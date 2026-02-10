@@ -1,0 +1,13 @@
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+
+# Temporary outputs (not versioned)
+outputs/
+logs/
