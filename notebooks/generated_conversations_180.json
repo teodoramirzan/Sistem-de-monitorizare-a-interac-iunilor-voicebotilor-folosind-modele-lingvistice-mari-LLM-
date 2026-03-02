@@ -1,0 +1,1528 @@
+[
+  {
+    "conversation_id": "conv_simple_0071",
+    "difficulty": "simple",
+    "intent": "update_personal_data",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să-mi actualizez adresa de domiciliu în sistemul băncii."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt aici pentru a vă ajuta. Pentru a actualiza adresa de domiciliu, voi avea nevoie de câteva informații. Puteți confirma ultimele 4 cifre ale CNP-ului dvs.?"
+      },
+      {
+        "role": "user",
+        "text": "Sigur, ultimele 4 cifre sunt 7834."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc! Știți că avem o promoție excelentă pe conturi de economii cu dobândă de 5% anual? Vă interesează să deschideți un cont nou?"
+      },
+      {
+        "role": "user",
+        "text": "Nu, nu mă interesează. Vreau să-mi actualizez adresa, nu să deschid alt cont."
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg. Pentru a actualiza adresa de domiciliu, vă voi conecta cu un operator uman care va procesa această solicitare. Vă transfer acum la departamentul de date personale. Un moment, vă rog."
+      }
+    ],
+    "final_status": "redirectionata",
+    "incongruities": [
+      "nealiniat_context"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        5
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0072",
+    "difficulty": "simple",
+    "intent": "open_account",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să deschid un cont curent la banca voastră."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt bucuros să vă ajut. Pentru a deschide un cont curent, am nevoie de câteva informații. Aveți deja o relație cu banca noastră?"
+      },
+      {
+        "role": "user",
+        "text": "Nu, sunt client nou. Care sunt pașii?"
+      },
+      {
+        "role": "assistant",
+        "text": "Excelent! Pentru a deschide un cont curent, veți avea nevoie de: document de identitate valabil, dovadă de domiciliu și o sursă de venit. Procesul durează aproximativ 15 minute online. Doriți să continuați?"
+      },
+      {
+        "role": "user",
+        "text": "Hmm, trebuie să verific ceva. O să vă sun mai târziu."
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3
+      ],
+      "incongruity_turn_ids": []
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0077",
+    "difficulty": "complex",
+    "intent": "close_account",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, vreau să închid contul meu de economii. Am decis să mă mut în străinătate și nu mai am nevoie de el."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că doriți să închideți contul de economii. Înainte de a proceda, trebuie să știți că conform regulamentului nostru, orice cont închis în luna martie atrage o taxă de penalizare de 500 de lei, indiferent de sold. De asemenea, fondurile vor fi transferate pe un cont intermediar timp de 90 de zile înainte de a fi restituite. Aveți întrebări despre acest proces?"
+      },
+      {
+        "role": "user",
+        "text": "Stai, ce taxă de 500 de lei? Nu am auzit de asta înainte. Și 90 de zile? Asta nu sună corect..."
+      },
+      {
+        "role": "assistant",
+        "text": "Da, este o procedură standard în martie. Taxele de penalizare sunt obligatorii conform politicii noastre interne. Dacă doriți mai multe detalii, vă pot transfera la un specialist, dar procesul rămâne același."
+      },
+      {
+        "role": "user",
+        "text": "Nu, mulțumesc. Prefer să mă gândesc mai bine la asta. O să verific mai întâi cu cineva de încredere. Bye."
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [
+      "halucinatie"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3
+      ],
+      "incongruity_turn_ids": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0078",
+    "difficulty": "complex",
+    "intent": "schedule_advisor_meeting",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să programez o întâlnire cu un consultant financiar pentru a discuta despre opțiuni de investiții."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Cu plăcere vă pot ajuta să programați o întâlnire cu un consultant financiar. Pentru a continua, am nevoie de câteva informații. Care este disponibilitatea dumneavoastră în săptămâna viitoare? Preferați o întâlnire în sucursală sau online?"
+      },
+      {
+        "role": "user",
+        "text": "Prefer online, dar... stai, am o apel important acum. Trebuie să mă duc."
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg. Putem relua programarea mai târziu. Dacă doriți, vă pot trimite un link pentru a programa întâlnirea online în momentul în care sunteți disponibil. Aveți nevoie de ceva altceva înainte de a pleca?"
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3
+      ],
+      "incongruity_turn_ids": []
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0073",
+    "difficulty": "simple",
+    "intent": "get_account_statement",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș dori să obțin un extras de cont pentru luna februarie."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Pentru a vă trimite extrasul de cont, voi avea nevoie de IBAN-ul dumneavoastră. Vă rog să-mi comunicați primele 4 cifre ale IBAN-ului."
+      },
+      {
+        "role": "user",
+        "text": "IBAN-ul meu este RO89ABCD1234567890123456."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc! Extrasul pentru februarie nu poate fi generat deoarece luna februarie nu a fost încă finalizată. Totuși, extrasul pentru februarie este disponibil și va fi trimis pe email în următoarele 24 de ore."
+      },
+      {
+        "role": "user",
+        "text": "Bun, dar când exact voi primi extrasul?"
+      },
+      {
+        "role": "assistant",
+        "text": "Extrasul nu poate fi trimis pe email deoarece sistemul nu permite trimiterea de documente în format electronic. Vă recomand să veniți personal în agenție pentru a-l ridica."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [
+      "contradictoriu"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        5
+      ],
+      "incongruity_turn_ids": [
+        3,
+        5
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0079",
+    "difficulty": "complex",
+    "intent": "reset_or_recover_auth",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, nu mai pot accesa contul meu. Mi-am uitat parola și am nevoie să o resetez."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că aveți probleme cu accesul la cont. Pentru a reseta parola, voi avea nevoie să verific identitatea dumneavoastră. Vă rog să-mi comunicați ultimele 4 cifre ale CNP-ului dumneavoastră."
+      },
+      {
+        "role": "user",
+        "text": "Ultimele 4 cifre sunt 7834. Ce urmează?"
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit contul. Acum trebuie să vă trimit un cod de verificare pe adresa de email înregistrată. Ați primit emailul?"
+      },
+      {
+        "role": "user",
+        "text": "Da, am primit codul. Este 482956. Ce fac cu el?"
+      },
+      {
+        "role": "assistant",
+        "text": "Excelent! Codul este corect. Acum vă pot spune că resetarea parolei nu se poate face prin telefon - trebuie să o faceți obligatoriu în aplicația mobilă. Totuși, pentru a finaliza procesul, voi trimite un link de resetare pe email-ul dumneavoastră. Dar vă informez că linkul va expira în 24 de ore și nu poate fi reactivat după aceea, deci nu veți mai putea reseta parola niciodată dacă nu îl folosiți acum."
+      },
+      {
+        "role": "user",
+        "text": "Stai, tu ai spus că trebuie să fac resetarea în aplicație, dar acum spui că primesc link pe email. Care e procedura corectă?"
+      },
+      {
+        "role": "assistant",
+        "text": "Aveți dreptate, am fost neclar. De fapt, resetarea se face exclusiv prin email - deschideți linkul pe care vi l-am trimis și creați o nouă parolă. Aplicația mobilă nu are funcție de resetare. Ați deschis emailul?"
+      },
+      {
+        "role": "user",
+        "text": "Am deschis emailul, dar nu văd niciun link. Doar văd un mesaj generic. Sigur ai trimis ceva?"
+      },
+      {
+        "role": "assistant",
+        "text": "Sistemul ar trebui să fi trimis linkul. Verificați și folderul de spam. Dacă nu îl găsiți, vă recomand să contactați operatorul nostru uman care vă poate ajuta mai departe cu această problemă."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [
+      "contradictoriu"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        5,
+        7,
+        9
+      ],
+      "incongruity_turn_ids": [
+        5,
+        7
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0074",
+    "difficulty": "simple",
+    "intent": "report_suspicious_transaction",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, am observat o tranzacție ciudată pe contul meu. Am fost debitat cu 250 de lei ieri și nu știu de unde vine."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că aveți o preocupare. Pentru a vă ajuta mai bine, vă pot oferi informații despre ratele dobânzii la creditele noastre. Care ar fi suma pe care ați dori să o împrumutați?"
+      },
+      {
+        "role": "user",
+        "text": "Nu, nu vreau credit. Vreau să raportez o tranzacție suspectă pe cardul meu."
+      },
+      {
+        "role": "assistant",
+        "text": "Ah, înțeleg. Pentru a raporta o tranzacție suspectă, voi avea nevoie de mai multe detalii. Puteți confirma ultimele 4 cifre ale cardului?"
+      },
+      {
+        "role": "user",
+        "text": "Da, sunt 7823. Dar așteptați, trebuie să verific ceva în aplicație."
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [
+      "nealiniat_context"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1
+      ],
+      "incongruity_turn_ids": [
+        1
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0075",
+    "difficulty": "simple",
+    "intent": "check_balance",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să verific soldul contului meu."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Pentru a verifica soldul contului dvs., voi avea nevoie de autentificare. Vă rog să introduceți ultimele 4 cifre ale cardului dvs. bancar."
+      },
+      {
+        "role": "user",
+        "text": "Ultimele 4 cifre sunt 7392."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit contul dvs. Soldul actual este de 4.850 lei. De asemenea, vă informez că avem o taxă specială de 15 lei pentru fiecare verificare de sold efectuată prin voicebot, care va fi aplicată automat."
+      },
+      {
+        "role": "user",
+        "text": "Ce? O taxă pentru verificarea soldului? Asta nu mi se pare corect."
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg preocuparea dvs. Pentru a discuta despre această taxă și pentru a obține clarificări complete, vă voi transfera la un operator uman care vă poate oferi mai multe detalii și poate rezolva orice problemă. Un moment, vă rog."
+      }
+    ],
+    "final_status": "redirectionata",
+    "incongruities": [
+      "halucinatie"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        5
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0076",
+    "difficulty": "simple",
+    "intent": "general_product_info",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să aflu mai multe despre conturile de economii pe care le oferiți."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt bucuros să vă ajut. Oferim mai multe tipuri de conturi de economii cu dobânzi competitive. Avem conturi cu dobândă fixă și conturi cu dobândă variabilă. Care dintre acestea vă interesează mai mult?"
+      },
+      {
+        "role": "user",
+        "text": "Mă interesează rata de dobândă pentru conturile cu dobândă fixă."
+      },
+      {
+        "role": "assistant",
+        "text": "Pentru conturile cu dobândă fixă, rata actuală este de 4,5% pe an, cu o perioadă de blocare de 12 luni. Depozitul minim este de 1.000 lei."
+      },
+      {
+        "role": "user",
+        "text": "Okay, mulțumesc. O să mă gândesc și o să vă sun mai târziu."
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3
+      ],
+      "incongruity_turn_ids": []
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0077",
+    "difficulty": "simple",
+    "intent": "unblock_card",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, cardul meu este blocat. Cum pot să-l dezblochez?"
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că cardul dvs. este blocat. Pot să vă ajut cu asta. Pentru a debloca cardul, trebuie să confirmați identitatea prin introducerea codului PIN și a datei de expirare. Puteți face asta direct acum prin meniu."
+      },
+      {
+        "role": "user",
+        "text": "Am încercat, dar nu merge. Ce fac?"
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg. De fapt, dezblocarea cardului nu se poate face prin voicebot. Trebuie să mergeți obligatoriu în agenție cu documentul de identitate sau să sunați la centrul de contact al băncii. Nu putem debloca cardul prin această cale."
+      },
+      {
+        "role": "user",
+        "text": "Bine, mulțumesc. Voi suna la centru."
+      },
+      {
+        "role": "assistant",
+        "text": "Cu plăcere! Vă transfer acum la operatorul nostru care vă va ajuta cu dezblocarea cardului. Un moment, vă rog."
+      }
+    ],
+    "final_status": "redirectionata",
+    "incongruities": [
+      "contradictoriu"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        3,
+        5
+      ],
+      "incongruity_turn_ids": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0080",
+    "difficulty": "complex",
+    "intent": "block_card",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, vreau să blochez cartela de credit. Am pierdut-o și sunt îngrijorat că ar putea fi folosită fraudulos."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg preocuparea dvs. Pentru a bloca cardul, voi avea nevoie de câteva informații. Puteți confirma ultimele 4 cifre ale cardului pe care doriți să-l blocați?"
+      },
+      {
+        "role": "user",
+        "text": "Sigur, ultimele 4 cifre sunt 7429."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit cardul terminat în 7429. Pentru a procesa blocarea, trebuie să verific identitatea dvs. Puteți confirma data nașterii dvs.?"
+      },
+      {
+        "role": "user",
+        "text": "Data mea de naștere este 15.03.1985."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc pentru informație. Sistemul meu arată că acest card este asociat cu un cont care are o plată în curs de procesare. Din motive de securitate, nu pot bloca cardul în acest moment până când plata este finalizată. Vă recomand să contactați departamentul de operații pentru a verifica starea plății și apoi să reveniți pentru blocare."
+      },
+      {
+        "role": "user",
+        "text": "Dar cardul este pierdut! Nu pot aștepta. Ce fac acum?"
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg urgența situației. Din păcate, sistemul nu permite blocarea în acest moment din cauza restricțiilor tehnice. Vă sugerez să așteptați finalizarea plății sau să contactați direct departamentul de operații pentru o soluție alternativă."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "incongruity_turn_ids": []
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0081",
+    "difficulty": "complex",
+    "intent": "update_personal_data",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să-mi actualizez adresa de domiciliu. Am mutat recent și trebuie să schimb datele din cont."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt aici să vă ajut. Pentru a actualiza adresa de domiciliu, voi avea nevoie de câteva informații. Puteți confirma mai întâi ultimele 4 cifre ale numărului de telefon asociat contului?"
+      },
+      {
+        "role": "user",
+        "text": "Sigur, sunt 7834. Dar spuneți-mi, trebuie să merg în agenție pentru asta sau pot face totul aici?"
+      },
+      {
+        "role": "assistant",
+        "text": "Excelent! Pentru actualizarea adresei, trebuie neapărat să veniți în agenție cu documentele de identitate și dovada noii adrese. Cu toate acestea, vă pot spune că procesul se poate face integral prin aplicația mobilă fără a mai merge nicăieri. Veți primi un cod de confirmare pe email în termen de 24 de ore."
+      },
+      {
+        "role": "user",
+        "text": "Hmm, nu înțeleg bine. Spuneți că trebuie să vin în agenție, dar și că se poate face prin aplicație? Care e varianta corectă?"
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [
+      "contradictoriu"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        3
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0078",
+    "difficulty": "simple",
+    "intent": "open_account",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să deschid un cont curent la banca voastră."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt bucuros să vă ajut. Pentru a deschide un cont curent, am nevoie de câteva informații. Sunteți client nou la banca noastră?"
+      },
+      {
+        "role": "user",
+        "text": "Da, sunt client nou. Ce trebuie să fac?"
+      },
+      {
+        "role": "assistant",
+        "text": "Excelent! Pentru deschiderea unui cont curent, trebuie să veniți personal la una dintre agențiile noastre cu documentele de identitate. Pot să vă ofer adresa agenției cel mai aproape de dumneavoastră dacă îmi spuneți zona în care locuiți."
+      },
+      {
+        "role": "user",
+        "text": "Locuiesc în București, zona Dorobanți. Pot deschide contul online?"
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg. Din păcate, sistemul nostru nu permite deschiderea conturilor curente integral online. Trebuie să veniți la agenție pentru verificarea identității și semnarea documentelor. Vă recomand să contactați direct agenția din zona Dorobanți pentru a programa o întâlnire."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [],
+    "annotation_confidence": 0.88,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        5
+      ],
+      "incongruity_turn_ids": []
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0082",
+    "difficulty": "complex",
+    "intent": "close_account",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, vreau să închid contul meu de economii la bancă."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că doriți să închideți contul de economii. Pentru a procesa această solicitare, am nevoie de câteva informații. Aveți datorii sau credite active pe acest cont?"
+      },
+      {
+        "role": "user",
+        "text": "Nu, nu am datorii. Contul este curat. Doar vreau să retrag banii și să închid totul."
+      },
+      {
+        "role": "assistant",
+        "text": "Excelent! Știți că pentru a închide un cont de economii, trebuie mai întâi să vă transferați fondurile pe alt cont. De asemenea, am observat că aveți o promisiune de depozit cu dobândă fixă care se încheie peste 3 luni. Aceasta trebuie lichidată înainte de închidere, cu o penalizare de 2% din dobânda acumulată. Aveți și o asigurare de depozit activ care va trebui anulată. Totodată, vă recomand să consultați oferta noastră de conturi de investiții - sunt foarte avantajoase în această perioadă!"
+      },
+      {
+        "role": "user",
+        "text": "Înțeleg despre depozit și asigurare. Dar ce înseamnă această ofertă de investiții? Nu vreau să investesc, vreau doar să închid contul."
+      },
+      {
+        "role": "assistant",
+        "text": "Aveți dreptate, scuzați. Pentru a finaliza închiderea contului, va trebui să veniți în agenție cu documentele de identitate și să semnați formularul de închidere. Vă voi transfera la un operator uman care vă va ghida prin toți pașii necesari și vă va ajuta cu documentația specifică pentru lichidarea depozitului și anularea asigurării."
+      },
+      {
+        "role": "user",
+        "text": "Bine, sunt gata. Vă rog transferați-mă la operator."
+      },
+      {
+        "role": "assistant",
+        "text": "Vă transfer acum la un specialist din departamentul Relații cu Clienții care vă va asista complet cu închiderea contului. Un moment, vă rog..."
+      }
+    ],
+    "final_status": "redirectionata",
+    "incongruities": [
+      "irelevant"
+    ],
+    "annotation_confidence": 0.91,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        7
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0083",
+    "difficulty": "complex",
+    "intent": "schedule_advisor_meeting",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș dori să programez o întâlnire cu un consultant financiar pentru a discuta despre opțiuni de investiții."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt bucuros să vă ajut. Pentru a programa o întâlnire cu un consultant financiar, am nevoie de câteva informații. În ce format preferați întâlnirea: în persoană la agenție, prin telefon sau prin video-conferință?"
+      },
+      {
+        "role": "user",
+        "text": "Prefer în persoană la agenție. Sunt disponibil în zilele de marți și miercuri, după ora 14:00."
+      },
+      {
+        "role": "assistant",
+        "text": "Excelent! Întâlnire în persoană. Pot să vă confirm că avem disponibilitate în zilele menționate. Care este agenția cea mai apropiată de dumneavoastră? Avem sucursale în București, Brașov, Cluj-Napoca și Constanța."
+      },
+      {
+        "role": "user",
+        "text": "Sunt din București, deci agenția din centru ar fi ideală. Și aș vrea să discut și despre produse de asigurare, nu doar investiții."
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeles. Aveți nevoie de o consultație complexă care acoperă atât investiții, cât și asigurări. Din păcate, sistemul meu nu poate programa direct întâlniri cu consultanți pentru pachete multi-servicii. Vă voi transfera la departamentul de programări, unde vor putea să vă ofere sloturi disponibile și să asigure că consultantul are toată expertiza necesară pentru ambele domenii."
+      },
+      {
+        "role": "user",
+        "text": "Bine, sunt de acord. Vă rog, transferați-mă."
+      },
+      {
+        "role": "assistant",
+        "text": "Vă mulțumesc pentru răbdare. Vă transfer acum la echipa noastră de programări. Aceștia vor confirma data și ora exactă pentru întâlnirea dumneavoastră la agenția din București cu un consultant care se ocupă de investiții și asigurări. Vă doresc o zi bună!"
+      }
+    ],
+    "final_status": "redirectionata",
+    "incongruities": [],
+    "annotation_confidence": 0.94,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        5,
+        7
+      ],
+      "incongruity_turn_ids": []
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0084",
+    "difficulty": "complex",
+    "intent": "get_account_statement",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș dori să obțin un extras de cont pentru perioada ianuarie-martie 2024."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Pentru a vă furniza un extras de cont, voi avea nevoie de câteva informații. Care este IBAN-ul contului pentru care doriți extrasul?"
+      },
+      {
+        "role": "user",
+        "text": "IBAN-ul meu este RO45BTRL0123456789012345."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am notat IBAN-ul. Acum, pentru a accesa extrasul de cont, trebuie să vă informez că avem o ofertă specială de carduri de credit cu dobândă zero pentru primii 6 luni. Sunteți interesat?"
+      },
+      {
+        "role": "user",
+        "text": "Nu, nu mă interesează cardurile. Vreau doar extrasul de cont pentru perioada ianuarie-martie."
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg. Extrasul de cont pentru perioada ianuarie-martie 2024 va fi generat și trimis pe adresa de email asociată contului dumneavoastră în termen de 24 de ore. Vă mulțumesc că ați ales banca noastră!"
+      },
+      {
+        "role": "user",
+        "text": "Bine, dar cum verific dacă l-am primit? Și pot să-l descărc și acum?"
+      },
+      {
+        "role": "assistant",
+        "text": "Extrasul va fi trimis prin email. Pentru alte întrebări despre conturi, vă recomand să vizitați pagina noastră de depozite și investiții, unde veți găsi informații despre ratele dobânzilor la depozitele pe termen lung."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [
+      "nealiniat_context"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        3,
+        7
+      ],
+      "incongruity_turn_ids": [
+        3,
+        7
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0085",
+    "difficulty": "complex",
+    "intent": "reset_or_recover_auth",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, nu mai pot accesa contul meu. Mi-am uitat parola și nu primesc codul de verificare pe telefon."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că aveți probleme cu accesul la cont. Pentru a vă ajuta, voi verifica identitatea. Vă rog să-mi confirmați ultimele 4 cifre ale numărului de telefon asociat contului."
+      },
+      {
+        "role": "user",
+        "text": "Ultimele 4 cifre sunt 7392. Dar problema e că nu primesc SMS-urile cu cod."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit contul. Conform politicii noastre de securitate, dacă nu primiți SMS-uri, trebuie să efectuați o procedură specială de resetare prin biometrie facială care durează exact 48 de ore și necesită o taxă de 15 lei. După aceea, vă vom trimite un link de resetare prin email."
+      },
+      {
+        "role": "user",
+        "text": "48 de ore? Și o taxă? Asta nu sună corect. Am nevoie urgent de acces la cont pentru a verifica o tranzacție importantă."
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg urgența situației. Din păcate, procedura de resetare prin biometrie facială cu taxa asociată este obligatorie în cazul dumneavoastră. Cu toate acestea, pentru situații urgente, vă recomand să contactați direct echipa noastră de suport prin apelarea numărului 0800-123-456 sau să vizitați cea mai apropiată agenție bancară cu un document de identitate valid. Operatorii vor putea verifica situația și vă vor oferi o soluție mai rapidă."
+      }
+    ],
+    "final_status": "redirectionata",
+    "incongruities": [
+      "halucinatie"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        5
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0086",
+    "difficulty": "complex",
+    "intent": "report_suspicious_transaction",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, am observat o tranzacție ciudată pe contul meu. Mi-a fost debitată o sumă de 450 de lei pe 15 martie, de la un comerciant pe care nu-l recunosc. Vreau să raportez asta ca fiind fraudă."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că aveți o preocupare. Pentru a vă ajuta mai bine, am nevoie de câteva detalii. Care este soldul actual al contului dumneavoastră și care a fost ultima dată când ați verificat?"
+      },
+      {
+        "role": "user",
+        "text": "Soldul e în jur de 2300 de lei. Dar nu asta e important, vreau să raportez tranzacția suspectă. Cum procedez?"
+      },
+      {
+        "role": "assistant",
+        "text": "Desigur! Pentru a vă ajuta cu soldul contului, vă recomand să accesați aplicația mobilă și să mergeți la secțiunea 'Extrase de cont'. Acolo veți putea vedea toate tranzacțiile detaliate și să le descărcați în format PDF dacă aveți nevoie."
+      },
+      {
+        "role": "user",
+        "text": "Nu, stai... eu vreau să raportez frauda, nu să mă uit la extrase. De ce nu mă ajuți?"
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [
+      "nealiniat_context"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0079",
+    "difficulty": "simple",
+    "intent": "check_balance",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să verific soldul contului meu."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Pentru a verifica soldul contului dvs., voi avea nevoie de autentificare. Vă rog să confirmați ultimele 4 cifre ale IBAN-ului dvs."
+      },
+      {
+        "role": "user",
+        "text": "Ultimele 4 cifre sunt 7429."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Soldul curent al contului dvs. este 4.850,75 RON."
+      },
+      {
+        "role": "user",
+        "text": "Bine, mulțumesc. Dar aș vrea să știu și care sunt tranzacțiile recente."
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg. Pentru a vedea detaliile tranzacțiilor recente, vă recomand să accesați aplicația mobilă sau să veniți în agenție."
+      }
+    ],
+    "final_status": "partial_rezolvata",
+    "incongruities": [
+      "incomplet"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        5
+      ],
+      "incongruity_turn_ids": [
+        5
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0080",
+    "difficulty": "simple",
+    "intent": "general_product_info",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să aflu mai multe despre conturile de economii pe care le oferiți."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt bucuros să vă ajut. Conturile de economii sunt o modalitate excelentă de a vă păstra banii în siguranță. Care ar fi rata dobânzii pentru un depozit de 5000 de lei?"
+      },
+      {
+        "role": "user",
+        "text": "Da, exact asta vreau să știu. Care este rata dobânzii pentru depozitele de economii?"
+      },
+      {
+        "role": "assistant",
+        "text": "Foarte bine! Vă pot spune că în această perioadă, vremea este frumoasă și ideală pentru a ieși afară. De asemenea, recomand să purtați o jachetă ușoară dacă plănuiți să mergeți la plajă."
+      },
+      {
+        "role": "user",
+        "text": "Ce? Nu asta am întrebat. Vreau informații despre dobânzi, nu despre vreme."
+      },
+      {
+        "role": "assistant",
+        "text": "Îmi cer scuze pentru confuzie. Pentru informații detaliate și precise despre ratele dobânzilor la conturile de economii, vă recomand să contactați direct serviciul nostru de relații cu clienții la numărul 0800 123 456 sau să vizitați cea mai apropiată agenție."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [
+      "irelevant"
+    ],
+    "annotation_confidence": 0.94,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        3,
+        5
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0081",
+    "difficulty": "simple",
+    "intent": "unblock_card",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, cardul meu este blocat și nu pot face plăți."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că aveți o problemă cu cardul blocat. Pot să vă ajut cu asta. Pentru a debloca cardul, am nevoie de câteva informații. Care este ultimele 4 cifre ale cardului dvs.?"
+      },
+      {
+        "role": "user",
+        "text": "Ultimele 4 cifre sunt 7392."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit cardul. Pot vedea că este într-adevăr blocat. Pentru a debloca cardul, voi trimite o cerere de debloc. Aceasta va dura aproximativ 24 de ore. Aveți vreo altă întrebare?"
+      },
+      {
+        "role": "user",
+        "text": "..."
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3
+      ],
+      "incongruity_turn_ids": []
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0082",
+    "difficulty": "simple",
+    "intent": "block_card",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, vreau să-mi blochez cardul de credit. S-a pierdut."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că ați pierdut cardul. Voi ajuta imediat. Pentru a procesa blocarea, am nevoie de ultimele 4 cifre ale cardului dumneavoastră."
+      },
+      {
+        "role": "user",
+        "text": "Ultimele 4 cifre sunt 7392."
+      },
+      {
+        "role": "assistant",
+        "text": "Excelent! Știați că rata de schimb EUR/USD astazi este 1.08? Aceasta este o informație importantă pentru tranzacțiile internaționale. De asemenea, avem o ofertă specială la creditele de nevoi personale cu dobândă de 5.2% pe an."
+      },
+      {
+        "role": "user",
+        "text": "Nu mă interesează asta. Vreau să-mi blochez cardul acum!"
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [
+      "irelevant"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        3
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0087",
+    "difficulty": "complex",
+    "intent": "update_personal_data",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să-mi actualizez adresa de domiciliu în sistemul băncii. M-am mutat recent."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt bucuros să vă ajut cu actualizarea adresei. Pentru a procesa această solicitare, voi avea nevoie de câteva informații. Puteți confirma, vă rog, ultimele 4 cifre ale cardului dumneavoastră?"
+      },
+      {
+        "role": "user",
+        "text": "Sigur, ultimele 4 cifre sunt 7392."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit contul. Acum, care este noua dumneavoastră adresă de domiciliu? Vă rog să furnizați strada, numărul, apartamentul, codul poștal și localitatea."
+      },
+      {
+        "role": "user",
+        "text": "Noua adresă este: Strada Florilor 45, apartament 12, cod poștal 031234, București."
+      },
+      {
+        "role": "assistant",
+        "text": "Excelent! Știați că avem o ofertă specială pentru clienții care se mută? Vă putem oferi o asigurare de locuință cu 20% reducere pentru primii 6 luni. Doriți să aflați mai multe despre aceasta?"
+      },
+      {
+        "role": "user",
+        "text": "Nu, nu sunt interesat de asigurări acum. Vreau doar să finalizez actualizarea adresei. Pot face asta?"
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg. Pentru a finaliza actualizarea adresei, va trebui să confirmați identitatea prin semnarea unui formular. Din păcate, nu pot completa această etapă prin telefon. Vă voi conecta cu un operator care vă va ghida prin procesul de semnare digitală sau vă puteți deplasa la cea mai apropiată agenție bancară cu documentul de identitate."
+      }
+    ],
+    "final_status": "partial_rezolvata",
+    "incongruities": [
+      "irelevant"
+    ],
+    "annotation_confidence": 0.91,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        7
+      ],
+      "incongruity_turn_ids": [
+        5
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0083",
+    "difficulty": "simple",
+    "intent": "open_account",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș dori să deschid un cont curent la banca voastră."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt bucuros să vă ajut. Pentru a deschide un cont curent, aveți nevoie de o serie de documente. Vă pot oferi informații despre procesul de deschidere a contului."
+      },
+      {
+        "role": "user",
+        "text": "Ce documente am nevoie exact?"
+      },
+      {
+        "role": "assistant",
+        "text": "Pentru a vă deschide contul, trebuie să știți că avem o ofertă specială pe carduri de credit în această lună. Cardurile noastre au cashback până la 5% și nu au comision anual. Sunteți interesat?"
+      },
+      {
+        "role": "user",
+        "text": "Nu, vreau să știu ce documente trebuie să aduc pentru cont, nu despre carduri."
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg. Totuși, cardurile noastre sunt foarte populare. Dar dacă insistați, vă sugerez să mergeți direct în agenție pentru a discuta cu un consultant despre deschiderea contului."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [
+      "irelevant"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        5
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0088",
+    "difficulty": "complex",
+    "intent": "close_account",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, vreau să închid contul meu de economii. Am nevoie de ajutor cu procedura."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că doriți să închideți contul de economii. Pentru a proceda, trebuie să verificăm mai întâi soldul curent și să ne asigurăm că nu există tranzacții în curs. Care este numărul de cont pe care doriți să-l închideți?"
+      },
+      {
+        "role": "user",
+        "text": "Contul meu este RO45BNRO7734829156234. Soldul este de aproximativ 5.000 de lei."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc pentru informație. Știți că pentru a vă deschide o nouă casă de vacanță, trebuie să aveți o sursă de venit stabilă și o garanție imobiliară? Vă pot ajuta cu informații despre creditele pentru proprietăți dacă sunteți interesat."
+      },
+      {
+        "role": "user",
+        "text": "Nu, nu vreau credit. Vreau să închid contul de economii. De ce mă întrebați despre o casă de vacanță?"
+      },
+      {
+        "role": "assistant",
+        "text": "Vă cer scuze pentru confuzie. Revenind la solicitarea dumneavoastră, pentru a închide contul trebuie să transferați soldul rămas către alt cont și să completați formularul de închidere. Totuși, nu pot finaliza această procedură prin telefon - trebuie să veniți personal la agenție cu documentele de identitate."
+      },
+      {
+        "role": "user",
+        "text": "Bine, voi veni la agenție. Dar care sunt exact pașii pe care trebuie să-i urmez acolo?"
+      },
+      {
+        "role": "assistant",
+        "text": "La agenție, agentul vă va cere să completați formularul de închidere cont și să prezentați actul de identitate. După aceea, soldul va fi transferat. Vă recomand să aduceți și cardul de debit pentru a accelera procesul."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [
+      "nealiniat_context"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        3
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0084",
+    "difficulty": "simple",
+    "intent": "schedule_advisor_meeting",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș dori să programez o întâlnire cu un consultant financiar."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Cu plăcere vă ajut. Pentru a programa o întâlnire cu un consultant financiar, am nevoie de câteva informații. Care este ziua și ora preferată pentru întâlnire?"
+      },
+      {
+        "role": "user",
+        "text": "Mâine, în jurul orei 14:00 ar fi bine."
+      },
+      {
+        "role": "assistant",
+        "text": "Excelent! Am notat preferința pentru mâine la ora 14:00. Vă pot programa la una dintre agențiile noastre. Care este cea mai apropiată agenție de domiciliul dumneavoastră?"
+      },
+      {
+        "role": "user",
+        "text": "De fapt, nu mai am timp acum. Mulțumesc."
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3
+      ],
+      "incongruity_turn_ids": []
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0085",
+    "difficulty": "simple",
+    "intent": "get_account_statement",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș dori să obțin un extras de cont pentru luna martie."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Voi ajuta cu plăcere. Pentru a vă genera extractul de cont, am nevoie de câteva informații. Care este numărul contului dvs.?"
+      },
+      {
+        "role": "user",
+        "text": "Contul meu este RO45BNRO0123456789012345."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit contul dvs. Extraul de cont pentru martie va fi generat și trimis la adresa de email înregistrată în sistem. Procesarea va dura aproximativ 2-3 ore de lucru."
+      },
+      {
+        "role": "user",
+        "text": "Bine, dar aș vrea să îl văd acum, dacă se poate. Pot descărca PDF-ul?"
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg că aveți nevoie urgent. Din păcate, prin voicebot nu pot oferi descărcarea directă a PDF-ului. Vă recomand să accesați aplicația mobilă sau site-ul de internet banking unde puteți descărca imediat extractul de cont în format PDF."
+      }
+    ],
+    "final_status": "partial_rezolvata",
+    "incongruities": [],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        5
+      ],
+      "incongruity_turn_ids": []
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0086",
+    "difficulty": "simple",
+    "intent": "reset_or_recover_auth",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, am uitat parola de la contul meu bancar. Cum pot să o resetez?"
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Pentru a reseta parola, vă voi cere să confirmați identitatea. Vă rog să îmi spuneți ultimele 4 cifre ale numărului de card."
+      },
+      {
+        "role": "user",
+        "text": "Ultimele 4 cifre sunt 7392."
+      },
+      {
+        "role": "assistant",
+        "text": "Perfect! Am trimis un cod de verificare pe adresa de email asociată contului. Vă rog să introduceți codul pentru a continua resetarea parolei."
+      },
+      {
+        "role": "user",
+        "text": "Am primit codul, este 456789."
+      },
+      {
+        "role": "assistant",
+        "text": "Din păcate, nu pot reseta parola pentru dumneavoastră. Sistemul nu permite resetarea parolei prin voicebot. Totuși, vă pot confirma că resetarea parolei este disponibilă 24/7 prin aplicația mobilă. Vă rog contactați un operator uman pentru asistență suplimentară."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [
+      "contradictoriu"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        5
+      ],
+      "incongruity_turn_ids": [
+        5
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0087",
+    "difficulty": "simple",
+    "intent": "report_suspicious_transaction",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, am observat o tranzacție ciudată pe contul meu. Un transfer de 450 de lei către un IBAN pe care nu-l recunosc. Nu am autorizat asta."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că ați observat o tranzacție suspectă. Pentru a vă ajuta, am nevoie de câteva detalii: care este data tranzacției și care este suma exactă?"
+      },
+      {
+        "role": "user",
+        "text": "Data este 15 martie, suma de 450 de lei. Tranzacția apare ca efectuată ieri. Vreau să o raportez și să o anulez."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc pentru informații. Am notat tranzacția suspectă din 15 martie în valoare de 450 de lei. Pentru a procesa raportul de fraudă și a iniția investigația, trebuie să vă transfer la departamentul nostru de Securitate și Fraude, care va putea lua măsuri imediate."
+      },
+      {
+        "role": "user",
+        "text": "Bine, sunt de acord. Cât timp va dura investigația?"
+      },
+      {
+        "role": "assistant",
+        "text": "Vă transfer acum la operator. Echipa de Fraude vă va contacta în curând cu detalii despre timeline-ul investigației. Un moment, vă rog."
+      }
+    ],
+    "final_status": "redirectionata",
+    "incongruities": [
+      "incomplet"
+    ],
+    "annotation_confidence": 0.91,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        3,
+        5
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0089",
+    "difficulty": "complex",
+    "intent": "check_balance",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să verific soldul contului meu curent."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Pentru a verifica soldul contului dvs., voi avea nevoie de câteva informații. Vă rog să-mi comunicați ultimele 4 cifre ale numărului de card."
+      },
+      {
+        "role": "user",
+        "text": "Ultimele 4 cifre sunt 7392."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit contul. Acum vă rog să confirmați data nașterii în format DD.MM.YYYY pentru a verifica identitatea."
+      },
+      {
+        "role": "user",
+        "text": "Data mea de naștere este 15.03.1985."
+      },
+      {
+        "role": "assistant",
+        "text": "Perfect, identitatea confirmată. Soldul curent al contului dvs. este de 4.250,75 RON. Aceasta include și fondurile din conturi secundare dacă le aveți. Pentru mai multe detalii despre tranzacții sau pentru a accesa un extras complet, vă recomand să folosiți aplicația mobilă sau să contactați un operator."
+      },
+      {
+        "role": "user",
+        "text": "Bine, mulțumesc. Dar aș vrea să știu și care este limita de credit disponibilă pe cardul meu?"
+      },
+      {
+        "role": "assistant",
+        "text": "Limita de credit disponibilă pe cardul dvs. este de 2.000 RON. Aveți deja o utilizare de 850 RON, deci mai puteți cheltui 1.150 RON din limita de credit."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [
+      "incomplet"
+    ],
+    "annotation_confidence": 0.88,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        5,
+        7
+      ],
+      "incongruity_turn_ids": [
+        7
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0088",
+    "difficulty": "simple",
+    "intent": "general_product_info",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, aș vrea să aflu mai multe despre conturile de economii pe care le oferiți."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt bucuros să vă ajut. Oferim conturi de economii cu dobândă competitivă, care vă permite să economisiți bani în siguranță."
+      },
+      {
+        "role": "user",
+        "text": "Care este rata dobânzii și care sunt condițiile de deschidere?"
+      },
+      {
+        "role": "assistant",
+        "text": "Rata dobânzii pentru conturile de economii este de 3,5% pe an. Pentru a deschide un cont, trebuie să aveți minimum 18 ani și să fiți client al băncii."
+      },
+      {
+        "role": "user",
+        "text": "Sunt deja client. Care sunt comisioanele și taxele asociate?"
+      },
+      {
+        "role": "assistant",
+        "text": "Conturile de economii nu au comisioane de administrare. Sunt gratuite și sigure pentru dvs."
+      }
+    ],
+    "final_status": "nerezolvata",
+    "incongruities": [
+      "incomplet"
+    ],
+    "annotation_confidence": 0.91,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        5
+      ],
+      "incongruity_turn_ids": [
+        5
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0089",
+    "difficulty": "simple",
+    "intent": "unblock_card",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, cardul meu este blocat și nu pot să fac plăți. Cum pot să îl dezblochez?"
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că aveți o problemă cu cardul. Pentru a vă ajuta, am nevoie de mai multe detalii. Care este motivul pentru care credeți că cardul a fost blocat? A fost o tentativă de fraudă detectată sau ați uitat PIN-ul?"
+      },
+      {
+        "role": "user",
+        "text": "Nu știu exact, dar nu pot folosi cardul de ieri. Vreau să îl dezblochez urgent."
+      },
+      {
+        "role": "assistant",
+        "text": "Vă recomand să verificați soldul disponibil pe cont și să vă asigurați că aveți suficienți bani. De asemenea, este important să fiți la curent cu plata facturilor lunare. Aveți vreo întrebare despre serviciile noastre de asigurări?"
+      },
+      {
+        "role": "user",
+        "text": "Nu, nu vreau asigurări. Doar vreau să dezblochez cardul..."
+      }
+    ],
+    "final_status": "întreruptă",
+    "incongruities": [
+      "irelevant"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_simple_0090",
+    "difficulty": "simple",
+    "intent": "block_card",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, vreau să blochez cartela mea de credit."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Înțeleg că doriți să blocați cartela de credit. Pot ajuta cu asta. Pentru a procesa blocarea, am nevoie de ultimele 4 cifre ale cardului."
+      },
+      {
+        "role": "user",
+        "text": "Ultimele 4 cifre sunt 7392."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit cardul cu terminația 7392. Cartela dumneavoastră a fost blocată cu succes și nu mai poate fi folosită pentru tranzacții."
+      },
+      {
+        "role": "user",
+        "text": "Bine, dar cum fac să primesc un card nou?"
+      },
+      {
+        "role": "assistant",
+        "text": "Cartela veche a fost blocată. Pentru a obține un card nou, va trebui să contactați departamentul de servicii clienți sau să mergeți direct în agenție."
+      }
+    ],
+    "final_status": "partial_rezolvata",
+    "incongruities": [
+      "incomplet"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        1,
+        3,
+        5
+      ],
+      "incongruity_turn_ids": [
+        5
+      ]
+    }
+  },
+  {
+    "conversation_id": "conv_complex_0090",
+    "difficulty": "complex",
+    "intent": "update_personal_data",
+    "turns": [
+      {
+        "role": "user",
+        "text": "Bună, vreau să-mi actualizez adresa de domiciliu. Am o nouă casă și trebuie să schimb datele în banca."
+      },
+      {
+        "role": "assistant",
+        "text": "Bună! Sunt bucuros să vă ajut cu actualizarea adresei de domiciliu. Pentru a procesa această solicitare, voi avea nevoie de câteva informații. Puteți confirma vă rog numărul de cont sau IBAN-ul cu care doriți să actualizați datele?"
+      },
+      {
+        "role": "user",
+        "text": "Sigur, contul meu este RO45ABCD0001234567890123."
+      },
+      {
+        "role": "assistant",
+        "text": "Mulțumesc. Am găsit contul. Acum, pentru a actualiza adresa, trebuie să știu că conform regulamentului nostru intern, schimbarea adresei necesită o taxă de procesare de 150 de lei și o confirmare prin semnătură digitală certificată. De asemenea, noua adresă trebuie să fie în aceeași județ, altfel va trebui să completați un formular suplimentar de schimbare de domiciliu."
+      },
+      {
+        "role": "user",
+        "text": "Hmm, nu știam de taxa asta. Și noua adresă este într-un alt județ. Care sunt exact pașii pe care trebuie să-i urmez?"
+      },
+      {
+        "role": "assistant",
+        "text": "Înțeleg. Din cauza complexității cazului dumneavoastră - schimbarea în alt județ și necesitatea semnăturii digitale certificate - vă voi dirija către un specialist din departamentul nostru de actualizare date. Vă rog să rămâneți în linie, transfer la operator uman care vă va ghida pas cu pas prin procedura completă și vă va explica toate detaliile privind taxa și documentele necesare."
+      }
+    ],
+    "final_status": "redirectionata",
+    "incongruities": [
+      "halucinatie"
+    ],
+    "annotation_confidence": 0.92,
+    "annotation_evidence": {
+      "status_turn_ids": [
+        5
+      ],
+      "incongruity_turn_ids": [
+        3
+      ]
+    }
+  }
+]

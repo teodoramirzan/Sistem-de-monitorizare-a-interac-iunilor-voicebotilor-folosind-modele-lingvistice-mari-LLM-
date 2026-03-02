@@ -1,0 +1,1790 @@
+{
+  "conversations": [
+    {
+      "conversation_id": "conv_simple_0001",
+      "difficulty": "simple",
+      "intent": "update_personal_data",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să actualizez numărul meu de telefon."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt bucuros să vă ajut. Pentru a actualiza numărul de telefon, vă voi solicita să confirmați identitatea. Care este numărul dumneavoastră de cont?"
+        },
+        {
+          "role": "user",
+          "text": "Contul meu este 1234567890."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Care este noul număr de telefon pe care doriți să-l înregistrați?"
+        },
+        {
+          "role": "user",
+          "text": "Noul număr este 0721234567."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Am actualizat numărul dumneavoastră de telefon la 0721234567. Veți primi o confirmare prin SMS în scurt timp."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0002",
+      "difficulty": "simple",
+      "intent": "update_personal_data",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Trebuie să schimb adresa de domiciliu."
+        },
+        {
+          "role": "assistant",
+          "text": "Desigur, vă pot ajuta cu actualizarea adresei de domiciliu. Vă rog să-mi spuneți noua adresă completă."
+        },
+        {
+          "role": "user",
+          "text": "Strada Principală 45, Apartament 12, București, cod postal 010101."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Am actualizat adresa dumneavoastră de domiciliu. Modificarea va fi efectivă în termen de 24 de ore."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0003",
+      "difficulty": "simple",
+      "intent": "update_personal_data",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, vreau să modific adresa de email."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Voi actualiza adresa de email cu plăcere. Care este noua adresă de email pe care doriți să o înregistrați?"
+        },
+        {
+          "role": "user",
+          "text": "Noua adresă este newemail@example.com."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent. Am actualizat adresa de email la newemail@example.com. Veți primi o confirmare pe noua adresă."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0004",
+      "difficulty": "simple",
+      "intent": "update_personal_data",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Salut, am schimbat locul de muncă și trebuie să actualizez datele mele."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt aici pentru a vă ajuta. Care sunt datele pe care doriți să le actualizați?"
+        },
+        {
+          "role": "user",
+          "text": "Trebuie să actualizez ocupația și compania unde lucrez."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg. Vă rog să-mi spuneți noua ocupație și numele companiei."
+        },
+        {
+          "role": "user",
+          "text": "Sunt Inginer Software la TechCorp Solutions."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Am actualizat ocupația dumneavoastră la Inginer Software și compania la TechCorp Solutions. Datele vor fi valide imediat."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0005",
+      "difficulty": "simple",
+      "intent": "update_personal_data",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș vrea să actualizez datele de contact de urgență."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Voi actualiza contactul de urgență imediat. Vă rog să-mi furnizați numele și numărul de telefon al persoanei de contact."
+        },
+        {
+          "role": "user",
+          "text": "Contactul de urgență este Ana Popescu, 0723456789."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Am actualizat contactul de urgență cu Ana Popescu, 0723456789. Datele vor fi active în sistem."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0006",
+      "difficulty": "simple",
+      "intent": "close_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să închid contul meu de economii."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Înțeleg că doriți să închideți contul de economii. Pentru a procesa această solicitare, trebuie să verific câteva detalii. Contul dumneavoastră este activ și nu are solicitări în așteptare?"
+        },
+        {
+          "role": "user",
+          "text": "Da, contul este activ și nu am nicio solicitare în curs."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent. Voi procesa închiderea contului dumneavoastră. Fondurile rămase vor fi transferate pe contul principal desemnat. Veți primi o confirmare în 24 de ore."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0007",
+      "difficulty": "simple",
+      "intent": "close_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Vreau să închid contul de depozit pe care l-am deschis acum doi ani."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Solicitarea dumneavoastră de închidere a contului de depozit a fost înregistrată. Trebuie să știu dacă doriți să repatriați fondurile pe alt cont bancar sau să le retrageți în numerar."
+        },
+        {
+          "role": "user",
+          "text": "Vreau să transfer fondurile pe contul meu curent."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Voi aranja transferul fondurilor pe contul curent dumneavoastră. Operațiunea va fi finalizată în maximum 2 zile lucrătoare."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0008",
+      "difficulty": "simple",
+      "intent": "close_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, nu mai am nevoie de contul de credit și aș vrea să-l închid."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Înțeleg că doriți să închideți contul de credit. Înainte de a procesa solicitarea, trebuie să verific dacă aveți balanță datorată pe acest cont."
+        },
+        {
+          "role": "user",
+          "text": "Nu, am achitat deja toate datoriile și contul este cu balanță zero."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Deoarece balanța este zero, pot procesa imediat închiderea contului. Vă voi trimite o confirmare prin email în cel mult 1 oră."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0009",
+      "difficulty": "simple",
+      "intent": "close_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Salutare, am decis să-mi consolidez conturile și aș dori să închid contul de economii secundar."
+        },
+        {
+          "role": "assistant",
+          "text": "Salutare! Voi ajuta cu plăcere. Pentru a închide contul de economii secundar, va trebui să confirmați identitatea și să specificați unde doriți transferul fondurilor."
+        },
+        {
+          "role": "user",
+          "text": "Sunt de acord, iar fondurile să meargă pe contul principal."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc pentru confirmare. Solicitarea de închidere a fost acceptată și fondurile vor fi transferate pe contul principal dumneavoastră în termen de 1-2 zile lucrătoare."
+        },
+        {
+          "role": "user",
+          "text": "Mulțumesc pentru ajutor!"
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere! Dacă aveți alte întrebări, sunt aici pentru a vă ajuta."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0010",
+      "difficulty": "simple",
+      "intent": "close_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, vreau să închid contul de pensii complementare pe care l-am deschis cu ani în urmă."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Solicitarea dumneavoastră a fost înregistrată. Închiderea unui cont de pensii complementare necesită o procedură specifică. Puteți confirma că sunteți conștient de implicațiile fiscale?"
+        },
+        {
+          "role": "user",
+          "text": "Da, sunt conștient și doresc să procedez."
+        },
+        {
+          "role": "assistant",
+          "text": "Bine. Voi trimite documentele necesare la adresa dumneavoastră. Trebuie să le semnați și să le returnați pentru a finaliza procesul de închidere."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0011",
+      "difficulty": "simple",
+      "intent": "open_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să deschid un cont bancar."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt bucuros să vă ajut. Pentru a deschide un cont, vă voi ghida prin procesul de înregistrare. Aveți deja o relație cu banca noastră?"
+        },
+        {
+          "role": "user",
+          "text": "Nu, sunt client nou."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent. Voi avea nevoie de documentele dumneavoastră de identitate și de o dovadă de adresă. Puteți veni la una dintre sucursalele noastre sau putem continua online. Care varianta preferați?"
+        },
+        {
+          "role": "user",
+          "text": "Prefer online, dacă se poate."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Voi trimite un link de completare a formularului pe email-ul dumneavoastră. Veți primi instrucțiuni detaliate pentru încărcarea documentelor. Procesul durează aproximativ 2-3 zile lucrătoare."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0012",
+      "difficulty": "simple",
+      "intent": "open_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Vreau să deschid un cont curent pentru afacerea mea."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Vă pot ajuta cu deschiderea unui cont curent pentru afacere. Aveți deja înregistrată firma la registrul de comerț?"
+        },
+        {
+          "role": "user",
+          "text": "Da, sunt înregistrat."
+        },
+        {
+          "role": "assistant",
+          "text": "Foarte bine. Voi avea nevoie de certificatul de înregistrare, dovada fiscală și documentele de identitate ale administratorului. Pot fi aduse la sucursală sau trimise online. Ce preferați?"
+        },
+        {
+          "role": "user",
+          "text": "Voi veni la sucursală cu documentele."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Puteți veni la orice sucursală a noastră în orele de program. Deschiderea contului se va finaliza în același zi. Aveți alte întrebări?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0013",
+      "difficulty": "simple",
+      "intent": "open_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, doresc să deschid un cont de economii."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt aici să vă asist. Contul de economii este o opțiune excelentă. Aveți o carte de identitate valabilă?"
+        },
+        {
+          "role": "user",
+          "text": "Da, am cartea de identitate la mine."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Contul de economii oferă dobândă competitivă și fără comisioane de administrare. Vă recomand să vizitați o sucursală pentru a finaliza deschiderea contului și a alege rata de dobândă care vă convine."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0014",
+      "difficulty": "simple",
+      "intent": "open_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Aș vrea să deschid un cont pentru copilul meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Vă pot ajuta cu deschiderea unui cont pentru minori. Care este vârsta copilului?"
+        },
+        {
+          "role": "user",
+          "text": "Are 14 ani."
+        },
+        {
+          "role": "assistant",
+          "text": "Foarte bine. Pentru minori cu vârsta peste 10 ani, avem conturi speciale cu beneficii educaționale. Veți avea nevoie de actul de identitate al copilului și de consimțământul părintelui. Vă invit să veniți la sucursală pentru a completa documentele și a deschide contul."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0015",
+      "difficulty": "simple",
+      "intent": "open_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, sunt interesat de deschiderea unui cont cu card de debit inclus."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Excelentă alegere. Toate conturile noastre includ un card de debit gratuit. Doriți un cont curent sau de economii?"
+        },
+        {
+          "role": "user",
+          "text": "Curent, cu acces la internet banking."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect! Contul curent vine cu card de debit și acces complet la internet banking și aplicația mobilă. Pentru a deschide contul, aveți nevoie de actul de identitate și o dovadă de adresă. Puteți veni la sucursală sau să completați formularul online. Care preferați?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0016",
+      "difficulty": "simple",
+      "intent": "open_account",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să deschid un cont curent la banca dumneavoastră."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt bucuros să vă ajut. Pentru a deschide un cont curent, voi avea nevoie de câteva informații de bază și documente. Sunteți client nou la banca noastră?"
+        },
+        {
+          "role": "user",
+          "text": "Da, sunt client nou. Ce documente trebuie să aduc?"
+        },
+        {
+          "role": "assistant",
+          "text": "Pentru deschiderea contului curent aveți nevoie de: buletinul de identitate sau pașaport valabil, dovada de domiciliu și dovada veniturilor. Ați putea veni la una din sucursalele noastre sau preferați să continuăm procesul online?"
+        },
+        {
+          "role": "user",
+          "text": "Prefer online, dacă este posibil."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect! Voi deschide un proces de cerere online pentru dumneavoastră. Veți primi un link pe email în următoarele minute. Urmați pașii indicați și încărcați documentele solicitate. După verificare, contul va fi deschis în 1-2 zile lucrătoare. Aveți întrebări suplimentare?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0017",
+      "difficulty": "simple",
+      "intent": "schedule_advisor_meeting",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să mă întâlnesc cu un consultant bancar."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Cu plăcere vă pot ajuta să programați o întâlnire cu un advisor. Ce zi și oră vă convine dumneavoastră?"
+        },
+        {
+          "role": "user",
+          "text": "Mâine, după ora 14:00."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Vă pot programa mâine la ora 14:30. Aceasta vă convine? Întâlnirea va fi la sucursala principală."
+        },
+        {
+          "role": "user",
+          "text": "Perfect, confirmați."
+        },
+        {
+          "role": "assistant",
+          "text": "Programarea este confirmată! Mâine la ora 14:30 cu advisorul nostru. Vă așteptăm. Aveți nevoie de altceva?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0018",
+      "difficulty": "simple",
+      "intent": "schedule_advisor_meeting",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Vreau să vorbesc cu cineva despre opțiunile de investiție."
+        },
+        {
+          "role": "assistant",
+          "text": "Sigur! Pot programa o consultație cu un advisor specialist în investiții. Când ați fi disponibil?"
+        },
+        {
+          "role": "user",
+          "text": "Joi, în cursul dimineții."
+        },
+        {
+          "role": "assistant",
+          "text": "Joi dimineață este perfect. Vă program la ora 10:00. Aceasta vă convine dumneavoastră?"
+        },
+        {
+          "role": "user",
+          "text": "Da, ora 10:00 e bună."
+        },
+        {
+          "role": "assistant",
+          "text": "Întâlnirea este confirmată pentru joi la ora 10:00. Advisorul vă va contacta dacă va fi nevoie. Mulțumim!"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0019",
+      "difficulty": "simple",
+      "intent": "schedule_advisor_meeting",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, am nevoie de o întâlnire cu un consultant."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Cu plăcere vă ajut. Pentru ce subiect doriti consultația?"
+        },
+        {
+          "role": "user",
+          "text": "Despre credite și rate de dobândă."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeles. Vă pot programa cu un advisor pentru credite. Ce zi și oră preferați?"
+        },
+        {
+          "role": "user",
+          "text": "Vineri, după 15:00."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Vineri la ora 15:30 cu advisorul nostru pentru credite. Confirmă dumneavoastră?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0020",
+      "difficulty": "simple",
+      "intent": "schedule_advisor_meeting",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Trebuie să programez o întâlnire cu cineva din bancă."
+        },
+        {
+          "role": "assistant",
+          "text": "Desigur! Vă pot ajuta. Ce disponibilitate aveți dumneavoastră?"
+        },
+        {
+          "role": "user",
+          "text": "Luni sau marți, nu mă face diferență cât timp e după prânz."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect! Vă program luni la ora 14:00 cu advisorul nostru. Vă convine?"
+        },
+        {
+          "role": "user",
+          "text": "Da, luni la 14:00 este bine."
+        },
+        {
+          "role": "assistant",
+          "text": "Confirmă! Luni la ora 14:00. Vă mulțumim și așteptăm cu plăcere!"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0021",
+      "difficulty": "simple",
+      "intent": "schedule_advisor_meeting",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Aș vrea să mă întâlnesc cu un advisor bancar."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Pot programa aceasta pentru dumneavoastră. Care ar fi ziua și ora preferată?"
+        },
+        {
+          "role": "user",
+          "text": "Miercuri la 11:00."
+        },
+        {
+          "role": "assistant",
+          "text": "Miercuri la 11:00 este disponibil. Confirmă dumneavoastră?"
+        },
+        {
+          "role": "user",
+          "text": "Confirm, merci!"
+        },
+        {
+          "role": "assistant",
+          "text": "Programarea este finalizată pentru miercuri la 11:00. Cu plăcere!"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0022",
+      "difficulty": "simple",
+      "intent": "get_account_statement",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să obțin un extras de cont."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună. Voi fi bucuros să vă ajut cu extrasul de cont. Pentru care perioadă doriți extrasul: luna curentă, luna trecută, sau un interval personalizat?"
+        },
+        {
+          "role": "user",
+          "text": "Vreau extrasul pentru luna februarie."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Extrasul de cont pentru luna februarie va fi trimis la adresa de e-mail înregistrată în sistem în cel mult 24 de ore. Doriți să actualizați adresa de e-mail înainte de trimitere?"
+        },
+        {
+          "role": "user",
+          "text": "Nu, adresa de e-mail este corectă. Mulțumesc."
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere. Extrasul va fi disponibil în scurt timp. Pot ajuta cu altceva?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0023",
+      "difficulty": "simple",
+      "intent": "get_account_statement",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Am nevoie de un extras de cont din ultimele 3 luni."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună. Voi genera extrasul de cont pentru ultimele 3 luni. Doriți să-l primiti prin e-mail sau să-l descărcați acum din aplicație?"
+        },
+        {
+          "role": "user",
+          "text": "Prin e-mail, vă rog."
+        },
+        {
+          "role": "assistant",
+          "text": "Extrasul va fi trimis pe adresa de e-mail asociată contului dumneavoastră în cel mult 2 ore. Este totul în regulă?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0024",
+      "difficulty": "simple",
+      "intent": "get_account_statement",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, vreau extrasul de cont."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună. Voi fi bucuros să vă ajut. Ce perioadă doriți: luna curentă sau un alt interval?"
+        },
+        {
+          "role": "user",
+          "text": "Luna curentă, vă rog."
+        },
+        {
+          "role": "assistant",
+          "text": "Extrasul de cont pentru luna curentă va fi trimis la e-mail în scurt timp. Mulțumesc că ați apelat serviciile noastre."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0025",
+      "difficulty": "simple",
+      "intent": "get_account_statement",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, am nevoie de extrasul din decembrie."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună. Voi genera extrasul de cont pentru luna decembrie. Doriți o copie tipărită sau doar versiunea electronică?"
+        },
+        {
+          "role": "user",
+          "text": "Doar versiunea electronică."
+        },
+        {
+          "role": "assistant",
+          "text": "Extrasul de cont pentru decembrie va fi trimis prin e-mail în maximum 24 de ore. Pot ajuta cu altceva?"
+        },
+        {
+          "role": "user",
+          "text": "Nu, mulțumesc."
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere. Vă mulțumesc și vă dorim o zi frumoasă."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0026",
+      "difficulty": "simple",
+      "intent": "get_account_statement",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Aș vrea un extras de cont pentru ultimele 6 luni."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună. Voi procesa cererea pentru extrasul de cont din ultimele 6 luni. Acesta va fi trimis la adresa de e-mail înregistrată în sistem în cel mult 48 de ore. Este în regulă?"
+        },
+        {
+          "role": "user",
+          "text": "Da, este perfect. Mulțumesc."
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere. Extrasul va fi disponibil în scurt timp. Dacă aveți alte întrebări, nu ezitați să ne contactați."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0027",
+      "difficulty": "simple",
+      "intent": "report_suspicious_transaction",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, am observat o tranzacție ciudată pe contul meu și vreau să o raportez."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Vă ajut cu plăcere. Pentru a raporta o tranzacție suspectă, am nevoie de câteva informații. Puteți să-mi spuneți data și aproximativ suma tranzacției?"
+        },
+        {
+          "role": "user",
+          "text": "Era ieri, 15 martie, și suma a fost 250 de lei, pe un comerciant pe care nu-l cunosc."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc pentru informații. Am înregistrat raportul pentru tranzacția din 15 martie în valoare de 250 lei. Echipa noastră de securitate va analiza situația și vă vom contacta în termen de 24 de ore cu detalii."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0028",
+      "difficulty": "simple",
+      "intent": "report_suspicious_transaction",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Vreau să raportez o tranzacție frauduloasă de pe cardul meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg preocuparea dumneavoastră. Vă rog să-mi comunicați mai multe detalii: care este aproximativ suma și unde a fost efectuată tranzacția?"
+        },
+        {
+          "role": "user",
+          "text": "1200 de lei, la un site de cumpărături online pe care nu am accesat niciodată."
+        },
+        {
+          "role": "assistant",
+          "text": "Am notat raportul pentru suma de 1200 lei. Vă recomand să verificați și alte tranzacții recente. Echipa de fraud prevention va investiga imediat și vă vom recontacta în 24 de ore."
+        },
+        {
+          "role": "user",
+          "text": "Mulțumesc. Trebuie să fac ceva în plus?"
+        },
+        {
+          "role": "assistant",
+          "text": "Deocamdată nu. Rămâneți în contact cu noi și nu efectuați alte operații cu cardul până vă contactăm din nou. Raportul dumneavoastră este prioritar."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0029",
+      "difficulty": "simple",
+      "intent": "report_suspicious_transaction",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Am găsit o plată neautorizată pe contul meu și trebuie s-o raportez urgent."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt aici să vă ajut. Puteți preciza data plății și suma pentru a putea înregistra raportul?"
+        },
+        {
+          "role": "user",
+          "text": "Da, 500 de lei, astazi dimineață, la o benzinărie."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Am înregistrat raportul pentru tranzacția de astazi de 500 lei. Vă vom contacta în maxim 24 de ore cu informații suplimentare și pași următori."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0030",
+      "difficulty": "simple",
+      "intent": "report_suspicious_transaction",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, am o problemă. Am văzut o debitare pe cardul de credit care nu mi-o amintesc."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Voi intra în detalii cu dumneavoastră. Vă rog spuneți-mi data și suma acestei debitări."
+        },
+        {
+          "role": "user",
+          "text": "75 de lei, pe 12 martie, de la o platformă de streaming."
+        },
+        {
+          "role": "assistant",
+          "text": "Am înregistrat raportul pentru suma de 75 lei din 12 martie. Echipa noastră va verifica dacă este o încărcare recurentă neautorizată și vă vom contacta în 24 de ore."
+        },
+        {
+          "role": "user",
+          "text": "Bine, mulțumesc."
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere! Raportul dumneavoastră este în curs de analiză. Așteptați apelul nostru în 24 de ore."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0031",
+      "difficulty": "simple",
+      "intent": "report_suspicious_transaction",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Salut, cred că cineva a folosit cardul meu fără permisiunea mea."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt aici să vă ajut. Vă rog să-mi spuneți care este suma și data acestei tranzacții neautorizate."
+        },
+        {
+          "role": "user",
+          "text": "2000 de lei, pe 14 martie, la un magazin de electronice din alt oraș."
+        },
+        {
+          "role": "assistant",
+          "text": "Am înregistrat raportul pentru suma de 2000 lei. Aceasta este o situație prioritară. Echipa de securitate va investiga imediat și vă vom contacta în 24 de ore cu măsuri de protecție."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0032",
+      "difficulty": "simple",
+      "intent": "reset_or_recover_auth",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, am uitat parola de acces la contul meu bancar."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Înțeleg că dumneavoastră ați uitat parola. Voi vă ajuta să o resetați. Pentru a continua, vă voi cere să confirmaț identitatea dumneavoastră cu numărul de telefon asociat contului."
+        },
+        {
+          "role": "user",
+          "text": "Da, sunt de acord. Numărul meu este 0712345678."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Am trimis un cod de verificare pe numărul dumneavoastră. Vă rugez să introduceți codul pentru a continua cu resetarea parolei."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0033",
+      "difficulty": "simple",
+      "intent": "reset_or_recover_auth",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Nu mai pot accesa aplicația mobilă. Cred că am probleme cu autentificarea."
+        },
+        {
+          "role": "assistant",
+          "text": "Regret să aud acest lucru. Pot vă ajuta să recuperați accesul. Dumneavoastră preferați să resetați parola sau să recuperați credențialele de autentificare?"
+        },
+        {
+          "role": "user",
+          "text": "Prefer să resetez parola, cred că aceasta este problema."
+        },
+        {
+          "role": "assistant",
+          "text": "Bine. Pentru a procesa resetarea, vă voi trimite un link de confirmare pe adresa de email înregistrată. Vă rugez să accesați linkul și să setați o nouă parolă."
+        },
+        {
+          "role": "user",
+          "text": "Bun, am înțeles. Voi verifica emailul imediat."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent. După resetare, vă veți putea conecta cu noua parolă. Dacă aveți alte întrebări, sunt aici pentru dumneavoastră."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0034",
+      "difficulty": "simple",
+      "intent": "reset_or_recover_auth",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Salut, mi-am pierdut accesul la homebanking și nu mai pot intra."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Voi vă ajuta să recuperați accesul la homebanking. Pentru a verifica identitatea, vă voi cere codul de card bancar și data de expirare."
+        },
+        {
+          "role": "user",
+          "text": "Codul de card este 1234 și expira în 12/2026."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc pentru informații. Am inițiat procesul de recuperare. Veți primi un mesaj SMS cu instrucțiuni pentru resetarea parolei în următoarele minute."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0035",
+      "difficulty": "simple",
+      "intent": "reset_or_recover_auth",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, doresc să schimb parola de acces la internet banking."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Voi vă ajuta cu schimbarea parolei. Pentru a continua, trebuie să confirmați identitatea cu datele dumneavoastră de înregistrare. Aveți la îndemână codul de client?"
+        },
+        {
+          "role": "user",
+          "text": "Da, codul meu de client este BNC987654."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Am verificat datele. Vă voi trimite un link de confirmare pe email pentru a seta o nouă parolă. Vă rugez să accesați linkul în termen de 24 de ore."
+        },
+        {
+          "role": "user",
+          "text": "Bun, voi face asta. Mulțumesc pentru ajutor."
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere! Dacă aveți alte probleme, nu ezitați să ne contactați din nou."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0036",
+      "difficulty": "simple",
+      "intent": "reset_or_recover_auth",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Am fost blocat din cont din cauza mai multor încercări greșite de conectare."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg. Contul dumneavoastră a fost temporar blocat din motive de securitate. Voi vă ajuta să deblocați accesul. Vă rugez să confirmați adresa de email asociată contului."
+        },
+        {
+          "role": "user",
+          "text": "Email-ul meu este [email_dumneavoastră@domeniu.com]."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Am trimis instrucțiuni de deblocare pe adresa dumneavoastră. Urmați pașii din email pentru a vă recupera accesul și a seta o nouă parolă."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0037",
+      "difficulty": "simple",
+      "intent": "check_balance",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să verific soldul contului meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Vă salut. Pentru a verifica soldul contului dumneavoastră, mă pot conecta la sistemul bancar. Care este numărul contului sau codul de identificare al dumneavoastră?"
+        },
+        {
+          "role": "user",
+          "text": "Contul meu este cel curent, cel principal."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg. Soldul actual al contului dumneavoastră principal este de 3.450,75 lei. Doriti să primiti și alte informații despre cont?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0038",
+      "difficulty": "simple",
+      "intent": "check_balance",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Am nevoie să verific cât am în cont acum."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt aici pentru a vă ajuta. Soldul curent al contului dumneavoastră este de 8.920,50 lei. Este totul în regulă?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0039",
+      "difficulty": "simple",
+      "intent": "check_balance",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Salut, care este soldul meu?"
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Vă salut. Soldul contului dumneavoastră este de 5.200,00 lei. Pot vă ajuta cu altceva?"
+        },
+        {
+          "role": "user",
+          "text": "Nu, mulțumesc. Asta era tot."
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere! Vă mulțumesc că ați apelat banca noastră. La revedere!"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0040",
+      "difficulty": "simple",
+      "intent": "check_balance",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Vreau să verific disponibilul din contul meu de economii."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Vă pot ajuta cu plăcere. Soldul contului dumneavoastră de economii este de 12.675,25 lei. Doriți să efectuați o operație cu aceste fonduri?"
+        },
+        {
+          "role": "user",
+          "text": "Nu, doar vreau să mă asigur că e corect."
+        },
+        {
+          "role": "assistant",
+          "text": "Bun. Informația este corectă și actualizată. Dacă mai aveți întrebări, sunt la dispoziție."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0041",
+      "difficulty": "simple",
+      "intent": "check_balance",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Pot să verific soldul contului meu?"
+        },
+        {
+          "role": "assistant",
+          "text": "Desigur! Soldul actual al contului dumneavoastră este de 6.810,40 lei. Sunt alte informații de care aveți nevoie?"
+        },
+        {
+          "role": "user",
+          "text": "Și cu cât am cheltuit luna aceasta?"
+        },
+        {
+          "role": "assistant",
+          "text": "Pentru a obține detalii despre cheltuielile din luna aceasta, vă recomand să consultați extrasul de cont. Doriti să solicitați un extras?"
+        },
+        {
+          "role": "user",
+          "text": "Da, aș dori extrasul de cont."
+        },
+        {
+          "role": "assistant",
+          "text": "Bun. Vă voi redirecționa pentru a solicita extrasul de cont. Un moment, vă rog."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0042",
+      "difficulty": "simple",
+      "intent": "check_balance",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să verific soldul contului meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Vă salut. Pentru a verifica soldul contului dumneavoastră, vă rog să confirmați că doriți să accesați contul curent. Care este numărul contului pe care doriti să-l verificati?"
+        },
+        {
+          "role": "user",
+          "text": "Este contul curent, cel cu IBAN-ul care se termină în 4521."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc pentru confirmare. Soldul actual al contului dumneavoastră este de 3.450,75 lei. Doriti să primiti un extras de cont sau aveti alte intrebari?"
+        },
+        {
+          "role": "user",
+          "text": "Nu, mulțumesc. Asta era tot ce aveam nevoie."
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere! Dacă mai aveti nevoie de asistență, nu ezitati sa ne contactati. O zi bună dumneavoastră!"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0043",
+      "difficulty": "simple",
+      "intent": "block_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să blochez cartela mea de credit."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Voi ajuta dumneavoastră să blocați cartela de credit. Vă rog să îmi confirmaţi ultimele patru cifre ale cardului pe care doriți să-l blocați."
+        },
+        {
+          "role": "user",
+          "text": "Ultimele patru cifre sunt 4527."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Cartela cu terminația 4527 a fost blocată cu succes. Dacă doriți să o deblochați ulterior, vă puteți adresa unui agent sau să apelați centrul de contact."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0044",
+      "difficulty": "simple",
+      "intent": "block_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Trebuie să blochez urgent o carte."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg, voi procesa blocarea cartelei dumneavoastră imediat. Care sunt ultimele patru cifre ale cardului?"
+        },
+        {
+          "role": "user",
+          "text": "8901."
+        },
+        {
+          "role": "assistant",
+          "text": "Cartela cu terminația 8901 este acum blocată. Nu veți putea efectua tranzacții cu aceasta. Puteți solicita o nouă carte sau contactați serviciul de asistență pentru alte opțiuni."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0045",
+      "difficulty": "simple",
+      "intent": "block_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, vreau să blochez cardul meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt aici pentru a vă ajuta. Vă rog să confirmaţi ultimele patru cifre ale cardului pe care doriți să-l blocați."
+        },
+        {
+          "role": "user",
+          "text": "Sunt 3456."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Cartela cu terminația 3456 a fost blocată cu succes. Dumneavoastră nu veți putea folosi acest card pentru plăți. Doriti să comandaţi un card de înlocuire?"
+        },
+        {
+          "role": "user",
+          "text": "Da, aș dori."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent. Voi conecta dumneavoastră cu un agent care vă va ajuta cu comanda noului card. Mulțumesc că ați apelat."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0046",
+      "difficulty": "simple",
+      "intent": "block_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, am pierdut cardul și trebuie să-l blochez."
+        },
+        {
+          "role": "assistant",
+          "text": "Îmi pare rău să aud asta. Voi bloca cardul imediat. Vă rog, confirmaţi ultimele patru cifre."
+        },
+        {
+          "role": "user",
+          "text": "Ultimele patru cifre sunt 7890."
+        },
+        {
+          "role": "assistant",
+          "text": "Cartela cu terminația 7890 a fost blocată pentru a proteja contul dumneavoastră. Vă recomand să contactaţi centrul de asistență pentru a raporta pierderea și a comanda un card nou."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0047",
+      "difficulty": "simple",
+      "intent": "block_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, doresc să blochez o carte de debit."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Voi ajuta dumneavoastră cu blocarea cartelei de debit. Vă rog să-mi furnizaţi ultimele patru cifre ale cardului."
+        },
+        {
+          "role": "user",
+          "text": "2134."
+        },
+        {
+          "role": "assistant",
+          "text": "Cartela de debit cu terminația 2134 a fost blocată cu succes. Orice tentativă de utilizare a acestui card va fi refuzată. Este vorba despre o blocare temporară sau permanentă?"
+        },
+        {
+          "role": "user",
+          "text": "Permanentă, voi comanda o nouă carte."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeles. Cartela rămâne blocată permanent. Puteți comanda o nouă carte prin aplicația mobilă sau contactând serviciul de asistență. Mulțumesc!"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0048",
+      "difficulty": "simple",
+      "intent": "block_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să blochez cardul meu de debit."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Înțeleg că doriți să blocați cardul dumneavoastră de debit. Pot ajuta cu asta. Vă rog să îmi confirmați ultimele 4 cifre ale cardului pe care doriți să îl blocați."
+        },
+        {
+          "role": "user",
+          "text": "Ultimele 4 cifre sunt 5847."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Am identificat cardul. Pot procesa blocarea acestuia. Aceasta este o acțiune permanentă - cardul nu va mai putea fi folosit pentru tranzacții. Doriți să continuați cu blocarea?"
+        },
+        {
+          "role": "user",
+          "text": "Da, sunt sigur. Vă rog să îl blocați."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect! Cardul dumneavoastră cu terminația 5847 a fost blocat cu succes. Nu veți mai putea efectua tranzacții cu acesta. Dacă aveți nevoie de un card de înlocuire, vă recomand să contactați sucursala sau să solicitați online. Este mai ceva ce pot face pentru dumneavoastră?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0049",
+      "difficulty": "simple",
+      "intent": "unblock_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, cardul meu a fost blocat și aș dori să-l deblochez."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Voi ajuta dumneavoastră să deblochați cardul. Pentru a continua, vă rog să-mi spuneți ultimele patru cifre ale cardului."
+        },
+        {
+          "role": "user",
+          "text": "Ultimele patru cifre sunt 5847."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Am identificat cardul. Cardul dumneavoastră va fi deblocat în următoarele minute. Veți primi o confirmare prin SMS."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0050",
+      "difficulty": "simple",
+      "intent": "unblock_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Am o problemă, cardul meu nu mai funcționează."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg. Cardul dumneavoastră pare să fie blocat. Pot ajuta dumneavoastră să-l deblochezi. Care sunt ultimele patru cifre ale cardului?"
+        },
+        {
+          "role": "user",
+          "text": "3621"
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Cardul cu finalizarea 3621 va fi deblocat imediat. Vă recomand să încercați o tranzacție peste câteva minute."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0051",
+      "difficulty": "simple",
+      "intent": "unblock_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, vreau să deblochez cardul de debit."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Sunt aici pentru a vă ajuta. Vă rog să furnizați ultimele patru cifre ale cardului de debit."
+        },
+        {
+          "role": "user",
+          "text": "8934"
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Cardul cu finalizarea 8934 este acum deblocat. Puteti folosi cardul imediat pentru tranzacții."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0052",
+      "difficulty": "simple",
+      "intent": "unblock_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Cardul meu a fost blocat și nu pot face plăți online."
+        },
+        {
+          "role": "assistant",
+          "text": "Regret să aud asta. Voi debloca cardul dumneavoastră. Care sunt ultimele patru cifre?"
+        },
+        {
+          "role": "user",
+          "text": "7502"
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent. Cardul cu finalizarea 7502 a fost deblocat cu succes. Puteti folosi cardul pentru plăți online și în magazin."
+        },
+        {
+          "role": "user",
+          "text": "Mulțumesc!"
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere! Dacă mai aveți întrebări, sunt disponibil pentru a vă ajuta."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0053",
+      "difficulty": "simple",
+      "intent": "unblock_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Necesit ajutor, cardul meu nu funcționează din cauza unui blocaj."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Voi rezolva această problemă pentru dumneavoastră. Vă rog să-mi spuneți ultimele patru cifre ale cardului."
+        },
+        {
+          "role": "user",
+          "text": "4156"
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Cardul cu finalizarea 4156 va fi deblocat în scurt timp. Veți primi o notificare de confirmare."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0054",
+      "difficulty": "simple",
+      "intent": "general_product_info",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să aflu mai multe despre conturile de economii pe care le oferiți."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Cu plăcere. Oferim conturi de economii cu dobândă competitivă și fără comisioane lunare. Dumneavoastră sunteți interesat de rata dobânzii sau de alte detalii specifice?"
+        },
+        {
+          "role": "user",
+          "text": "Care este rata dobânzii actuală pentru aceste conturi?"
+        },
+        {
+          "role": "assistant",
+          "text": "Rata dobânzii pentru conturile de economii este de 4,5% pe an, cu capitalizare lunară. Aceasta este o ofertă valabilă pentru deschiderea unui nou cont în această perioadă."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0055",
+      "difficulty": "simple",
+      "intent": "general_product_info",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Vreau să știu ce beneficii are cardul de credit pe care îl oferiți."
+        },
+        {
+          "role": "assistant",
+          "text": "Sigur! Cardul de credit oferă plafon flexibil, perioada de grație de 55 de zile, acumul de puncte de recompensă și asigurare de călătorie. Doriți mai multe informații despre vreun beneficiu anume?"
+        },
+        {
+          "role": "user",
+          "text": "Cum funcționează programul de puncte de recompensă?"
+        },
+        {
+          "role": "assistant",
+          "text": "Pentru fiecare leu cheltuit cu cardul, acumulați 1 punct de recompensă. Punctele pot fi convertite în reduceri la partenii noștri sau în bani înapoi în cont. Puteți verifica soldul de puncte oricând prin aplicația mobilă."
+        },
+        {
+          "role": "user",
+          "text": "Perfect, mulțumesc pentru informații!"
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere! Dacă mai aveți întrebări, sunt la dispoziție. Doriți să deschideți un card de credit?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0056",
+      "difficulty": "simple",
+      "intent": "general_product_info",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș vrea să aflu despre creditele imobiliare."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Oferim credite imobiliare cu dobânzi competitive și perioade de rambursare de la 5 la 30 de ani. Care sunt dumneavoastră principalele întrebări despre acest produs?"
+        },
+        {
+          "role": "user",
+          "text": "Care este rata dobânzii și care sunt condițiile de eligibilitate?"
+        },
+        {
+          "role": "assistant",
+          "text": "Rata dobânzii variază între 3,8% și 5,2% în funcție de profilul dumneavoastră și perioada de rambursare aleasă. Pentru eligibilitate, aveți nevoie de venit stabil, score de credit bun și o avere inițială de minimum 10% din valoarea proprietății."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0057",
+      "difficulty": "simple",
+      "intent": "general_product_info",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Mă interesează serviciile de investiții pe care le oferiți."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Oferim servicii complete de investiții: conturi de brokeraj, fonduri mutuale și soluții de gestionare patrimonială. Ce tip de investiții vă interesează cel mai mult?"
+        },
+        {
+          "role": "user",
+          "text": "Sunt începător și aș dori o soluție simplă și sigură."
+        },
+        {
+          "role": "assistant",
+          "text": "Pentru dumneavoastră recomand fondurile mutuale echilibrate, care combină acțiuni și obligațiuni. Acestea sunt gestionate de specialiști și oferă diversificare cu risc moderat. Putem programa o întâlnire cu un consultant pentru a discuta mai detaliat."
+        },
+        {
+          "role": "user",
+          "text": "Da, aș vrea să vorbesc cu un consultant."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect! Voi programa o întâlnire cu un consultant de investiții. Preferați o întâlnire online sau în sucursală?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0058",
+      "difficulty": "simple",
+      "intent": "general_product_info",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș vrea să cunosc detaliile despre asigurările pe care le oferiți."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Oferim asigurări de depozit bancar, asigurări de viață și asigurări de accident. Care dintre acestea vă interesează?"
+        },
+        {
+          "role": "user",
+          "text": "Mă intereseaza asigurarea de viață. Ce acoperire oferă?"
+        },
+        {
+          "role": "assistant",
+          "text": "Asigurarea de viață oferă protecție pentru familia dumneavoastră în caz de deces, cu beneficii de la 50.000 la 500.000 lei, în funcție de plan. Premiile sunt mici și fixe, iar asigurarea poate fi cuplată cu credite pentru a acoperi obligațiile financiare."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0059",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Ce vreme o să fie mâine?"
+        },
+        {
+          "role": "assistant",
+          "text": "Îmi pare rău, dar nu pot furniza informații despre vreme. Sunt asistentul virtual al băncii și pot ajuta dumneavoastră cu servicii bancare. Pot verifica soldul contului dumneavoastră, bloca o carte, sau programa o întâlnire cu un consultant. Cu ce vă pot ajuta?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0060",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Poți să-mi spui o glumă?"
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc pentru întrebare, dar nu sunt programat pentru a povestii glume. Sunt aici pentru a vă asista cu serviciile bancare. Pot ajuta dumneavoastră cu verificarea balanței, obținerea unui extras de cont, sau alte operațiuni bancare. Ce aveți nevoie?"
+        },
+        {
+          "role": "user",
+          "text": "Bine, vreau să verific soldul meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Pentru a verifica soldul dumneavoastră, voi avea nevoie să mă autentificați. Aveți acces la aplicația mobilă sau doriti să continuați prin această linie?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0061",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Cum e situația politică în țară?"
+        },
+        {
+          "role": "assistant",
+          "text": "Regret, dar nu pot discuta despre subiecte politice. Sunt asistentul bancar și mă concentrez exclusiv pe serviciile financiare. Pot ajuta dumneavoastră cu blocarea unei cărți, deschiderea unui cont, sau alte operațiuni bancare. Ce doriti?"
+        },
+        {
+          "role": "user",
+          "text": "Vreau să deschid un cont nou."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect! Vă pot ajuta cu deschiderea unui cont nou. Pentru a continua, vă recomand să contactați direct sucursala noastră sau să utilizați aplicația mobilă. Pot programa o întâlnire cu un consultant care vă va ghida prin tot procesul. Doriti aceasta?"
+        },
+        {
+          "role": "user",
+          "text": "Da, vreau să program o întâlnire."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Vă voi conecta cu departamentul de programări. Vă rog să aveți grijă - consultantul va lua legătura cu dumneavoastră în cel mai scurt timp pentru a confirma data și ora."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0062",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Mă poți ajuta cu sfaturi despre investiții pe bursă?"
+        },
+        {
+          "role": "assistant",
+          "text": "Îmi pare rău, dar nu pot furniza consiliere de investiții. Pentru informații detaliate despre produse de investiții, vă recomand să programați o întâlnire cu un consultant specialist al băncii. Pot programa aceasta pentru dumneavoastră acum?"
+        },
+        {
+          "role": "user",
+          "text": "Nu, mulțumesc. Doar vreau să verific o tranzacție suspectă."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg. Pot ajuta dumneavoastră să raportați o tranzacție suspectă. Vă voi conecta cu echipa de securitate pentru a investi această problemă. Puteți descrie tranzacția în cauză?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0063",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Poți să-mi dai sfaturi pentru viața personală?"
+        },
+        {
+          "role": "assistant",
+          "text": "Regret, dar nu sunt programat pentru a oferi consiliere personală. Sunt asistentul băncii dumneavoastră. Pot vă ajuta cu servicii bancare cum ar fi verificarea soldului, blocarea unei cărți, sau raportarea unei tranzacții suspecte. Cu ce vă pot asista?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0064",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Ce vreme o să fie mâine?"
+        },
+        {
+          "role": "assistant",
+          "text": "Îmi pare rău, dar nu pot furniza informații despre vreme. Sunt asistent bancar și mă pot ajuta cu servicii legate de contul dumneavoastră. Pot verifica soldul, genera extrase de cont, sau vă pot informa despre produsele noastre bancare. Cu ce pot fi de ajutor?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0065",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Poți să-mi spui o glumă?"
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc pentru întrebare, dar nu sunt programat să spun glume. Sunt aici pentru a vă asista cu serviciile bancare. Pot ajuta dumneavoastră cu blocarea unei cărți, verificarea balanței, sau alte operațiuni bancare. Ce aveți nevoie?"
+        },
+        {
+          "role": "user",
+          "text": "Bine, atunci vreau să verific soldul contului meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect! Pentru a verifica soldul contului dumneavoastră, voi avea nevoie de autentificare. Puteți continua cu datele dumneavoastră de acces?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0066",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Cine a câștigat meciul de ieri?"
+        },
+        {
+          "role": "assistant",
+          "text": "Nu am acces la informații despre sport sau știri. Sunt asistent dedicat serviciilor bancare. Dacă aveți întrebări despre contul dumneavoastră, cardurile, sau produsele noastre, sunt aici să ajut."
+        },
+        {
+          "role": "user",
+          "text": "De fapt, am o problemă cu cartela mea de credit."
+        },
+        {
+          "role": "assistant",
+          "text": "Bine, voi ajuta cu plăcere. Puteți specifica ce problemă aveți cu cardul? De exemplu, dacă doriți să-l blocați, deblocați, sau raportați o tranzacție suspectă?"
+        },
+        {
+          "role": "user",
+          "text": "Vreau să o blochez."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeles. Voi procesa blocarea cardului dumneavoastră. Vă rog confirmare: doriți să blocați cardul imediat?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0067",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Cum pot face bani rapid?"
+        },
+        {
+          "role": "assistant",
+          "text": "Aceasta este o întrebare în afara domeniului serviciilor bancare pe care le ofer. Pot ajuta dumneavoastră cu informații despre produsele noastre de investiții, conturi de economii, sau alte servicii bancare disponibile. Cu ce pot fi de ajutor?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0068",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Ce sfaturi de viață mă poți da?"
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc pentru încredere, dar nu sunt programat pentru consiliere personală. Sunt asistent bancar și mă specializez în servicii financiare. Pot ajuta cu gestionarea contului dumneavoastră, întrebări despre produse bancare, sau să program o întâlnire cu un consultant. Ce serviciu bancar vă interesează?"
+        },
+        {
+          "role": "user",
+          "text": "Ar fi bine să vorbesc cu un consultant."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Pot programa o întâlnire cu un consultant bancar pentru dumneavoastră. Care ar fi ziua și ora preferată?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0069",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Ce vreme va fi mâine?"
+        },
+        {
+          "role": "assistant",
+          "text": "Îmi pare rău, dar nu pot furniza informații meteo. Sunt asistent bancar și pot ajuta dumneavoastră cu servicii legate de contul dumneavoastră, cum ar fi verificarea soldului, blocarea cardului sau deschiderea unui cont. Cu ce vă pot ajuta?"
+        },
+        {
+          "role": "user",
+          "text": "Bine, atunci vreau să verific soldul contului meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Pentru a verifica soldul contului dumneavoastră, voi avea nevoie să mă autentificați. Aveți la îndemână codul PIN pentru card sau credențialele de acces?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0070",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Poți să-mi spui o glumă?"
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc pentru întrebare, dar specialitatea mea este asistența bancară, nu divertismentul. Pot ajuta dumneavoastră cu operațiuni bancare precum blocarea cardului, solicitarea unui extras de cont, sau alte servicii conexe. Cum vă pot asista?"
+        },
+        {
+          "role": "user",
+          "text": "Am nevoie să raportez o tranzacție suspectă pe cardul meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg preocuparea dumneavoastră. Voi vă ajuta să raportați tranzacția suspectă. Pentru a procesa raportul, vă rog să descrieți tranzacția: suma, data și comerciantul, dacă îl cunoașteți."
+        }
+      ]
+    }
+  ]
+}

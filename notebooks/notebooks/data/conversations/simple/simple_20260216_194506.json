@@ -1,0 +1,119 @@
+{
+  "conversations": [
+    {
+      "conversation_id": "conv_simple_0001",
+      "difficulty": "simple",
+      "intent": "check_balance",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Bună, aș dori să verific soldul contului meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Bună! Pentru a verifica soldul dumneavoastră, voi avea nevoie să vă autentific. Vă rog să confirmaţi ultimele patru cifre ale cardului dumneavoastră."
+        },
+        {
+          "role": "user",
+          "text": "Ultimele patru cifre sunt 5432."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Soldul actual al contului dumneavoastră este de 2.450,75 lei. Puteți folosi acești bani pentru tranzacții și retrageri. Este mai ceva ce pot face pentru dumneavoastră?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0002",
+      "difficulty": "simple",
+      "intent": "block_card",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Trebuie să blochez cardul meu de urgență."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg urgența situației. Voi procesa imediat blocarea cardului dumneavoastră. Vă rog să confirmați ultimele patru cifre ale cardului pe care doriti să-l blocați."
+        },
+        {
+          "role": "user",
+          "text": "Sunt 7891."
+        },
+        {
+          "role": "assistant",
+          "text": "Cardul cu ultimele patru cifre 7891 a fost blocat cu succes. Nu veți putea efectua tranzacții cu acest card. Vă recomand să contactați departamentul nostru de fraude dacă ati observat tranzacții neautorizate. Pot ajuta cu altceva?"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0003",
+      "difficulty": "simple",
+      "intent": "report_suspicious_transaction",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Am observat o tranzacție ciudată pe cont. Nu am autorizat-o."
+        },
+        {
+          "role": "assistant",
+          "text": "Sunt îngrijorat de situația dumneavoastră. Voi deschide imediat o investigație. Vă rog să-mi descrieți tranzacția: suma, data și comerciantul."
+        },
+        {
+          "role": "user",
+          "text": "Este o tranzacție de 350 lei de ieri, la o platformă online pe care nu am conturi."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc pentru detalii. Am înregistrat raportul dumneavoastră pentru frauda suspectă. Echipa noastră va investiga în următoarele 24-48 de ore. Vă vom contacta cu actualizări. În timp ce investigația este în curs, tranzacția va fi marcată ca disputată. Sunt bani care vor fi protejați temporar."
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0004",
+      "difficulty": "simple",
+      "intent": "schedule_advisor_meeting",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Aș dori să mă întâlnesc cu un consilier financiar."
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere! Voi programa o întâlnire cu un consilier pentru dumneavoastră. Care sunt zilele și orele care vă convin?"
+        },
+        {
+          "role": "user",
+          "text": "Preferabil joi sau vineri, în după-amiază."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Am găsit disponibilitate joi la ora 14:30. Vă va contacta consilierul nostru la numărul de telefon pe care îl avem în evidență. Confirmați că aceasta vă convine?"
+        },
+        {
+          "role": "user",
+          "text": "Da, perfect. Mulțumesc."
+        },
+        {
+          "role": "assistant",
+          "text": "Excelent! Întâlnirea dumneavoastră este confirmată pentru joi la ora 14:30. Un consilier financiar vă va contacta cu detalii suplimentare. Vă mulțumesc și așteptăm cu plăcere!"
+        }
+      ]
+    },
+    {
+      "conversation_id": "conv_simple_0005",
+      "difficulty": "simple",
+      "intent": "fallback",
+      "turns": [
+        {
+          "role": "user",
+          "text": "Pot comanda o pizza prin aplicația voastră?"
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg întrebarea dumneavoastră, dar serviciile de comandă de mâncare nu fac parte din oferta noastră. Sunt un asistent bancar și pot ajuta cu operații legate de conturi, carduri, solde și alte servicii financiare. Cu ce aspect bancar pot să vă ajut?"
+        }
+      ]
+    }
+  ]
+}

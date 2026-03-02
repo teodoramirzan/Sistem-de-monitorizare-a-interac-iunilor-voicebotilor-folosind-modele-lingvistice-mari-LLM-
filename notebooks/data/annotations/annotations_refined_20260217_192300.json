@@ -1,0 +1,2080 @@
+{
+  "meta": {
+    "source_dataset": "data\\conversations\\all_dataset_20260216_205546.json",
+    "created_at": "20260217_192300",
+    "count": 150
+  },
+  "annotations": [
+    {
+      "conversation_id": "conv_simple_0001",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0002",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0003",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0004",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0005",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0006",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0007",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0008",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0009",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0010",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0011",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0012",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          4,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0013",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0014",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0015",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0016",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0017",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          4,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0018",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0019",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0020",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          4,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0021",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0022",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0023",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0024",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0025",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.98,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0026",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          2
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0027",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0028",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0029",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0030",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0031",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0032",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0033",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          4,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0034",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0035",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3,
+          4
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0036",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0037",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0038",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0039",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.99,
+      "evidence": {
+        "status_turn_ids": [
+          1
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0040",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.98,
+      "evidence": {
+        "status_turn_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0041",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0042",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.98,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0043",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.98,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0044",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0045",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0046",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0047",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0048",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.98,
+      "evidence": {
+        "status_turn_ids": [
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0049",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0050",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0051",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0052",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0053",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0054",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0055",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0056",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0057",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          4,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0058",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0059",
+      "final_status": "nerezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          0,
+          1
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0060",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0061",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          4,
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0062",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0063",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0064",
+      "final_status": "nerezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          0,
+          1
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0065",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0066",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0067",
+      "final_status": "nerezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          0,
+          1
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0068",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0069",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_simple_0070",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          2,
+          3
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0001",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          9,
+          10
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0002",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          0,
+          7,
+          8,
+          9,
+          10
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0003",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          11,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0004",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.98,
+      "evidence": {
+        "status_turn_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0005",
+      "final_status": "rezolvata",
+      "incongruities": [
+        "halucinatie"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          5,
+          7,
+          10,
+          11
+        ],
+        "incongruity_turn_ids": [
+          7
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0006",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0007",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0008",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0009",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          12,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0010",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0011",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          6,
+          7,
+          9,
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0012",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0013",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          11,
+          15
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0014",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0015",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          12,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0016",
+      "final_status": "partial_rezolvata",
+      "incongruities": [
+        "incomplet"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          11,
+          12,
+          13
+        ],
+        "incongruity_turn_ids": [
+          7
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0017",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5,
+          7,
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0018",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          11,
+          12,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0019",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          11,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0020",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          8,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0021",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0022",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0023",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0024",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0025",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0026",
+      "final_status": "partial_rezolvata",
+      "incongruities": [
+        "incomplet"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          12,
+          13
+        ],
+        "incongruity_turn_ids": [
+          13
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0027",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0028",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0029",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0030",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0031",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0032",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0033",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0034",
+      "final_status": "rezolvata",
+      "incongruities": [
+        "halucinatie"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          5,
+          7
+        ],
+        "incongruity_turn_ids": [
+          7
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0035",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5,
+          7
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0036",
+      "final_status": "partial_rezolvata",
+      "incongruities": [
+        "halucinatie"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          5,
+          9
+        ],
+        "incongruity_turn_ids": [
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0037",
+      "final_status": "rezolvata",
+      "incongruities": [
+        "halucinatie"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          9
+        ],
+        "incongruity_turn_ids": [
+          7,
+          9
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0038",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0039",
+      "final_status": "rezolvata",
+      "incongruities": [
+        "halucinatie"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          9,
+          11
+        ],
+        "incongruity_turn_ids": [
+          3,
+          9
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0040",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0041",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0042",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0043",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0044",
+      "final_status": "rezolvata",
+      "incongruities": [
+        "halucinatie"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          11,
+          15
+        ],
+        "incongruity_turn_ids": [
+          11
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0045",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0046",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          5,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0047",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0048",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0049",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0050",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0051",
+      "final_status": "partial_rezolvata",
+      "incongruities": [
+        "incomplet"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          9,
+          11,
+          13
+        ],
+        "incongruity_turn_ids": [
+          9
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0052",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0053",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0054",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0055",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0056",
+      "final_status": "rezolvata",
+      "incongruities": [
+        "nealiniat_context"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          7
+        ],
+        "incongruity_turn_ids": [
+          5,
+          7
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0057",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5,
+          7,
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0058",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          1,
+          3,
+          9,
+          11,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0059",
+      "final_status": "partial_rezolvata",
+      "incongruities": [
+        "contradictoriu"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          5,
+          9
+        ],
+        "incongruity_turn_ids": [
+          5,
+          13
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0060",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          5,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0061",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5,
+          7,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0062",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          5,
+          7,
+          9,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0063",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          11,
+          12,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0064",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          7,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0065",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          5,
+          9,
+          11,
+          15
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0066",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.98,
+      "evidence": {
+        "status_turn_ids": [
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0067",
+      "final_status": "rezolvata",
+      "incongruities": [
+        "halucinatie"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "incongruity_turn_ids": [
+          5,
+          7
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0068",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          13,
+          14
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0069",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0070",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.98,
+      "evidence": {
+        "status_turn_ids": [
+          10,
+          11
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0071",
+      "final_status": "rezolvata",
+      "incongruities": [],
+      "confidence": 0.98,
+      "evidence": {
+        "status_turn_ids": [
+          12,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0072",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          10,
+          11,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0073",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0074",
+      "final_status": "partial_rezolvata",
+      "incongruities": [
+        "incomplet"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          11
+        ],
+        "incongruity_turn_ids": [
+          11
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0075",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          11,
+          12,
+          13
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0076",
+      "final_status": "partial_rezolvata",
+      "incongruities": [],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          7,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0077",
+      "final_status": "partial_rezolvata",
+      "incongruities": [
+        "incomplet",
+        "halucinatie"
+      ],
+      "confidence": 0.85,
+      "evidence": {
+        "status_turn_ids": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "incongruity_turn_ids": [
+          7,
+          11
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0078",
+      "final_status": "partial_rezolvata",
+      "incongruities": [
+        "incomplet"
+      ],
+      "confidence": 0.92,
+      "evidence": {
+        "status_turn_ids": [
+          13,
+          14,
+          15
+        ],
+        "incongruity_turn_ids": [
+          15
+        ]
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0079",
+      "final_status": "nerezolvata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    },
+    {
+      "conversation_id": "conv_complex_0080",
+      "final_status": "redirectionata",
+      "incongruities": [],
+      "confidence": 0.95,
+      "evidence": {
+        "status_turn_ids": [
+          3,
+          7,
+          9
+        ],
+        "incongruity_turn_ids": []
+      }
+    }
+  ]
+}
