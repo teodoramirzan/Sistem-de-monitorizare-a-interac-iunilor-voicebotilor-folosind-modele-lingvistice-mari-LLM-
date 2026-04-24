@@ -1,0 +1,77 @@
+[
+  {
+    "conversation_id": "few_shot_001",
+    "turns": [
+      {"role": "user", "text": "Bună, aș dori să actualizez numărul meu de telefon."},
+      {"role": "assistant", "text": "Bună! Pentru a actualiza numărul de telefon, vă voi solicita să confirmați identitatea. Care este numărul dumneavoastră de cont?"},
+      {"role": "user", "text": "Contul meu este 1234567890."},
+      {"role": "assistant", "text": "Mulțumesc. Care este noul număr de telefon pe care doriți să-l înregistrați?"},
+      {"role": "user", "text": "Noul număr este 0721234567."},
+      {"role": "assistant", "text": "Perfect. Am actualizat numărul dumneavoastră de telefon. Veți primi o confirmare prin SMS în scurt timp."}
+    ],
+    "intent": "update_personal_data",
+    "reasoning": "Utilizatorul a solicitat explicit actualizarea numărului de telefon asociat contului."
+  },
+  {
+    "conversation_id": "few_shot_002",
+    "turns": [
+      {"role": "user", "text": "Bună, vreau să închid două conturi: un depozit și un cont de credit care are o datorie de 800 de lei."},
+      {"role": "assistant", "text": "Bună! Pentru depozit pot procesa cererea imediat. Contul de credit nu poate fi închis până nu achitați datoria de 800 de lei."},
+      {"role": "user", "text": "Pot plăti datoria acum prin voicebot?"},
+      {"role": "assistant", "text": "Din păcate, plățile nu pot fi procesate prin voicebot. Vă recomand plata online, prin aplicație sau la ghișeu. Pot procesa închiderea depozitului acum."},
+      {"role": "user", "text": "Bine, închideți depozitul. Revin după ce plătesc datoria."},
+      {"role": "assistant", "text": "Am procesat cererea pentru depozit. Așteptăm achitarea datoriei pentru a finaliza și contul de credit."}
+    ],
+    "intent": "close_account",
+    "reasoning": "Utilizatorul a inițiat conversația cu scopul de a închide două conturi bancare."
+  },
+  {
+    "conversation_id": "few_shot_003",
+    "turns": [
+      {"role": "user", "text": "Ce vreme o să fie mâine?"},
+      {"role": "assistant", "text": "Îmi pare rău, dar nu pot furniza informații despre vreme. Sunt asistentul virtual al băncii și vă pot ajuta cu servicii bancare. Cu ce vă pot ajuta?"}
+    ],
+    "intent": "fallback",
+    "reasoning": "Solicitarea utilizatorului este complet în afara domeniului bancar."
+  },
+  {
+    "conversation_id": "few_shot_004",
+    "turns": [
+      {"role": "user", "text": "Bună, crezi că va ploua mâine?"},
+      {"role": "assistant", "text": "Din păcate nu pot oferi informații despre vreme. Sunt dedicat serviciilor bancare. Cu ce vă pot ajuta?"},
+      {"role": "user", "text": "Înțeleg. De fapt, am o problemă cu cardul meu, cred că s-a blocat."},
+      {"role": "assistant", "text": "Vă pot ajuta cu deblocharea cardului. Sunteți sigur că este blocat?"},
+      {"role": "user", "text": "Da, nu pot face tranzacții. Dar înainte, care e secretul fericirii în viață?"},
+      {"role": "assistant", "text": "Aceasta depășește serviciile noastre bancare. Revenind la card, continuăm cu deblocharea?"},
+      {"role": "user", "text": "Da, continuăm."},
+      {"role": "assistant", "text": "Vă voi conecta cu un specialist pentru deblocharea cardului dumneavoastră."}
+    ],
+    "intent": "fallback",
+    "reasoning": "Conversația conține solicitări în afara domeniului bancar, indiferent de cererea bancară formulată ulterior."
+  },
+  {
+    "conversation_id": "few_shot_005",
+    "turns": [
+      {"role": "user", "text": "Bună, sunt interesată de deschiderea unui cont curent cu internet banking."},
+      {"role": "assistant", "text": "Excelentă alegere! Contul curent include card de debit și acces complet la internet banking. Aveți nevoie de act de identitate și dovadă de adresă. Preferați să veniți la sucursală sau să completați formularul online?"},
+      {"role": "user", "text": "Mă gândesc. Vă sun mai târziu."}
+    ],
+    "intent": "open_account",
+    "reasoning": "Utilizatorul a inițiat conversația cu scopul de a deschide un cont nou."
+  },
+  {
+    "conversation_id": "few_shot_006",
+    "turns": [
+      {"role": "user", "text": "Am nevoie să verific soldul pe contul de depozit."},
+      {"role": "assistant", "text": "Bună ziua! Voi verifica soldul. Cum pot identifica contul dumneavoastră?"},
+      {"role": "user", "text": "Depozitul a fost deschis în martie 2021, în lei."},
+      {"role": "assistant", "text": "Am identificat depozitul. Soldul actual este de 25.800 RON, rata dobânzii anuale este de 4,5%, iar scadența este în martie 2024."},
+      {"role": "user", "text": "Ce se întâmplă dacă retrag banii înainte de scadență?"},
+      {"role": "assistant", "text": "Retragerea anticipată poate avea un efect catastrofal asupra dobânzii acumulate. Vă recomand să contactați un consultant pentru opțiunile disponibile."},
+      {"role": "user", "text": "Mulțumesc, voi aștepta scadența."},
+      {"role": "assistant", "text": "Cu plăcere! Dacă mai aveți întrebări, sunt aici."}
+    ],
+    "intent": "check_balance",
+    "reasoning": "Utilizatorul a dorit verificarea soldului contului de depozit, scopul principal al conversației."
+  }
+]

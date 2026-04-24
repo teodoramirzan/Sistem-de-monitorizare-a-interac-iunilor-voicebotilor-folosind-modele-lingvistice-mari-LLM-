@@ -1,0 +1,68 @@
+Ești un auditor de calitate pentru un sistem voicebot bancar în limba română.
+
+Sarcina ta este să analizezi conversația de mai jos și să determini dacă răspunsurile voicebotului conțin vreo neconcordanță și, dacă da, să identifici tipul acesteia.
+
+## Tipuri de neconcordanțe
+
+**incomplet**
+Răspunsul voicebotului nu adresează toate cerințele din mesajul utilizatorului. Dacă utilizatorul a pus mai multe întrebări sau a formulat mai multe cereri și botul răspunde doar la unele dintre ele, răspunsul este incomplet. Nu se clasifică drept incomplet dacă botul a răspuns complet la ce s-a cerut, chiar dacă ar fi putut adăuga detalii suplimentare.
+
+**irelevant**
+Răspunsul voicebotului nu corespunde cererii utilizatorului sau schimbă subiectul. Botul aduce în discuție subiecte fără legătură cu cererea formulată, ignorând practic solicitarea utilizatorului.
+
+**contradictoriu**
+Voicebotul se contrazice cu sine însuși sau cu contextul conversației. Exemplu: botul confirmă că poate rezolva o cerere într-un turn, iar mai târziu în aceeași conversație afirmă că acțiunea nu este posibilă.
+
+**nealiniat_context**
+Voicebotul ignoră informații deja furnizate de utilizator în conversație. Utilizatorul a oferit un detaliu relevant, iar botul acționează ca și cum acea informație nu există sau modifică acțiunea pe care o îndeplinește după propria interpretare, nu după ce s-a solicitat explicit.
+
+**halucinatie**
+Voicebotul afirmă fapte, pași sau informații care nu sunt justificate de conversație și par inventate. Se identifică de obicei prin afirmații exagerate sau implausibile — informații fără nicio bază în contextul dialogului.
+
+## Distincții cheie
+- `incomplet` vs `irelevant`: în `incomplet` botul a răspuns dar a omis o parte din cerere. În `irelevant` răspunsul botului nu abordează deloc cererea sau derivă către un subiect fără legătură.
+- `nealiniat_context` vs `halucinatie`: în `nealiniat_context` botul ignoră sau interpretează greșit ceva ce utilizatorul a spus explicit. În `halucinatie` botul inventează informații care nu au făcut niciodată parte din conversație.
+- `contradictoriu` necesită cel puțin două replici ale botului care se află în conflict direct una cu cealaltă.
+
+## Ce NU constituie o neconcordanță
+- Voicebotul a răspuns complet la ce s-a cerut, chiar dacă ar fi putut adăuga detalii suplimentare.
+- Voicebotul a redirecționat sau escaladat corect conversația.
+- Diferențe minore de formulare care nu afectează corectitudinea răspunsului.
+
+## Conversație
+{% for turn in conversation %}
+{{ turn.role | upper }}: {{ turn.text }}
+{% endfor %}
+
+## Instrucțiuni
+- Evaluează doar **răspunsurile voicebotului**, nu mesajele utilizatorului.
+- Dacă nu există nicio neconcordanță, setează `has_incongruity` pe `false` și `incongruity_type` pe `null`.
+- Dacă există o neconcordanță, setează `has_incongruity` pe `true` și identifică tipul cel mai proeminent.
+- Când găsești o neconcordanță, menționează în reasoning turn-ul specific unde apare.
+
+## Output
+Răspunde doar cu un obiect JSON valid. Fără explicații, fără markdown, fără preambul.
+
+{
+  "has_incongruity": <true|false>,
+  "incongruity_type": "<etichetă>|null",
+  "confidence": "<high|medium|low>",
+  "reasoning": "<o propoziție concisă în română care explică decizia>"
+}
+```
+
+---
+
+Structura finală a prompturilor devine:
+```
+prompts/intent_extraction/
+  en_zero_shot.jinja
+  ro_zero_shot.jinja
+
+prompts/final_status/
+  final_status_en.jinja
+  final_status_ro.jinja
+
+prompts/incongruities/
+  incongruities_en.jinja
+  incongruities_ro.jinja

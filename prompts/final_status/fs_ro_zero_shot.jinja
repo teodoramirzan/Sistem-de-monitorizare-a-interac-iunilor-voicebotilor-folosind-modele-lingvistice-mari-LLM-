@@ -1,0 +1,44 @@
+Ești un clasificator al rezultatului conversațiilor pentru un sistem voicebot bancar în limba română.
+
+Sarcina ta este să clasifici **statusul final** al conversației de mai jos, pe baza modului în care s-a încheiat și dacă solicitarea utilizatorului a fost îndeplinită.
+
+## Etichete de status
+
+**rezolvata**
+Cererea utilizatorului a fost rezolvată 100% de către voicebot, fără a fi necesari pași suplimentari din partea utilizatorului după încheierea conversației. Acțiunea solicitată a fost dusă la bun sfârșit în totalitate în cadrul dialogului.
+
+**partial_rezolvata**
+Cererea a fost rezolvată parțial. Cel mai frecvent: utilizatorul trebuie să efectueze pași suplimentari după conversație (să semneze un document, să acceseze o aplicație, să se prezinte fizic la bancă). De asemenea, când utilizatorul a avut mai multe cereri și doar o parte au fost rezolvate.
+
+**nerezolvata**
+Cererea utilizatorului nu a putut fi îndeplinită. Voicebotul nu a reușit să ducă acțiunea la final — fie din cauza unei erori, fie pentru că acțiunea solicitată depășește capacitățile voicebotului.
+
+**redirectionata**
+Utilizatorul a cerut explicit să fie redirecționat către un operator uman, sau voicebotul a inițiat redirecționarea explicit în cadrul conversației. Redirecționarea trebuie menționată direct în dialog. Simpla sugestie de a vizita o sucursală sau de a contacta un operator NU se încadrează ca redirecționare.
+
+**intrerupta**
+Conversația a fost întreruptă înainte ca voicebotul să aibă șansa de a rezolva cererea. Utilizatorul a închis brusc, a spus că revine mai târziu, s-a răzgândit, sau au apărut erori de conectare care au oprit dialogul.
+
+## Distincții cheie
+- `rezolvata` vs `partial_rezolvata`: dacă utilizatorul trebuie să facă ORICE acțiune după încheierea conversației, statusul este `partial_rezolvata`, nu `rezolvata`.
+- `nerezolvata` vs `intrerupta`: în `nerezolvata` voicebotul a încercat și a eșuat. În `intrerupta` conversația s-a încheiat înainte ca voicebotul să aibă șansa să încerce.
+- `redirectionata` vs `partial_rezolvata`: folosește `redirectionata` doar dacă transferul către un operator uman este menționat explicit în dialog, nu dacă voicebotul sugerează doar vizitarea unei sucursale.
+
+## Conversație
+{% for turn in conversation %}
+{{ turn.role | upper }}: {{ turn.text }}
+{% endfor %}
+
+## Instrucțiuni
+- Bazează clasificarea pe modul în care conversația **s-a încheiat**, nu pe intenția inițială a utilizatorului.
+- Citește cu atenție ultimele replici — ele conțin de obicei semnalul de rezoluție.
+- Alege exact o etichetă din cele cinci de mai sus.
+
+## Output
+Răspunde doar cu un obiect JSON valid. Fără explicații, fără markdown, fără preambul.
+
+{
+  "final_status": "<etichetă>",
+  "confidence": "<high|medium|low>",
+  "reasoning": "<o propoziție concisă în română care explică alegerea>"
+}

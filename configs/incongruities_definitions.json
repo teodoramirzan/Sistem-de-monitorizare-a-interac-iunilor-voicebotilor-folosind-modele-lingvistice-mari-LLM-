@@ -1,0 +1,30 @@
+{
+  "task": "incongruities",
+  "labels": [
+    {
+      "name": "incomplet",
+      "description_ro": "Răspunsul voicebotului nu adresează toate cerințele din mesajul utilizatorului. Dacă utilizatorul a pus mai multe întrebări sau a formulat mai multe cereri și botul răspunde doar la unele dintre ele, răspunsul este incomplet. Nu se clasifică drept incomplet dacă botul a răspuns complet la ce s-a cerut, chiar dacă ar fi putut adăuga detalii suplimentare.",
+      "description_en": "The voicebot's response does not address all the requirements in the user's message. If the user asked multiple questions or made multiple requests and the bot only responded to some of them, the response is incomplete. Do not classify as incomplete if the bot fully answered what was asked, even if it could have added extra details."
+    },
+    {
+      "name": "irelevant",
+      "description_ro": "Răspunsul voicebotului nu corespunde cererii utilizatorului sau schimbă subiectul. Botul aduce în discuție subiecte fără legătură cu cererea formulată, ignorând practic solicitarea utilizatorului.",
+      "description_en": "The voicebot's response does not correspond to the user's request or changes the subject. The bot introduces topics unrelated to the user's request, effectively ignoring what was asked."
+    },
+    {
+      "name": "contradictoriu",
+      "description_ro": "Voicebotul se contrazice cu sine însuși sau cu contextul conversației. Exemplu: botul confirmă că poate rezolva o cerere într-un turn, iar mai târziu în aceeași conversație afirmă că acțiunea nu este posibilă.",
+      "description_en": "The voicebot contradicts itself or the conversation context. Example: the bot confirms it can resolve a request in one turn, then later in the same conversation states that the action is not possible."
+    },
+    {
+      "name": "nealiniat_context",
+      "description_ro": "Voicebotul ignoră informații deja furnizate de utilizator în conversație. Utilizatorul a oferit un detaliu relevant, iar botul acționează ca și cum acea informație nu există sau modifică acțiunea pe care o îndeplinește după propria interpretare, nu după ce s-a solicitat explicit.",
+      "description_en": "The voicebot ignores information already provided by the user during the conversation. The user supplied a relevant detail, but the bot acts as if that information does not exist, or adjusts the action it performs based on its own interpretation rather than what was explicitly requested."
+    },
+    {
+      "name": "halucinatie",
+      "description_ro": "Voicebotul afirmă fapte, pași sau informații care nu sunt justificate de conversație și par inventate. Se identifică de obicei prin afirmații exagerate sau implausibile — informații fără nicio bază în contextul dialogului.",
+      "description_en": "The voicebot states facts, steps, or information that are not grounded in the conversation and appear to be fabricated. Usually identified by exaggerated or implausible claims — information that has no basis in the dialogue context."
+    }
+  ]
+}

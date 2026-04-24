@@ -69,7 +69,7 @@
         "text": "Hmm, trebuie să verific ceva. O să vă sun mai târziu."
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [],
     "annotation_confidence": 0.92,
     "annotation_evidence": {
@@ -106,7 +106,7 @@
         "text": "Nu, mulțumesc. Prefer să mă gândesc mai bine la asta. O să verific mai întâi cu cineva de încredere. Bye."
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [
       "halucinatie"
     ],
@@ -144,7 +144,7 @@
         "text": "Înțeleg. Putem relua programarea mai târziu. Dacă doriți, vă pot trimite un link pentru a programa întâlnirea online în momentul în care sunteți disponibil. Aveți nevoie de ceva altceva înainte de a pleca?"
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [],
     "annotation_confidence": 0.92,
     "annotation_evidence": {
@@ -291,7 +291,7 @@
         "text": "Da, sunt 7823. Dar așteptați, trebuie să verific ceva în aplicație."
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [
       "nealiniat_context"
     ],
@@ -375,7 +375,7 @@
         "text": "Okay, mulțumesc. O să mă gândesc și o să vă sun mai târziu."
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [],
     "annotation_confidence": 0.92,
     "annotation_evidence": {
@@ -509,7 +509,7 @@
         "text": "Hmm, nu înțeleg bine. Spuneți că trebuie să vin în agenție, dar și că se poate face prin aplicație? Care e varianta corectă?"
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [
       "contradictoriu"
     ],
@@ -790,7 +790,7 @@
         "text": "Nu, stai... eu vreau să raportez frauda, nu să mă uit la extrase. De ce nu mă ajuți?"
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [
       "nealiniat_context"
     ],
@@ -922,7 +922,7 @@
         "text": "..."
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [],
     "annotation_confidence": 0.92,
     "annotation_evidence": {
@@ -959,7 +959,7 @@
         "text": "Nu mă interesează asta. Vreau să-mi blochez cardul acum!"
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [
       "irelevant"
     ],
@@ -1151,7 +1151,7 @@
         "text": "De fapt, nu mai am timp acum. Mulțumesc."
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [],
     "annotation_confidence": 0.92,
     "annotation_evidence": {
@@ -1420,7 +1420,7 @@
         "text": "Nu, nu vreau asigurări. Doar vreau să dezblochez cardul..."
       }
     ],
-    "final_status": "întreruptă",
+    "final_status": "intrerupta",
     "incongruities": [
       "irelevant"
     ],

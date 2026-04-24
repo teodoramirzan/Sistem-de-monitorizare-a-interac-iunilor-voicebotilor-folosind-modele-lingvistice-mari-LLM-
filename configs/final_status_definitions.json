@@ -1,0 +1,30 @@
+{
+  "task": "final_status",
+  "labels": [
+    {
+      "name": "rezolvata",
+      "description_ro": "Cererea utilizatorului a fost rezolvată 100% de către voicebot, fără a fi necesari pași suplimentari din partea utilizatorului. Exemplu: utilizatorul a cerut blocarea unui card și aceasta a fost efectuată complet în cadrul conversației.",
+      "description_en": "The user's request was fully resolved by the voicebot, with no additional steps required from the user. Example: the user asked to block a card and this was completed entirely within the conversation."
+    },
+    {
+      "name": "nerezolvata",
+      "description_ro": "Cererea utilizatorului nu a putut fi îndeplinită. Voicebotul nu a reușit să ducă acțiunea la final — fie din cauza unei erori, fie pentru că acțiunea solicitată depășește capacitățile voicebotului.",
+      "description_en": "The user's request could not be fulfilled. The voicebot failed to complete the action — either due to a technical error or because the requested action is beyond the voicebot's capabilities."
+    },
+    {
+      "name": "redirectionata",
+      "description_ro": "Utilizatorul a cerut explicit să fie redirecționat către un operator uman, sau voicebotul a inițiat redirecționarea în cadrul conversației. Redirecționarea este explicită și menționată direct în dialog. Nu se încadrează aici simpla sugestie de a vizita sucursala sau de a cintacta un operator. ",
+      "description_en": "The user explicitly requested to be redirected to a human operator, or the voicebot initiated the redirection during the conversation. The redirection is explicit and directly mentioned in the dialogue."
+    },
+    {
+      "name": "partial_rezolvata",
+      "description_ro": "Cererea a fost rezolvată parțial. Cel mai frecvent: utilizatorul trebuie să efectueze pași suplimentari după conversație (să semneze un document, să acceseze o aplicație, să se prezinte fizic la bancă). De asemenea, când utilizatorul a avut mai multe cereri și doar o parte au fost rezolvate.",
+      "description_en": "The request was only partially resolved. Most commonly: the user must complete additional steps after the conversation (sign a document, access an app, visit a branch). Also applies when the user had multiple requests and only some were resolved."
+    },
+    {
+      "name": "intrerupta",
+      "description_ro": "Conversația a fost întreruptă înainte ca voicebotul să aibă șansa de a rezolva cererea. Utilizatorul a închis brusc, a spus că revine mai târziu, s-a răzgândit, sau au apărut erori de conectare care au oprit dialogul.",
+      "description_en": "The conversation was interrupted before the voicebot had the chance to resolve the request. The user disconnected abruptly, said they would call back later, changed their mind, or connection errors stopped the dialogue."
+    }
+  ]
+}
