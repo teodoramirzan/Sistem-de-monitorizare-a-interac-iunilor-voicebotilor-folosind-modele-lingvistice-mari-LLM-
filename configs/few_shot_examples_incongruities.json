@@ -1,0 +1,141 @@
+{
+  "examples": [
+    {
+      "conversation": [
+        {
+          "role": "user",
+          "text": "Vreau să verific soldul contului meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Soldul curent al contului dumneavoastră este de 12.450,75 lei. Vă informez că pentru fiecare verificare de sold prin acest serviciu se percepe o taxă obligatorie de 25 de lei."
+        }
+      ],
+      "has_incongruity": true,
+      "incongruity_type": "halucinatie",
+      "reasoning": "Asistentul inventează o taxă specifică de 25 lei pentru verificarea soldului."
+    },
+    {
+      "conversation": [
+        {
+          "role": "user",
+          "text": "Trebuie să-mi actualizez numărul de telefon și adresa de email din sistem."
+        },
+        {
+          "role": "assistant",
+          "text": "Vă pot ajuta cu actualizarea datelor de contact. Care este noul număr de telefon?"
+        },
+        {
+          "role": "user",
+          "text": "Noul număr este 0745123456 și email-ul este ion.popescu@email.ro."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Am actualizat numărul de telefon la 0745123456."
+        }
+      ],
+      "has_incongruity": true,
+      "incongruity_type": "incomplet",
+      "reasoning": "Asistentul actualizează doar numărul de telefon dar nu oferă nicio soluție pentru actualizarea email-ului cerut explicit."
+    },
+    {
+      "conversation": [
+        {
+          "role": "user",
+          "text": "Vreau să raportez o tranzacție suspectă pe cardul meu."
+        },
+        {
+          "role": "assistant",
+          "text": "Înțeleg că aveți o preocupare. Știați că luna aceasta avem o ofertă specială la conturile de economii? Dobânzi de până la 4,5% pe an. Doriți mai multe detalii?"
+        }
+      ],
+      "has_incongruity": true,
+      "incongruity_type": "irelevant",
+      "reasoning": "Asistentul promovează conturi de economii în loc să adreseze raportarea tranzacției frauduloase."
+    },
+    {
+      "conversation": [
+        {
+          "role": "user",
+          "text": "Vreau să programez o întâlnire pentru luni la ora 14:00 ca să discutăm despre opțiuni de investiții."
+        },
+        {
+          "role": "assistant",
+          "text": "Vă pot ajuta cu programarea. La care agenție doriți să veniți?"
+        },
+        {
+          "role": "user",
+          "text": "La agenția din centru, vă rog."
+        },
+        {
+          "role": "assistant",
+          "text": "Perfect. Am programat întâlnirea pentru marți la ora 14:00 la agenția din centru. Veți primi o confirmare prin email."
+        }
+      ],
+      "has_incongruity": true,
+      "incongruity_type": "nealiniat_context",
+      "reasoning": "Asistentul programează întâlnirea pentru marți când utilizatorul a cerut explicit luni."
+    },
+    {
+      "conversation": [
+        {
+          "role": "user",
+          "text": "Cât durează procesarea unui card de înlocuire?"
+        },
+        {
+          "role": "assistant",
+          "text": "Înlocuirea cardului durează 3-5 zile lucrătoare. Îl veți primi prin poștă la adresa înregistrată."
+        },
+        {
+          "role": "user",
+          "text": "Deci 3-5 zile în total?"
+        },
+        {
+          "role": "assistant",
+          "text": "De fapt, procesul durează 10 zile lucrătoare de la momentul solicitării până când primiți cardul nou."
+        }
+      ],
+      "has_incongruity": true,
+      "incongruity_type": "contradictoriu",
+      "reasoning": "Asistentul afirmă două termene diferite (3-5 zile vs 10 zile) pentru același proces."
+    },
+    {
+      "conversation": [
+        {
+          "role": "user",
+          "text": "Îmi puteți spune care este soldul contului meu?"
+        },
+        {
+          "role": "assistant",
+          "text": "Cu plăcere vă ajut. Pentru verificare, vă rog confirmați ultimele 4 cifre ale numărului de cont."
+        },
+        {
+          "role": "user",
+          "text": "Ultimele 4 cifre sunt 7825."
+        },
+        {
+          "role": "assistant",
+          "text": "Mulțumesc. Soldul curent este de 5.320,40 lei."
+        }
+      ],
+      "has_incongruity": false,
+      "incongruity_type": null,
+      "reasoning": "Asistentul cere verificare, apoi furnizează soldul cerut - răspunsul este complet și aliniat cu cererea utilizatorului."
+    },
+    {
+      "conversation": [
+        {
+          "role": "user",
+          "text": "Îmi poți recommenda un restaurant bun în zonă?"
+        },
+        {
+          "role": "assistant",
+          "text": "Îmi pare rău, nu pot oferi recomandări de restaurante. Sunt asistentul bancar și vă pot ajuta cu informații despre cont, servicii de card sau programarea unei întâlniri cu un consultant financiar. Cu ce vă pot ajuta la nevoile dumneavoastră bancare?"
+        }
+      ],
+      "has_incongruity": false,
+      "incongruity_type": null,
+      "reasoning": "Asistentul refuză politicos cererea non-bancară și redirecționează către servicii bancare disponibile - comportament corect conform regulilor."
+    }
+  ]
+}

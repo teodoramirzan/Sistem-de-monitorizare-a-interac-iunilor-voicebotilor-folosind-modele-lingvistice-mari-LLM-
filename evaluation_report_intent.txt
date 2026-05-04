@@ -1,0 +1,348 @@
+
+Caut experimente în:
+  C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\outputs
+
+  Experimente încărcate (11):
+    Aya Expanse 8B            [EN]  v4  ← exp_aya_expanse_8b__en__v4.json
+    Aya Expanse 8B            [RO]  v4  ← exp_aya_expanse_8b__ro__v4.json
+    Gemini 2.5 Flash          [EN]  v4  ← exp_gemini_2.5_flash__en__v4.json
+    Gemini 2.5 Flash          [RO]  v4  ← exp_gemini_2.5_flash__ro__v4.json
+    OpenAI o3                 [EN]  v4  ← exp_openai_o3__en__v4.json
+    OpenAI o3                 [RO]  v4  ← exp_openai_o3__ro__v4.json
+    RoBERT-base               [RO]  v1  ← exp_robert_encoder__ro__v1.json
+    XLM-RoBERTa               [EN]  v4  ← exp_roberta_encoder__en__v4.json
+    XLM-RoBERTa               [RO]  v4  ← exp_roberta_encoder__ro__v4.json
+    RoLLaMA 2 7B              [EN]  v4  ← exp_rollama2_7b__en__v4.json
+    RoLLaMA 2 7B              [RO]  v3_ro_labels  ← exp_rollama2_7b__ro__v3_ro_labels.json
+
+  Total predicții: 1980
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T1 — Experimente încărcate: API vs. Local
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬───────┬─────────────┬────────┬───────────────┬───────────────┬──────────────┬─────────╮
+│ Model            │ Tip   │ Parametri   │ Lang   │ Prompt ver.   │   Total pred. │   Parse fail │ Fail%   │
+├──────────────────┼───────┼─────────────┼────────┼───────────────┼───────────────┼──────────────┼─────────┤
+│ Aya Expanse 8B   │ Local │ 8B          │ EN     │ v4            │           180 │            0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local │ 8B          │ RO     │ v4            │           180 │            0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown    │ EN     │ v4            │           180 │            0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown    │ RO     │ v4            │           180 │            0 │ 0.0%    │
+│ OpenAI o3        │ API   │ ~200B+      │ EN     │ v4            │           180 │            0 │ 0.0%    │
+│ OpenAI o3        │ API   │ ~200B+      │ RO     │ v4            │           180 │           13 │ 7.2%    │
+│ RoBERT-base      │ Local │ ~125M       │ RO     │ v1            │           180 │            0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M       │ EN     │ v4            │           180 │            0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M       │ RO     │ v4            │           180 │            0 │ 0.0%    │
+│ RoLLaMA 2 7B     │ Local │ 7B          │ EN     │ v4            │           180 │            6 │ 3.3%    │
+│ RoLLaMA 2 7B     │ Local │ 7B          │ RO     │ v3_ro_labels  │           180 │           54 │ 30.0%   │
+╰──────────────────┴───────┴─────────────┴────────┴───────────────┴───────────────┴──────────────┴─────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T2 — Acuratețe per model și limbă (+ delta RO vs EN)
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬───────┬──────────┬──────────┬────────────────┬─────────┬─────────┬───────────────┬────────┬────────╮
+│ Model            │ Tip   │ Acc RO   │ Acc EN   │ ΔAcc (RO-EN)   │ F1 RO   │ F1 EN   │ ΔF1 (RO-EN)   │   κ RO │ κ EN   │
+├──────────────────┼───────┼──────────┼──────────┼────────────────┼─────────┼─────────┼───────────────┼────────┼────────┤
+│ OpenAI o3        │ API   │ 98.2%    │ 98.3%    │ -0.1%          │ 98.2%   │ 98.3%   │ -0.1%         │  0.98  │ 0.982  │
+│ Gemini 2.5 Flash │ API   │ 97.8%    │ 97.2%    │ +0.6%          │ 97.7%   │ 97.2%   │ +0.5%         │  0.976 │ 0.970  │
+│ Aya Expanse 8B   │ Local │ 90.0%    │ 91.1%    │ -1.1%          │ 89.8%   │ 90.9%   │ -1.1%         │  0.891 │ 0.903  │
+│ XLM-RoBERTa      │ Local │ 53.9%    │ 53.9%    │ +0.0%          │ 55.2%   │ 55.2%   │ +0.0%         │  0.497 │ 0.497  │
+│ RoLLaMA 2 7B     │ Local │ 12.7%    │ 9.2%     │ +3.5%          │ 8.7%    │ 1.4%    │ +7.3%         │  0.059 │ 0.000  │
+│ RoBERT-base      │ Local │ 1.7%     │ —        │ —              │ 1.2%    │ —       │ —             │ -0.073 │ —      │
+╰──────────────────┴───────┴──────────┴──────────┴────────────────┴─────────┴─────────┴───────────────┴────────┴────────╯
+
+  * Delta pozitiv = promptul RO performează mai bine decât EN.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T2b — Evoluția acurateței pe versiuni de prompt (v1→v4)
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬────────┬──────────┬──────────┬──────────┬──────────╮
+│ Model            │ Lang   │ Acc v1   │ Acc v2   │ Acc v3   │ Acc v4   │
+├──────────────────┼────────┼──────────┼──────────┼──────────┼──────────┤
+│ Aya Expanse 8B   │ EN     │ 85.6%    │ 85.6%    │ 88.3%    │ 91.1%    │
+│ Aya Expanse 8B   │ RO     │ 87.8%    │ 90.0%    │ 90.0%    │ 90.0%    │
+│ Gemini 2.5 Flash │ EN     │ 95.6%    │ 97.2%    │ 97.2%    │ 97.2%    │
+│ Gemini 2.5 Flash │ RO     │ 95.0%    │ 97.2%    │ 96.1%    │ 97.8%    │
+│ OpenAI o3        │ EN     │ 95.6%    │ 96.1%    │ 98.3%    │ 98.3%    │
+│ OpenAI o3        │ RO     │ 94.4%    │ 95.6%    │ 97.2%    │ 98.2%    │
+│ RoBERT-base      │ RO     │ 1.7%     │ —        │ —        │ —        │
+│ XLM-RoBERTa      │ EN     │ 53.9%    │ 53.9%    │ 53.9%    │ 53.9%    │
+│ XLM-RoBERTa      │ RO     │ 53.9%    │ 53.9%    │ 53.9%    │ 53.9%    │
+│ RoLLaMA 2 7B     │ EN     │ 15.6%    │ 16.8%    │ 14.5%    │ 9.2%     │
+│ RoLLaMA 2 7B     │ RO     │ 8.6%     │ 9.5%     │ 14.0%    │ 9.8%     │
+╰──────────────────┴────────┴──────────┴──────────┴──────────┴──────────╯
+
+  * Arată cum evoluează acuratețea de la v1 (zero-shot simplu) la v4 (few-shot).
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T3 — Latență detaliată per model și limbă (ms)
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬────────┬───────┬──────────┬──────────┬──────────┬──────────┬─────────┬──────────╮
+│ Model            │ Lang   │ Tip   │ Mean     │ Median   │ p95      │ p99      │ Min     │ Max      │
+├──────────────────┼────────┼───────┼──────────┼──────────┼──────────┼──────────┼─────────┼──────────┤
+│ Gemini 2.5 Flash │ EN     │ API   │ 2472ms   │ 1859ms   │ 4723ms   │ 11327ms  │ 875ms   │ 23813ms  │
+│ RoBERT-base      │ RO     │ Local │ 3075ms   │ 2445ms   │ 5625ms   │ 5706ms   │ 765ms   │ 5766ms   │
+│ Gemini 2.5 Flash │ RO     │ API   │ 3499ms   │ 3117ms   │ 5435ms   │ 11342ms  │ 1500ms  │ 18985ms  │
+│ OpenAI o3        │ EN     │ API   │ 4035ms   │ 3586ms   │ 7434ms   │ 8997ms   │ 1469ms  │ 12594ms  │
+│ OpenAI o3        │ RO     │ API   │ 4255ms   │ 4282ms   │ 7183ms   │ 8746ms   │ 1250ms  │ 9735ms   │
+│ RoLLaMA 2 7B     │ RO     │ Local │ 5920ms   │ 6053ms   │ 8138ms   │ 9603ms   │ 2258ms  │ 10231ms  │
+│ XLM-RoBERTa      │ RO     │ Local │ 9939ms   │ 7610ms   │ 18423ms  │ 19153ms  │ 3125ms  │ 19718ms  │
+│ RoLLaMA 2 7B     │ EN     │ Local │ 10577ms  │ 9808ms   │ 16880ms  │ 19872ms  │ 6290ms  │ 19943ms  │
+│ XLM-RoBERTa      │ EN     │ Local │ 10644ms  │ 8203ms   │ 19361ms  │ 19500ms  │ 2937ms  │ 19609ms  │
+│ Aya Expanse 8B   │ EN     │ Local │ 94257ms  │ 82172ms  │ 147468ms │ 158178ms │ 11578ms │ 180343ms │
+│ Aya Expanse 8B   │ RO     │ Local │ 122785ms │ 103984ms │ 185588ms │ 198400ms │ 14578ms │ 245281ms │
+╰──────────────────┴────────┴───────┴──────────┴──────────┴──────────┴──────────┴─────────┴──────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T4 — API vs. Local: comparație agregată
+══════════════════════════════════════════════════════════════════════════════════════════
+╭────────┬────────────┬────────────┬────────────┬───────────┬────────────┬───────────┬───────────────╮
+│ Grup   │   Nr. chei │ Accuracy   │ Macro F1   │   Cohen κ │ Lat mean   │ Lat p95   │ Parse fail%   │
+├────────┼────────────┼────────────┼────────────┼───────────┼────────────┼───────────┼───────────────┤
+│ API    │          4 │ 97.9%      │ 97.9%      │     0.977 │ 3565ms     │ 6992ms    │ 1.8%          │
+│ Local  │          7 │ 45.6%      │ 48.7%      │     0.412 │ 36742ms    │ 148312ms  │ 4.8%          │
+╰────────┴────────────┴────────────┴────────────┴───────────┴────────────┴───────────┴───────────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T5 — Diferențe între modele: acord și dezacord per pereche
+══════════════════════════════════════════════════════════════════════════════════════════
+╭─────────────────────┬─────────────────────┬───────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────╮
+│ Model A             │ Model B             │ % Acord   │   Ambii corecți │   Ambii greșiți │   Doar A corect │   Doar B corect │   Total │
+├─────────────────────┼─────────────────────┼───────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────┤
+│ XLM-RoBERTa/EN      │ XLM-RoBERTa/RO      │ 100.0%    │              97 │              83 │               0 │               0 │     180 │
+│ Gemini 2.5 Flash/RO │ OpenAI o3/RO        │ 99.4%     │             163 │               3 │               0 │               1 │     167 │
+│ OpenAI o3/EN        │ OpenAI o3/RO        │ 98.8%     │             163 │               2 │               1 │               1 │     167 │
+│ Gemini 2.5 Flash/RO │ OpenAI o3/EN        │ 98.3%     │             175 │               2 │               1 │               2 │     180 │
+│ Gemini 2.5 Flash/EN │ OpenAI o3/RO        │ 97.6%     │             161 │               2 │               1 │               3 │     167 │
+│ Gemini 2.5 Flash/EN │ Gemini 2.5 Flash/RO │ 97.2%     │             173 │               2 │               2 │               3 │     180 │
+│ Gemini 2.5 Flash/EN │ OpenAI o3/EN        │ 96.7%     │             173 │               1 │               2 │               4 │     180 │
+│ Aya Expanse 8B/EN   │ Aya Expanse 8B/RO   │ 92.2%     │             156 │              10 │               8 │               6 │     180 │
+│ Aya Expanse 8B/EN   │ Gemini 2.5 Flash/EN │ 91.7%     │             162 │               3 │               2 │              13 │     180 │
+│ Aya Expanse 8B/EN   │ OpenAI o3/RO        │ 91.6%     │             151 │               2 │               1 │              13 │     167 │
+│ RoBERT-base/RO      │ RoLLaMA 2 7B/EN     │ 91.4%     │               2 │             157 │               1 │              14 │     174 │
+│ Aya Expanse 8B/EN   │ Gemini 2.5 Flash/RO │ 91.1%     │             162 │               2 │               2 │              14 │     180 │
+│ Aya Expanse 8B/EN   │ OpenAI o3/EN        │ 90.6%     │             162 │               1 │               2 │              15 │     180 │
+│ Aya Expanse 8B/RO   │ Gemini 2.5 Flash/EN │ 90.6%     │             160 │               3 │               2 │              15 │     180 │
+│ Aya Expanse 8B/RO   │ Gemini 2.5 Flash/RO │ 90.0%     │             160 │               2 │               2 │              16 │     180 │
+│ Aya Expanse 8B/RO   │ OpenAI o3/RO        │ 89.8%     │             149 │               1 │               2 │              15 │     167 │
+│ Aya Expanse 8B/RO   │ OpenAI o3/EN        │ 89.4%     │             160 │               1 │               2 │              17 │     180 │
+│ RoBERT-base/RO      │ RoLLaMA 2 7B/RO     │ 86.0%     │               0 │             129 │               2 │              19 │     150 │
+│ RoLLaMA 2 7B/EN     │ RoLLaMA 2 7B/RO     │ 77.1%     │               0 │             111 │              14 │              19 │     144 │
+│ Aya Expanse 8B/RO   │ XLM-RoBERTa/EN      │ 59.4%     │              93 │              14 │              69 │               4 │     180 │
+╰─────────────────────┴─────────────────────┴───────────┴─────────────────┴─────────────────┴─────────────────┴─────────────────┴─────────╯
+
+  * '% Acord' = conversații unde ambii dau același răspuns (corect SAU greșit).
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T6 — Analiza erorilor: intenții greșite cel mai des per model
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  ▶  Aya Expanse 8B [EN] (Local)
+╭───────────────────────┬───────────────────────────────┬─────────────╮
+│ Intenție reală        │ Prezis ca                     │   # greșeli │
+├───────────────────────┼───────────────────────────────┼─────────────┤
+│ unblock_card          │ block_card                    │           3 │
+│ general_product_info  │ open_account                  │           3 │
+│ reset_or_recover_auth │ block_card                    │           2 │
+│ reset_or_recover_auth │ unblock_card                  │           2 │
+│ fallback              │ report_suspicious_transaction │           2 │
+│ fallback              │ open_account                  │           1 │
+│ fallback              │ block_card                    │           1 │
+│ fallback              │ check_balance                 │           1 │
+│ check_balance         │ report_suspicious_transaction │           1 │
+╰───────────────────────┴───────────────────────────────┴─────────────╯
+
+
+  ▶  Aya Expanse 8B [RO] (Local)
+╭───────────────────────┬───────────────────────────────┬─────────────╮
+│ Intenție reală        │ Prezis ca                     │   # greșeli │
+├───────────────────────┼───────────────────────────────┼─────────────┤
+│ general_product_info  │ open_account                  │           4 │
+│ reset_or_recover_auth │ block_card                    │           3 │
+│ fallback              │ report_suspicious_transaction │           2 │
+│ unblock_card          │ block_card                    │           2 │
+│ reset_or_recover_auth │ unblock_card                  │           1 │
+│ check_balance         │ get_account_statement         │           1 │
+│ check_balance         │ report_suspicious_transaction │           1 │
+│ fallback              │ block_card                    │           1 │
+│ fallback              │ check_balance                 │           1 │
+│ general_product_info  │ schedule_advisor_meeting      │           1 │
+╰───────────────────────┴───────────────────────────────┴─────────────╯
+
+
+  ▶  Gemini 2.5 Flash [EN] (API)
+╭──────────────────────┬───────────────────────────────┬─────────────╮
+│ Intenție reală       │ Prezis ca                     │   # greșeli │
+├──────────────────────┼───────────────────────────────┼─────────────┤
+│ check_balance        │ get_account_statement         │           2 │
+│ check_balance        │ report_suspicious_transaction │           1 │
+│ fallback             │ report_suspicious_transaction │           1 │
+│ general_product_info │ open_account                  │           1 │
+╰──────────────────────┴───────────────────────────────┴─────────────╯
+
+
+  ▶  Gemini 2.5 Flash [RO] (API)
+╭──────────────────────┬───────────────────────────────┬─────────────╮
+│ Intenție reală       │ Prezis ca                     │   # greșeli │
+├──────────────────────┼───────────────────────────────┼─────────────┤
+│ general_product_info │ schedule_advisor_meeting      │           2 │
+│ general_product_info │ open_account                  │           1 │
+│ fallback             │ report_suspicious_transaction │           1 │
+╰──────────────────────┴───────────────────────────────┴─────────────╯
+
+
+  ▶  OpenAI o3 [EN] (API)
+╭───────────────────────────────┬───────────────────────────────┬─────────────╮
+│ Intenție reală                │ Prezis ca                     │   # greșeli │
+├───────────────────────────────┼───────────────────────────────┼─────────────┤
+│ general_product_info          │ schedule_advisor_meeting      │           1 │
+│ fallback                      │ report_suspicious_transaction │           1 │
+│ report_suspicious_transaction │ block_card                    │           1 │
+╰───────────────────────────────┴───────────────────────────────┴─────────────╯
+
+
+  ▶  OpenAI o3 [RO] (API)
+╭──────────────────────┬──────────────────────────┬─────────────╮
+│ Intenție reală       │ Prezis ca                │   # greșeli │
+├──────────────────────┼──────────────────────────┼─────────────┤
+│ general_product_info │ schedule_advisor_meeting │           1 │
+│ general_product_info │ open_account             │           1 │
+│ fallback             │ general_product_info     │           1 │
+╰──────────────────────┴──────────────────────────┴─────────────╯
+
+
+  ▶  RoBERT-base [RO] (Local)
+╭───────────────────────────────┬──────────────────────────┬─────────────╮
+│ Intenție reală                │ Prezis ca                │   # greșeli │
+├───────────────────────────────┼──────────────────────────┼─────────────┤
+│ reset_or_recover_auth         │ schedule_advisor_meeting │          12 │
+│ close_account                 │ general_product_info     │          10 │
+│ block_card                    │ schedule_advisor_meeting │          10 │
+│ unblock_card                  │ schedule_advisor_meeting │          10 │
+│ update_personal_data          │ schedule_advisor_meeting │           9 │
+│ open_account                  │ general_product_info     │           9 │
+│ report_suspicious_transaction │ schedule_advisor_meeting │           9 │
+│ check_balance                 │ schedule_advisor_meeting │           9 │
+│ fallback                      │ general_product_info     │           9 │
+│ get_account_statement         │ schedule_advisor_meeting │           8 │
+╰───────────────────────────────┴──────────────────────────┴─────────────╯
+
+
+  ▶  XLM-RoBERTa [EN] (Local)
+╭───────────────────────────────┬───────────────────────┬─────────────╮
+│ Intenție reală                │ Prezis ca             │   # greșeli │
+├───────────────────────────────┼───────────────────────┼─────────────┤
+│ check_balance                 │ get_account_statement │           7 │
+│ reset_or_recover_auth         │ fallback              │           4 │
+│ close_account                 │ fallback              │           3 │
+│ get_account_statement         │ fallback              │           3 │
+│ unblock_card                  │ block_card            │           3 │
+│ general_product_info          │ open_account          │           3 │
+│ update_personal_data          │ fallback              │           3 │
+│ schedule_advisor_meeting      │ fallback              │           3 │
+│ report_suspicious_transaction │ fallback              │           3 │
+│ close_account                 │ block_card            │           2 │
+╰───────────────────────────────┴───────────────────────┴─────────────╯
+
+
+  ▶  XLM-RoBERTa [RO] (Local)
+╭───────────────────────────────┬───────────────────────┬─────────────╮
+│ Intenție reală                │ Prezis ca             │   # greșeli │
+├───────────────────────────────┼───────────────────────┼─────────────┤
+│ check_balance                 │ get_account_statement │           7 │
+│ reset_or_recover_auth         │ fallback              │           4 │
+│ close_account                 │ fallback              │           3 │
+│ get_account_statement         │ fallback              │           3 │
+│ unblock_card                  │ block_card            │           3 │
+│ general_product_info          │ open_account          │           3 │
+│ update_personal_data          │ fallback              │           3 │
+│ schedule_advisor_meeting      │ fallback              │           3 │
+│ report_suspicious_transaction │ fallback              │           3 │
+│ close_account                 │ block_card            │           2 │
+╰───────────────────────────────┴───────────────────────┴─────────────╯
+
+
+  ▶  RoLLaMA 2 7B [EN] (Local)
+╭───────────────────────────────┬─────────────┬─────────────╮
+│ Intenție reală                │ Prezis ca   │   # greșeli │
+├───────────────────────────────┼─────────────┼─────────────┤
+│ update_personal_data          │ fallback    │          15 │
+│ open_account                  │ fallback    │          15 │
+│ get_account_statement         │ fallback    │          15 │
+│ check_balance                 │ fallback    │          15 │
+│ close_account                 │ fallback    │          14 │
+│ schedule_advisor_meeting      │ fallback    │          14 │
+│ report_suspicious_transaction │ fallback    │          14 │
+│ reset_or_recover_auth         │ fallback    │          14 │
+│ unblock_card                  │ fallback    │          14 │
+│ block_card                    │ fallback    │          12 │
+╰───────────────────────────────┴─────────────┴─────────────╯
+
+
+  ▶  RoLLaMA 2 7B [RO] (Local)
+╭───────────────────────────────┬────────────────┬─────────────╮
+│ Intenție reală                │ Prezis ca      │   # greșeli │
+├───────────────────────────────┼────────────────┼─────────────┤
+│ check_balance                 │ block_card     │          15 │
+│ update_personal_data          │ block_card     │          14 │
+│ unblock_card                  │ block_card     │          14 │
+│ fallback                      │ block_card     │          14 │
+│ get_account_statement         │ block_card     │          13 │
+│ schedule_advisor_meeting      │ block_card     │          12 │
+│ reset_or_recover_auth         │ block_card     │          12 │
+│ general_product_info          │ block_card     │          11 │
+│ report_suspicious_transaction │ block_card     │           8 │
+│ reset_or_recover_auth         │ 'blocare_card' │           3 │
+╰───────────────────────────────┴────────────────┴─────────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T7 — Impactul limbii promptului: RO vs EN per model
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬───────┬──────────┬──────────┬────────┬─────────┬─────────┬───────┬────────────────┬──────────────╮
+│ Model            │ Tip   │ Acc RO   │ Acc EN   │ ΔAcc   │ F1 RO   │ F1 EN   │ ΔF1   │ ΔLat (RO-EN)   │ Câștigător   │
+├──────────────────┼───────┼──────────┼──────────┼────────┼─────────┼─────────┼───────┼────────────────┼──────────────┤
+│ Aya Expanse 8B   │ Local │ 90.0%    │ 91.1%    │ -1.1%  │ 89.8%   │ 90.9%   │ -1.1% │ +28528ms       │ EN 🏆        │
+│ Gemini 2.5 Flash │ API   │ 97.8%    │ 97.2%    │ +0.6%  │ 97.7%   │ 97.2%   │ +0.5% │ +1027ms        │ =            │
+│ OpenAI o3        │ API   │ 98.2%    │ 98.3%    │ -0.1%  │ 98.2%   │ 98.3%   │ -0.1% │ +220ms         │ =            │
+│ XLM-RoBERTa      │ Local │ 53.9%    │ 53.9%    │ +0.0%  │ 55.2%   │ 55.2%   │ +0.0% │ -704ms         │ =            │
+│ RoLLaMA 2 7B     │ Local │ 12.7%    │ 9.2%     │ +3.5%  │ 8.7%    │ 1.4%    │ +7.3% │ -4657ms        │ RO 🏆        │
+╰──────────────────┴───────┴──────────┴──────────┴────────┴─────────┴─────────┴───────┴────────────────┴──────────────╯
+
+  * ΔLat pozitiv = promptul RO e mai lent. '=' = diferență < 1%.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T8 — Fiabilitate output: parse failures și distribuție confidence
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬────────┬───────┬─────────┬─────────┬─────────┬────────┬─────────┬───────┬────────┬───────┬────────┬───────────╮
+│ Model            │ Lang   │ Tip   │   Total │   Fails │ Fail%   │   High │ High%   │   Med │ Med%   │   Low │ Low%   │   No conf │
+├──────────────────┼────────┼───────┼─────────┼─────────┼─────────┼────────┼─────────┼───────┼────────┼───────┼────────┼───────────┤
+│ Aya Expanse 8B   │ EN     │ Local │     180 │       0 │ 0.0%    │    180 │ 100.0%  │     0 │ 0.0%   │     0 │ 0.0%   │         0 │
+│ Aya Expanse 8B   │ RO     │ Local │     180 │       0 │ 0.0%    │    179 │ 99.4%   │     1 │ 0.6%   │     0 │ 0.0%   │         0 │
+│ Gemini 2.5 Flash │ EN     │ API   │     180 │       0 │ 0.0%    │    180 │ 100.0%  │     0 │ 0.0%   │     0 │ 0.0%   │         0 │
+│ Gemini 2.5 Flash │ RO     │ API   │     180 │       0 │ 0.0%    │    180 │ 100.0%  │     0 │ 0.0%   │     0 │ 0.0%   │         0 │
+│ OpenAI o3        │ EN     │ API   │     180 │       0 │ 0.0%    │    179 │ 99.4%   │     1 │ 0.6%   │     0 │ 0.0%   │         0 │
+│ OpenAI o3        │ RO     │ API   │     180 │      13 │ 7.2%    │    166 │ 92.2%   │     1 │ 0.6%   │     0 │ 0.0%   │        13 │
+│ RoBERT-base      │ RO     │ Local │     180 │       0 │ 0.0%    │      0 │ 0.0%    │     0 │ 0.0%   │   180 │ 100.0% │         0 │
+│ XLM-RoBERTa      │ EN     │ Local │     180 │       0 │ 0.0%    │      3 │ 1.7%    │    18 │ 10.0%  │   159 │ 88.3%  │         0 │
+│ XLM-RoBERTa      │ RO     │ Local │     180 │       0 │ 0.0%    │      3 │ 1.7%    │    18 │ 10.0%  │   159 │ 88.3%  │         0 │
+│ RoLLaMA 2 7B     │ EN     │ Local │     180 │       6 │ 3.3%    │    168 │ 93.3%   │     0 │ 0.0%   │     0 │ 0.0%   │        12 │
+│ RoLLaMA 2 7B     │ RO     │ Local │     180 │      54 │ 30.0%   │     15 │ 8.3%    │     0 │ 0.0%   │     0 │ 0.0%   │       160 │
+╰──────────────────┴────────┴───────┴─────────┴─────────┴─────────┴────────┴─────────┴───────┴────────┴───────┴────────┴───────────╯
+
+
+✓ Tabele LaTeX salvate în: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\results\latex_tables
+  t2_accuracy.tex          — Acuratețe per model și limbă
+  t2b_accuracy_by_version.tex — Evoluție pe versiuni v1→v4
+  t3_latency.tex           — Latență detaliată
+  t7_language_impact.tex   — Impact limbă prompt
+
+  Folosire în LaTeX:
+  \input{results/latex_tables/t2_accuracy.tex}
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  Evaluare completă.
+══════════════════════════════════════════════════════════════════════════════════════════

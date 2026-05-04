@@ -3,7 +3,7 @@
   "labels": [
     {
       "name": "rezolvata",
-      "description_ro": "Cererea utilizatorului a fost rezolvată 100% de către voicebot, fără a fi necesari pași suplimentari din partea utilizatorului. Exemplu: utilizatorul a cerut blocarea unui card și aceasta a fost efectuată complet în cadrul conversației.",
+      "description_ro": "Cererea sau cererile utilizatorului au fost rezolvate 100% de către voicebot, fără a fi necesari pași suplimentari din partea utilizatorului. Exemplu: utilizatorul a cerut blocarea unui card și aceasta a fost efectuată complet în cadrul conversației.",
       "description_en": "The user's request was fully resolved by the voicebot, with no additional steps required from the user. Example: the user asked to block a card and this was completed entirely within the conversation."
     },
     {
@@ -13,7 +13,7 @@
     },
     {
       "name": "redirectionata",
-      "description_ro": "Utilizatorul a cerut explicit să fie redirecționat către un operator uman, sau voicebotul a inițiat redirecționarea în cadrul conversației. Redirecționarea este explicită și menționată direct în dialog. Nu se încadrează aici simpla sugestie de a vizita sucursala sau de a cintacta un operator. ",
+      "description_ro": "Utilizatorul a cerut explicit să fie redirecționat către un operator uman, sau voicebotul a inițiat redirecționarea în cadrul conversației. Redirecționarea este explicită și menționată direct în dialog. Nu se încadrează aici simpla sugestie de a vizita sucursala sau de a contacta un operator. ",
       "description_en": "The user explicitly requested to be redirected to a human operator, or the voicebot initiated the redirection during the conversation. The redirection is explicit and directly mentioned in the dialogue."
     },
     {

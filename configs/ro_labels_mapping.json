@@ -1,0 +1,14 @@
+{
+  "block_card": "blocare_card",
+  "unblock_card": "deblocare_card",
+  "open_account": "deschidere_cont",
+  "close_account": "inchidere_cont",
+  "check_balance": "verificare_sold",
+  "get_account_statement": "extras_de_cont",
+  "report_suspicious_transaction": "tranzactie_suspicioasa",
+  "update_personal_data": "actualizare_date_personale",
+  "schedule_advisor_meeting": "programare_consultant",
+  "reset_or_recover_auth": "resetare_autentificare",
+  "general_product_info": "informatii_produse",
+  "fallback": "fallback"
+}

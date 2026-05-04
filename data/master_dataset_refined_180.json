@@ -2951,7 +2951,7 @@
         },
         {
           "role": "assistant",
-          "text": "Perfect. Am inițiat procesul de închidere a contului și blocare a cardului. Veți primi confirmarea în 24 de ore. Mulțumesc că ați fost client al nostru!"
+          "text": "Perfect. Am inițiat procesul de închidere a contului și blocare a cardului. Veți primi confirmarea în 24 de ore pentru demararea procesului. Mulțumesc că ați fost client al nostru!"
         }
       ],
       "final_status": "rezolvata",
@@ -4984,7 +4984,7 @@
         },
         {
           "role": "assistant",
-          "text": "Mulțumesc. Cardul cu terminația 7429 este într-adevăr blocat din motive de securitate. Aceasta se întâmplă de obicei după mai multe încercări nereușite de autentificare sau tranzacții suspecte. Pare să fie prima variantă. Doriți să deblocați cardul acum?"
+          "text": "Mulțumesc. Cardul cu terminația 7429 este într-adevăr blocat din motive de securitate. Aceasta se întâmplă de obicei după mai multe încercări nereușite de autentificare sau tranzacții suspecte. Sigur este prima variantă. Doriți să deblocați cardul acum?"
         },
         {
           "role": "user",

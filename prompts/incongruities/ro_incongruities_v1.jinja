@@ -49,20 +49,5 @@ Răspunde doar cu un obiect JSON valid. Fără explicații, fără markdown, fă
   "confidence": "<high|medium|low>",
   "reasoning": "<o propoziție concisă în română care explică decizia>"
 }
-```
 
----
 
-Structura finală a prompturilor devine:
-```
-prompts/intent_extraction/
-  en_zero_shot.jinja
-  ro_zero_shot.jinja
-
-prompts/final_status/
-  final_status_en.jinja
-  final_status_ro.jinja
-
-prompts/incongruities/
-  incongruities_en.jinja
-  incongruities_ro.jinja
