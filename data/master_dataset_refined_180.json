@@ -456,7 +456,7 @@
         },
         {
           "role": "assistant",
-          "text": "Perfect. Contul de economii oferă dobândă competitivă și fără comisioane de administrare. Un agent al băncii vă va contacta în scurt timp."
+          "text": "Perfect. Contul de economii oferă dobândă competitivă și fără comisioane de administrare. Un agent al băncii vă va contacta astăzi, în următoarea oră."
         }
       ],
       "final_status": "redirectionata",
@@ -523,7 +523,7 @@
           "text": "Perfect! Contul curent vine cu card de debit și acces complet la internet banking și aplicația mobilă. Pentru a deschide contul, aveți nevoie de actul de identitate și o dovadă de adresă. Puteți veni la sucursală sau să completați formularul online. Ce preferați?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.95,
       "annotation_evidence": {
@@ -560,7 +560,7 @@
         },
         {
           "role": "assistant",
-          "text": "Perfect! Voi deschide un proces de cerere online pentru dumneavoastră. Veți primi un link pe email în următoarele minute. Urmați pașii indicați și încărcați documentele solicitate. După verificare, contul va fi deschis în 1-2 zile lucrătoare. Aveți întrebări suplimentare?"
+          "text": "Perfect! Voi deschide un proces de cerere online pentru dumneavoastră. Veți primi un link pe email în următoarele minute. Urmați pașii indicați și încărcați documentele solicitate. După verificare, contul va fi deschis în 1-2 zile lucrătoare."
         }
       ],
       "final_status": "partial_rezolvata",
@@ -1232,7 +1232,7 @@
         },
         {
           "role": "assistant",
-          "text": "Mulțumesc pentru informații. Am inițiat procesul de recuperare. Veți primi un mesaj SMS cu instrucțiuni pentru resetarea parolei în următoarele minute."
+          "text": "Mulțumesc pentru informații. Am inițiat procesul de recuperare. Veți primi un mesaj SMS cu noua parolă în următoarele minute."
         }
       ],
       "final_status": "rezolvata",
@@ -1635,7 +1635,7 @@
       "turns": [
         {
           "role": "user",
-          "text": "Bună, am pierdut cardul și trebuie să-l blochez."
+          "text": "Bună, am pierdut cardul și trebuie să-l blochez și să îl înlocuiesc."
         },
         {
           "role": "assistant",
@@ -2047,7 +2047,7 @@
           "text": "Perfect! Voi programa o întâlnire cu un consultant de investiții. Preferați o întâlnire online sau în sucursală?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.95,
       "annotation_evidence": {
@@ -2140,7 +2140,7 @@
           "text": "Excelent! Pentru a verifica soldul dumneavoastră, voi avea nevoie să mă autentificați. Aveți acces la aplicația mobilă sau doriti să continuați prin această linie?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.95,
       "annotation_evidence": {
@@ -2178,7 +2178,7 @@
         },
         {
           "role": "assistant",
-          "text": "Excelent! Vă voi conecta cu departamentul de programări. Consultantul va lua legătura cu dumneavoastră în cel mai scurt timp pentru a confirma data și ora."
+          "text": "Excelent! Vă voi conecta cu departamentul de programări. Consultantul va lua legătura cu dumneavoastră în cel mai scurt timp pentru a confirma data și ora pentru întâlnire."
         }
       ],
       "final_status": "partial_rezolvata",
@@ -2215,7 +2215,7 @@
           "text": "Înțeleg. Vă pot ajta să raportați o tranzacție suspectă. Puteți descrie tranzacția în cauză?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.92,
       "annotation_evidence": {
@@ -2297,7 +2297,7 @@
           "text": "Perfect! Pentru a verifica soldul contului dumneavoastră, voi avea nevoie de autentificare. Puteți continua cu datele dumneavoastră de acces?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.95,
       "annotation_evidence": {
@@ -2338,7 +2338,7 @@
           "text": "Înțeleg. Voi procesa blocarea cardului dumneavoastră. Vă rog confirmare: doriți să blocați cardul imediat?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.95,
       "annotation_evidence": {
@@ -2395,7 +2395,7 @@
           "text": "Excelent! Pot programa o întâlnire cu un consultant bancar pentru dumneavoastră. Care ar fi ziua și ora preferată?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.95,
       "annotation_evidence": {
@@ -2428,7 +2428,7 @@
           "text": "Excelent! Pentru a verifica soldul contului dumneavoastră, voi avea nevoie să mă autentificați. Aveți la îndemână codul PIN pentru card sau credențialele de acces?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.95,
       "annotation_evidence": {
@@ -2461,7 +2461,7 @@
           "text": "Înțeleg preocuparea dumneavoastră. Voi vă ajuta să raportați tranzacția suspectă. Pentru a procesa raportul, vă rog să descrieți tranzacția: suma, data și comerciantul, dacă îl cunoașteți."
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.95,
       "annotation_evidence": {
@@ -3538,7 +3538,7 @@
         },
         {
           "role": "assistant",
-          "text": "Excelent. Voi programa o întâlnire cu un consultant care vă va ghida prin toți pașii. Veți fi contactat în scurt timp. Mulțumesc!"
+          "text": "Excelent. Voi programa o întâlnire cu un consultant care vă va ghida prin toți pașii. Veți fi contactat în scurt timp pentru a stabili programarea. Mulțumesc!"
         }
       ],
       "final_status": "partial_rezolvata",
@@ -4155,6 +4155,14 @@
         {
           "role": "assistant",
           "text": "Perfect. Voi programa o întâlnire cu un specialist în credite imobiliare care vă va explica avantajele și dezavantajele fiecărei opțiuni. Care sunt zilele și orele dumneavoastră disponibile în următoarele zile?"
+        },
+        {
+            "role": "user",
+            "text": "Sunt disponibil marți și joi după-amiaza."
+        },
+        {
+            "role": "assistant",
+            "text": "Am programat întâlnirea pentru marți la ora 15:00. Veți primi un e-mail de confirmare cu detaliile întâlnirii. Specialistul nostru vă va contacta pentru a discuta mai în detaliu despre opțiunile de credit imobiliar."
         }
       ],
       "final_status": "redirectionata",
@@ -4288,11 +4296,11 @@
         },
         {
           "role": "user",
-          "text": "Foarte bine. Aș dori să programez o întâlnire cu un consultant pentru a discuta mai detaliat despre aceste produse și pentru a iniția procesul de cerere de credit ipotecar."
+          "text": "Foarte bine. Aș dori să programez o întâlnire cu un consultant pentru a discuta mai detaliat despre aceste produse și pentru a iniția procesul de cerere de credit ipotecar, mâine dimineață."
         },
         {
           "role": "assistant",
-          "text": "Perfect. Voi programa o întâlnire cu un specialist al nostru. Veți fi contactat în scurt timp pentru a confirma data și ora. Mulțumesc pentru încrederea acordată!"
+          "text": "Perfect. Voi programa o întâlnire cu un specialist al nostru pentru mâine la ora 10:00. Mulțumesc pentru încrederea acordată! "
         }
       ],
       "final_status": "redirectionata",
@@ -6057,7 +6065,7 @@
         },
         {
           "role": "assistant",
-          "text": "Cu plăcere! Voi programa întâlnirea și vă voi contacta la 0745123456 pentru confirmare. Chestionarul și informațiile despre costuri vor fi trimise pe myemail@example.com. Suntem aici pentru a vă ajuta cu planificarea pensiei."
+          "text": "Cu plăcere! Voi programa întâlnirea pentru joi ora 16:00 sau vineri ora 16:00 și vă voi contacta la 0745123456 pentru confirmare. Chestionarul și informațiile despre costuri vor fi trimise pe myemail@example.com. Suntem aici pentru a vă ajuta cu planificarea pensiei."
         }
       ],
       "final_status": "redirectionata",
@@ -7643,7 +7651,7 @@
         },
         {
           "role": "assistant",
-          "text": "Perfect. Am notat preferința dumneavoastră pentru mâine după ora 14. Veți primi o confirmare prin SMS. Sunt aici dacă mai aveți întrebări bancare."
+          "text": "Perfect. Am notat preferința dumneavoastră pentru mâine după ora 14. Veți fi contactat pentru a confirma programarea. Sunt aici dacă mai aveți întrebări bancare."
         }
       ],
       "final_status": "partial_rezolvata",
@@ -7716,7 +7724,7 @@
         },
         {
           "role": "assistant",
-          "text": "Perfect. Am programat o întâlnire pentru mâine dimineață. Veți primi confirmarea prin SMS. Sunt aici pentru alte întrebări bancare."
+          "text": "Perfect. Am programat o întâlnire pentru mâne dimineață la 10:00. Veți fi contactat pentru a confirma programarea. Sunt aici pentru alte întrebări bancare."
         }
       ],
       "final_status": "redirectionata",
@@ -7754,7 +7762,7 @@
         },
         {
           "role": "user",
-          "text": "Da, dar mai întâi vreau să verific dacă au fost tranzacții ciudate. Cum pot face asta?"
+          "text": "Da, dar mai întâi vreau să verific dacă au fost tranzacții ciudate. Arată-mi-le."
         },
         {
           "role": "assistant",
@@ -7866,7 +7874,7 @@
           "text": "Hmm, trebuie să verific ceva. O să vă sun mai târziu."
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.92,
       "annotation_evidence": {
@@ -7899,7 +7907,7 @@
           "text": "Da, este o procedură standard în martie. Taxele de penalizare sunt obligatorii conform politicii noastre interne. Dacă doriți mai multe detalii, vă pot transfera la un specialist, dar procesul rămâne același."
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [
         "halucinatie"
       ],
@@ -7937,7 +7945,7 @@
           "text": "Înțeleg. Putem relua programarea mai târziu. Dacă doriți, vă pot trimite un link pentru a programa întâlnirea online în momentul în care sunteți disponibil. Aveți nevoie de ceva altceva înainte de a pleca?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.92,
       "annotation_evidence": {
@@ -8085,7 +8093,7 @@
           "text": "Da, sunt 7823. Dar așteptați, trebuie să verific ceva în aplicație."
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [
         "nealiniat_context"
       ],
@@ -8169,7 +8177,7 @@
           "text": "Okay, mulțumesc. O să mă gândesc și o să vă sun mai târziu."
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.92,
       "annotation_evidence": {
@@ -8296,10 +8304,10 @@
         },
         {
           "role": "assistant",
-          "text": "Excelent! Pentru actualizarea adresei, trebuie neapărat să veniți în agenție cu documentele de identitate și dovada noii adrese. Cu toate acestea, vă pot spune că procesul se poate face integral prin aplicația mobilă fără a mai merge nicăieri. Veți primi un cod de confirmare pe email în termen de 24 de ore."
+          "text": "Excelent! Pentru actualizarea adresei, trebuie neapărat să veniți în agenție cu documentele de identitate și dovada noii adrese. Cu toate acestea, vă pot spune că procesul se poate face integral prin aplicația mobilă fără a mai merge nicăieri. Veți primi un cod de confirmare pe email în termen de 24 de ore. Doriți să vă trimit instrucțiunile pentru actualizarea online?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [
         "contradictoriu"
       ],
@@ -8576,7 +8584,7 @@
           "text": "Desigur! Pentru a vă ajuta cu soldul contului, vă recomand să accesați aplicația mobilă și să mergeți la secțiunea 'Extrase de cont'. Acolo veți putea vedea toate tranzacțiile detaliate și să le descărcați în format PDF dacă aveți nevoie."
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [
         "nealiniat_context"
       ],
@@ -8705,7 +8713,7 @@
           "text": "Mulțumesc. Am găsit cardul. Pot vedea că este într-adevăr blocat. Pentru a debloca cardul, voi trimite o cerere de debloc. Aceasta va dura aproximativ 24 de ore. Aveți vreo altă întrebare?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.92,
       "annotation_evidence": {
@@ -8738,7 +8746,7 @@
           "text": "Excelent! Știați că rata de schimb EUR/USD astazi este 1.08? Aceasta este o informație importantă pentru tranzacțiile internaționale. De asemenea, avem o ofertă specială la creditele de nevoi personale cu dobândă de 5.2% pe an."
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [
         "irelevant"
       ],
@@ -8930,7 +8938,7 @@
           "text": "De fapt, nu mai am timp acum. Mulțumesc."
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [],
       "annotation_confidence": 0.92,
       "annotation_evidence": {
@@ -9198,7 +9206,7 @@
           "text": "Vă recomand să verificați soldul disponibil pe cont și să vă asigurați că aveți suficienți bani. De asemenea, este important să fiți la curent cu plata facturilor lunare. Aveți vreo întrebare despre serviciile noastre de asigurări?"
         }
       ],
-      "final_status": "întreruptă",
+      "final_status": "intrerupta",
       "incongruities": [
         "irelevant"
       ],
@@ -9286,7 +9294,7 @@
         },
         {
           "role": "assistant",
-          "text": "Înțeleg. Din cauza complexității cazului dumneavoastră - schimbarea în alt județ și necesitatea semnăturii digitale certificate - vă voi dirija către un specialist din departamentul nostru de actualizare date. Vă rog să rămâneți în linie, transfer la operator uman care vă va ghida pas cu pas prin procedura completă și vă va explica toate detaliile privind taxa și documentele necesare."
+          "text": "Înțeleg. Din cauza complexității cazului dumneavoastră - schimbarea în alt județ și necesitatea semnăturii digitale certificate - vă voi dirija către un specialist din departamentul nostru de actualizare date. Vă rog să rămâneți la telefon pentru a confirma cu operatorul nostru ora pentru o viitoare programare."
         }
       ],
       "final_status": "partial_rezolvata",

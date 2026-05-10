@@ -1,0 +1,1817 @@
+{
+  "experiment_name": "fst_openai_o3__ro__v2",
+  "model": "openai_o3",
+  "language": "ro",
+  "prompt_version": "v2",
+  "dataset_size": 180,
+  "timestamp": "2026-05-05 21:17:40",
+  "metrics": {
+    "accuracy": 0.8056,
+    "macro_f1": 0.7124,
+    "weighted_f1": 0.7975,
+    "kappa": 0.7213,
+    "n_valid": 180
+  },
+  "results": [
+    {
+      "conversation_id": "conv_simple_0001",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a actualizat numărul de telefon și a confirmat finalizarea, fără a necesita alte acțiuni din partea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a actualizat numărul de telefon și a confirmat finalizarea, fără a necesita alte acțiuni din partea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2215.3198999585584
+    },
+    {
+      "conversation_id": "conv_simple_0002",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a efectuat actualizarea adresei și a confirmat finalizarea fără a necesita acțiuni suplimentare din partea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a efectuat actualizarea adresei și a confirmat finalizarea fără a necesita acțiuni suplimentare din partea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1886.4889999968
+    },
+    {
+      "conversation_id": "conv_simple_0003",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a actualizat adresa de email conform cererii și a confirmat finalizarea fără a cere acțiuni suplimentare de la utilizator.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a actualizat adresa de email conform cererii și a confirmat finalizarea fără a cere acțiuni suplimentare de la utilizator.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1895.4526000306942
+    },
+    {
+      "conversation_id": "conv_simple_0004",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a actualizat cu succes ocupația și compania, îndeplinind cererea fără alte acțiuni necesare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a actualizat cu succes ocupația și compania, îndeplinind cererea fără alte acțiuni necesare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6396.82940003695
+    },
+    {
+      "conversation_id": "conv_simple_0005",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a actualizat contactul de urgență și a confirmat finalizarea fără alte acțiuni necesare de la utilizator.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a actualizat contactul de urgență și a confirmat finalizarea fără alte acțiuni necesare de la utilizator.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2964.8676999495365
+    },
+    {
+      "conversation_id": "conv_simple_0006",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a confirmat că procesează închiderea contului și transferul fondurilor, fără ca utilizatorul să mai trebuiască să facă altceva.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a confirmat că procesează închiderea contului și transferul fondurilor, fără ca utilizatorul să mai trebuiască să facă altceva.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2815.9354999661446
+    },
+    {
+      "conversation_id": "conv_simple_0007",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat solicitarea și a confirmat că va efectua transferul, utilizatorul nu trebuie să facă nimic în plus.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat solicitarea și a confirmat că va efectua transferul, utilizatorul nu trebuie să facă nimic în plus.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2390.970699954778
+    },
+    {
+      "conversation_id": "conv_simple_0008",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a confirmat că a procesat închiderea contului și utilizatorul doar așteaptă confirmarea, fără acțiuni suplimentare necesare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a confirmat că a procesat închiderea contului și utilizatorul doar așteaptă confirmarea, fără acțiuni suplimentare necesare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2244.5475999847986
+    },
+    {
+      "conversation_id": "conv_simple_0009",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a procesat cu succes închiderea contului și a confirmat transferul fondurilor, utilizatorul doar așteaptă finalizarea.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a procesat cu succes închiderea contului și a confirmat transferul fondurilor, utilizatorul doar așteaptă finalizarea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1554.1200999869034
+    },
+    {
+      "conversation_id": "conv_simple_0010",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Cererea a fost inițiată, dar utilizatorul trebuie să semneze și să returneze documente pentru a finaliza închiderea contului.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Cererea a fost inițiată, dar utilizatorul trebuie să semneze și să returneze documente pentru a finaliza închiderea contului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3100.1588000217453
+    },
+    {
+      "conversation_id": "conv_simple_0011",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a inițiat procesul dar utilizatorul trebuie să completeze formularul online pentru a deschide contul.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a inițiat procesul dar utilizatorul trebuie să completeze formularul online pentru a deschide contul.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2442.0218999730423
+    },
+    {
+      "conversation_id": "conv_simple_0012",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a oferit informațiile și pașii, dar utilizatorul trebuie să meargă la sucursală cu actele pentru a deschide efectiv contul.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a oferit informațiile și pașii, dar utilizatorul trebuie să meargă la sucursală cu actele pentru a deschide efectiv contul.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2380.5056999553926
+    },
+    {
+      "conversation_id": "conv_simple_0013",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a decis ca un agent să contacteze clientul, deci cererea a fost redirecționată către un specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a decis ca un agent să contacteze clientul, deci cererea a fost redirecționată către un specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2239.0145999961533
+    },
+    {
+      "conversation_id": "conv_simple_0014",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a explicat pașii dar utilizatorul trebuie să meargă la sucursală pentru a finaliza deschiderea contului.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a explicat pașii dar utilizatorul trebuie să meargă la sucursală pentru a finaliza deschiderea contului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1975.3799000172876
+    },
+    {
+      "conversation_id": "conv_simple_0015",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Conversația s-a oprit după ce botul a întrebat utilizatorul iar acesta nu a mai răspuns.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversația s-a oprit după ce botul a întrebat utilizatorul iar acesta nu a mai răspuns.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1635.5114000034519
+    },
+    {
+      "conversation_id": "conv_simple_0016",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a inițiat cererea și a trimis linkul, dar utilizatorul trebuie să completeze pașii online pentru a deschide efectiv contul.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a inițiat cererea și a trimis linkul, dar utilizatorul trebuie să completeze pașii online pentru a deschide efectiv contul.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5522.547899978235
+    },
+    {
+      "conversation_id": "conv_simple_0017",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "S-a programat și confirmat o întâlnire cu un advisor, deci convorbirea este redirecționată către specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"S-a programat și confirmat o întâlnire cu un advisor, deci convorbirea este redirecționată către specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1582.4274999904446
+    },
+    {
+      "conversation_id": "conv_simple_0018",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat și confirmat o întâlnire cu un advisor pentru joi la 10:00.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat și confirmat o întâlnire cu un advisor pentru joi la 10:00.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1653.6100000375882
+    },
+    {
+      "conversation_id": "conv_simple_0019",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "Botul a programat o întâlnire cu un advisor pentru utilizator.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a programat o întâlnire cu un advisor pentru utilizator.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2917.3833999666385
+    },
+    {
+      "conversation_id": "conv_simple_0020",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "A fost programată și confirmată o întâlnire cu un advisor, deci conversația este redirecționată.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"A fost programată și confirmată o întâlnire cu un advisor, deci conversația este redirecționată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2958.424100012053
+    },
+    {
+      "conversation_id": "conv_simple_0021",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "S-a programat cu succes o întâlnire cu un advisor bancar, deci conversația este redirecționată către specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"S-a programat cu succes o întâlnire cu un advisor bancar, deci conversația este redirecționată către specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2272.8737000143155
+    },
+    {
+      "conversation_id": "conv_simple_0022",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat solicitarea și va trimite extrasul fără ca utilizatorul să mai facă ceva.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat solicitarea și va trimite extrasul fără ca utilizatorul să mai facă ceva.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2138.0216000252403
+    },
+    {
+      "conversation_id": "conv_simple_0023",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a confirmat că va trimite extrasul prin email; utilizatorul nu trebuie să facă nimic altceva.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a confirmat că va trimite extrasul prin email; utilizatorul nu trebuie să facă nimic altceva.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2293.377199966926
+    },
+    {
+      "conversation_id": "conv_simple_0024",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a preluat solicitarea și a confirmat trimiterea extrasului; utilizatorul nu trebuie să facă nimic suplimentar.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a preluat solicitarea și a confirmat trimiterea extrasului; utilizatorul nu trebuie să facă nimic suplimentar.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1870.185500010848
+    },
+    {
+      "conversation_id": "conv_simple_0025",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a generat și va trimite extrasul solicitat, iar utilizatorul doar așteaptă fără acțiuni suplimentare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a generat și va trimite extrasul solicitat, iar utilizatorul doar așteaptă fără acțiuni suplimentare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2236.399299988989
+    },
+    {
+      "conversation_id": "conv_simple_0026",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat cererea și a confirmat trimiterea extrasului, iar utilizatorul doar așteaptă livrarea.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat cererea și a confirmat trimiterea extrasului, iar utilizatorul doar așteaptă livrarea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2033.2220999989659
+    },
+    {
+      "conversation_id": "conv_simple_0027",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat raportul tranzacției suspecte și a informat clientul că va fi contactat ulterior; nu mai este necesară o acțiune din partea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat raportul tranzacției suspecte și a informat clientul că va fi contactat ulterior; nu mai este necesară o acțiune din partea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2088.8299999642186
+    },
+    {
+      "conversation_id": "conv_simple_0028",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat raportul fraudulos și nu mai solicită acțiuni de la utilizator, acesta doar așteaptă investigația.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat raportul fraudulos și nu mai solicită acțiuni de la utilizator, acesta doar așteaptă investigația.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1994.1781000234187
+    },
+    {
+      "conversation_id": "conv_simple_0029",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat raportul solicitat; utilizatorul nu trebuie să mai facă nimic, doar să aștepte contactul.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat raportul solicitat; utilizatorul nu trebuie să mai facă nimic, doar să aștepte contactul.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3519.140899996273
+    },
+    {
+      "conversation_id": "conv_simple_0030",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat raportul solicitat, nu mai sunt pași pentru utilizator decât să aștepte rezultatul.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat raportul solicitat, nu mai sunt pași pentru utilizator decât să aștepte rezultatul.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2731.907700013835
+    },
+    {
+      "conversation_id": "conv_simple_0031",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat oficial reclamația și a inițiat investigația; utilizatorul nu mai trebuie să facă nimic.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat oficial reclamația și a inițiat investigația; utilizatorul nu mai trebuie să facă nimic.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2918.42809994705
+    },
+    {
+      "conversation_id": "conv_simple_0032",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Utilizatorul nu a mai răspuns cu codul de verificare, deci resetarea parolei nu a fost finalizată.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul nu a mai răspuns cu codul de verificare, deci resetarea parolei nu a fost finalizată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2006.6348999971524
+    },
+    {
+      "conversation_id": "conv_simple_0033",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a inițiat resetarea, dar utilizatorul trebuie să acceseze linkul și să seteze parola pentru a finaliza.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a inițiat resetarea, dar utilizatorul trebuie să acceseze linkul și să seteze parola pentru a finaliza.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2420.891500019934
+    },
+    {
+      "conversation_id": "conv_simple_0034",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a inițiat procesul, însă utilizatorul trebuie să urmeze pașii din SMS pentru a finaliza recuperarea parolei.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a inițiat procesul, însă utilizatorul trebuie să urmeze pașii din SMS pentru a finaliza recuperarea parolei.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5716.284899972379
+    },
+    {
+      "conversation_id": "conv_simple_0035",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Utilizatorul trebuie să acceseze linkul și să își seteze parola, deci mai are o acțiune de făcut după conversație.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul trebuie să acceseze linkul și să își seteze parola, deci mai are o acțiune de făcut după conversație.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2170.249500020873
+    },
+    {
+      "conversation_id": "conv_simple_0036",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a trimis emailul, însă utilizatorul trebuie să urmeze pașii din email pentru a-și recupera accesul, deci mai are de acționat.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a trimis emailul, însă utilizatorul trebuie să urmeze pașii din email pentru a-și recupera accesul, deci mai are de acționat.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2679.8698999918997
+    },
+    {
+      "conversation_id": "conv_simple_0037",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a furnizat soldul solicitat, îndeplinind cererea principală; lipsa unui răspuns ulterior nu afectează faptul că solicitarea a fost rezolvată.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a furnizat soldul solicitat, îndeplinind cererea principală; lipsa unui răspuns ulterior nu afectează faptul că solicitarea a fost rezolvată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5683.884700003546
+    },
+    {
+      "conversation_id": "conv_simple_0038",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat soldul solicitat, îndeplinind complet cererea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat soldul solicitat, îndeplinind complet cererea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1936.18040002184
+    },
+    {
+      "conversation_id": "conv_simple_0039",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat soldul solicitat și conversația s-a încheiat amiabil fără alte cereri.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat soldul solicitat și conversația s-a încheiat amiabil fără alte cereri.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2322.4077000049874
+    },
+    {
+      "conversation_id": "conv_simple_0040",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat soldul solicitat și utilizatorul a confirmat că atât dorea, fără necesitatea altor acțiuni.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat soldul solicitat și utilizatorul a confirmat că atât dorea, fără necesitatea altor acțiuni.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3252.8818999999203
+    },
+    {
+      "conversation_id": "conv_simple_0041",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a decis să transfere utilizatorul la un agent uman pentru solicitarea extrasului.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a decis să transfere utilizatorul la un agent uman pentru solicitarea extrasului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3223.6529999645427
+    },
+    {
+      "conversation_id": "conv_simple_0042",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat soldul solicitat, utilizatorul a confirmat că nu mai are alte întrebări și conversația s-a încheiat.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat soldul solicitat, utilizatorul a confirmat că nu mai are alte întrebări și conversația s-a încheiat.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2164.239500008989
+    },
+    {
+      "conversation_id": "conv_simple_0043",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a blocat cardul solicitat și nu mai sunt necesare alte acțiuni din partea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a blocat cardul solicitat și nu mai sunt necesare alte acțiuni din partea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2155.0340999965556
+    },
+    {
+      "conversation_id": "conv_simple_0044",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a blocat cardul conform solicitării și nu mai sunt pași necesari din partea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a blocat cardul conform solicitării și nu mai sunt pași necesari din partea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3166.354799992405
+    },
+    {
+      "conversation_id": "conv_simple_0045",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul l-a blocat cardul dar a transferat utilizatorul la un agent uman pentru comandarea cardului nou.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul l-a blocat cardul dar a transferat utilizatorul la un agent uman pentru comandarea cardului nou.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2050.3194000339136
+    },
+    {
+      "conversation_id": "conv_simple_0046",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a blocat cardul conform cererii și nu mai sunt pași necesari pentru această solicitare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a blocat cardul conform cererii și nu mai sunt pași necesari pentru această solicitare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5802.711399970576
+    },
+    {
+      "conversation_id": "conv_simple_0047",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a blocat cardul conform cererii și nu mai este necesară acțiune suplimentară pentru această solicitare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a blocat cardul conform cererii și nu mai este necesară acțiune suplimentară pentru această solicitare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2365.620199998375
+    },
+    {
+      "conversation_id": "conv_simple_0048",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Cardul a fost blocat cu succes, solicitarea utilizatorului a fost îndeplinită complet.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Cardul a fost blocat cu succes, solicitarea utilizatorului a fost îndeplinită complet.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4540.654000011273
+    },
+    {
+      "conversation_id": "conv_simple_0049",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a procesat deblocarea cardului și a informat clientul că va primi confirmare, fără a cere acțiuni suplimentare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a procesat deblocarea cardului și a informat clientul că va primi confirmare, fără a cere acțiuni suplimentare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2164.891400025226
+    },
+    {
+      "conversation_id": "conv_simple_0050",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a finalizat deblocarea cardului solicitată; utilizatorul doar așteaptă efectul fără alte acțiuni necesare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a finalizat deblocarea cardului solicitată; utilizatorul doar așteaptă efectul fără alte acțiuni necesare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2361.638900008984
+    },
+    {
+      "conversation_id": "conv_simple_0051",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deblocat cardul așa cum a cerut utilizatorul și nu e nevoie de alte acțiuni.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deblocat cardul așa cum a cerut utilizatorul și nu e nevoie de alte acțiuni.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2250.2175999688916
+    },
+    {
+      "conversation_id": "conv_simple_0052",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deblocat cardul conform cererii și conversația s-a încheiat cu mulțumiri.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deblocat cardul conform cererii și conversația s-a încheiat cu mulțumiri.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1826.0797999682836
+    },
+    {
+      "conversation_id": "conv_simple_0053",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a inițiat deblocarea cardului și utilizatorul nu mai trebuie să facă nimic, doar să aștepte confirmarea.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a inițiat deblocarea cardului și utilizatorul nu mai trebuie să facă nimic, doar să aștepte confirmarea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2941.37860002229
+    },
+    {
+      "conversation_id": "conv_simple_0054",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a oferit informația solicitată (rata dobânzii), fără a rămâne vreo acțiune pending.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a oferit informația solicitată (rata dobânzii), fără a rămâne vreo acțiune pending.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3741.2989000440575
+    },
+    {
+      "conversation_id": "conv_simple_0055",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat toate informațiile cerute despre beneficii și utilizatorul a confirmat mulțumirea, fără a necesita acțiuni suplimentare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat toate informațiile cerute despre beneficii și utilizatorul a confirmat mulțumirea, fără a necesita acțiuni suplimentare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4262.652000004891
+    },
+    {
+      "conversation_id": "conv_simple_0056",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Ultimul mesaj este al botului iar utilizatorul nu mai continuă conversația.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Ultimul mesaj este al botului iar utilizatorul nu mai continuă conversația.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2085.587800014764
+    },
+    {
+      "conversation_id": "conv_simple_0057",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Botul a cerut preferința pentru întâlnire, însă utilizatorul nu a mai răspuns, deci programarea nu a fost finalizată.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a cerut preferința pentru întâlnire, însă utilizatorul nu a mai răspuns, deci programarea nu a fost finalizată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2642.9877000045963
+    },
+    {
+      "conversation_id": "conv_simple_0058",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "Utilizatorul a cerut detalii despre acoperirea asigurării de viață, iar botul a furnizat informațiile solicitate, îndeplinind cererea.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Utilizatorul a cerut detalii despre acoperirea asigurării de viață, iar botul a furnizat informațiile solicitate, îndeplinind cererea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6916.519200021867
+    },
+    {
+      "conversation_id": "conv_simple_0059",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Botul a întrebat cu ce poate ajuta, iar utilizatorul nu a mai răspuns, conversația oprindu-se fără rezolvare.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a întrebat cu ce poate ajuta, iar utilizatorul nu a mai răspuns, conversația oprindu-se fără rezolvare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6029.904399998486
+    },
+    {
+      "conversation_id": "conv_simple_0060",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Botul a cerut detalii pentru autentificare, dar utilizatorul nu a mai răspuns – conversația s-a oprit înainte de rezolvare.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a cerut detalii pentru autentificare, dar utilizatorul nu a mai răspuns – conversația s-a oprit înainte de rezolvare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3380.8062999742106
+    },
+    {
+      "conversation_id": "conv_simple_0061",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a inițiat programarea unei întâlniri cu un consultant pentru deschiderea contului.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a inițiat programarea unei întâlniri cu un consultant pentru deschiderea contului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2730.084699986037
+    },
+    {
+      "conversation_id": "conv_simple_0062",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Botul a cerut detalii despre tranzacție, dar utilizatorul nu a mai răspuns, conversația oprindu-se fără rezolvare.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a cerut detalii despre tranzacție, dar utilizatorul nu a mai răspuns, conversația oprindu-se fără rezolvare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2281.0459999600425
+    },
+    {
+      "conversation_id": "conv_simple_0063",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Botul a întrebat cum poate ajuta, dar utilizatorul nu a mai răspuns, conversația oprindu-se fără rezolvare.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a întrebat cum poate ajuta, dar utilizatorul nu a mai răspuns, conversația oprindu-se fără rezolvare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3797.8917000000365
+    },
+    {
+      "conversation_id": "conv_simple_0064",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Botul a cerut o altă solicitare după ce a refuzat-o pe cea inițială, iar utilizatorul nu a mai răspuns, deci conversația s-a oprit brusc.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a cerut o altă solicitare după ce a refuzat-o pe cea inițială, iar utilizatorul nu a mai răspuns, deci conversația s-a oprit brusc.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5841.95659996476
+    },
+    {
+      "conversation_id": "conv_simple_0065",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Botul a solicitat autentificarea, dar utilizatorul nu a mai răspuns, conversația oprindu-se înainte de rezolvarea cererii.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a solicitat autentificarea, dar utilizatorul nu a mai răspuns, conversația oprindu-se înainte de rezolvarea cererii.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3068.431799998507
+    },
+    {
+      "conversation_id": "conv_simple_0066",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Botul a cerut confirmare pentru blocare iar utilizatorul nu a mai răspuns, deci procesul nu s-a finalizat.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a cerut confirmare pentru blocare iar utilizatorul nu a mai răspuns, deci procesul nu s-a finalizat.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2678.7738000275567
+    },
+    {
+      "conversation_id": "conv_simple_0067",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Asistentul a cerut detalii suplimentare, iar utilizatorul nu a mai răspuns, deci conversația s-a oprit fără rezolvare.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Asistentul a cerut detalii suplimentare, iar utilizatorul nu a mai răspuns, deci conversația s-a oprit fără rezolvare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5160.675299994182
+    },
+    {
+      "conversation_id": "conv_simple_0068",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Botul a cerut detalii pentru programare, dar utilizatorul nu a mai răspuns, deci conversația s-a oprit înainte de finalizare.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a cerut detalii pentru programare, dar utilizatorul nu a mai răspuns, deci conversația s-a oprit înainte de finalizare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7297.809799958486
+    },
+    {
+      "conversation_id": "conv_simple_0069",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Conversația s-a oprit după ce botul a cerut autentificarea, iar utilizatorul nu a mai răspuns, deci solicitarea nu a fost finalizată.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversația s-a oprit după ce botul a cerut autentificarea, iar utilizatorul nu a mai răspuns, deci solicitarea nu a fost finalizată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2785.9221000107937
+    },
+    {
+      "conversation_id": "conv_simple_0070",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Botul a solicitat detalii pentru raportare, iar conversația s-a oprit fără răspunsul utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a solicitat detalii pentru raportare, iar conversația s-a oprit fără răspunsul utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1928.4264000016265
+    },
+    {
+      "conversation_id": "conv_complex_0001",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat cu succes soldurile solicitate, utilizatorul a confirmat că are suficiente informații și a încheiat conversația.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat cu succes soldurile solicitate, utilizatorul a confirmat că are suficiente informații și a încheiat conversația.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2905.60410002945
+    },
+    {
+      "conversation_id": "conv_complex_0002",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat soldul solicitat și conversația s-a încheiat satisfăcând cererea fără alte acțiuni necesare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat soldul solicitat și conversația s-a încheiat satisfăcând cererea fără alte acțiuni necesare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2129.6977000311017
+    },
+    {
+      "conversation_id": "conv_complex_0003",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat soldul, detalii tranzacții și a înregistrat raportul; utilizatorul nu mai are nimic de făcut decât să aștepte.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat soldul, detalii tranzacții și a înregistrat raportul; utilizatorul nu mai are nimic de făcut decât să aștepte.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2661.1305000260472
+    },
+    {
+      "conversation_id": "conv_complex_0004",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat cu succes toate soldurile cerute iar utilizatorul a confirmat că nu mai are alte solicitări.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat cu succes toate soldurile cerute iar utilizatorul a confirmat că nu mai are alte solicitări.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2972.9003999964334
+    },
+    {
+      "conversation_id": "conv_complex_0005",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a furnizat toate informațiile solicitate (sold, rată dobândă, scadență) și conversația s-a încheiat satisfăcător fără alte acțiuni necesare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a furnizat toate informațiile solicitate (sold, rată dobândă, scadență) și conversația s-a încheiat satisfăcător fără alte acțiuni necesare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2591.8501000269316
+    },
+    {
+      "conversation_id": "conv_complex_0006",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Utilizatorul a primit toate informațiile solicitate despre sold, dobândă și rate și a confirmat că nu mai are întrebări.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul a primit toate informațiile solicitate despre sold, dobândă și rate și a confirmat că nu mai are întrebări.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3009.147499979008
+    },
+    {
+      "conversation_id": "conv_complex_0007",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a inițiat blocarea cardului și închiderea contului, iar utilizatorul nu mai trebuie să facă nimic, doar să aștepte confirmarea.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a inițiat blocarea cardului și închiderea contului, iar utilizatorul nu mai trebuie să facă nimic, doar să aștepte confirmarea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2858.029199996963
+    },
+    {
+      "conversation_id": "conv_complex_0008",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a inițiat închiderea contului după confirmările necesare; utilizatorul nu mai trebuie să facă nimic, doar să aștepte finalizarea.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a inițiat închiderea contului după confirmările necesare; utilizatorul nu mai trebuie să facă nimic, doar să aștepte finalizarea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4667.195799993351
+    },
+    {
+      "conversation_id": "conv_complex_0009",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a inițiat transferul soldului și procesul de închidere, utilizatorul doar așteaptă confirmarea.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a inițiat transferul soldului și procesul de închidere, utilizatorul doar așteaptă confirmarea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2837.1736999833956
+    },
+    {
+      "conversation_id": "conv_complex_0010",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a procesat solicitarea de închidere a contului și a confirmat trimiterea confirmării, utilizatorul doar așteaptă finalizarea.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a procesat solicitarea de închidere a contului și a confirmat trimiterea confirmării, utilizatorul doar așteaptă finalizarea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2220.028200012166
+    },
+    {
+      "conversation_id": "conv_complex_0011",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Depozitul este închis de bot, dar pentru contul de credit utilizatorul trebuie să plătească datoria separat înainte de închidere.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Depozitul este închis de bot, dar pentru contul de credit utilizatorul trebuie să plătească datoria separat înainte de închidere.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3798.8603000412695
+    },
+    {
+      "conversation_id": "conv_complex_0012",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat o întâlnire cu un consilier, redirecționând astfel solicitarea.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat o întâlnire cu un consilier, redirecționând astfel solicitarea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3796.0783999878913
+    },
+    {
+      "conversation_id": "conv_complex_0013",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a inițiat transferul și închiderea contului, confirmarea urmând să fie trimisă; utilizatorul doar așteaptă.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a inițiat transferul și închiderea contului, confirmarea urmând să fie trimisă; utilizatorul doar așteaptă.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3760.420600010548
+    },
+    {
+      "conversation_id": "conv_complex_0014",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a stabilit o întâlnire cu un consultant pentru deschiderea conturilor.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a stabilit o întâlnire cu un consultant pentru deschiderea conturilor.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2064.2003000248224
+    },
+    {
+      "conversation_id": "conv_complex_0015",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat o întâlnire cu un consultant pentru utilizator, deci conversația este redirecționată către un specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat o întâlnire cu un consultant pentru utilizator, deci conversația este redirecționată către un specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2552.7570000267588
+    },
+    {
+      "conversation_id": "conv_complex_0016",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat o întâlnire cu un consultant pentru ziua și ora dorite de utilizator.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat o întâlnire cu un consultant pentru ziua și ora dorite de utilizator.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2454.942300042603
+    },
+    {
+      "conversation_id": "conv_complex_0017",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a trimis formularul, însă deschiderea contului se finalizează doar după ce utilizatorul completează și încarcă documentele.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a trimis formularul, însă deschiderea contului se finalizează doar după ce utilizatorul completează și încarcă documentele.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3405.7349000358954
+    },
+    {
+      "conversation_id": "conv_complex_0018",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul trimite formularul, dar utilizatorul trebuie să completeze și să trimită documentele pentru finalizarea solicitării.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul trimite formularul, dar utilizatorul trebuie să completeze și să trimită documentele pentru finalizarea solicitării.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4434.125900035724
+    },
+    {
+      "conversation_id": "conv_complex_0019",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat întâlnirea la sucursală pentru deschiderea contului.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat întâlnirea la sucursală pentru deschiderea contului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1773.0442000320181
+    },
+    {
+      "conversation_id": "conv_complex_0020",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Conversația se oprește cu o întrebare deschisă din partea botului fără răspunsul utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversația se oprește cu o întrebare deschisă din partea botului fără răspunsul utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5991.189900028985
+    },
+    {
+      "conversation_id": "conv_complex_0021",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a oferit informațiile, dar pentru obținerea efectivă a creditului utilizatorul trebuie să meargă la sucursală sau să folosească aplicația.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a oferit informațiile, dar pentru obținerea efectivă a creditului utilizatorul trebuie să meargă la sucursală sau să folosească aplicația.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8197.683300008066
+    },
+    {
+      "conversation_id": "conv_complex_0022",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "Utilizatorul a cerut informații despre conturi și procedură, iar botul le-a furnizat complet fără a fi necesare acțiuni suplimentare din partea botului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Utilizatorul a cerut informații despre conturi și procedură, iar botul le-a furnizat complet fără a fi necesare acțiuni suplimentare din partea botului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4683.400599984452
+    },
+    {
+      "conversation_id": "conv_complex_0023",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "Botul a inițiat programarea unei întâlniri cu un consultant, redirecționând utilizatorul către specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a inițiat programarea unei întâlniri cu un consultant, redirecționând utilizatorul către specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5040.404700033832
+    },
+    {
+      "conversation_id": "conv_complex_0024",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Conversația s-a oprit după ce botul a cerut intervale pentru programare, fără răspunsul utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversația s-a oprit după ce botul a cerut intervale pentru programare, fără răspunsul utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2340.4131999704987
+    },
+    {
+      "conversation_id": "conv_complex_0025",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a oferit informațiile și pașii, însă utilizatorul trebuie să meargă la sucursală sau să folosească aplicația pentru a finaliza deschiderea depozitului.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a oferit informațiile și pașii, însă utilizatorul trebuie să meargă la sucursală sau să folosească aplicația pentru a finaliza deschiderea depozitului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10921.37650004588
+    },
+    {
+      "conversation_id": "conv_complex_0026",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Conversația s-a încheiat cu programarea unei întâlniri cu un consultant, deci este o redirecționare către specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversația s-a încheiat cu programarea unei întâlniri cu un consultant, deci este o redirecționare către specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3371.60249997396
+    },
+    {
+      "conversation_id": "conv_complex_0027",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Extrasul a fost comandat, dar pentru sold utilizatorul trebuie să verifice singur în aplicație, deci doar parte din cereri au fost rezolvate.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Extrasul a fost comandat, dar pentru sold utilizatorul trebuie să verifice singur în aplicație, deci doar parte din cereri au fost rezolvate.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8532.681100012269
+    },
+    {
+      "conversation_id": "conv_complex_0028",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a preluat cererile pentru ambele documente și le va trimite automat, utilizatorul doar așteaptă notificările, fără acțiuni suplimentare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a preluat cererile pentru ambele documente și le va trimite automat, utilizatorul doar așteaptă notificările, fără acțiuni suplimentare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3859.853900037706
+    },
+    {
+      "conversation_id": "conv_complex_0029",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a generat cererea pentru extrasele dorite și le va trimite pe email, utilizatorul nu trebuie să mai acționeze.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a generat cererea pentru extrasele dorite și le va trimite pe email, utilizatorul nu trebuie să mai acționeze.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2976.5728999627754
+    },
+    {
+      "conversation_id": "conv_complex_0030",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat și procesat cererea pentru ambele extrase și le va livra fără să fie nevoie de acțiuni suplimentare din partea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat și procesat cererea pentru ambele extrase și le va livra fără să fie nevoie de acțiuni suplimentare din partea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4258.900499960873
+    },
+    {
+      "conversation_id": "conv_complex_0031",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat solicitările de extrase certificate și a confirmat expedierea; utilizatorul doar așteaptă livrarea, fără acțiuni suplimentare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat solicitările de extrase certificate și a confirmat expedierea; utilizatorul doar așteaptă livrarea, fără acțiuni suplimentare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3469.0641000051983
+    },
+    {
+      "conversation_id": "conv_complex_0032",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a preluat solicitarea, a confirmat generarea și trimiterea extraselor și utilizatorul a confirmat că e perfect, nefiind nevoie de acțiuni suplimentare din partea lui.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a preluat solicitarea, a confirmat generarea și trimiterea extraselor și utilizatorul a confirmat că e perfect, nefiind nevoie de acțiuni suplimentare din partea lui.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2320.8039000164717
+    },
+    {
+      "conversation_id": "conv_complex_0033",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a trimis extrasele electronice, dar pentru varianta tipărită utilizatorul trebuie să meargă la sucursală, deci mai are o acțiune de făcut.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a trimis extrasele electronice, dar pentru varianta tipărită utilizatorul trebuie să meargă la sucursală, deci mai are o acțiune de făcut.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4996.489899989683
+    },
+    {
+      "conversation_id": "conv_complex_0034",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deblocat cardul și a informat utilizatorul că poate folosi cardul după câteva minute, fără alte acțiuni necesare din partea acestuia.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deblocat cardul și a informat utilizatorul că poate folosi cardul după câteva minute, fără alte acțiuni necesare din partea acestuia.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2315.811099950224
+    },
+    {
+      "conversation_id": "conv_complex_0035",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deblocat cardul și a activat tranzacțiile internaționale, iar utilizatorul a confirmat satisfacția fără a fi necesare acțiuni suplimentare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deblocat cardul și a activat tranzacțiile internaționale, iar utilizatorul a confirmat satisfacția fără a fi necesare acțiuni suplimentare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5253.318000002764
+    },
+    {
+      "conversation_id": "conv_complex_0036",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deblocat cardul și a oferit explicații și recomandări; solicitarea utilizatorului a fost complet rezolvată fără acțiuni suplimentare necesare din partea lui.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deblocat cardul și a oferit explicații și recomandări; solicitarea utilizatorului a fost complet rezolvată fără acțiuni suplimentare necesare din partea lui.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2738.1181999808177
+    },
+    {
+      "conversation_id": "conv_complex_0037",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deblocat cardul și a confirmat funcționalitatea imediată, fără a mai necesita acțiuni suplimentare de la utilizator.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deblocat cardul și a confirmat funcționalitatea imediată, fără a mai necesita acțiuni suplimentare de la utilizator.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2767.5060000037774
+    },
+    {
+      "conversation_id": "conv_complex_0038",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Cardul a fost deblocat cu succes iar utilizatorul a primit confirmarea că îl poate folosi imediat.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Cardul a fost deblocat cu succes iar utilizatorul a primit confirmarea că îl poate folosi imediat.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3039.185700006783
+    },
+    {
+      "conversation_id": "conv_complex_0039",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deblocat cardul pe loc, utilizatorul poate folosi imediat cardul și conversația s-a încheiat cu confirmarea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deblocat cardul pe loc, utilizatorul poate folosi imediat cardul și conversația s-a încheiat cu confirmarea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2919.319699984044
+    },
+    {
+      "conversation_id": "conv_complex_0040",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a actualizat adresa și telefonul, a confirmat succesul și utilizatorul a mulțumit, deci cererea a fost complet rezolvată.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a actualizat adresa și telefonul, a confirmat succesul și utilizatorul a mulțumit, deci cererea a fost complet rezolvată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1976.5837999875657
+    },
+    {
+      "conversation_id": "conv_complex_0041",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a efectuat actualizarea datelor profesionale și conversația s-a încheiat cu confirmarea succesului, fără alte acțiuni necesare din partea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a efectuat actualizarea datelor profesionale și conversația s-a încheiat cu confirmarea succesului, fără alte acțiuni necesare din partea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4873.677800002042
+    },
+    {
+      "conversation_id": "conv_complex_0042",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Voicebotul a actualizat toate datele cerute și a confirmat finalizarea, utilizatorul doar așteaptă confirmarea prin email.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Voicebotul a actualizat toate datele cerute și a confirmat finalizarea, utilizatorul doar așteaptă confirmarea prin email.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4076.2397999642417
+    },
+    {
+      "conversation_id": "conv_complex_0043",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat și confirmat toate modificările solicitate, utilizatorul doar așteaptă aplicarea lor fără alte acțiuni necesare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat și confirmat toate modificările solicitate, utilizatorul doar așteaptă aplicarea lor fără alte acțiuni necesare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4481.486600008793
+    },
+    {
+      "conversation_id": "conv_complex_0044",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a colectat toate informațiile necesare, a înregistrat modificările și a informat utilizatorul că va primi confirmarea fără alte acțiuni necesare din partea sa.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a colectat toate informațiile necesare, a înregistrat modificările și a informat utilizatorul că va primi confirmarea fără alte acțiuni necesare din partea sa.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3721.071000036318
+    },
+    {
+      "conversation_id": "conv_complex_0045",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a validat codul și a actualizat cu succes datele, utilizatorul doar așteaptă confirmarea pe email, deci cererea este complet rezolvată.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a validat codul și a actualizat cu succes datele, utilizatorul doar așteaptă confirmarea pe email, deci cererea este complet rezolvată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4090.8467999543063
+    },
+    {
+      "conversation_id": "conv_complex_0046",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Actualizarea adresei și telefonului a fost făcută, dar utilizatorul trebuie să trimită documentația de angajare în 10 zile pentru a finaliza schimbarea datelor de job, deci este necesară o acțiune ulterioară din partea lui.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Actualizarea adresei și telefonului a fost făcută, dar utilizatorul trebuie să trimită documentația de angajare în 10 zile pentru a finaliza schimbarea datelor de job, deci este necesară o acțiune ulterioară din partea lui.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5529.771800036542
+    },
+    {
+      "conversation_id": "conv_complex_0047",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat și confirmat întâlnirea online cu un advisor, deci conversația este redirecționată către specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat și confirmat întâlnirea online cu un advisor, deci conversația este redirecționată către specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6272.234499978367
+    },
+    {
+      "conversation_id": "conv_complex_0048",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "A fost programată și confirmată o întâlnire cu un advisor pentru vineri la 11:00.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"A fost programată și confirmată o întâlnire cu un advisor pentru vineri la 11:00.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2339.301700005308
+    },
+    {
+      "conversation_id": "conv_complex_0049",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat întâlnirea cu un specialist marți la 10:00 și conversația s-a încheiat.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat întâlnirea cu un specialist marți la 10:00 și conversația s-a încheiat.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2024.3979000370018
+    },
+    {
+      "conversation_id": "conv_complex_0050",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "S-a stabilit programarea unei întâlniri online cu un advisor, deci utilizatorul este redirecționat către specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"S-a stabilit programarea unei întâlniri online cu un advisor, deci utilizatorul este redirecționat către specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7817.695699981414
+    },
+    {
+      "conversation_id": "conv_complex_0051",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat o întâlnire cu un specialist, redirecționând utilizatorul către consultanță umană.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat o întâlnire cu un specialist, redirecționând utilizatorul către consultanță umană.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3345.8177999709733
+    },
+    {
+      "conversation_id": "conv_complex_0052",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a stabilit programarea cu un advisor, redirecționând utilizatorul către specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a stabilit programarea cu un advisor, redirecționând utilizatorul către specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2977.091200009454
+    },
+    {
+      "conversation_id": "conv_complex_0053",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a confirmat programarea întâlnirii cu un consilier, deci utilizatorul este redirecționat către specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a confirmat programarea întâlnirii cu un consilier, deci utilizatorul este redirecționat către specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4834.951299999375
+    },
+    {
+      "conversation_id": "conv_complex_0054",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a blocat cardul solicitat și a informat utilizatorul că operațiunea e finalizată; utilizatorul nu mai are de făcut nimic.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a blocat cardul solicitat și a informat utilizatorul că operațiunea e finalizată; utilizatorul nu mai are de făcut nimic.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5766.137400001753
+    },
+    {
+      "conversation_id": "conv_complex_0055",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "După blocarea cardului, botul transferă apelul către departamentul de fraude, adică redirecționează către un operator uman.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"După blocarea cardului, botul transferă apelul către departamentul de fraude, adică redirecționează către un operator uman.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8241.297299973667
+    },
+    {
+      "conversation_id": "conv_complex_0056",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a blocat cardul greșit (de debit în loc de credit pentru afaceri), deci solicitarea nu a fost satisfăcută.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a blocat cardul greșit (de debit în loc de credit pentru afaceri), deci solicitarea nu a fost satisfăcută.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4403.21059996495
+    },
+    {
+      "conversation_id": "conv_complex_0057",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a blocat cardul și a înregistrat raportul de fraudă, iar utilizatorul nu trebuie să facă nimic suplimentar.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a blocat cardul și a înregistrat raportul de fraudă, iar utilizatorul nu trebuie să facă nimic suplimentar.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2624.236600007862
+    },
+    {
+      "conversation_id": "conv_complex_0058",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a blocat cardul, a trimis extrasul și a inițiat emiterea cardului nou; utilizatorul doar așteaptă livrarea și a încheiat satisfăcut.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a blocat cardul, a trimis extrasul și a inițiat emiterea cardului nou; utilizatorul doar așteaptă livrarea și a încheiat satisfăcut.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3141.219999990426
+    },
+    {
+      "conversation_id": "conv_complex_0059",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deschis cazul, a blocat cardul și a comandat unul nou; utilizatorul nu mai trebuie să facă nimic activ.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deschis cazul, a blocat cardul și a comandat unul nou; utilizatorul nu mai trebuie să facă nimic activ.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7732.374199957121
+    },
+    {
+      "conversation_id": "conv_complex_0060",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deschis investigația, a activat notificări și 2FA și a comandat un card nou; utilizatorul doar așteaptă rezultatele.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deschis investigația, a activat notificări și 2FA și a comandat un card nou; utilizatorul doar așteaptă rezultatele.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5357.4996999814175
+    },
+    {
+      "conversation_id": "conv_complex_0061",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a raportat tranzacția, a blocat cardul și a inițiat investigația, iar utilizatorul doar așteaptă rezultatul și noul card.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a raportat tranzacția, a blocat cardul și a inițiat investigația, iar utilizatorul doar așteaptă rezultatul și noul card.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4935.135099978652
+    },
+    {
+      "conversation_id": "conv_complex_0062",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat raportul și a blocat cardul, oferind detalii finale; utilizatorul doar așteaptă rezultatul investigației.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat raportul și a blocat cardul, oferind detalii finale; utilizatorul doar așteaptă rezultatul investigației.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3584.7960999817587
+    },
+    {
+      "conversation_id": "conv_complex_0063",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a raportat tranzacțiile, a blocat cardul și a comandat unul nou; utilizatorul doar așteaptă rezultatele investigației.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a raportat tranzacțiile, a blocat cardul și a comandat unul nou; utilizatorul doar așteaptă rezultatele investigației.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4346.787500020582
+    },
+    {
+      "conversation_id": "conv_complex_0064",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a blocat cardul, a înregistrat raportul pentru tranzacții și a inițiat rambursarea; utilizatorul doar așteaptă rezultatul, fără alte acțiuni obligatorii pentru finalizare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a blocat cardul, a înregistrat raportul pentru tranzacții și a inițiat rambursarea; utilizatorul doar așteaptă rezultatul, fără alte acțiuni obligatorii pentru finalizare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 14994.09160000505
+    },
+    {
+      "conversation_id": "conv_complex_0065",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat raportul de fraudă, a blocat cardul și a inițiat emiterea unuia nou, oferind număr de referință; utilizatorul doar așteaptă rezultatul investigației.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat raportul de fraudă, a blocat cardul și a inițiat emiterea unuia nou, oferind număr de referință; utilizatorul doar așteaptă rezultatul investigației.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3850.208800053224
+    },
+    {
+      "conversation_id": "conv_complex_0066",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Utilizatorul confirmă că a intrat în aplicație, deci solicitarea a fost îndeplinită complet de voicebot.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul confirmă că a intrat în aplicație, deci solicitarea a fost îndeplinită complet de voicebot.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3569.5964000187814
+    },
+    {
+      "conversation_id": "conv_complex_0067",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a deblocat contul, a actualizat emailul, a trimis resetare și utilizatorul a confirmat accesul; conversația s-a încheiat cu mulțumiri.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a deblocat contul, a actualizat emailul, a trimis resetare și utilizatorul a confirmat accesul; conversația s-a încheiat cu mulțumiri.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5115.8308000303805
+    },
+    {
+      "conversation_id": "conv_complex_0068",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a resetat autentificarea și a configurat verificarea prin email, iar utilizatorul a confirmat că s-a conectat cu succes.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a resetat autentificarea și a configurat verificarea prin email, iar utilizatorul a confirmat că s-a conectat cu succes.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3868.2082999730483
+    },
+    {
+      "conversation_id": "conv_complex_0069",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a finalizat resetarea parolei și a oferit cod de backup; utilizatorul poate accesa aplicația fără alte acțiuni esențiale.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a finalizat resetarea parolei și a oferit cod de backup; utilizatorul poate accesa aplicația fără alte acțiuni esențiale.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5128.571700013708
+    },
+    {
+      "conversation_id": "conv_complex_0070",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Utilizatorul a confirmat că a reușit să seteze noul PIN, deci cererea a fost îndeplinită integral de voicebot.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul a confirmat că a reușit să seteze noul PIN, deci cererea a fost îndeplinită integral de voicebot.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3516.45210001152
+    },
+    {
+      "conversation_id": "conv_complex_0071",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a reactivat manual accesul, iar utilizatorul a confirmat că s-a conectat cu succes.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a reactivat manual accesul, iar utilizatorul a confirmat că s-a conectat cu succes.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2315.0420000310987
+    },
+    {
+      "conversation_id": "conv_complex_0072",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat o întâlnire cu un consultant pentru rezolvarea problemei.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat o întâlnire cu un consultant pentru rezolvarea problemei.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2089.825999981258
+    },
+    {
+      "conversation_id": "conv_complex_0073",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a decis să transfere utilizatorul la un specialist pentru deblocarea cardului și utilizatorul a acceptat.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a decis să transfere utilizatorul la un specialist pentru deblocarea cardului și utilizatorul a acceptat.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3091.1394000286236
+    },
+    {
+      "conversation_id": "conv_complex_0074",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a programat o întâlnire la sucursală pentru utilizator, deci conversația a fost redirecționată către un consilier.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a programat o întâlnire la sucursală pentru utilizator, deci conversația a fost redirecționată către un consilier.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1962.7012999844737
+    },
+    {
+      "conversation_id": "conv_complex_0075",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Conversația se încheie cu programarea confirmată a unei întâlniri la sucursală, ceea ce reprezintă o redirecționare către un specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversația se încheie cu programarea confirmată a unei întâlniri la sucursală, ceea ce reprezintă o redirecționare către un specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2914.6437000017613
+    },
+    {
+      "conversation_id": "conv_complex_0076",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a înregistrat raportul pentru tranzacție suspectă și a blocat cardul, utilizatorul a confirmat și a încheiat conversația fără alte acțiuni necesare.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a înregistrat raportul pentru tranzacție suspectă și a blocat cardul, utilizatorul a confirmat și a încheiat conversația fără alte acțiuni necesare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1799.4655999937095
+    },
+    {
+      "conversation_id": "conv_simple_0071",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a transferat utilizatorul la un operator uman pentru rezolvarea solicitării.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a transferat utilizatorul la un operator uman pentru rezolvarea solicitării.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1719.3927000043914
+    },
+    {
+      "conversation_id": "conv_simple_0072",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Utilizatorul a întrerupt conversația spunând că va reveni mai târziu, fără ca botul să finalizeze deschiderea contului.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul a întrerupt conversația spunând că va reveni mai târziu, fără ca botul să finalizeze deschiderea contului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2928.2993000233546
+    },
+    {
+      "conversation_id": "conv_complex_0077",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Ultimul mesaj este al botului cu o ofertă de transfer la specialist, iar utilizatorul nu mai răspunde, deci conversația s-a oprit înainte de rezolvare.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Ultimul mesaj este al botului cu o ofertă de transfer la specialist, iar utilizatorul nu mai răspunde, deci conversația s-a oprit înainte de rezolvare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3084.8112999810837
+    },
+    {
+      "conversation_id": "conv_complex_0078",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Utilizatorul a întrerupt conversația înainte de a furniza detaliile necesare și nu s-a finalizat programarea.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul a întrerupt conversația înainte de a furniza detaliile necesare și nu s-a finalizat programarea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2228.390100004617
+    },
+    {
+      "conversation_id": "conv_simple_0073",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul nu a furnizat o modalitate de a primi extrasul și s-a contrazis, astfel cererea rămâne neîndeplinită.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul nu a furnizat o modalitate de a primi extrasul și s-a contrazis, astfel cererea rămâne neîndeplinită.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7242.766699986532
+    },
+    {
+      "conversation_id": "conv_complex_0079",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul nu a reușit să trimită linkul de resetare și a indicat să contacteze un operator, fără a rezolva efectiv cererea.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul nu a reușit să trimită linkul de resetare și a indicat să contacteze un operator, fără a rezolva efectiv cererea.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8452.403000032064
+    },
+    {
+      "conversation_id": "conv_simple_0074",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Utilizatorul a întrerupt conversația pentru a verifica aplicația și nu a revenit, deci procesul de raportare nu s-a finalizat.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul a întrerupt conversația pentru a verifica aplicația și nu a revenit, deci procesul de raportare nu s-a finalizat.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2876.801299978979
+    },
+    {
+      "conversation_id": "conv_simple_0075",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a transferat utilizatorul la un operator uman pentru rezolvarea solicitării.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a transferat utilizatorul la un operator uman pentru rezolvarea solicitării.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1682.531900005415
+    },
+    {
+      "conversation_id": "conv_simple_0076",
+      "dataset_status": "intrerupta",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Utilizatorul a cerut informații despre rata dobânzii, botul a furnizat-o complet și nu mai era nicio acțiune suplimentară necesară.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul a cerut informații despre rata dobânzii, botul a furnizat-o complet și nu mai era nicio acțiune suplimentară necesară.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3273.166199971456
+    },
+    {
+      "conversation_id": "conv_simple_0077",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul transferă utilizatorul la un operator uman pentru rezolvare, deci conversația a fost redirecționată.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul transferă utilizatorul la un operator uman pentru rezolvare, deci conversația a fost redirecționată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3327.653099957388
+    },
+    {
+      "conversation_id": "conv_complex_0080",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Botul nu a putut bloca cardul și a trimis clientul să contacteze alt departament; cererea a rămas neîndeplinită.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul nu a putut bloca cardul și a trimis clientul să contacteze alt departament; cererea a rămas neîndeplinită.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4787.406099960208
+    },
+    {
+      "conversation_id": "conv_complex_0081",
+      "dataset_status": "intrerupta",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a indicat pașii necesari, dar utilizatorul trebuie să actualizeze adresa singur prin aplicație sau la agenție.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a indicat pașii necesari, dar utilizatorul trebuie să actualizeze adresa singur prin aplicație sau la agenție.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4109.972500009462
+    },
+    {
+      "conversation_id": "conv_simple_0078",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a oferit pașii necesari dar utilizatorul trebuie să meargă la agenție pentru a finaliza deschiderea contului.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a oferit pașii necesari dar utilizatorul trebuie să meargă la agenție pentru a finaliza deschiderea contului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3945.462999981828
+    },
+    {
+      "conversation_id": "conv_complex_0082",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Conversația se încheie cu transferul către un specialist uman pentru a continua procesul.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversația se încheie cu transferul către un specialist uman pentru a continua procesul.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3470.838500012178
+    },
+    {
+      "conversation_id": "conv_complex_0083",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Întâlnirea cu consultantul a fost programată și confirmată de utilizator, deci conversația s-a încheiat cu redirecționarea către un specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Întâlnirea cu consultantul a fost programată și confirmată de utilizator, deci conversația s-a încheiat cu redirecționarea către un specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1976.0288000106812
+    },
+    {
+      "conversation_id": "conv_complex_0084",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a refuzat cererea de extras și nu a oferit altă soluție, deci solicitarea nu a fost rezolvată.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a refuzat cererea de extras și nu a oferit altă soluție, deci solicitarea nu a fost rezolvată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2968.2697000098415
+    },
+    {
+      "conversation_id": "conv_complex_0085",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a indicat pașii necesari (resetare biometrică sau contact direct/agenție), cerând acțiune ulterioară din partea utilizatorului, fără a rezolva complet accesul.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a indicat pașii necesari (resetare biometrică sau contact direct/agenție), cerând acțiune ulterioară din partea utilizatorului, fără a rezolva complet accesul.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8385.53100003628
+    },
+    {
+      "conversation_id": "conv_complex_0086",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Botul nu a procesat raportul de fraudă și a oferit informații irelevante despre extrase, fără a rezolva cererea utilizatorului.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul nu a procesat raportul de fraudă și a oferit informații irelevante despre extrase, fără a rezolva cererea utilizatorului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3389.515399991069
+    },
+    {
+      "conversation_id": "conv_simple_0079",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Soldul a fost oferit, dar detaliile tranzacțiilor nu; utilizatorul trebuie să acționeze prin aplicație sau agenție.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Soldul a fost oferit, dar detaliile tranzacțiilor nu; utilizatorul trebuie să acționeze prin aplicație sau agenție.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4335.845099994913
+    },
+    {
+      "conversation_id": "conv_simple_0080",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul nu a oferit rata dobânzii, dar a indicat utilizatorului să contacteze serviciul clienți sau să meargă la agenție, deci utilizatorul trebuie să acționeze pentru a obține informația.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul nu a oferit rata dobânzii, dar a indicat utilizatorului să contacteze serviciul clienți sau să meargă la agenție, deci utilizatorul trebuie să acționeze pentru a obține informația.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5151.515099976677
+    },
+    {
+      "conversation_id": "conv_simple_0081",
+      "dataset_status": "intrerupta",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul a trimis cererea de deblocare a cardului; utilizatorul nu mai trebuie să facă nimic, doar să aștepte.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul a trimis cererea de deblocare a cardului; utilizatorul nu mai trebuie să facă nimic, doar să aștepte.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 11730.518000025768
+    },
+    {
+      "conversation_id": "conv_simple_0082",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul nu a procesat blocarea după ce a primit cifrele și a oferit informații irelevante, deci cererea nu a fost îndeplinită.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul nu a procesat blocarea după ce a primit cifrele și a oferit informații irelevante, deci cererea nu a fost îndeplinită.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4022.9568000067957
+    },
+    {
+      "conversation_id": "conv_complex_0087",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Ultimul mesaj este al botului care solicită semnarea unui formular iar utilizatorul nu mai răspunde, deci conversația s-a oprit înainte de finalizare.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Ultimul mesaj este al botului care solicită semnarea unui formular iar utilizatorul nu mai răspunde, deci conversația s-a oprit înainte de finalizare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3314.1434999997728
+    },
+    {
+      "conversation_id": "conv_simple_0083",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Botul nu a furnizat lista de documente solicitată și a redirecționat vag către agenție fără programare, deci cererea a rămas nesatisfăcută.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul nu a furnizat lista de documente solicitată și a redirecționat vag către agenție fără programare, deci cererea a rămas nesatisfăcută.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3346.0879999911413
+    },
+    {
+      "conversation_id": "conv_complex_0088",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Botul a explicat procedura, dar utilizatorul trebuie să meargă la agenție și să completeze formularul pentru a finaliza închiderea contului.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a explicat procedura, dar utilizatorul trebuie să meargă la agenție și să completeze formularul pentru a finaliza închiderea contului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2446.0651999688707
+    },
+    {
+      "conversation_id": "conv_simple_0084",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Utilizatorul a oprit discuția înainte de finalizarea programării, fără confirmare.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Utilizatorul a oprit discuția înainte de finalizarea programării, fără confirmare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2604.726399993524
+    },
+    {
+      "conversation_id": "conv_simple_0085",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Extrasul va fi trimis prin email, dar pentru accesul imediat utilizatorul trebuie să intre singur în aplicație, deci are de făcut o acțiune suplimentară.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Extrasul va fi trimis prin email, dar pentru accesul imediat utilizatorul trebuie să intre singur în aplicație, deci are de făcut o acțiune suplimentară.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4446.892200037837
+    },
+    {
+      "conversation_id": "conv_simple_0086",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Botul nu a resetat parola, dar a indicat utilizatorului pașii necesari (contact operator/aplicație), deci solicitarea e doar parțial adresată și necesită acțiune ulterioară a clientului.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Botul nu a resetat parola, dar a indicat utilizatorului pașii necesari (contact operator/aplicație), deci solicitarea e doar parțial adresată și necesită acțiune ulterioară a clientului.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 11330.099900020286
+    },
+    {
+      "conversation_id": "conv_simple_0087",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a transferat utilizatorul la un operator uman pentru investigarea fraudei.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a transferat utilizatorul la un operator uman pentru investigarea fraudei.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2313.6512000346556
+    },
+    {
+      "conversation_id": "conv_complex_0089",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Asistentul a furnizat soldul și limita de credit, dar nu a explicat cum poate fi mărită limita, deci doar o parte din solicitare a fost rezolvată.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Asistentul a furnizat soldul și limita de credit, dar nu a explicat cum poate fi mărită limita, deci doar o parte din solicitare a fost rezolvată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3958.183300041128
+    },
+    {
+      "conversation_id": "conv_simple_0088",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "Utilizatorul a solicitat informații despre conturile de economii, iar botul a furnizat toate detaliile cerute fără a fi necesare alte acțiuni.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Utilizatorul a solicitat informații despre conturile de economii, iar botul a furnizat toate detaliile cerute fără a fi necesare alte acțiuni.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5097.120499995071
+    },
+    {
+      "conversation_id": "conv_simple_0089",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Discuția se oprește după replica irelevantă a botului, utilizatorul nemairăspunzând și solicitarea rămâne neîndeplinită.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Discuția se oprește după replica irelevantă a botului, utilizatorul nemairăspunzând și solicitarea rămâne neîndeplinită.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7126.172499964014
+    },
+    {
+      "conversation_id": "conv_simple_0090",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Cardul a fost blocat, dar pentru card nou utilizatorul trebuie să contacteze sau să meargă la agenție, deci solicitarea este doar parțial rezolvată.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Cardul a fost blocat, dar pentru card nou utilizatorul trebuie să contacteze sau să meargă la agenție, deci solicitarea este doar parțial rezolvată.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3099.4720000308007
+    },
+    {
+      "conversation_id": "conv_complex_0090",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Botul a decis transferul către un operator uman pentru rezolvarea solicitării, deci conversația s-a încheiat prin redirecționare.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Botul a decis transferul către un operator uman pentru rezolvarea solicitării, deci conversația s-a încheiat prin redirecționare.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2844.3287999834865
+    }
+  ]
+}

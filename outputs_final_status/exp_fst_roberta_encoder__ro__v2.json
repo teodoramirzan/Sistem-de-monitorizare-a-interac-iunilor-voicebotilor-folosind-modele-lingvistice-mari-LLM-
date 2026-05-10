@@ -1,0 +1,1817 @@
+{
+  "experiment_name": "fst_roberta_encoder__ro__v2",
+  "model": "roberta_encoder",
+  "language": "ro",
+  "prompt_version": "v2",
+  "dataset_size": 180,
+  "timestamp": "2026-05-09 11:33:42",
+  "metrics": {
+    "accuracy": 0.2278,
+    "macro_f1": 0.2237,
+    "weighted_f1": 0.2374,
+    "kappa": 0.0688,
+    "n_valid": 180
+  },
+  "results": [
+    {
+      "conversation_id": "conv_simple_0001",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2659",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2659\"}",
+      "parse_failed": false,
+      "latency_ms": 2714.7345000412315
+    },
+    {
+      "conversation_id": "conv_simple_0002",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3068",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3068\"}",
+      "parse_failed": false,
+      "latency_ms": 1837.9367000889033
+    },
+    {
+      "conversation_id": "conv_simple_0003",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3492",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3492\"}",
+      "parse_failed": false,
+      "latency_ms": 1993.3506000088528
+    },
+    {
+      "conversation_id": "conv_simple_0004",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4926",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4926\"}",
+      "parse_failed": false,
+      "latency_ms": 2422.628700034693
+    },
+    {
+      "conversation_id": "conv_simple_0005",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3669",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3669\"}",
+      "parse_failed": false,
+      "latency_ms": 2314.9478000123054
+    },
+    {
+      "conversation_id": "conv_simple_0006",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2501",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2501\"}",
+      "parse_failed": false,
+      "latency_ms": 2459.0962999500334
+    },
+    {
+      "conversation_id": "conv_simple_0007",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4324",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4324\"}",
+      "parse_failed": false,
+      "latency_ms": 2499.772600014694
+    },
+    {
+      "conversation_id": "conv_simple_0008",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3395",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3395\"}",
+      "parse_failed": false,
+      "latency_ms": 2520.563199999742
+    },
+    {
+      "conversation_id": "conv_simple_0009",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4457",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4457\"}",
+      "parse_failed": false,
+      "latency_ms": 2901.0149999521673
+    },
+    {
+      "conversation_id": "conv_simple_0010",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2637",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2637\"}",
+      "parse_failed": false,
+      "latency_ms": 2524.2392999352887
+    },
+    {
+      "conversation_id": "conv_simple_0011",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2234",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2234\"}",
+      "parse_failed": false,
+      "latency_ms": 3106.3712999457493
+    },
+    {
+      "conversation_id": "conv_simple_0012",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2266",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2266\"}",
+      "parse_failed": false,
+      "latency_ms": 2801.3644000748172
+    },
+    {
+      "conversation_id": "conv_simple_0013",
+      "dataset_status": "redirectionata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2205",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2205\"}",
+      "parse_failed": false,
+      "latency_ms": 2213.596299989149
+    },
+    {
+      "conversation_id": "conv_simple_0014",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3615",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3615\"}",
+      "parse_failed": false,
+      "latency_ms": 2244.9315999401733
+    },
+    {
+      "conversation_id": "conv_simple_0015",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2227",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2227\"}",
+      "parse_failed": false,
+      "latency_ms": 2822.1266999607906
+    },
+    {
+      "conversation_id": "conv_simple_0016",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2334",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2334\"}",
+      "parse_failed": false,
+      "latency_ms": 3656.1352000571787
+    },
+    {
+      "conversation_id": "conv_simple_0017",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2533",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2533\"}",
+      "parse_failed": false,
+      "latency_ms": 2477.5743999052793
+    },
+    {
+      "conversation_id": "conv_simple_0018",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3625",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3625\"}",
+      "parse_failed": false,
+      "latency_ms": 2035.8003999572247
+    },
+    {
+      "conversation_id": "conv_simple_0019",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4877",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4877\"}",
+      "parse_failed": false,
+      "latency_ms": 2169.4347999291494
+    },
+    {
+      "conversation_id": "conv_simple_0020",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.6626",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.6626\"}",
+      "parse_failed": false,
+      "latency_ms": 2063.4469999931753
+    },
+    {
+      "conversation_id": "conv_simple_0021",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5022",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5022\"}",
+      "parse_failed": false,
+      "latency_ms": 1797.6404000073671
+    },
+    {
+      "conversation_id": "conv_simple_0022",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2292",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2292\"}",
+      "parse_failed": false,
+      "latency_ms": 2791.737799998373
+    },
+    {
+      "conversation_id": "conv_simple_0023",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3372",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3372\"}",
+      "parse_failed": false,
+      "latency_ms": 1978.1738999299705
+    },
+    {
+      "conversation_id": "conv_simple_0024",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5001",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5001\"}",
+      "parse_failed": false,
+      "latency_ms": 1728.7786999950185
+    },
+    {
+      "conversation_id": "conv_simple_0025",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3556",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3556\"}",
+      "parse_failed": false,
+      "latency_ms": 2086.052800063044
+    },
+    {
+      "conversation_id": "conv_simple_0026",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4895",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4895\"}",
+      "parse_failed": false,
+      "latency_ms": 2152.4653000524268
+    },
+    {
+      "conversation_id": "conv_simple_0027",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3127",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3127\"}",
+      "parse_failed": false,
+      "latency_ms": 2701.483100070618
+    },
+    {
+      "conversation_id": "conv_simple_0028",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4583",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4583\"}",
+      "parse_failed": false,
+      "latency_ms": 3163.5588000062853
+    },
+    {
+      "conversation_id": "conv_simple_0029",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5263",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5263\"}",
+      "parse_failed": false,
+      "latency_ms": 2240.447500022128
+    },
+    {
+      "conversation_id": "conv_simple_0030",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3734",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3734\"}",
+      "parse_failed": false,
+      "latency_ms": 2940.7112000044435
+    },
+    {
+      "conversation_id": "conv_simple_0031",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5743",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5743\"}",
+      "parse_failed": false,
+      "latency_ms": 2056.835600058548
+    },
+    {
+      "conversation_id": "conv_simple_0032",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4906",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4906\"}",
+      "parse_failed": false,
+      "latency_ms": 2235.6576999882236
+    },
+    {
+      "conversation_id": "conv_simple_0033",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4146",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4146\"}",
+      "parse_failed": false,
+      "latency_ms": 2939.503200002946
+    },
+    {
+      "conversation_id": "conv_simple_0034",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5401",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5401\"}",
+      "parse_failed": false,
+      "latency_ms": 2156.9028000812978
+    },
+    {
+      "conversation_id": "conv_simple_0035",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3126",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3126\"}",
+      "parse_failed": false,
+      "latency_ms": 2954.2965999571607
+    },
+    {
+      "conversation_id": "conv_simple_0036",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4169",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4169\"}",
+      "parse_failed": false,
+      "latency_ms": 2332.108899950981
+    },
+    {
+      "conversation_id": "conv_simple_0037",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3094",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3094\"}",
+      "parse_failed": false,
+      "latency_ms": 1972.298500011675
+    },
+    {
+      "conversation_id": "conv_simple_0038",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4643",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4643\"}",
+      "parse_failed": false,
+      "latency_ms": 1363.91159996856
+    },
+    {
+      "conversation_id": "conv_simple_0039",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.6034",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.6034\"}",
+      "parse_failed": false,
+      "latency_ms": 1517.8443000186235
+    },
+    {
+      "conversation_id": "conv_simple_0040",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4963",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4963\"}",
+      "parse_failed": false,
+      "latency_ms": 1994.3156000226736
+    },
+    {
+      "conversation_id": "conv_simple_0041",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5970",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5970\"}",
+      "parse_failed": false,
+      "latency_ms": 2681.7346999887377
+    },
+    {
+      "conversation_id": "conv_simple_0042",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2539",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2539\"}",
+      "parse_failed": false,
+      "latency_ms": 3105.2146999863908
+    },
+    {
+      "conversation_id": "conv_simple_0043",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3861",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3861\"}",
+      "parse_failed": false,
+      "latency_ms": 2328.3252998953685
+    },
+    {
+      "conversation_id": "conv_simple_0044",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3758",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3758\"}",
+      "parse_failed": false,
+      "latency_ms": 1920.2647999627516
+    },
+    {
+      "conversation_id": "conv_simple_0045",
+      "dataset_status": "redirectionata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2595",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2595\"}",
+      "parse_failed": false,
+      "latency_ms": 2988.7752999784425
+    },
+    {
+      "conversation_id": "conv_simple_0046",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4999",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4999\"}",
+      "parse_failed": false,
+      "latency_ms": 2044.4618000183254
+    },
+    {
+      "conversation_id": "conv_simple_0047",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3209",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3209\"}",
+      "parse_failed": false,
+      "latency_ms": 2868.4444000246003
+    },
+    {
+      "conversation_id": "conv_simple_0048",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2402",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2402\"}",
+      "parse_failed": false,
+      "latency_ms": 3735.5081998975947
+    },
+    {
+      "conversation_id": "conv_simple_0049",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5909",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5909\"}",
+      "parse_failed": false,
+      "latency_ms": 2040.6701000174507
+    },
+    {
+      "conversation_id": "conv_simple_0050",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4743",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4743\"}",
+      "parse_failed": false,
+      "latency_ms": 1906.7024999530986
+    },
+    {
+      "conversation_id": "conv_simple_0051",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2605",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2605\"}",
+      "parse_failed": false,
+      "latency_ms": 1845.3715000068769
+    },
+    {
+      "conversation_id": "conv_simple_0052",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3538",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3538\"}",
+      "parse_failed": false,
+      "latency_ms": 2129.2499999981374
+    },
+    {
+      "conversation_id": "conv_simple_0053",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5868",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5868\"}",
+      "parse_failed": false,
+      "latency_ms": 1828.222700045444
+    },
+    {
+      "conversation_id": "conv_simple_0054",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2170",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2170\"}",
+      "parse_failed": false,
+      "latency_ms": 2581.482299952768
+    },
+    {
+      "conversation_id": "conv_simple_0055",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3502",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3502\"}",
+      "parse_failed": false,
+      "latency_ms": 3275.012700003572
+    },
+    {
+      "conversation_id": "conv_simple_0056",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2477",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2477\"}",
+      "parse_failed": false,
+      "latency_ms": 2659.981400007382
+    },
+    {
+      "conversation_id": "conv_simple_0057",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2414",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2414\"}",
+      "parse_failed": false,
+      "latency_ms": 3079.0687000844628
+    },
+    {
+      "conversation_id": "conv_simple_0058",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2120",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2120\"}",
+      "parse_failed": false,
+      "latency_ms": 2536.9978999951854
+    },
+    {
+      "conversation_id": "conv_simple_0059",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3960",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3960\"}",
+      "parse_failed": false,
+      "latency_ms": 1563.3215999696404
+    },
+    {
+      "conversation_id": "conv_simple_0060",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5117",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5117\"}",
+      "parse_failed": false,
+      "latency_ms": 2460.715700057335
+    },
+    {
+      "conversation_id": "conv_simple_0061",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2982",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2982\"}",
+      "parse_failed": false,
+      "latency_ms": 3239.0621999511495
+    },
+    {
+      "conversation_id": "conv_simple_0062",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4705",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4705\"}",
+      "parse_failed": false,
+      "latency_ms": 2189.9263999657705
+    },
+    {
+      "conversation_id": "conv_simple_0063",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5162",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5162\"}",
+      "parse_failed": false,
+      "latency_ms": 1693.5590000357479
+    },
+    {
+      "conversation_id": "conv_simple_0064",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4189",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4189\"}",
+      "parse_failed": false,
+      "latency_ms": 1564.2200999427587
+    },
+    {
+      "conversation_id": "conv_simple_0065",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.5431",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.5431\"}",
+      "parse_failed": false,
+      "latency_ms": 2366.2952999584377
+    },
+    {
+      "conversation_id": "conv_simple_0066",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3181",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3181\"}",
+      "parse_failed": false,
+      "latency_ms": 2897.6916000247
+    },
+    {
+      "conversation_id": "conv_simple_0067",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4152",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4152\"}",
+      "parse_failed": false,
+      "latency_ms": 1490.1161999441683
+    },
+    {
+      "conversation_id": "conv_simple_0068",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.6342",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.6342\"}",
+      "parse_failed": false,
+      "latency_ms": 2271.7136000283062
+    },
+    {
+      "conversation_id": "conv_simple_0069",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.6144",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.6144\"}",
+      "parse_failed": false,
+      "latency_ms": 2287.3469999758527
+    },
+    {
+      "conversation_id": "conv_simple_0070",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4734",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4734\"}",
+      "parse_failed": false,
+      "latency_ms": 2643.182000028901
+    },
+    {
+      "conversation_id": "conv_complex_0001",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2130",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2130\"}",
+      "parse_failed": false,
+      "latency_ms": 4822.456799913198
+    },
+    {
+      "conversation_id": "conv_complex_0002",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2793",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2793\"}",
+      "parse_failed": false,
+      "latency_ms": 4975.915599963628
+    },
+    {
+      "conversation_id": "conv_complex_0003",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2224",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2224\"}",
+      "parse_failed": false,
+      "latency_ms": 6849.159899982624
+    },
+    {
+      "conversation_id": "conv_complex_0004",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2118",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2118\"}",
+      "parse_failed": false,
+      "latency_ms": 5225.18609999679
+    },
+    {
+      "conversation_id": "conv_complex_0005",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2064",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2064\"}",
+      "parse_failed": false,
+      "latency_ms": 5817.6501999842
+    },
+    {
+      "conversation_id": "conv_complex_0006",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2098",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2098\"}",
+      "parse_failed": false,
+      "latency_ms": 5132.428499986418
+    },
+    {
+      "conversation_id": "conv_complex_0007",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2058",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2058\"}",
+      "parse_failed": false,
+      "latency_ms": 5889.404800022021
+    },
+    {
+      "conversation_id": "conv_complex_0008",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2160",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2160\"}",
+      "parse_failed": false,
+      "latency_ms": 7488.8823999790475
+    },
+    {
+      "conversation_id": "conv_complex_0009",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2061",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2061\"}",
+      "parse_failed": false,
+      "latency_ms": 9032.522500026971
+    },
+    {
+      "conversation_id": "conv_complex_0010",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2019",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2019\"}",
+      "parse_failed": false,
+      "latency_ms": 5703.867599950172
+    },
+    {
+      "conversation_id": "conv_complex_0011",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2053",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2053\"}",
+      "parse_failed": false,
+      "latency_ms": 7703.220200026408
+    },
+    {
+      "conversation_id": "conv_complex_0012",
+      "dataset_status": "redirectionata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2387",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2387\"}",
+      "parse_failed": false,
+      "latency_ms": 7208.49319989793
+    },
+    {
+      "conversation_id": "conv_complex_0013",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2039",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2039\"}",
+      "parse_failed": false,
+      "latency_ms": 8859.910700004548
+    },
+    {
+      "conversation_id": "conv_complex_0014",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2031",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2031\"}",
+      "parse_failed": false,
+      "latency_ms": 6027.49660005793
+    },
+    {
+      "conversation_id": "conv_complex_0015",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2017",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2017\"}",
+      "parse_failed": false,
+      "latency_ms": 7362.723600002937
+    },
+    {
+      "conversation_id": "conv_complex_0016",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2037",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2037\"}",
+      "parse_failed": false,
+      "latency_ms": 6717.068700003438
+    },
+    {
+      "conversation_id": "conv_complex_0017",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2022",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2022\"}",
+      "parse_failed": false,
+      "latency_ms": 7246.234399965033
+    },
+    {
+      "conversation_id": "conv_complex_0018",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2039",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2039\"}",
+      "parse_failed": false,
+      "latency_ms": 7469.395700027235
+    },
+    {
+      "conversation_id": "conv_complex_0019",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2023",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2023\"}",
+      "parse_failed": false,
+      "latency_ms": 8405.564700020477
+    },
+    {
+      "conversation_id": "conv_complex_0020",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2071",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2071\"}",
+      "parse_failed": false,
+      "latency_ms": 7883.7490999139845
+    },
+    {
+      "conversation_id": "conv_complex_0021",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2046",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2046\"}",
+      "parse_failed": false,
+      "latency_ms": 8720.710100024007
+    },
+    {
+      "conversation_id": "conv_complex_0022",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2058",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2058\"}",
+      "parse_failed": false,
+      "latency_ms": 8850.538900005631
+    },
+    {
+      "conversation_id": "conv_complex_0023",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2034",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2034\"}",
+      "parse_failed": false,
+      "latency_ms": 7608.896600082517
+    },
+    {
+      "conversation_id": "conv_complex_0024",
+      "dataset_status": "redirectionata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2026",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2026\"}",
+      "parse_failed": false,
+      "latency_ms": 8246.332200011238
+    },
+    {
+      "conversation_id": "conv_complex_0025",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2059",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2059\"}",
+      "parse_failed": false,
+      "latency_ms": 8942.336000036448
+    },
+    {
+      "conversation_id": "conv_complex_0026",
+      "dataset_status": "redirectionata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2034",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2034\"}",
+      "parse_failed": false,
+      "latency_ms": 9023.87319994159
+    },
+    {
+      "conversation_id": "conv_complex_0027",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2061",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2061\"}",
+      "parse_failed": false,
+      "latency_ms": 6152.162899961695
+    },
+    {
+      "conversation_id": "conv_complex_0028",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2073",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2073\"}",
+      "parse_failed": false,
+      "latency_ms": 8471.944199991412
+    },
+    {
+      "conversation_id": "conv_complex_0029",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2936",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2936\"}",
+      "parse_failed": false,
+      "latency_ms": 8033.274499932304
+    },
+    {
+      "conversation_id": "conv_complex_0030",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2176",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2176\"}",
+      "parse_failed": false,
+      "latency_ms": 7603.764799889177
+    },
+    {
+      "conversation_id": "conv_complex_0031",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2087",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2087\"}",
+      "parse_failed": false,
+      "latency_ms": 9002.355700009502
+    },
+    {
+      "conversation_id": "conv_complex_0032",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2103",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2103\"}",
+      "parse_failed": false,
+      "latency_ms": 9200.785199995153
+    },
+    {
+      "conversation_id": "conv_complex_0033",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2074",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2074\"}",
+      "parse_failed": false,
+      "latency_ms": 9035.84399993997
+    },
+    {
+      "conversation_id": "conv_complex_0034",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2084",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2084\"}",
+      "parse_failed": false,
+      "latency_ms": 7101.37350007426
+    },
+    {
+      "conversation_id": "conv_complex_0035",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2257",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2257\"}",
+      "parse_failed": false,
+      "latency_ms": 7149.88370006904
+    },
+    {
+      "conversation_id": "conv_complex_0036",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2183",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2183\"}",
+      "parse_failed": false,
+      "latency_ms": 7689.494000049308
+    },
+    {
+      "conversation_id": "conv_complex_0037",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2068",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2068\"}",
+      "parse_failed": false,
+      "latency_ms": 6039.355399901979
+    },
+    {
+      "conversation_id": "conv_complex_0038",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2123",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2123\"}",
+      "parse_failed": false,
+      "latency_ms": 6982.037500012666
+    },
+    {
+      "conversation_id": "conv_complex_0039",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2049",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2049\"}",
+      "parse_failed": false,
+      "latency_ms": 5844.2581000272185
+    },
+    {
+      "conversation_id": "conv_complex_0040",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2273",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2273\"}",
+      "parse_failed": false,
+      "latency_ms": 7357.579899951816
+    },
+    {
+      "conversation_id": "conv_complex_0041",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2304",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2304\"}",
+      "parse_failed": false,
+      "latency_ms": 6946.370300021954
+    },
+    {
+      "conversation_id": "conv_complex_0042",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2177",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2177\"}",
+      "parse_failed": false,
+      "latency_ms": 8882.204900030047
+    },
+    {
+      "conversation_id": "conv_complex_0043",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2121",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2121\"}",
+      "parse_failed": false,
+      "latency_ms": 7009.387099999003
+    },
+    {
+      "conversation_id": "conv_complex_0044",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2055",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2055\"}",
+      "parse_failed": false,
+      "latency_ms": 9069.698999985121
+    },
+    {
+      "conversation_id": "conv_complex_0045",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2448",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2448\"}",
+      "parse_failed": false,
+      "latency_ms": 7482.8758999938145
+    },
+    {
+      "conversation_id": "conv_complex_0046",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2110",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2110\"}",
+      "parse_failed": false,
+      "latency_ms": 9020.319900009781
+    },
+    {
+      "conversation_id": "conv_complex_0047",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2027",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2027\"}",
+      "parse_failed": false,
+      "latency_ms": 6168.071300024167
+    },
+    {
+      "conversation_id": "conv_complex_0048",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2051",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2051\"}",
+      "parse_failed": false,
+      "latency_ms": 7191.486500087194
+    },
+    {
+      "conversation_id": "conv_complex_0049",
+      "dataset_status": "redirectionata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2020",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2020\"}",
+      "parse_failed": false,
+      "latency_ms": 6975.634399917908
+    },
+    {
+      "conversation_id": "conv_complex_0050",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2117",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2117\"}",
+      "parse_failed": false,
+      "latency_ms": 7879.222400020808
+    },
+    {
+      "conversation_id": "conv_complex_0051",
+      "dataset_status": "redirectionata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2015",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2015\"}",
+      "parse_failed": false,
+      "latency_ms": 9114.017900079489
+    },
+    {
+      "conversation_id": "conv_complex_0052",
+      "dataset_status": "redirectionata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2097",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2097\"}",
+      "parse_failed": false,
+      "latency_ms": 9026.390000013635
+    },
+    {
+      "conversation_id": "conv_complex_0053",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2066",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2066\"}",
+      "parse_failed": false,
+      "latency_ms": 9215.440300060436
+    },
+    {
+      "conversation_id": "conv_complex_0054",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2131",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2131\"}",
+      "parse_failed": false,
+      "latency_ms": 6019.713500048965
+    },
+    {
+      "conversation_id": "conv_complex_0055",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2067",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2067\"}",
+      "parse_failed": false,
+      "latency_ms": 5534.040599945001
+    },
+    {
+      "conversation_id": "conv_complex_0056",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2014",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2014\"}",
+      "parse_failed": false,
+      "latency_ms": 6121.676699956879
+    },
+    {
+      "conversation_id": "conv_complex_0057",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2341",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2341\"}",
+      "parse_failed": false,
+      "latency_ms": 8757.233600015752
+    },
+    {
+      "conversation_id": "conv_complex_0058",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2069",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2069\"}",
+      "parse_failed": false,
+      "latency_ms": 9004.053400014527
+    },
+    {
+      "conversation_id": "conv_complex_0059",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2066",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2066\"}",
+      "parse_failed": false,
+      "latency_ms": 9094.464800087735
+    },
+    {
+      "conversation_id": "conv_complex_0060",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2019",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2019\"}",
+      "parse_failed": false,
+      "latency_ms": 9077.290100045502
+    },
+    {
+      "conversation_id": "conv_complex_0061",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2112",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2112\"}",
+      "parse_failed": false,
+      "latency_ms": 8733.483100077137
+    },
+    {
+      "conversation_id": "conv_complex_0062",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2072",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2072\"}",
+      "parse_failed": false,
+      "latency_ms": 8353.73560001608
+    },
+    {
+      "conversation_id": "conv_complex_0063",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2061",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2061\"}",
+      "parse_failed": false,
+      "latency_ms": 9110.336300102063
+    },
+    {
+      "conversation_id": "conv_complex_0064",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2074",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2074\"}",
+      "parse_failed": false,
+      "latency_ms": 9062.389100086875
+    },
+    {
+      "conversation_id": "conv_complex_0065",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2137",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2137\"}",
+      "parse_failed": false,
+      "latency_ms": 9090.676599997096
+    },
+    {
+      "conversation_id": "conv_complex_0066",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2144",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2144\"}",
+      "parse_failed": false,
+      "latency_ms": 7658.465499989688
+    },
+    {
+      "conversation_id": "conv_complex_0067",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2091",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2091\"}",
+      "parse_failed": false,
+      "latency_ms": 8450.591000029817
+    },
+    {
+      "conversation_id": "conv_complex_0068",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2039",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2039\"}",
+      "parse_failed": false,
+      "latency_ms": 8988.743800087832
+    },
+    {
+      "conversation_id": "conv_complex_0069",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2046",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2046\"}",
+      "parse_failed": false,
+      "latency_ms": 9107.842999976128
+    },
+    {
+      "conversation_id": "conv_complex_0070",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2169",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2169\"}",
+      "parse_failed": false,
+      "latency_ms": 7874.573400011286
+    },
+    {
+      "conversation_id": "conv_complex_0071",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2105",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2105\"}",
+      "parse_failed": false,
+      "latency_ms": 8940.67989999894
+    },
+    {
+      "conversation_id": "conv_complex_0072",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2097",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2097\"}",
+      "parse_failed": false,
+      "latency_ms": 9140.585499932058
+    },
+    {
+      "conversation_id": "conv_complex_0073",
+      "dataset_status": "redirectionata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2033",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2033\"}",
+      "parse_failed": false,
+      "latency_ms": 5893.355400068685
+    },
+    {
+      "conversation_id": "conv_complex_0074",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2654",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2654\"}",
+      "parse_failed": false,
+      "latency_ms": 7155.538000050001
+    },
+    {
+      "conversation_id": "conv_complex_0075",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2290",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2290\"}",
+      "parse_failed": false,
+      "latency_ms": 7188.065700000152
+    },
+    {
+      "conversation_id": "conv_complex_0076",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2181",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2181\"}",
+      "parse_failed": false,
+      "latency_ms": 7698.463900014758
+    },
+    {
+      "conversation_id": "conv_simple_0071",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3190",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3190\"}",
+      "parse_failed": false,
+      "latency_ms": 3382.5522999977693
+    },
+    {
+      "conversation_id": "conv_simple_0072",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2786",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2786\"}",
+      "parse_failed": false,
+      "latency_ms": 2614.288399927318
+    },
+    {
+      "conversation_id": "conv_complex_0077",
+      "dataset_status": "intrerupta",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3639",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3639\"}",
+      "parse_failed": false,
+      "latency_ms": 3559.631999931298
+    },
+    {
+      "conversation_id": "conv_complex_0078",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3960",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3960\"}",
+      "parse_failed": false,
+      "latency_ms": 2777.313799946569
+    },
+    {
+      "conversation_id": "conv_simple_0073",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2332",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2332\"}",
+      "parse_failed": false,
+      "latency_ms": 3026.7978999763727
+    },
+    {
+      "conversation_id": "conv_complex_0079",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3125",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3125\"}",
+      "parse_failed": false,
+      "latency_ms": 7110.125800012611
+    },
+    {
+      "conversation_id": "conv_simple_0074",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2589",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2589\"}",
+      "parse_failed": false,
+      "latency_ms": 2939.902300015092
+    },
+    {
+      "conversation_id": "conv_simple_0075",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4599",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4599\"}",
+      "parse_failed": false,
+      "latency_ms": 3669.7900999570265
+    },
+    {
+      "conversation_id": "conv_simple_0076",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2436",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2436\"}",
+      "parse_failed": false,
+      "latency_ms": 2906.960599939339
+    },
+    {
+      "conversation_id": "conv_simple_0077",
+      "dataset_status": "redirectionata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2510",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2510\"}",
+      "parse_failed": false,
+      "latency_ms": 3542.667599976994
+    },
+    {
+      "conversation_id": "conv_complex_0080",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2268",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2268\"}",
+      "parse_failed": false,
+      "latency_ms": 5078.310500015505
+    },
+    {
+      "conversation_id": "conv_complex_0081",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2800",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2800\"}",
+      "parse_failed": false,
+      "latency_ms": 3253.0043000588194
+    },
+    {
+      "conversation_id": "conv_simple_0078",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3844",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3844\"}",
+      "parse_failed": false,
+      "latency_ms": 3570.909300004132
+    },
+    {
+      "conversation_id": "conv_complex_0082",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2055",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2055\"}",
+      "parse_failed": false,
+      "latency_ms": 5875.523400027305
+    },
+    {
+      "conversation_id": "conv_complex_0083",
+      "dataset_status": "redirectionata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2250",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2250\"}",
+      "parse_failed": false,
+      "latency_ms": 4454.554999945685
+    },
+    {
+      "conversation_id": "conv_complex_0084",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3884",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3884\"}",
+      "parse_failed": false,
+      "latency_ms": 4555.482900002971
+    },
+    {
+      "conversation_id": "conv_complex_0085",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2564",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2564\"}",
+      "parse_failed": false,
+      "latency_ms": 5245.97230006475
+    },
+    {
+      "conversation_id": "conv_complex_0086",
+      "dataset_status": "intrerupta",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3789",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3789\"}",
+      "parse_failed": false,
+      "latency_ms": 3794.251300045289
+    },
+    {
+      "conversation_id": "conv_simple_0079",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2210",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2210\"}",
+      "parse_failed": false,
+      "latency_ms": 3046.3344999589026
+    },
+    {
+      "conversation_id": "conv_simple_0080",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.4757",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.4757\"}",
+      "parse_failed": false,
+      "latency_ms": 4133.0842999741435
+    },
+    {
+      "conversation_id": "conv_simple_0081",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3083",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3083\"}",
+      "parse_failed": false,
+      "latency_ms": 2682.242100010626
+    },
+    {
+      "conversation_id": "conv_simple_0082",
+      "dataset_status": "intrerupta",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2731",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2731\"}",
+      "parse_failed": false,
+      "latency_ms": 2642.077700002119
+    },
+    {
+      "conversation_id": "conv_complex_0087",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2283",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2283\"}",
+      "parse_failed": false,
+      "latency_ms": 4998.601800063625
+    },
+    {
+      "conversation_id": "conv_simple_0083",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.3050",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.3050\"}",
+      "parse_failed": false,
+      "latency_ms": 3551.9963999977335
+    },
+    {
+      "conversation_id": "conv_complex_0088",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2094",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2094\"}",
+      "parse_failed": false,
+      "latency_ms": 5747.917500091717
+    },
+    {
+      "conversation_id": "conv_simple_0084",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2621",
+      "raw_response": "{\"final_status\": \"intrerupta\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2621\"}",
+      "parse_failed": false,
+      "latency_ms": 2552.8319000732154
+    },
+    {
+      "conversation_id": "conv_simple_0085",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2744",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2744\"}",
+      "parse_failed": false,
+      "latency_ms": 3561.523300013505
+    },
+    {
+      "conversation_id": "conv_simple_0086",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2487",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2487\"}",
+      "parse_failed": false,
+      "latency_ms": 3195.793000049889
+    },
+    {
+      "conversation_id": "conv_simple_0087",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "zero-shot score: 0.6972",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"medium\", \"reasoning\": \"zero-shot score: 0.6972\"}",
+      "parse_failed": false,
+      "latency_ms": 4152.913199970499
+    },
+    {
+      "conversation_id": "conv_complex_0089",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2527",
+      "raw_response": "{\"final_status\": \"rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2527\"}",
+      "parse_failed": false,
+      "latency_ms": 4689.640299999155
+    },
+    {
+      "conversation_id": "conv_simple_0088",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2560",
+      "raw_response": "{\"final_status\": \"partial_rezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2560\"}",
+      "parse_failed": false,
+      "latency_ms": 2766.892799991183
+    },
+    {
+      "conversation_id": "conv_simple_0089",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2993",
+      "raw_response": "{\"final_status\": \"nerezolvata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2993\"}",
+      "parse_failed": false,
+      "latency_ms": 3217.844200087711
+    },
+    {
+      "conversation_id": "conv_simple_0090",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2621",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2621\"}",
+      "parse_failed": false,
+      "latency_ms": 3048.621999914758
+    },
+    {
+      "conversation_id": "conv_complex_0090",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "low",
+      "reasoning": "zero-shot score: 0.2996",
+      "raw_response": "{\"final_status\": \"redirectionata\", \"confidence\": \"low\", \"reasoning\": \"zero-shot score: 0.2996\"}",
+      "parse_failed": false,
+      "latency_ms": 5499.4827000191435
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "examples": [
+    {
+      "conversation": [
+        {"role": "user", "text": "Bună ziua, am observat o tranzacție suspectă pe cardul meu de 350 lei către un magazin online pe care nu îl recunosc."},
+        {"role": "assistant", "text": "Bună ziua! Înțeleg îngrijorarea dumneavoastră. Vă voi ajuta să raportați această tranzacție. Pot să confirm că am înregistrat raportul pentru tranzacția de 350 lei. Echipa noastră de securitate va investiga în termen de 3-5 zile lucrătoare și vă va contacta. Dorești și blocarea cardului ca măsură de precauție?"},
+        {"role": "user", "text": "Da, vă rog blocați cardul."},
+        {"role": "assistant", "text": "Am blocat cardul cu terminația 4521. Raportul a fost înregistrat și cardul este blocat. Veți fi contactat de echipa de securitate. Voi comanda și un card de înlocuire care va ajunge în 5-7 zile lucrătoare."},
+        {"role": "user", "text": "Mulțumesc, asta era tot."},
+        {"role": "assistant", "text": "Cu plăcere! O zi bună."}
+      ],
+      "final_status": "rezolvata",
+      "reasoning": "Botul a înregistrat raportul și a blocat cardul — a finalizat tot ce putea face. Faptul că investigația durează câteva zile și cardul vine prin poștă sunt rezultate de așteptat, nu acțiuni ale utilizatorului."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Bună ziua, aș vrea să deschid un cont curent și aș vrea să știu ce acte îmi trebuie."},
+        {"role": "assistant", "text": "Bună ziua! Pentru deschiderea unui cont curent aveți nevoie de actul de identitate valabil și o adresă de email. Deschiderea se face la sucursală sau online prin aplicație. Doriți să faceți asta online sau preferați să veniți la o sucursală?"},
+        {"role": "user", "text": "Aș prefera online, dar nu știu cum funcționează aplicația."},
+        {"role": "assistant", "text": "Înțeleg. Vă pot trimite un ghid pas cu pas pe email sau vă pot programa o întâlnire cu un consultant care să vă ajute. Ce preferați?"},
+        {"role": "user", "text": "Trimiteți-mi ghidul pe email, vă rog."},
+        {"role": "assistant", "text": "Am trimis ghidul pe adresa de email înregistrată. Dacă aveți nevoie de ajutor suplimentar după ce îl parcurgeți, nu ezitați să ne contactați."}
+      ],
+      "final_status": "partial_rezolvata",
+      "reasoning": "Botul a furnizat informații și a trimis ghidul, dar utilizatorul trebuie să acceseze aplicația și să completeze el procesul de deschidere — acțiune activă necesară după conversație."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Bună ziua, aș vrea să discut cu cineva despre un credit ipotecar, sunt interesat să cumpăr un apartament."},
+        {"role": "assistant", "text": "Bună ziua! Cu plăcere vă pot programa o întâlnire cu unul dintre consultanții noștri specializați în credite ipotecare. Când ați fi disponibil?"},
+        {"role": "user", "text": "Marți sau miercuri după-amiaza, în jurul orei 14-15."},
+        {"role": "assistant", "text": "Am verificat disponibilitatea. Consultantul Mihai Popa este disponibil miercuri la ora 14:30. Am înregistrat programarea. Veți primi o confirmare SMS și email cu detaliile întâlnirii."},
+        {"role": "user", "text": "Perfect, mulțumesc mult."},
+        {"role": "assistant", "text": "Cu plăcere! Vă așteptăm miercuri la 14:30."}
+      ],
+      "final_status": "redirectionata",
+      "reasoning": "Botul a confirmat concret o întâlnire cu un consultant specific, la o dată și oră stabilite — programarea a fost efectiv realizată în conversație, nu doar promisă."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Bună ziua, vreau să resetez parola pentru aplicația de mobile banking, am uitat-o."},
+        {"role": "assistant", "text": "Bună ziua! Vă pot ajuta cu resetarea parolei. Vă voi trimite un cod de verificare pe numărul de telefon asociat contului: 07xx xxx xxx. Confirmați că este numărul corect?"},
+        {"role": "user", "text": "Da, e corect."},
+        {"role": "assistant", "text": "Am trimis codul de verificare. Vă rog introduceți codul primit în câmpul de mai jos pentru a continua resetarea."}
+      ],
+      "final_status": "intrerupta",
+      "reasoning": "Botul a trimis codul și așteaptă introducerea lui, dar utilizatorul nu mai răspunde — conversația se oprește cu procesul nefinalizat, nu din cauza unui eșec al botului."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Bună ziua, vă rog să îmi spuneți dacă acțiunile companiei X vor crește săptămâna viitoare."},
+        {"role": "assistant", "text": "Bună ziua! Îmi pare rău, dar nu pot oferi prognoze sau recomandări de investiții pentru acțiuni individuale. Acest tip de analiză financiară depășește serviciile pe care le ofer. Vă pot ajuta cu informații despre produsele de economisire ale băncii sau cu alte solicitări bancare."},
+        {"role": "user", "text": "Înțeleg. Atunci nu mai am nevoie de nimic, mulțumesc."},
+        {"role": "assistant", "text": "Cu plăcere! O zi bună."}
+      ],
+      "final_status": "nerezolvata",
+      "reasoning": "Botul a declarat explicit că solicitarea depășește capacitățile sale și nu a putut oferi nicio soluție pentru cererea inițială a utilizatorului."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Bună ziua, aș vrea să deschid un cont de economii pentru copilul meu de 8 ani."},
+        {"role": "assistant", "text": "Bună ziua! Pentru deschiderea unui cont de economii pentru minor aveți nevoie de actul de identitate al dumneavoastră, certificatul de naștere al copilului și o depunere inițială minimă de 50 lei. Deschiderea se face exclusiv la sucursală, în prezența ambilor părinți sau a tutorelui legal."},
+        {"role": "user", "text": "Înțeleg, deci nu se poate online. Și ce dobândă oferă contul?"},
+        {"role": "assistant", "text": "Corect, exclusiv la sucursală. Dobânda actuală pentru contul de economii pentru minori este de 3,5% pe an. Dacă doriți, vă pot oferi adresa sucursalei celei mai apropiate."},
+        {"role": "user", "text": "Nu, am găsit-o. Mulțumesc, atât am vrut să știu."},
+        {"role": "assistant", "text": "Cu plăcere! O zi bună!"}
+      ],
+      "final_status": "partial_rezolvata",
+      "reasoning": "Botul a oferit toate informațiile solicitate, dar utilizatorul trebuie să se prezinte fizic la sucursală pentru a deschide contul — acțiune activă necesară. Nu este 'rezolvata' deoarece contul nu a fost deschis în conversație."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Bună ziua, cardul meu a fost reținut de bancomat ieri. Ce pot face?"},
+        {"role": "assistant", "text": "Bună ziua! Înțeleg situația. Cardul reținut de bancomat este păstrat în siguranță. Vă pot ajuta să îl recuperați sau să comandăm un card nou. Ce preferați?"},
+        {"role": "user", "text": "Vreau să îl recuperez."},
+        {"role": "assistant", "text": "Pentru recuperare va trebui să vă prezentați la sucursala unde se află bancomatul cu actul de identitate. Sucursala de pe Calea Victoriei nr. 10 este deschisă luni-vineri 9:00-17:00. Alternativ, pot comanda un card nou care ajunge în 5-7 zile. Preferați recuperarea sau cardul nou?"}
+      ],
+      "final_status": "intrerupta",
+      "reasoning": "Botul a pus o întrebare de clarificare și utilizatorul nu a mai răspuns — conversația s-a oprit înainte de finalizare. Nu este 'nerezolvata' deoarece botul nu a eșuat; pur și simplu utilizatorul a plecat în mijlocul dialogului."
+    }
+  ]
+}
