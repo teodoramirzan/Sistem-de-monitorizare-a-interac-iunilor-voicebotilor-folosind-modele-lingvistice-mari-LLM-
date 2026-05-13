@@ -1,0 +1,280 @@
+
+  Task: Clasificarea statusului final
+  Director: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\outputs_final_status
+
+  Labels: 5 clase din final_status_definitions.json
+
+  Experimente încărcate (10):
+    Aya Expanse 8B            [EN]  v4  ← exp_fst_aya_expanse_8b__en__v4.json
+    Aya Expanse 8B            [RO]  v4  ← exp_fst_aya_expanse_8b__ro__v4.json
+    Gemini 2.5 Flash          [EN]  v4  ← exp_fst_gemini_2.5_flash__en__v4.json
+    Gemini 2.5 Flash          [RO]  v4  ← exp_fst_gemini_2.5_flash__ro__v4.json
+    OpenAI o3                 [EN]  v4  ← exp_fst_openai_o3__en__v4.json
+    OpenAI o3                 [RO]  v4  ← exp_fst_openai_o3__ro__v4.json
+    XLM-RoBERTa               [EN]  v4  ← exp_fst_roberta_encoder__en__v4.json
+    XLM-RoBERTa               [RO]  v4  ← exp_fst_roberta_encoder__ro__v4.json
+    RoLLaMA 2 7B              [EN]  v3  ← exp_fst_rollama2_7b__en__v3.json
+    RoLLaMA 2 7B              [RO]  v4  ← exp_fst_rollama2_7b__ro__v4.json
+
+  Total predicții: 1440
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T1 — Overview modele: Clasificarea statusului final
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬───────┬──────────┬────────┬───────┬─────────┬─────────┬─────────╮
+│ Model            │ Tip   │ Param    │ Lang   │ Ver   │   Total │   Fails │ Fail%   │
+├──────────────────┼───────┼──────────┼────────┼───────┼─────────┼─────────┼─────────┤
+│ Aya Expanse 8B   │ Local │ 8B       │ EN     │ v4    │     180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local │ 8B       │ RO     │ v4    │     180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ EN     │ v4    │     180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ RO     │ v4    │     180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API   │ ~200B+   │ EN     │ v4    │     180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API   │ ~200B+   │ RO     │ v4    │     180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M    │ EN     │ v4    │     180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M    │ RO     │ v4    │     180 │       0 │ 0.0%    │
+╰──────────────────┴───────┴──────────┴────────┴───────┴─────────┴─────────┴─────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T2 — Acuratețe per model: Clasificarea statusului final
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬───────┬──────────┬──────────┬────────┬─────────┬─────────┬────────┬────────╮
+│ Model            │ Tip   │ Acc RO   │ Acc EN   │ ΔAcc   │ F1 RO   │ F1 EN   │   κ RO │   κ EN │
+├──────────────────┼───────┼──────────┼──────────┼────────┼─────────┼─────────┼────────┼────────┤
+│ OpenAI o3        │ API   │ 90.0%    │ 87.2%    │ +2.8%  │ 86.0%   │ 83.9%   │  0.856 │  0.819 │
+│ Gemini 2.5 Flash │ API   │ 83.9%    │ 86.1%    │ -2.2%  │ 80.6%   │ 83.4%   │  0.774 │  0.804 │
+│ Aya Expanse 8B   │ Local │ 44.4%    │ 68.3%    │ -23.9% │ 39.2%   │ 53.1%   │  0.263 │  0.537 │
+│ XLM-RoBERTa      │ Local │ 22.2%    │ 22.2%    │ +0.0%  │ 21.6%   │ 21.6%   │  0.064 │  0.064 │
+╰──────────────────┴───────┴──────────┴──────────┴────────┴─────────┴─────────┴────────┴────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T2b — Evoluție v1→v4: Clasificarea statusului final
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬────────┬──────────┬──────────┬──────────┬──────────╮
+│ Model            │ Lang   │ Acc v1   │ Acc v2   │ Acc v3   │ Acc v4   │
+├──────────────────┼────────┼──────────┼──────────┼──────────┼──────────┤
+│ Aya Expanse 8B   │ EN     │ 68.9%    │ 73.3%    │ 72.2%    │ 68.3%    │
+│ Aya Expanse 8B   │ RO     │ 67.8%    │ 71.7%    │ 67.8%    │ 44.4%    │
+│ Gemini 2.5 Flash │ EN     │ 71.7%    │ 83.9%    │ 84.4%    │ 86.1%    │
+│ Gemini 2.5 Flash │ RO     │ 66.1%    │ 81.7%    │ 84.4%    │ 83.9%    │
+│ OpenAI o3        │ EN     │ 72.2%    │ 82.1%    │ 84.4%    │ 87.2%    │
+│ OpenAI o3        │ RO     │ 72.8%    │ 80.6%    │ 85.6%    │ 90.0%    │
+│ XLM-RoBERTa      │ EN     │ 22.8%    │ 22.2%    │ 22.2%    │ 22.2%    │
+│ XLM-RoBERTa      │ RO     │ 22.8%    │ 22.8%    │ 22.2%    │ 22.2%    │
+╰──────────────────┴────────┴──────────┴──────────┴──────────┴──────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T3 — Latență: Clasificarea statusului final
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬────────┬───────┬──────────┬──────────┬──────────┬───────────╮
+│ Model            │ Lang   │ Tip   │ Mean     │ Median   │ p95      │ Max       │
+├──────────────────┼────────┼───────┼──────────┼──────────┼──────────┼───────────┤
+│ XLM-RoBERTa      │ EN     │ Local │ 4560ms   │ 3622ms   │ 8624ms   │ 9520ms    │
+│ Gemini 2.5 Flash │ EN     │ API   │ 4769ms   │ 3788ms   │ 11370ms  │ 20685ms   │
+│ XLM-RoBERTa      │ RO     │ Local │ 4842ms   │ 3798ms   │ 8984ms   │ 9596ms    │
+│ Gemini 2.5 Flash │ RO     │ API   │ 6546ms   │ 5614ms   │ 12684ms  │ 20886ms   │
+│ OpenAI o3        │ EN     │ API   │ 7606ms   │ 6740ms   │ 15897ms  │ 25524ms   │
+│ OpenAI o3        │ RO     │ API   │ 8916ms   │ 8436ms   │ 21062ms  │ 37002ms   │
+│ Aya Expanse 8B   │ EN     │ Local │ 180983ms │ 119939ms │ 671350ms │ 706893ms  │
+│ Aya Expanse 8B   │ RO     │ Local │ 515508ms │ 676666ms │ 994610ms │ 1155134ms │
+╰──────────────────┴────────┴───────┴──────────┴──────────┴──────────┴───────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T6 — Analiza erorilor: Clasificarea statusului final
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  ▶  Aya Expanse 8B [EN]
+╭───────────────────┬───────────────────┬─────────────╮
+│ Etichetă reală    │ Prezis ca         │   # greșeli │
+├───────────────────┼───────────────────┼─────────────┤
+│ intrerupta        │ partial_rezolvata │          14 │
+│ rezolvata         │ partial_rezolvata │           8 │
+│ redirectionata    │ partial_rezolvata │           7 │
+│ nerezolvata       │ partial_rezolvata │           7 │
+│ partial_rezolvata │ rezolvata         │           6 │
+│ redirectionata    │ rezolvata         │           3 │
+│ intrerupta        │ rezolvata         │           3 │
+│ rezolvata         │ redirectionata    │           2 │
+│ intrerupta        │ nerezolvata       │           2 │
+│ redirectionata    │ intrerupta        │           1 │
+│ redirectionata    │ nerezolvata       │           1 │
+│ partial_rezolvata │ intrerupta        │           1 │
+│ partial_rezolvata │ redirectionata    │           1 │
+│ nerezolvata       │ intrerupta        │           1 │
+╰───────────────────┴───────────────────┴─────────────╯
+
+
+  ▶  Aya Expanse 8B [RO]
+╭───────────────────┬───────────────────┬─────────────╮
+│ Etichetă reală    │ Prezis ca         │   # greșeli │
+├───────────────────┼───────────────────┼─────────────┤
+│ rezolvata         │ partial_rezolvata │          34 │
+│ intrerupta        │ partial_rezolvata │          15 │
+│ rezolvata         │ redirectionata    │          11 │
+│ redirectionata    │ partial_rezolvata │           8 │
+│ nerezolvata       │ partial_rezolvata │           7 │
+│ rezolvata         │ intrerupta        │           6 │
+│ partial_rezolvata │ rezolvata         │           5 │
+│ intrerupta        │ rezolvata         │           3 │
+│ partial_rezolvata │ redirectionata    │           3 │
+│ redirectionata    │ rezolvata         │           2 │
+│ nerezolvata       │ intrerupta        │           2 │
+│ redirectionata    │ intrerupta        │           1 │
+│ redirectionata    │ nerezolvata       │           1 │
+│ partial_rezolvata │ intrerupta        │           1 │
+│ nerezolvata       │ rezolvata         │           1 │
+╰───────────────────┴───────────────────┴─────────────╯
+
+
+  ▶  Gemini 2.5 Flash [EN]
+╭───────────────────┬───────────────────┬─────────────╮
+│ Etichetă reală    │ Prezis ca         │   # greșeli │
+├───────────────────┼───────────────────┼─────────────┤
+│ rezolvata         │ partial_rezolvata │           6 │
+│ intrerupta        │ nerezolvata       │           4 │
+│ partial_rezolvata │ redirectionata    │           3 │
+│ partial_rezolvata │ rezolvata         │           3 │
+│ redirectionata    │ partial_rezolvata │           3 │
+│ partial_rezolvata │ intrerupta        │           1 │
+│ rezolvata         │ intrerupta        │           1 │
+│ rezolvata         │ redirectionata    │           1 │
+│ rezolvata         │ nerezolvata       │           1 │
+│ intrerupta        │ rezolvata         │           1 │
+│ nerezolvata       │ partial_rezolvata │           1 │
+╰───────────────────┴───────────────────┴─────────────╯
+
+
+  ▶  Gemini 2.5 Flash [RO]
+╭───────────────────┬───────────────────┬─────────────╮
+│ Etichetă reală    │ Prezis ca         │   # greșeli │
+├───────────────────┼───────────────────┼─────────────┤
+│ rezolvata         │ partial_rezolvata │           8 │
+│ intrerupta        │ nerezolvata       │           4 │
+│ partial_rezolvata │ redirectionata    │           3 │
+│ partial_rezolvata │ intrerupta        │           2 │
+│ partial_rezolvata │ rezolvata         │           2 │
+│ redirectionata    │ partial_rezolvata │           2 │
+│ nerezolvata       │ partial_rezolvata │           2 │
+│ rezolvata         │ intrerupta        │           1 │
+│ rezolvata         │ redirectionata    │           1 │
+│ rezolvata         │ nerezolvata       │           1 │
+│ intrerupta        │ partial_rezolvata │           1 │
+│ intrerupta        │ rezolvata         │           1 │
+│ redirectionata    │ rezolvata         │           1 │
+╰───────────────────┴───────────────────┴─────────────╯
+
+
+  ▶  OpenAI o3 [EN]
+╭───────────────────┬───────────────────┬─────────────╮
+│ Etichetă reală    │ Prezis ca         │   # greșeli │
+├───────────────────┼───────────────────┼─────────────┤
+│ partial_rezolvata │ intrerupta        │           6 │
+│ partial_rezolvata │ rezolvata         │           3 │
+│ redirectionata    │ partial_rezolvata │           3 │
+│ rezolvata         │ intrerupta        │           2 │
+│ rezolvata         │ partial_rezolvata │           2 │
+│ nerezolvata       │ partial_rezolvata │           2 │
+│ intrerupta        │ nerezolvata       │           2 │
+│ rezolvata         │ redirectionata    │           1 │
+│ rezolvata         │ nerezolvata       │           1 │
+│ intrerupta        │ rezolvata         │           1 │
+╰───────────────────┴───────────────────┴─────────────╯
+
+
+  ▶  OpenAI o3 [RO]
+╭───────────────────┬───────────────────┬─────────────╮
+│ Etichetă reală    │ Prezis ca         │   # greșeli │
+├───────────────────┼───────────────────┼─────────────┤
+│ partial_rezolvata │ rezolvata         │           3 │
+│ redirectionata    │ partial_rezolvata │           3 │
+│ intrerupta        │ nerezolvata       │           3 │
+│ partial_rezolvata │ intrerupta        │           2 │
+│ nerezolvata       │ partial_rezolvata │           2 │
+│ intrerupta        │ rezolvata         │           2 │
+│ partial_rezolvata │ redirectionata    │           1 │
+│ rezolvata         │ redirectionata    │           1 │
+│ rezolvata         │ nerezolvata       │           1 │
+╰───────────────────┴───────────────────┴─────────────╯
+
+
+  ▶  XLM-RoBERTa [EN]
+╭───────────────────┬───────────────────┬─────────────╮
+│ Etichetă reală    │ Prezis ca         │   # greșeli │
+├───────────────────┼───────────────────┼─────────────┤
+│ rezolvata         │ intrerupta        │          32 │
+│ rezolvata         │ partial_rezolvata │          18 │
+│ rezolvata         │ nerezolvata       │          13 │
+│ partial_rezolvata │ intrerupta        │          12 │
+│ redirectionata    │ intrerupta        │          12 │
+│ rezolvata         │ redirectionata    │           8 │
+│ partial_rezolvata │ nerezolvata       │           8 │
+│ intrerupta        │ nerezolvata       │           7 │
+│ partial_rezolvata │ rezolvata         │           6 │
+│ redirectionata    │ nerezolvata       │           5 │
+│ redirectionata    │ partial_rezolvata │           4 │
+│ nerezolvata       │ intrerupta        │           3 │
+│ partial_rezolvata │ redirectionata    │           2 │
+│ nerezolvata       │ rezolvata         │           2 │
+│ nerezolvata       │ partial_rezolvata │           2 │
+╰───────────────────┴───────────────────┴─────────────╯
+
+
+  ▶  XLM-RoBERTa [RO]
+╭───────────────────┬───────────────────┬─────────────╮
+│ Etichetă reală    │ Prezis ca         │   # greșeli │
+├───────────────────┼───────────────────┼─────────────┤
+│ rezolvata         │ intrerupta        │          32 │
+│ rezolvata         │ partial_rezolvata │          18 │
+│ rezolvata         │ nerezolvata       │          13 │
+│ partial_rezolvata │ intrerupta        │          12 │
+│ redirectionata    │ intrerupta        │          12 │
+│ rezolvata         │ redirectionata    │           8 │
+│ partial_rezolvata │ nerezolvata       │           8 │
+│ intrerupta        │ nerezolvata       │           7 │
+│ partial_rezolvata │ rezolvata         │           6 │
+│ redirectionata    │ nerezolvata       │           5 │
+│ redirectionata    │ partial_rezolvata │           4 │
+│ nerezolvata       │ intrerupta        │           3 │
+│ partial_rezolvata │ redirectionata    │           2 │
+│ nerezolvata       │ rezolvata         │           2 │
+│ nerezolvata       │ partial_rezolvata │           2 │
+╰───────────────────┴───────────────────┴─────────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T7 — Impact limbă: Clasificarea statusului final
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬──────────┬──────────┬────────┬─────────┬─────────┬───────────┬──────────╮
+│ Model            │ Acc RO   │ Acc EN   │ ΔAcc   │ F1 RO   │ F1 EN   │ ΔLat      │ Winner   │
+├──────────────────┼──────────┼──────────┼────────┼─────────┼─────────┼───────────┼──────────┤
+│ Aya Expanse 8B   │ 44.4%    │ 68.3%    │ -23.9% │ 39.2%   │ 53.1%   │ +334525ms │ EN       │
+│ Gemini 2.5 Flash │ 83.9%    │ 86.1%    │ -2.2%  │ 80.6%   │ 83.4%   │ +1777ms   │ EN       │
+│ OpenAI o3        │ 90.0%    │ 87.2%    │ +2.8%  │ 86.0%   │ 83.9%   │ +1310ms   │ RO       │
+│ XLM-RoBERTa      │ 22.2%    │ 22.2%    │ +0.0%  │ 21.6%   │ 21.6%   │ +283ms    │ =        │
+╰──────────────────┴──────────┴──────────┴────────┴─────────┴─────────┴───────────┴──────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T8 — Fiabilitate output: Clasificarea statusului final
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬────────┬─────────┬─────────┬─────────┬────────┬─────────┬───────┬────────┬───────┬────────╮
+│ Model            │ Lang   │   Total │   Fails │ Fail%   │   High │ High%   │   Med │ Med%   │   Low │ Low%   │
+├──────────────────┼────────┼─────────┼─────────┼─────────┼────────┼─────────┼───────┼────────┼───────┼────────┤
+│ Aya Expanse 8B   │ EN     │     180 │       0 │ 0.0%    │    180 │ 100.0%  │     0 │ 0.0%   │     0 │ 0.0%   │
+│ Aya Expanse 8B   │ RO     │     180 │       0 │ 0.0%    │    180 │ 100.0%  │     0 │ 0.0%   │     0 │ 0.0%   │
+│ Gemini 2.5 Flash │ EN     │     180 │       0 │ 0.0%    │    180 │ 100.0%  │     0 │ 0.0%   │     0 │ 0.0%   │
+│ Gemini 2.5 Flash │ RO     │     180 │       0 │ 0.0%    │    179 │ 99.4%   │     1 │ 0.6%   │     0 │ 0.0%   │
+│ OpenAI o3        │ EN     │     180 │       0 │ 0.0%    │    150 │ 83.3%   │    30 │ 16.7%  │     0 │ 0.0%   │
+│ OpenAI o3        │ RO     │     180 │       0 │ 0.0%    │    153 │ 85.0%   │    27 │ 15.0%  │     0 │ 0.0%   │
+│ XLM-RoBERTa      │ EN     │     180 │       0 │ 0.0%    │      0 │ 0.0%    │    35 │ 19.4%  │   145 │ 80.6%  │
+│ XLM-RoBERTa      │ RO     │     180 │       0 │ 0.0%    │      0 │ 0.0%    │    35 │ 19.4%  │   145 │ 80.6%  │
+╰──────────────────┴────────┴─────────┴─────────┴─────────┴────────┴─────────┴───────┴────────┴───────┴────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  Evaluare completă: Clasificarea statusului final
+══════════════════════════════════════════════════════════════════════════════════════════

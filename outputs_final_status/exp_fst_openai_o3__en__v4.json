@@ -1,0 +1,1817 @@
+{
+  "experiment_name": "fst_openai_o3__en__v4",
+  "model": "openai_o3",
+  "language": "en",
+  "prompt_version": "v4",
+  "dataset_size": 180,
+  "timestamp": "2026-05-11 19:28:51",
+  "metrics": {
+    "accuracy": 0.8722,
+    "macro_f1": 0.8389,
+    "weighted_f1": 0.874,
+    "kappa": 0.8188,
+    "n_valid": 180
+  },
+  "results": [
+    {
+      "conversation_id": "conv_simple_0001",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot updated the phone number successfully and informed the user that confirmation SMS will be sent; no further user action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot updated the phone number successfully and informed the user that confirmation SMS will be sent; no further user action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3114.056700025685
+    },
+    {
+      "conversation_id": "conv_simple_0002",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot completed the address update request and informed it will be effective, with no further user action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot completed the address update request and informed it will be effective, with no further user action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3105.2315999986604
+    },
+    {
+      "conversation_id": "conv_simple_0003",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot completed the request by updating the email and no further user action is required aside from passively receiving a confirmation.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot completed the request by updating the email and no further user action is required aside from passively receiving a confirmation.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2821.2470000144094
+    },
+    {
+      "conversation_id": "conv_simple_0004",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot performed and confirmed the requested data update, leaving no further action required from the user.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot performed and confirmed the requested data update, leaving no further action required from the user.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3361.445999937132
+    },
+    {
+      "conversation_id": "conv_simple_0005",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot successfully updated the emergency contact information and confirmed completion, with no further user action needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot successfully updated the emergency contact information and confirmed completion, with no further user action needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2934.6404999960214
+    },
+    {
+      "conversation_id": "conv_simple_0006",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "The bot confirmed it will process the account closure and transfer funds, completing the user's request without requiring further user action.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot confirmed it will process the account closure and transfer funds, completing the user's request without requiring further user action.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4177.017799927853
+    },
+    {
+      "conversation_id": "conv_simple_0007",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot registered the account closure and arranged the fund transfer; no further action is required from the user beyond waiting.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot registered the account closure and arranged the fund transfer; no further action is required from the user beyond waiting.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2404.1434000246227
+    },
+    {
+      "conversation_id": "conv_simple_0008",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot confirmed it will immediately close the account and send email confirmation; user only needs to wait.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot confirmed it will immediately close the account and send email confirmation; user only needs to wait.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4274.220300023444
+    },
+    {
+      "conversation_id": "conv_simple_0009",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot completed the closure request and transfer instruction; user only waits for processing.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot completed the closure request and transfer instruction; user only waits for processing.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 1985.6507000513375
+    },
+    {
+      "conversation_id": "conv_simple_0010",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot initiated closure and will send documents, but user must still sign and return them to complete the process.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot initiated closure and will send documents, but user must still sign and return them to complete the process.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3805.363600025885
+    },
+    {
+      "conversation_id": "conv_simple_0011",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Bot sent the link and instructions, but user must still fill in the online form and upload documents to actually open the account.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot sent the link and instructions, but user must still fill in the online form and upload documents to actually open the account.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3369.230099953711
+    },
+    {
+      "conversation_id": "conv_simple_0012",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot provided required info but user must still visit a branch to open the account, an active post-call action.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot provided required info but user must still visit a branch to open the account, an active post-call action.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3342.824500054121
+    },
+    {
+      "conversation_id": "conv_simple_0013",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "Bot arranged for a human agent to contact the user within a specific timeframe (today, within the next hour), which is a concrete hand-off to an advisor.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot arranged for a human agent to contact the user within a specific timeframe (today, within the next hour), which is a concrete hand-off to an advisor.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5473.383100004867
+    },
+    {
+      "conversation_id": "conv_simple_0014",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "The bot invited the user to visit a branch and the user did not reply, leaving the process unfinished.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot invited the user to visit a branch and the user did not reply, leaving the process unfinished.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5537.609299994074
+    },
+    {
+      "conversation_id": "conv_simple_0015",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "The bot asked for the user's preference and received no reply, so the process stopped before completion.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot asked for the user's preference and received no reply, so the process stopped before completion.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8122.84450000152
+    },
+    {
+      "conversation_id": "conv_simple_0016",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot began the online application and sent a link, but user must complete steps and upload documents to finish opening the account.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot began the online application and sent a link, but user must complete steps and upload documents to finish opening the account.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8098.437099950388
+    },
+    {
+      "conversation_id": "conv_simple_0017",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "A specific meeting with an advisor was scheduled and confirmed for tomorrow at 14:30.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"A specific meeting with an advisor was scheduled and confirmed for tomorrow at 14:30.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6653.66469998844
+    },
+    {
+      "conversation_id": "conv_simple_0018",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot successfully scheduled and confirmed a specific meeting with an advisor for Thursday at 10:00.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully scheduled and confirmed a specific meeting with an advisor for Thursday at 10:00.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7586.13820001483
+    },
+    {
+      "conversation_id": "conv_simple_0019",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "The bot set a specific appointment for Friday at 15:30 with a credit advisor, fulfilling the meeting scheduling request.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot set a specific appointment for Friday at 15:30 with a credit advisor, fulfilling the meeting scheduling request.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10665.900100022554
+    },
+    {
+      "conversation_id": "conv_simple_0020",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "A meeting with an advisor was concretely scheduled for Monday at 14:00 and confirmed.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"A meeting with an advisor was concretely scheduled for Monday at 14:00 and confirmed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4080.5317000485957
+    },
+    {
+      "conversation_id": "conv_simple_0021",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot scheduled and confirmed an advisor meeting for Wednesday at 11:00—specific time set, so conversation ended with a redirection to a human advisor.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot scheduled and confirmed an advisor meeting for Wednesday at 11:00—specific time set, so conversation ended with a redirection to a human advisor.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 14701.172900036909
+    },
+    {
+      "conversation_id": "conv_simple_0022",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot confirmed the February statement will be emailed and no additional action is required from the user.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot confirmed the February statement will be emailed and no additional action is required from the user.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6479.5803000452
+    },
+    {
+      "conversation_id": "conv_simple_0023",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot confirmed the account statement will be emailed, fully addressing the user’s request with no further user action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot confirmed the account statement will be emailed, fully addressing the user’s request with no further user action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4852.166299941018
+    },
+    {
+      "conversation_id": "conv_simple_0024",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot completed the request by scheduling the statement to be emailed; user only waits for delivery with no further action needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot completed the request by scheduling the statement to be emailed; user only waits for delivery with no further action needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3846.0725999902934
+    },
+    {
+      "conversation_id": "conv_simple_0025",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot completed the request by ordering the electronic statement delivery; user only needs to wait, no further action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot completed the request by ordering the electronic statement delivery; user only needs to wait, no further action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7236.315299989656
+    },
+    {
+      "conversation_id": "conv_simple_0026",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot processed the statement request and confirmed it will be emailed; no further user action is required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot processed the statement request and confirmed it will be emailed; no further user action is required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6655.449900077656
+    },
+    {
+      "conversation_id": "conv_simple_0027",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully registered the fraud report and no further user action is required beyond waiting for investigation results.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully registered the fraud report and no further user action is required beyond waiting for investigation results.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8353.82399999071
+    },
+    {
+      "conversation_id": "conv_simple_0028",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully logged the fraud report and told the user no further action is needed, only to wait for contact—request fully handled.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully logged the fraud report and told the user no further action is needed, only to wait for contact—request fully handled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7695.723400101997
+    },
+    {
+      "conversation_id": "conv_simple_0029",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot recorded the unauthorized transaction report and no further action is required from the user.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot recorded the unauthorized transaction report and no further action is required from the user.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8565.02720003482
+    },
+    {
+      "conversation_id": "conv_simple_0030",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot registered the transaction dispute and informed the user that the investigation will follow, leaving no further action required from the user beyond waiting.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot registered the transaction dispute and informed the user that the investigation will follow, leaving no further action required from the user beyond waiting.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5784.172800020315
+    },
+    {
+      "conversation_id": "conv_simple_0031",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot registered the unauthorized transaction report and indicated next steps without requiring further action from the user.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot registered the unauthorized transaction report and indicated next steps without requiring further action from the user.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5587.274400051683
+    },
+    {
+      "conversation_id": "conv_simple_0032",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "The bot awaits the verification code, but the user gives no further response, ending the dialogue prematurely.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot awaits the verification code, but the user gives no further response, ending the dialogue prematurely.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3001.536599942483
+    },
+    {
+      "conversation_id": "conv_simple_0033",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Bot sent the reset link but the user must still follow it and set a new password to regain access.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot sent the reset link but the user must still follow it and set a new password to regain access.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 15895.068499958143
+    },
+    {
+      "conversation_id": "conv_simple_0034",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot completed the recovery process and told user an SMS with new password is on the way; no further user action with the bot is required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot completed the recovery process and told user an SMS with new password is on the way; no further user action with the bot is required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5202.686300035566
+    },
+    {
+      "conversation_id": "conv_simple_0035",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot sent email link but user still must actively reset password themselves.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot sent email link but user still must actively reset password themselves.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7788.232200080529
+    },
+    {
+      "conversation_id": "conv_simple_0036",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot sent unlock instructions but the user still needs to follow email steps to regain access.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot sent unlock instructions but the user still needs to follow email steps to regain access.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6974.783599958755
+    },
+    {
+      "conversation_id": "conv_simple_0037",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Bot provided balance but last message is a follow-up question to which user gave no reply, indicating the dialogue stopped before closure.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot provided balance but last message is a follow-up question to which user gave no reply, indicating the dialogue stopped before closure.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3121.156500070356
+    },
+    {
+      "conversation_id": "conv_simple_0038",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot provided the requested account balance and did not require further user action or information.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot provided the requested account balance and did not require further user action or information.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 11983.318299986422
+    },
+    {
+      "conversation_id": "conv_simple_0039",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot provided the requested balance and user confirmed no further needs, so request fully resolved.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot provided the requested balance and user confirmed no further needs, so request fully resolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8863.214300014079
+    },
+    {
+      "conversation_id": "conv_simple_0040",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully provided the requested account balance and confirmed its accuracy, fully satisfying the user’s request.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully provided the requested account balance and confirmed its accuracy, fully satisfying the user’s request.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3012.532800086774
+    },
+    {
+      "conversation_id": "conv_simple_0041",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "Bot initiated an immediate transfer to a human colleague to fulfill the request, constituting redirection to an operator.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot initiated an immediate transfer to a human colleague to fulfill the request, constituting redirection to an operator.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 14294.278600020334
+    },
+    {
+      "conversation_id": "conv_simple_0042",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot successfully provided the requested account balance and the user confirmed no further needs.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot successfully provided the requested account balance and the user confirmed no further needs.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 11766.116400016472
+    },
+    {
+      "conversation_id": "conv_simple_0043",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot completed the requested card block and indicated success; no further user action needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot completed the requested card block and indicated success; no further user action needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4891.938399989158
+    },
+    {
+      "conversation_id": "conv_simple_0044",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot successfully blocked the specified card and no further action from the user is required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot successfully blocked the specified card and no further action from the user is required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6558.881900040433
+    },
+    {
+      "conversation_id": "conv_simple_0045",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot is transferring the user to a human agent to complete the card replacement, i.e., initiating direct contact with a human operator.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot is transferring the user to a human agent to complete the card replacement, i.e., initiating direct contact with a human operator.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5011.674300068989
+    },
+    {
+      "conversation_id": "conv_simple_0046",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Card was blocked but user still must contact support to order a new card, requiring further action.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Card was blocked but user still must contact support to order a new card, requiring further action.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4315.8355000196025
+    },
+    {
+      "conversation_id": "conv_simple_0047",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully blocked the card as requested and there were no additional unresolved requests.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully blocked the card as requested and there were no additional unresolved requests.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 14836.10159996897
+    },
+    {
+      "conversation_id": "conv_simple_0048",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully executed the user’s request by blocking the card; no further user action is required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully executed the user’s request by blocking the card; no further user action is required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4535.945800016634
+    },
+    {
+      "conversation_id": "conv_simple_0049",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot completed the card unblock request, user now only waits for SMS confirmation with no further action needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot completed the card unblock request, user now only waits for SMS confirmation with no further action needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3616.799099952914
+    },
+    {
+      "conversation_id": "conv_simple_0050",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully unblocked the card and no further user action beyond waiting a few minutes is required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully unblocked the card and no further user action beyond waiting a few minutes is required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3667.043499997817
+    },
+    {
+      "conversation_id": "conv_simple_0051",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot completed the requested action of unblocking the card and informed the user it is now usable.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot completed the requested action of unblocking the card and informed the user it is now usable.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 13920.879399986006
+    },
+    {
+      "conversation_id": "conv_simple_0052",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully unblocked the card as requested and the user confirmed satisfaction, ending the conversation with the issue fully resolved.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully unblocked the card as requested and the user confirmed satisfaction, ending the conversation with the issue fully resolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5307.896200101823
+    },
+    {
+      "conversation_id": "conv_simple_0053",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "Bot completed the de-blocking request and no further action is required from the user, only waiting for confirmation.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot completed the de-blocking request and no further action is required from the user, only waiting for confirmation.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8347.518799942918
+    },
+    {
+      "conversation_id": "conv_simple_0054",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "User asked for interest rate, bot provided the exact information and conversation naturally ended with no further action needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"User asked for interest rate, bot provided the exact information and conversation naturally ended with no further action needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6173.861599992961
+    },
+    {
+      "conversation_id": "conv_simple_0055",
+      "dataset_status": "rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Bot ended with a question and the user did not reply, so conversation stopped before formal closure.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot ended with a question and the user did not reply, so conversation stopped before formal closure.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10966.403999947943
+    },
+    {
+      "conversation_id": "conv_simple_0056",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "User asked for interest rate and eligibility; bot provided the requested information and no further action or clarification is pending.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"User asked for interest rate and eligibility; bot provided the requested information and no further action or clarification is pending.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10533.429700066335
+    },
+    {
+      "conversation_id": "conv_simple_0057",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Conversation ends with the bot asking a question to schedule a meeting but no user response, indicating interruption.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversation ends with the bot asking a question to schedule a meeting but no user response, indicating interruption.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2876.523500075564
+    },
+    {
+      "conversation_id": "conv_simple_0058",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "User asked for life insurance coverage details and the bot provided them, fulfilling the request without pending action.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"User asked for life insurance coverage details and the bot provided them, fulfilling the request without pending action.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 11024.044600082561
+    },
+    {
+      "conversation_id": "conv_simple_0059",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "User asked for weather; bot said it cannot provide that information, thus request unfulfilled.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"User asked for weather; bot said it cannot provide that information, thus request unfulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2222.9023000691086
+    },
+    {
+      "conversation_id": "conv_simple_0060",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Conversation ends with the bot asking an authentication method question and the user provides no further response.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversation ends with the bot asking an authentication method question and the user provides no further response.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2629.142999998294
+    },
+    {
+      "conversation_id": "conv_simple_0061",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "The bot only forwarded the request and promised that a consultant will contact the user later; no specific appointment was fixed, so the user still needs further scheduling action.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot only forwarded the request and promised that a consultant will contact the user later; no specific appointment was fixed, so the user still needs further scheduling action.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 18319.48080006987
+    },
+    {
+      "conversation_id": "conv_simple_0062",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "The bot asked for transaction details but the user did not respond, ending the conversation before resolution.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot asked for transaction details but the user did not respond, ending the conversation before resolution.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2612.045200075954
+    },
+    {
+      "conversation_id": "conv_simple_0063",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "The bot explicitly refused as the request is outside its capabilities, so the user's request was not fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot explicitly refused as the request is outside its capabilities, so the user's request was not fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7213.305999990553
+    },
+    {
+      "conversation_id": "conv_simple_0064",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "The bot explicitly said it cannot provide weather information, so the user's request was not fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot explicitly said it cannot provide weather information, so the user's request was not fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 9404.687999980524
+    },
+    {
+      "conversation_id": "conv_simple_0065",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Bot requests authentication details and waits, but the user gives no further response, so the conversation halts before completion.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot requests authentication details and waits, but the user gives no further response, so the conversation halts before completion.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3983.396299998276
+    },
+    {
+      "conversation_id": "conv_simple_0066",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Bot asked for confirmation to block the card but the user did not respond, leaving the process unfinished.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot asked for confirmation to block the card but the user did not respond, leaving the process unfinished.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2125.425099977292
+    },
+    {
+      "conversation_id": "conv_simple_0067",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot explicitly said the request is outside its domain and offered no solution, so the user’s request was not fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot explicitly said the request is outside its domain and offered no solution, so the user’s request was not fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 16616.25780002214
+    },
+    {
+      "conversation_id": "conv_simple_0068",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Conversation stopped with bot asking for preferred date/time; user gave no further response.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Conversation stopped with bot asking for preferred date/time; user gave no further response.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5678.659599972889
+    },
+    {
+      "conversation_id": "conv_simple_0069",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "The bot asked for authentication details to check the balance and the user did not respond, leaving the process unfinished.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot asked for authentication details to check the balance and the user did not respond, leaving the process unfinished.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7248.750800034031
+    },
+    {
+      "conversation_id": "conv_simple_0070",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "The bot asked for transaction details but the user did not respond, leaving the report process unfinished.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot asked for transaction details but the user did not respond, leaving the report process unfinished.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3356.9935000268742
+    },
+    {
+      "conversation_id": "conv_complex_0001",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully authenticated the user and provided the requested balances for both accounts, and the user confirmed this was sufficient.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully authenticated the user and provided the requested balances for both accounts, and the user confirmed this was sufficient.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10807.648500078358
+    },
+    {
+      "conversation_id": "conv_complex_0002",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully authenticated the user, supplied the account balance information requested, and the user confirmed satisfaction before conversation ended.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully authenticated the user, supplied the account balance information requested, and the user confirmed satisfaction before conversation ended.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7824.720400036313
+    },
+    {
+      "conversation_id": "conv_complex_0003",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot verified balance, identified the unknown debit, and filed a fraud report, leaving the user only to wait for investigation—request fully handled.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot verified balance, identified the unknown debit, and filed a fraud report, leaving the user only to wait for investigation—request fully handled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3028.600799967535
+    },
+    {
+      "conversation_id": "conv_complex_0004",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot provided the requested balance information for both accounts and the user confirmed no further needs, so the request was fully resolved.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot provided the requested balance information for both accounts and the user confirmed no further needs, so the request was fully resolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 13211.188600049354
+    },
+    {
+      "conversation_id": "conv_complex_0005",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot provided all requested information (balance, interest rate, maturity, early withdrawal consequences) and the user confirmed satisfaction with no further action needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot provided all requested information (balance, interest rate, maturity, early withdrawal consequences) and the user confirmed satisfaction with no further action needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2113.251099945046
+    },
+    {
+      "conversation_id": "conv_complex_0006",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot provided all requested credit balance and details, user confirmed no further needs, conversation closed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot provided all requested credit balance and details, user confirmed no further needs, conversation closed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 12099.632799974643
+    },
+    {
+      "conversation_id": "conv_complex_0007",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot processed the card block and account closure, leaving only passive waiting for confirmation, thus fully resolved.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot processed the card block and account closure, leaving only passive waiting for confirmation, thus fully resolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3364.944100030698
+    },
+    {
+      "conversation_id": "conv_complex_0008",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot confirmed transfer and initiated account closure; nothing further required from user except waiting.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot confirmed transfer and initiated account closure; nothing further required from user except waiting.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 13723.920700023882
+    },
+    {
+      "conversation_id": "conv_complex_0009",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot executed the account closure and fund transfer, provided final information, user only waits for confirmations—request fully handled.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot executed the account closure and fund transfer, provided final information, user only waits for confirmations—request fully handled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10111.983299953863
+    },
+    {
+      "conversation_id": "conv_complex_0010",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot processed the account closure request and confirmed completion steps; user now only waits for notifications, no further action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot processed the account closure request and confirmed completion steps; user now only waits for notifications, no further action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6395.012399996631
+    },
+    {
+      "conversation_id": "conv_complex_0011",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "The deposit account closure was processed, but closing the credit account requires the user to first pay 800 lei and return later, so only part of the multi-request was fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The deposit account closure was processed, but closing the credit account requires the user to first pay 800 lei and return later, so only part of the multi-request was fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 9832.457199925557
+    },
+    {
+      "conversation_id": "conv_complex_0012",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "The bot captured availability and confirmed that a meeting with a counselor has been scheduled, sending the confirmation email, thus redirecting the user to a human advisor.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot captured availability and confirmed that a meeting with a counselor has been scheduled, sending the confirmation email, thus redirecting the user to a human advisor.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 18021.853500045836
+    },
+    {
+      "conversation_id": "conv_complex_0013",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot executed transfer and account-closure request and confirmed email confirmation; user only waits now.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot executed transfer and account-closure request and confirmed email confirmation; user only waits now.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3338.7305999640375
+    },
+    {
+      "conversation_id": "conv_complex_0014",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "The bot provided info and gathered availability but only promised future contact; user must still meet consultant and sign documents to open accounts.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot provided info and gathered availability but only promised future contact; user must still meet consultant and sign documents to open accounts.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5871.564199915156
+    },
+    {
+      "conversation_id": "conv_complex_0015",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot provided info and promised future scheduling, but no appointment set; user must still attend branch/meeting to complete account opening.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot provided info and promised future scheduling, but no appointment set; user must still attend branch/meeting to complete account opening.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7026.15649998188
+    },
+    {
+      "conversation_id": "conv_complex_0016",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Bot provided all requirements and tentatively noted a preferred time, but the user must still await confirmation and physically visit the branch to complete account opening.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot provided all requirements and tentatively noted a preferred time, but the user must still await confirmation and physically visit the branch to complete account opening.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10475.032999995165
+    },
+    {
+      "conversation_id": "conv_complex_0017",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot sent application forms but user must still fill and upload them to actually open the account.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot sent application forms but user must still fill and upload them to actually open the account.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5114.992600050755
+    },
+    {
+      "conversation_id": "conv_complex_0018",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot sent the opening form but user must fill, sign and return it with documents to actually open the account.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot sent the opening form but user must fill, sign and return it with documents to actually open the account.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8668.30130002927
+    },
+    {
+      "conversation_id": "conv_complex_0019",
+      "dataset_status": "rezolvata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot scheduled a branch appointment for tomorrow at 14:00, redirecting the user to an advisor with a concrete date and time.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot scheduled a branch appointment for tomorrow at 14:00, redirecting the user to an advisor with a concrete date and time.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8965.079399989918
+    },
+    {
+      "conversation_id": "conv_complex_0020",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "The conversation ended with the bot asking a question to schedule a meeting and the user did not reply, so the process remained unfinished.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The conversation ended with the bot asking a question to schedule a meeting and the user did not reply, so the process remained unfinished.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7873.864899971522
+    },
+    {
+      "conversation_id": "conv_complex_0021",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Bot provided information and next steps but user must still open an account or schedule a meeting to proceed with the credit.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot provided information and next steps but user must still open an account or schedule a meeting to proceed with the credit.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8073.0975000187755
+    },
+    {
+      "conversation_id": "conv_complex_0022",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Bot provided all requested information, but user must still actively open the account at a branch or online to accomplish their goal.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot provided all requested information, but user must still actively open the account at a branch or online to accomplish their goal.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 13242.621700046584
+    },
+    {
+      "conversation_id": "conv_complex_0023",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "Bot proposed to schedule a meeting but ended without fixing date/time or receiving user confirmation, and the user gave no further response so the request remained unfinished.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot proposed to schedule a meeting but ended without fixing date/time or receiving user confirmation, and the user gave no further response so the request remained unfinished.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 12755.639900104143
+    },
+    {
+      "conversation_id": "conv_complex_0024",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot scheduled a specific meeting with a specialist for Tuesday at 15:00, fulfilling the redirection criteria.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot scheduled a specific meeting with a specialist for Tuesday at 15:00, fulfilling the redirection criteria.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3080.9091000119224
+    },
+    {
+      "conversation_id": "conv_complex_0025",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot provided all information but user must still visit branch or use app to open the deposit.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot provided all information but user must still visit branch or use app to open the deposit.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 9215.128100011498
+    },
+    {
+      "conversation_id": "conv_complex_0026",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot scheduled a consultation for tomorrow at 10:00, redirecting the user to a specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot scheduled a consultation for tomorrow at 10:00, redirecting the user to a specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5618.886200012639
+    },
+    {
+      "conversation_id": "conv_complex_0027",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Statement was arranged but user must open the app themselves to obtain the requested balance, so not all requests were fully completed.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Statement was arranged but user must open the app themselves to obtain the requested balance, so not all requests were fully completed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8805.260199937038
+    },
+    {
+      "conversation_id": "conv_complex_0028",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot registered both the account statement and income declaration requests and confirmed delivery via email/SMS with no further action required from the user except waiting.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot registered both the account statement and income declaration requests and confirmed delivery via email/SMS with no further action required from the user except waiting.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2297.380100004375
+    },
+    {
+      "conversation_id": "conv_complex_0029",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot confirmed the statements for February and March will be generated and emailed; user's request fully processed and no further action needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot confirmed the statements for February and March will be generated and emailed; user's request fully processed and no further action needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 14924.985699937679
+    },
+    {
+      "conversation_id": "conv_complex_0030",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot confirmed that both account statements will be generated and delivered digitally, fully processing the user's request with no further action required from the user.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot confirmed that both account statements will be generated and delivered digitally, fully processing the user's request with no further action required from the user.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7169.818100053817
+    },
+    {
+      "conversation_id": "conv_complex_0031",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot registered both certified statements and updated email; user confirmed details and only needs to wait, so request fully handled.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot registered both certified statements and updated email; user confirmed details and only needs to wait, so request fully handled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 11341.563699999824
+    },
+    {
+      "conversation_id": "conv_complex_0032",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot confirmed the statement request was processed; user only needs to wait, no further action needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot confirmed the statement request was processed; user only needs to wait, no further action needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2600.4134999820963
+    },
+    {
+      "conversation_id": "conv_complex_0033",
+      "dataset_status": "rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot generated and emailed statements but user must physically visit branch later to collect printed copies, an active step remaining.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot generated and emailed statements but user must physically visit branch later to collect printed copies, an active step remaining.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 14010.808699997142
+    },
+    {
+      "conversation_id": "conv_complex_0034",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully unblocked the card and informed the user; no further active action is required from the user.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully unblocked the card and informed the user; no further active action is required from the user.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5838.478000019677
+    },
+    {
+      "conversation_id": "conv_complex_0035",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully unblocked the card and enabled international transactions, fulfilling the user’s request without requiring further user action.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully unblocked the card and enabled international transactions, fulfilling the user’s request without requiring further user action.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10273.99409993086
+    },
+    {
+      "conversation_id": "conv_complex_0036",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot verified and unblocked the card and activated notifications, fully resolving the user's issue within the call.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot verified and unblocked the card and activated notifications, fully resolving the user's issue within the call.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8200.851199915633
+    },
+    {
+      "conversation_id": "conv_complex_0037",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot validated the code and unblocked the card, fully completing the user's request.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot validated the code and unblocked the card, fully completing the user's request.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4594.110599951819
+    },
+    {
+      "conversation_id": "conv_complex_0038",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot successfully unblocked the card and confirmed it is operational, fully satisfying the user's request.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot successfully unblocked the card and confirmed it is operational, fully satisfying the user's request.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3546.5446000453085
+    },
+    {
+      "conversation_id": "conv_complex_0039",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully unblocked the card, confirmed it is usable immediately, and the user expressed satisfaction, so the request was fully resolved.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully unblocked the card, confirmed it is usable immediately, and the user expressed satisfaction, so the request was fully resolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 12376.150000025518
+    },
+    {
+      "conversation_id": "conv_complex_0040",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully updated the address and phone number, confirmed completion, and the user had no further actions to take.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully updated the address and phone number, confirmed completion, and the user had no further actions to take.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8594.90669996012
+    },
+    {
+      "conversation_id": "conv_complex_0041",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot successfully updated all requested professional details and the user confirmed no further changes were needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot successfully updated all requested professional details and the user confirmed no further changes were needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4669.746999978088
+    },
+    {
+      "conversation_id": "conv_complex_0042",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot completed all requested data updates and confirmed success; user only waits passively for system confirmation.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot completed all requested data updates and confirmed success; user only waits passively for system confirmation.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 11271.23680000659
+    },
+    {
+      "conversation_id": "conv_complex_0043",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot gathered all required data and confirmed the updates will be applied automatically, leaving no further action for the user.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot gathered all required data and confirmed the updates will be applied automatically, leaving no further action for the user.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4496.471900027245
+    },
+    {
+      "conversation_id": "conv_complex_0044",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot accepted and recorded all requested contact updates; user now only waits for email confirmation without needing further action.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot accepted and recorded all requested contact updates; user now only waits for email confirmation without needing further action.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 11159.511200035922
+    },
+    {
+      "conversation_id": "conv_complex_0045",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot completed the requested data updates and confirmed success, user only waits for automatic email confirmation.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot completed the requested data updates and confirmed success, user only waits for automatic email confirmation.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5841.4956999477
+    },
+    {
+      "conversation_id": "conv_complex_0046",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot updated address and phone but user must still send employment documents within 10 days to complete the request.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot updated address and phone but user must still send employment documents within 10 days to complete the request.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 11182.78479995206
+    },
+    {
+      "conversation_id": "conv_complex_0047",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot successfully scheduled and confirmed an online advisor meeting for Tuesday at 14:30, thus redirecting the user to a human specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully scheduled and confirmed an online advisor meeting for Tuesday at 14:30, thus redirecting the user to a human specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7342.081099981442
+    },
+    {
+      "conversation_id": "conv_complex_0048",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "A concrete appointment with an advisor was scheduled for Friday at 11:00, so the request was redirected to a specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"A concrete appointment with an advisor was scheduled for Friday at 11:00, so the request was redirected to a specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7682.513400097378
+    },
+    {
+      "conversation_id": "conv_complex_0049",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "A specific in-person meeting with an advisor was scheduled for Tuesday at 10:00, including confirmation details.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"A specific in-person meeting with an advisor was scheduled for Tuesday at 10:00, including confirmation details.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 2164.823899976909
+    },
+    {
+      "conversation_id": "conv_complex_0050",
+      "dataset_status": "redirectionata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Meeting not yet fixed with date/time; user must still confirm once contacted, so request only partially completed.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Meeting not yet fixed with date/time; user must still confirm once contacted, so request only partially completed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 22362.78399999719
+    },
+    {
+      "conversation_id": "conv_complex_0051",
+      "dataset_status": "redirectionata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "The bot collected availability but did not confirm a specific date/time; meeting scheduling remains pending, so the request is only partially fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot collected availability but did not confirm a specific date/time; meeting scheduling remains pending, so the request is only partially fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7825.485999928787
+    },
+    {
+      "conversation_id": "conv_complex_0052",
+      "dataset_status": "redirectionata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Meeting not fully scheduled (two possible slots awaiting user confirmation), so further user confirmation is required after the call.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Meeting not fully scheduled (two possible slots awaiting user confirmation), so further user confirmation is required after the call.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5310.423200018704
+    },
+    {
+      "conversation_id": "conv_complex_0053",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Bot confirmed an online meeting with a financial advisor on Tuesday at 15:00, a concrete scheduling with date and time.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot confirmed an online meeting with a financial advisor on Tuesday at 15:00, a concrete scheduling with date and time.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6702.285200008191
+    },
+    {
+      "conversation_id": "conv_complex_0054",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully blocked the specified card and confirmed completion; no further user action is required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully blocked the specified card and confirmed completion; no further user action is required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7809.29769994691
+    },
+    {
+      "conversation_id": "conv_complex_0055",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "medium",
+      "reasoning": "Bot confirmed card blocking and initiates a live transfer to the fraud department, thus redirecting the user to a human agent.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot confirmed card blocking and initiates a live transfer to the fraud department, thus redirecting the user to a human agent.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 12966.28180006519
+    },
+    {
+      "conversation_id": "conv_complex_0056",
+      "dataset_status": "rezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot blocked the wrong card (debit instead of the requested business credit card), thus the user’s intended request was not actually fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot blocked the wrong card (debit instead of the requested business credit card), thus the user’s intended request was not actually fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4855.140100000426
+    },
+    {
+      "conversation_id": "conv_complex_0057",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot successfully blocked the card and logged the fraud report; user only waits for replacement, no further action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot successfully blocked the card and logged the fraud report; user only waits for replacement, no further action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7465.487799956463
+    },
+    {
+      "conversation_id": "conv_complex_0058",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot blocked the card, ordered a replacement, and emailed the statement; user only has to wait, no further action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot blocked the card, ordered a replacement, and emailed the statement; user only has to wait, no further action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8753.522400045767
+    },
+    {
+      "conversation_id": "conv_complex_0059",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot registered the fraud case, blocked the card, ordered a replacement, and provided investigation timeline; no further user action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot registered the fraud case, blocked the card, ordered a replacement, and provided investigation timeline; no further user action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4679.745599976741
+    },
+    {
+      "conversation_id": "conv_complex_0060",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot filed the fraud report, activated security features, and ordered a new card; user only waits for results, no further action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot filed the fraud report, activated security features, and ordered a new card; user only waits for results, no further action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7762.292500003241
+    },
+    {
+      "conversation_id": "conv_complex_0061",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot successfully reported the transaction, blocked the card, initiated investigation, ordered a new card, and answered all follow-up questions, leaving no further action required from the user beyond waiting.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot successfully reported the transaction, blocked the card, initiated investigation, ordered a new card, and answered all follow-up questions, leaving no further action required from the user beyond waiting.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 15930.838500033133
+    },
+    {
+      "conversation_id": "conv_complex_0062",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot recorded the fraud report, blocked the card, gave case details and no further user action is required beyond waiting.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot recorded the fraud report, blocked the card, gave case details and no further user action is required beyond waiting.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6071.540900040418
+    },
+    {
+      "conversation_id": "conv_complex_0063",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot registered the dispute, blocked the card, ordered a replacement and explained next steps; user only waits, no further action required.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot registered the dispute, blocked the card, ordered a replacement and explained next steps; user only waits, no further action required.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6777.829200029373
+    },
+    {
+      "conversation_id": "conv_complex_0064",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot blocked the card, registered the four disputed transactions, initiated the refund process, ordered a replacement card, and provided all needed information, leaving only passive waiting for investigation completion.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot blocked the card, registered the four disputed transactions, initiated the refund process, ordered a replacement card, and provided all needed information, leaving only passive waiting for investigation completion.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 18159.846400027163
+    },
+    {
+      "conversation_id": "conv_complex_0065",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot registered all fraud transactions, blocked the card, ordered a replacement, provided reference number; user's request fully handled and no further user action required beyond waiting.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot registered all fraud transactions, blocked the card, ordered a replacement, provided reference number; user's request fully handled and no further user action required beyond waiting.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5181.0502000153065
+    },
+    {
+      "conversation_id": "conv_complex_0066",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "User successfully regained app access during the call and confirmed completion, so the request was fully resolved.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"User successfully regained app access during the call and confirmed completion, so the request was fully resolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4802.2056999616325
+    },
+    {
+      "conversation_id": "conv_complex_0067",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot updated email, assisted password reset, user regained access, confirmed issues resolved and ended conversation.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot updated email, assisted password reset, user regained access, confirmed issues resolved and ended conversation.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7157.889300026
+    },
+    {
+      "conversation_id": "conv_complex_0068",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot verified identity, sent reset link, changed verification to email, and user confirmed successful login—issue fully resolved.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot verified identity, sent reset link, changed verification to email, and user confirmed successful login—issue fully resolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10137.927699950524
+    },
+    {
+      "conversation_id": "conv_complex_0069",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot successfully reset the password, provided a backup 2FA code, and confirmed the user can now access the app—no further bank-side action needed.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot successfully reset the password, provided a backup 2FA code, and confirmed the user can now access the app—no further bank-side action needed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10956.220900057815
+    },
+    {
+      "conversation_id": "conv_complex_0070",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot successfully reset the PIN and addressed the follow-up question; nothing further is required from the user.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot successfully reset the PIN and addressed the follow-up question; nothing further is required from the user.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3912.5242000445724
+    },
+    {
+      "conversation_id": "conv_complex_0071",
+      "dataset_status": "rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "User confirmed successful login after bot's manual activation, fulfilling the request completely.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"User confirmed successful login after bot's manual activation, fulfilling the request completely.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3008.1422000657767
+    },
+    {
+      "conversation_id": "conv_complex_0072",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Bot scheduled a consultant call for tomorrow at 14:00, providing confirmation—this is a definite appointment with a human advisor.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot scheduled a consultant call for tomorrow at 14:00, providing confirmation—this is a definite appointment with a human advisor.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 25524.227799964137
+    },
+    {
+      "conversation_id": "conv_complex_0073",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot ends by initiating a transfer to a human specialist for card unblocking, fulfilling the redirection criteria.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot ends by initiating a transfer to a human specialist for card unblocking, fulfilling the redirection criteria.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3953.92170001287
+    },
+    {
+      "conversation_id": "conv_complex_0074",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "A branch visit is required and the appointment is only tentatively noted, awaiting confirmation, so the request is only partially resolved.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"A branch visit is required and the appointment is only tentatively noted, awaiting confirmation, so the request is only partially resolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8323.926700046286
+    },
+    {
+      "conversation_id": "conv_complex_0075",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "A branch appointment was scheduled for tomorrow at 10:00, making the conversation end with a concrete redirection to a human advisor.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"A branch appointment was scheduled for tomorrow at 10:00, making the conversation end with a concrete redirection to a human advisor.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6333.393299952149
+    },
+    {
+      "conversation_id": "conv_complex_0076",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot registered the suspicious transaction report and successfully blocked the card, completing the user’s request with no further action needed from the user.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot registered the suspicious transaction report and successfully blocked the card, completing the user’s request with no further action needed from the user.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3783.517300034873
+    },
+    {
+      "conversation_id": "conv_simple_0071",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Bot initiated transfer to a human operator to handle request.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot initiated transfer to a human operator to handle request.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10672.704699914902
+    },
+    {
+      "conversation_id": "conv_simple_0072",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "User halted the process saying they will call later, so the account opening was not completed and the bot was left waiting.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"User halted the process saying they will call later, so the account opening was not completed and the bot was left waiting.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3575.0823999987915
+    },
+    {
+      "conversation_id": "conv_complex_0077",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "The assistant ended with an offer to transfer to a specialist and awaited the user's response, but the user did not continue the conversation.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The assistant ended with an offer to transfer to a specialist and awaited the user's response, but the user did not continue the conversation.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10311.562400078401
+    },
+    {
+      "conversation_id": "conv_complex_0078",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "User left mid-process and no meeting was scheduled; bot’s last message awaited a response.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"User left mid-process and no meeting was scheduled; bot’s last message awaited a response.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6313.290599966422
+    },
+    {
+      "conversation_id": "conv_simple_0073",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot ultimately states it cannot send the statement electronically, thus failing to fulfill the user's request.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot ultimately states it cannot send the statement electronically, thus failing to fulfill the user's request.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6575.762500055134
+    },
+    {
+      "conversation_id": "conv_complex_0079",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot failed to provide the reset link, contradicted itself, and ultimately told user to contact a human operator, leaving the request unresolved.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot failed to provide the reset link, contradicted itself, and ultimately told user to contact a human operator, leaving the request unresolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 24266.963300062343
+    },
+    {
+      "conversation_id": "conv_simple_0074",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "User paused to verify something and conversation ended before bot could finalize the fraud report.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"User paused to verify something and conversation ended before bot could finalize the fraud report.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3427.5996999349445
+    },
+    {
+      "conversation_id": "conv_simple_0075",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Bot initiates immediate transfer to a human operator to handle the issue, constituting a redirection.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot initiates immediate transfer to a human operator to handle the issue, constituting a redirection.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4237.455100053921
+    },
+    {
+      "conversation_id": "conv_simple_0076",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "User said they will think and call later, ending conversation without completing any action or scheduling.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"User said they will think and call later, ending conversation without completing any action or scheduling.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3683.454400044866
+    },
+    {
+      "conversation_id": "conv_simple_0077",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot ends by transferring the user to a human operator for card unblocking, constituting a redirection to a specialist.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot ends by transferring the user to a human operator for card unblocking, constituting a redirection to a specialist.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4549.014199990779
+    },
+    {
+      "conversation_id": "conv_complex_0080",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "The bot was unable to block the card, stated technical restrictions, and redirected the user elsewhere without resolving the request.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot was unable to block the card, stated technical restrictions, and redirected the user elsewhere without resolving the request.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10258.88420001138
+    },
+    {
+      "conversation_id": "conv_complex_0081",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Bot ended with a question offering instructions and received no further user response, leaving the request unfinished.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot ended with a question offering instructions and received no further user response, leaving the request unfinished.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5787.11979999207
+    },
+    {
+      "conversation_id": "conv_simple_0078",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot provided requirements but user still must visit branch and sign documents to open the account.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot provided requirements but user still must visit branch and sign documents to open the account.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 9505.432600039057
+    },
+    {
+      "conversation_id": "conv_complex_0082",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "The bot ends by transferring the user to a human specialist to complete the request, constituting a concrete handoff.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot ends by transferring the user to a human specialist to complete the request, constituting a concrete handoff.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7037.624299991876
+    },
+    {
+      "conversation_id": "conv_complex_0083",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "A face-to-face meeting was scheduled for tomorrow at 13:00 and the user agreed, so the request was resolved by redirecting to a consultant.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"A face-to-face meeting was scheduled for tomorrow at 13:00 and the user agreed, so the request was resolved by redirecting to a consultant.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7128.021500073373
+    },
+    {
+      "conversation_id": "conv_complex_0084",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot explicitly stated the requested statement cannot be generated, leaving the user's request unmet.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot explicitly stated the requested statement cannot be generated, leaving the user's request unmet.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 9383.67350003682
+    },
+    {
+      "conversation_id": "conv_complex_0085",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Bot provided instructions (48-hour biometric reset or contacting support/branch) leaving the user to act afterwards; no immediate resolution or scheduled meeting was completed.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot provided instructions (48-hour biometric reset or contacting support/branch) leaving the user to act afterwards; no immediate resolution or scheduled meeting was completed.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 13993.205400067382
+    },
+    {
+      "conversation_id": "conv_complex_0086",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot never initiated a fraud report, giving unrelated instructions instead, so the user's request was not fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot never initiated a fraud report, giving unrelated instructions instead, so the user's request was not fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3482.7307000523433
+    },
+    {
+      "conversation_id": "conv_simple_0079",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Balance was provided, but for recent transactions and spending summary the user must use the app or visit a branch, leaving the second request unmet.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Balance was provided, but for recent transactions and spending summary the user must use the app or visit a branch, leaving the second request unmet.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6342.743300017901
+    },
+    {
+      "conversation_id": "conv_simple_0080",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot failed to provide the requested interest rate and redirected user without giving any solution, thus request remains unresolved.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot failed to provide the requested interest rate and redirected user without giving any solution, thus request remains unresolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 6372.663100017235
+    },
+    {
+      "conversation_id": "conv_simple_0081",
+      "dataset_status": "intrerupta",
+      "predicted_status": "rezolvata",
+      "confidence": "high",
+      "reasoning": "The bot submitted the unblock request for the card and no further action from the user is needed other than waiting.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot submitted the unblock request for the card and no further action from the user is needed other than waiting.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 8342.848800006323
+    },
+    {
+      "conversation_id": "conv_simple_0082",
+      "dataset_status": "intrerupta",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot failed to block the card after receiving required digits, giving irrelevant promotional information instead.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot failed to block the card after receiving required digits, giving irrelevant promotional information instead.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7954.6728999121115
+    },
+    {
+      "conversation_id": "conv_complex_0087",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "Bot requested the user to sign a form to complete the address update and awaited response, but the user did not reply, so the conversation stopped before completion.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot requested the user to sign a form to complete the address update and awaited response, but the user did not reply, so the conversation stopped before completion.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7153.312199981883
+    },
+    {
+      "conversation_id": "conv_simple_0083",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot failed to provide required document list and just diverted to another product, leaving request unmet.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot failed to provide required document list and just diverted to another product, leaving request unmet.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 9179.107700008899
+    },
+    {
+      "conversation_id": "conv_complex_0088",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Bot gave steps but user must visit branch and fill forms to finish account closure.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot gave steps but user must visit branch and fill forms to finish account closure.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5282.10230008699
+    },
+    {
+      "conversation_id": "conv_simple_0084",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "User aborted the scheduling process before providing required details, leaving the request unresolved.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"User aborted the scheduling process before providing required details, leaving the request unresolved.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3235.8350000577047
+    },
+    {
+      "conversation_id": "conv_simple_0085",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "rezolvata",
+      "confidence": "medium",
+      "reasoning": "The bot initiated generation and email delivery of the March statement, fulfilling the request; waiting for the email requires no further user action.",
+      "raw_response": "{\n  \"final_status\": \"rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot initiated generation and email delivery of the March statement, fulfilling the request; waiting for the email requires no further user action.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 22651.495500002056
+    },
+    {
+      "conversation_id": "conv_simple_0086",
+      "dataset_status": "nerezolvata",
+      "predicted_status": "nerezolvata",
+      "confidence": "high",
+      "reasoning": "Bot explicitly stated it cannot reset the password and directed the user elsewhere, so the request was not fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"nerezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot explicitly stated it cannot reset the password and directed the user elsewhere, so the request was not fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5817.936799954623
+    },
+    {
+      "conversation_id": "conv_simple_0087",
+      "dataset_status": "redirectionata",
+      "predicted_status": "redirectionata",
+      "confidence": "high",
+      "reasoning": "Bot escalated and started transferring the call to a human fraud operator, so conversation ends with redirection.",
+      "raw_response": "{\n  \"final_status\": \"redirectionata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Bot escalated and started transferring the call to a human fraud operator, so conversation ends with redirection.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 3205.136700067669
+    },
+    {
+      "conversation_id": "conv_complex_0089",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "Bot gave the current credit limit but did not address the user’s second request about how to increase it, so only part of the request was fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"Bot gave the current credit limit but did not address the user’s second request about how to increase it, so only part of the request was fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 7946.945499978028
+    },
+    {
+      "conversation_id": "conv_simple_0088",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "medium",
+      "reasoning": "The bot provided interest rate and fees but did not address the requested account opening conditions, so only part of the user’s information request was fulfilled.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot provided interest rate and fees but did not address the requested account opening conditions, so only part of the user’s information request was fulfilled.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 9577.935499954037
+    },
+    {
+      "conversation_id": "conv_simple_0089",
+      "dataset_status": "intrerupta",
+      "predicted_status": "intrerupta",
+      "confidence": "medium",
+      "reasoning": "The bot asked a follow-up question but the user did not respond, leaving the request unresolved at that point.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"medium\",\n  \"reasoning\": \"The bot asked a follow-up question but the user did not respond, leaving the request unresolved at that point.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 5395.9364999318495
+    },
+    {
+      "conversation_id": "conv_simple_0090",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "partial_rezolvata",
+      "confidence": "high",
+      "reasoning": "Card blocking completed but user must still contact or visit branch to obtain new card, leaving part of the request unresolved and requiring user action.",
+      "raw_response": "{\n  \"final_status\": \"partial_rezolvata\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"Card blocking completed but user must still contact or visit branch to obtain new card, leaving part of the request unresolved and requiring user action.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 10890.60949999839
+    },
+    {
+      "conversation_id": "conv_complex_0090",
+      "dataset_status": "partial_rezolvata",
+      "predicted_status": "intrerupta",
+      "confidence": "high",
+      "reasoning": "The bot asked the user to stay on the line to schedule with a specialist, but no confirmation or user response followed, so the conversation stopped before completion.",
+      "raw_response": "{\n  \"final_status\": \"intrerupta\",\n  \"confidence\": \"high\",\n  \"reasoning\": \"The bot asked the user to stay on the line to schedule with a specialist, but no confirmation or user response followed, so the conversation stopped before completion.\"\n}",
+      "parse_failed": false,
+      "latency_ms": 4232.041300041601
+    }
+  ]
+}

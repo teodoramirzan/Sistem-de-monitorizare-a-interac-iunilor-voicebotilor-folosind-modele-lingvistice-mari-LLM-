@@ -1,23 +1,16 @@
-# src/prompting/evaluate_models.py
+# src/prompting/evaluate_all_tasks.py
 
 """
-Evaluare detaliată LLM-uri: Acuratețe, Latență, Diferențe, API vs. Local.
-
-Citește toate fișierele exp_*.json din outputs/ generate de intent_experiments.ipynb.
-Dacă există mai multe versiuni de prompt pentru același model+limbă (ex: v1, v2),
-folosește implicit cea mai recentă. Poți filtra explicit cu --version.
+Evaluare detaliată LLM-uri pe toate cele 3 taskuri.
 
 Utilizare:
-    python evaluate_models.py                        # toate experimentele
-    python evaluate_models.py --version v1           # doar versiunea v1
-    python evaluate_models.py --model openai_o3      # doar un model
-    python evaluate_models.py --model openai_o3 --version v2 --lang ro
-    python evaluate_models.py --save-latex           # salvează și tabele LaTeX
+    python evaluate_all_tasks.py --task intent
+    python evaluate_all_tasks.py --task final_status
+    python evaluate_all_tasks.py --task incongruities
+    python evaluate_all_tasks.py --task final_status --version v4 --save-latex
+    python evaluate_all_tasks.py --task incongruities --model openai_o3
 
-Output:
-    - Terminal: tabele colorate cu rich
-    - evaluation_report_intent.txt: raport complet plain text
-    - results/latex_tables/*.tex: tabele în format LaTeX (cu --save-latex)
+Parametrizat pe baza evaluate_models.py original (intent).
 """
 
 import json
@@ -31,15 +24,11 @@ from itertools import combinations
 from sklearn.metrics import accuracy_score, f1_score, cohen_kappa_score
 from tabulate import tabulate
 
-# Rich pentru terminal colorat
 try:
     from rich.console import Console
     from rich.table import Table
     from rich.panel import Panel
-    from rich.text import Text
     from rich import box
-    from rich.columns import Columns
-    from rich.style import Style
     HAS_RICH = True
     console = Console()
 except ImportError:
@@ -47,30 +36,56 @@ except ImportError:
     console = None
 
 # ──────────────────────────────────────────────
-# Config
+# Config per task
 # ──────────────────────────────────────────────
 
-OUTPUT_DIR = Path(
+BASE_DIR = Path(
     r"C:\Users\Matebook 14s\Documents"
     r"\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-"
-    r"\outputs"
 )
 
-LATEX_DIR = Path(
-    r"C:\Users\Matebook 14s\Documents"
-    r"\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-"
-    r"\results\latex_tables"
-)
+TASK_CONFIG = {
+    "intent": {
+        "output_dir": BASE_DIR / "outputs" / "intent",
+        "report_path": BASE_DIR / "evaluation_report_intent.txt",
+        "labels_file": "configs/intent_definitions.json",
+        "labels_key": lambda defs: [l["name"] for l in defs["labels"]],
+        "pred_field": "predicted_intent",
+        "label_field": "dataset_label",
+        "pred_key": "predictions",
+        "file_pattern": "exp_*.json",
+        "display_name": "Extragerea intenției",
+    },
+    "final_status": {
+        "output_dir": BASE_DIR / "outputs_final_status",
+        "report_path": BASE_DIR / "evaluation_report_final_status.txt",
+        "labels_file": "configs/final_status_definitions.json",
+        "labels_key": lambda defs: [l["name"] for l in defs["labels"]],
+        "pred_field": "predicted_status",
+        "label_field": "dataset_status",
+        "pred_key": "results",
+        "file_pattern": "exp_*.json",
+        "display_name": "Clasificarea statusului final",
+    },
+    "incongruities": {
+        "output_dir": BASE_DIR / "outputs_incongruities",
+        "report_path": BASE_DIR / "evaluation_report_incongruities.txt",
+        "labels_file": "configs/incongruities_definitions.json",
+        "labels_key": lambda defs: [l["name"] for l in defs["labels"]],
+        "pred_field": "predicted_type",        # ajustează dacă diferă
+        "label_field": "dataset_label",        # ajustează dacă diferă
+        "pred_key": "predictions",
+        "file_pattern": "*.json",
+        "display_name": "Detecția neconcordanțelor",
+        # Metrici suplimentare binare
+        "binary_fields": {
+            "pred_binary": "predicted_has_incongruity",
+            "label_binary": "dataset_has_incongruity",  # ajustează
+        },
+    },
+}
 
-REPORT_PATH = Path(
-    r"C:\Users\Matebook 14s\Documents"
-    r"\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-"
-    r"\evaluation_report_intent.txt"
-)
-
-with open("configs/intent_definitions.json", encoding="utf-8") as f:
-    _defs = json.load(f)
-LABELS = [l["name"] for l in _defs["labels"]]
+LATEX_DIR = BASE_DIR / "results" / "latex_tables"
 
 MODEL_TYPE = {
     "openai_o3":        "API",
@@ -99,59 +114,32 @@ MODEL_PARAMS = {
     "robert_encoder":   "~125M",
 }
 
-# Culori rich pentru metrici
-def acc_color(v):
-    if v is None: return "dim"
-    if v >= 0.95: return "bold green"
-    if v >= 0.85: return "green"
-    if v >= 0.70: return "yellow"
-    if v >= 0.50: return "orange1"
-    return "red"
-
-def delta_color(v):
-    if v is None: return "dim"
-    if v > 0.01:  return "green"
-    if v < -0.01: return "red"
-    return "dim"
-
 # ──────────────────────────────────────────────
-# Output helpers — scrie atât în terminal cât și în fișier
+# Output helpers
 # ──────────────────────────────────────────────
 
 _report_lines = []
 
 def rprint(text="", style=None):
-    """Printează în terminal (cu rich dacă disponibil) și salvează în buffer."""
     _report_lines.append(str(text) + "\n")
     if HAS_RICH and console:
-        if style:
-            console.print(text, style=style)
-        else:
-            console.print(text)
+        console.print(text, style=style) if style else console.print(text)
     else:
         print(text)
 
-def rprint_table(rows, headers, title=None, tablefmt="rounded_outline"):
-    """Printează tabel în terminal și salvează plain text în buffer."""
-    plain = tabulate(rows, headers=headers, tablefmt=tablefmt)
+def rprint_table(rows, headers, title=None):
+    plain = tabulate(rows, headers=headers, tablefmt="rounded_outline")
     _report_lines.append(plain + "\n\n")
-
     if HAS_RICH and console:
-        table = Table(
-            title=title,
-            box=box.ROUNDED,
-            header_style="bold cyan",
-            border_style="blue",
-            show_lines=True,
-        )
+        table = Table(title=title, box=box.ROUNDED, header_style="bold cyan",
+                      border_style="blue", show_lines=True)
         for h in headers:
             table.add_column(h, no_wrap=False)
         for row in rows:
             table.add_row(*[str(c) for c in row])
         console.print(table)
     else:
-        if title:
-            print(f"\n  {title}")
+        if title: print(f"\n  {title}")
         print(plain)
 
 def section(title):
@@ -161,70 +149,84 @@ def section(title):
         console.print(Panel(f"[bold white]{title}[/bold white]",
                             border_style="cyan", expand=True))
     else:
-        print(f"\n{'═'*90}")
-        print(f"  {title}")
-        print('═'*90)
+        print(f"\n{'═'*90}\n  {title}\n{'═'*90}")
 
-def save_report():
-    """Salvează raportul complet în fișier txt."""
-    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(REPORT_PATH, "w", encoding="utf-8") as f:
+def save_report(path):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
         f.writelines(_report_lines)
-    rprint(f"\n✓ Raport salvat în: {REPORT_PATH}", style="bold green")
+    rprint(f"\n✓ Raport salvat: {path}", style="bold green")
 
 # ──────────────────────────────────────────────
-# Helpers metrici
+# Helpers
 # ──────────────────────────────────────────────
 
-def pct(v):
-    return f"{v*100:.1f}%" if v is not None else "—"
-
-def fmt(v, d=3):
-    return f"{v:.{d}f}" if v is not None else "—"
-
-def ms(v):
-    return f"{v:.0f}ms" if v is not None else "—"
+def pct(v): return f"{v*100:.1f}%" if v is not None else "—"
+def fmt(v, d=3): return f"{v:.{d}f}" if v is not None else "—"
+def ms(v): return f"{v:.0f}ms" if v is not None else "—"
 
 def delta_str(a, b, as_pct=True):
-    if a is None or b is None:
-        return "—"
+    if a is None or b is None: return "—"
     d = a - b
     sign = "+" if d >= 0 else ""
     return f"{sign}{d*100:.1f}%" if as_pct else f"{sign}{d:.0f}ms"
 
 # ──────────────────────────────────────────────
-# Load & organize
+# Load & organize (parametrizat per task)
 # ──────────────────────────────────────────────
 
-def load_experiments(output_dir, filter_model=None, filter_lang=None, filter_version=None):
-    exp_files = sorted(output_dir.glob("exp_*.json"))
+def load_experiments(cfg, filter_model=None, filter_lang=None, filter_version=None):
+    output_dir = cfg["output_dir"]
+    pred_key = cfg["pred_key"]
+    pred_field = cfg["pred_field"]
+    label_field = cfg["label_field"]
+
+    exp_files = sorted(output_dir.glob(cfg["file_pattern"]))
     if not exp_files:
-        raise FileNotFoundError(f"Nu s-au găsit fișiere exp_*.json în {output_dir}")
+        raise FileNotFoundError(f"Nu s-au găsit fișiere în {output_dir}")
 
     grouped = defaultdict(dict)
     for path in exp_files:
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
-        meta = data.get("experiment", {})
-        model   = meta.get("model", "unknown")
-        lang    = meta.get("lang", "unknown")
-        version = meta.get("prompt_version", "v1")
-        ts      = meta.get("timestamp", "00000000_000000")
 
-        if filter_model   and model   != filter_model:   continue
-        if filter_lang    and lang    != filter_lang:     continue
-        if filter_version and version != filter_version:  continue
+        # Detectează metadata — suportă ambele structuri
+        meta = data.get("experiment", {})
+        if not meta:
+            model = data.get("model", "unknown")
+            lang = data.get("language", "unknown")
+            version = data.get("prompt_version", "v1")
+            ts = data.get("timestamp", "00000000")
+        else:
+            model = meta.get("model", "unknown")
+            lang = meta.get("lang", meta.get("language", "unknown"))
+            version = meta.get("prompt_version", "v1")
+            ts = meta.get("timestamp", "00000000")
+
+        # Extrage model din experiment_name dacă model=unknown
+        if model == "unknown":
+            exp_name = data.get("experiment_name", path.stem)
+            # pattern: prefix_model__lang__version
+            parts = exp_name.split("__")
+            if len(parts) >= 3:
+                model = parts[0].replace("exp_", "").replace("fst_", "").replace("inc_", "")
+                lang = parts[1]
+                version = parts[2]
+
+        if filter_model and model != filter_model: continue
+        if filter_lang and lang != filter_lang: continue
+        if filter_version and version != filter_version: continue
 
         grouped[(model, lang)][version] = (ts, path, data)
 
     if not grouped:
-        raise ValueError("Niciun experiment nu corespunde filtrelor specificate.")
+        raise ValueError("Niciun experiment nu corespunde filtrelor.")
 
     selected = {}
     for (model, lang), versions in grouped.items():
-        chosen_version = filter_version if filter_version else max(versions, key=lambda v: versions[v][0])
-        ts, path, data = versions[chosen_version]
-        selected[(model, lang)] = (chosen_version, path, data)
+        chosen = filter_version if filter_version else max(versions, key=lambda v: versions[v][0])
+        ts, path, data = versions[chosen]
+        selected[(model, lang)] = (chosen, path, data)
 
     rprint(f"\n  Experimente încărcate ({len(selected)}):", style="bold")
     for (model, lang), (version, path, _) in sorted(selected.items()):
@@ -232,562 +234,345 @@ def load_experiments(output_dir, filter_model=None, filter_lang=None, filter_ver
 
     all_predictions = []
     for (model, lang), (version, path, data) in selected.items():
-        for pred in data.get("predictions", []):
-            pred.setdefault("model_name",     model)
-            pred.setdefault("prompt_lang",    lang)
+        for pred in data.get(pred_key, []):
+            pred.setdefault("model_name", model)
+            pred.setdefault("prompt_lang", lang)
             pred.setdefault("prompt_version", version)
+            # Normalizează field names
+            if pred_field not in pred and "predicted_intent" in pred:
+                pred[pred_field] = pred["predicted_intent"]
+            if label_field not in pred and "dataset_label" in pred:
+                pred[label_field] = pred["dataset_label"]
             all_predictions.append(pred)
 
     rprint(f"\n  Total predicții: {len(all_predictions)}\n")
     return all_predictions
 
 
-def organize(predictions):
-    by_key  = defaultdict(list)
+def organize(predictions, cfg):
+    pred_field = cfg["pred_field"]
+    label_field = cfg["label_field"]
+    by_key = defaultdict(list)
     by_conv = defaultdict(dict)
     for p in predictions:
         key = (p["model_name"], p["prompt_lang"])
         by_key[key].append(p)
-        by_conv[p["conversation_id"]][key] = p["predicted_intent"]
+        by_conv[p["conversation_id"]][key] = p.get(pred_field)
     return by_key, by_conv
 
 
-def get_yt_yp(by_key, key):
-    rows   = by_key.get(key, [])
-    y_true = [r["dataset_label"]    for r in rows if r["predicted_intent"] is not None]
-    y_pred = [r["predicted_intent"] for r in rows if r["predicted_intent"] is not None]
+def get_yt_yp(by_key, key, cfg):
+    pred_field = cfg["pred_field"]
+    label_field = cfg["label_field"]
+    rows = by_key.get(key, [])
+    y_true = [r[label_field] for r in rows if r.get(pred_field) is not None]
+    y_pred = [r[pred_field]  for r in rows if r.get(pred_field) is not None]
     return y_true, y_pred
 
 
-def compute_metrics(y_true, y_pred):
-    if not y_true:
-        return None
+def compute_metrics(y_true, y_pred, labels=None):
+    if not y_true: return None
     return {
         "accuracy":    accuracy_score(y_true, y_pred),
-        "macro_f1":    f1_score(y_true, y_pred, average="macro",    labels=LABELS, zero_division=0),
-        "weighted_f1": f1_score(y_true, y_pred, average="weighted", labels=LABELS, zero_division=0),
-        "kappa":       cohen_kappa_score(y_true, y_pred, labels=LABELS),
+        "macro_f1":    f1_score(y_true, y_pred, average="macro",    labels=labels, zero_division=0),
+        "weighted_f1": f1_score(y_true, y_pred, average="weighted", labels=labels, zero_division=0),
+        "kappa":       cohen_kappa_score(y_true, y_pred),
         "n":           len(y_true),
     }
 
 
 def compute_latency(rows):
-    lats = [r["latency_ms"] for r in rows if r["latency_ms"] > 0]
-    if not lats:
-        return {}
+    lats = [r.get("latency_ms", 0) for r in rows if r.get("latency_ms", 0) > 0]
+    if not lats: return {}
     return {
-        "mean":   np.mean(lats),
-        "median": np.median(lats),
-        "p95":    np.percentile(lats, 95),
-        "p99":    np.percentile(lats, 99),
-        "min":    np.min(lats),
-        "max":    np.max(lats),
-        "std":    np.std(lats),
+        "mean": np.mean(lats), "median": np.median(lats),
+        "p95": np.percentile(lats, 95), "p99": np.percentile(lats, 99),
+        "min": np.min(lats), "max": np.max(lats),
     }
 
 # ──────────────────────────────────────────────
-# T1. Overview modele
+# Tabele (adaptate per task)
 # ──────────────────────────────────────────────
 
-def print_t1_model_overview(by_key):
-    section("T1 — Experimente încărcate: API vs. Local")
+def print_t1(by_key, cfg):
+    section(f"T1 — Overview modele: {cfg['display_name']}")
+    pred_field = cfg["pred_field"]
     models = sorted({k[0] for k in by_key})
     rows = []
     for m in models:
-        mtype  = MODEL_TYPE.get(m, "?")
-        params = MODEL_PARAMS.get(m, "?")
-        langs  = sorted({k[1] for k in by_key if k[0] == m})
+        langs = sorted({k[1] for k in by_key if k[0] == m})
         for l in langs:
-            preds   = by_key[(m, l)]
-            total   = len(preds)
-            fails   = sum(1 for r in preds if r["parse_failed"])
+            preds = by_key[(m, l)]
+            total = len(preds)
+            fails = sum(1 for r in preds if r.get("parse_failed", False))
             version = preds[0].get("prompt_version", "?") if preds else "?"
             rows.append([
-                MODEL_DISPLAY.get(m, m), mtype, params, l.upper(),
-                version, total, fails,
-                pct(fails / total) if total else "—"
+                MODEL_DISPLAY.get(m, m), MODEL_TYPE.get(m, "?"),
+                MODEL_PARAMS.get(m, "?"), l.upper(), version,
+                total, fails, pct(fails/total) if total else "—"
             ])
     rprint_table(rows,
-                 headers=["Model", "Tip", "Parametri", "Lang", "Prompt ver.",
-                           "Total pred.", "Parse fail", "Fail%"],
-                 title="T1 — Overview modele")
+                 headers=["Model","Tip","Param","Lang","Ver","Total","Fails","Fail%"],
+                 title=f"T1 — {cfg['display_name']}")
 
-# ──────────────────────────────────────────────
-# T2. Acuratețe per model și limbă
-# ──────────────────────────────────────────────
 
-def print_t2_accuracy(by_key):
-    section("T2 — Acuratețe per model și limbă (+ delta RO vs EN)")
+def print_t2(by_key, cfg, labels):
+    section(f"T2 — Acuratețe per model: {cfg['display_name']}")
     models = sorted({k[0] for k in by_key})
-    rows   = []
-
+    rows = []
     for m in models:
-        m_ro = compute_metrics(*get_yt_yp(by_key, (m, "ro")))
-        m_en = compute_metrics(*get_yt_yp(by_key, (m, "en")))
-
-        acc_ro = m_ro["accuracy"]  if m_ro else None
-        acc_en = m_en["accuracy"]  if m_en else None
-        f1_ro  = m_ro["macro_f1"]  if m_ro else None
-        f1_en  = m_en["macro_f1"]  if m_en else None
-        kap_ro = m_ro["kappa"]     if m_ro else None
-        kap_en = m_en["kappa"]     if m_en else None
-        mtype  = MODEL_TYPE.get(m, "?")
-
+        m_ro = compute_metrics(*get_yt_yp(by_key, (m,"ro"), cfg), labels=labels)
+        m_en = compute_metrics(*get_yt_yp(by_key, (m,"en"), cfg), labels=labels)
         rows.append([
-            MODEL_DISPLAY.get(m, m), mtype,
-            pct(acc_ro), pct(acc_en), delta_str(acc_ro, acc_en),
-            pct(f1_ro),  pct(f1_en),  delta_str(f1_ro,  f1_en),
-            fmt(kap_ro), fmt(kap_en),
+            MODEL_DISPLAY.get(m, m), MODEL_TYPE.get(m, "?"),
+            pct(m_ro["accuracy"] if m_ro else None),
+            pct(m_en["accuracy"] if m_en else None),
+            delta_str(m_ro["accuracy"] if m_ro else None, m_en["accuracy"] if m_en else None),
+            pct(m_ro["macro_f1"] if m_ro else None),
+            pct(m_en["macro_f1"] if m_en else None),
+            fmt(m_ro["kappa"] if m_ro else None),
+            fmt(m_en["kappa"] if m_en else None),
         ])
-
-    # Sortează după acc_ro descrescător
-    rows.sort(key=lambda r: float(r[2].replace("%","")) if r[2] != "—" else 0, reverse=True)
-
+    rows.sort(key=lambda r: float(r[2].replace("%","")) if r[2]!="—" else 0, reverse=True)
     rprint_table(rows,
-                 headers=["Model", "Tip",
-                           "Acc RO", "Acc EN", "ΔAcc (RO-EN)",
-                           "F1 RO",  "F1 EN",  "ΔF1 (RO-EN)",
-                           "κ RO",   "κ EN"],
-                 title="T2 — Acuratețe per model și limbă")
-    rprint("  * Delta pozitiv = promptul RO performează mai bine decât EN.")
+                 headers=["Model","Tip","Acc RO","Acc EN","ΔAcc","F1 RO","F1 EN","κ RO","κ EN"],
+                 title=f"T2 — Acuratețe: {cfg['display_name']}")
 
-# ──────────────────────────────────────────────
-# T2b. Acuratețe per versiune de prompt
-# ──────────────────────────────────────────────
 
-def print_t2b_accuracy_by_version(output_dir, filter_model=None):
-    """Tabel suplimentar: evoluția acurateței pe versiuni v1→v4 per model."""
-    section("T2b — Evoluția acurateței pe versiuni de prompt (v1→v4)")
+def print_t2b(cfg, filter_model=None):
+    section(f"T2b — Evoluție v1→v4: {cfg['display_name']}")
+    output_dir = cfg["output_dir"]
+    pred_field = cfg["pred_field"]
+    label_field = cfg["label_field"]
+    pred_key = cfg["pred_key"]
 
-    exp_files = sorted(output_dir.glob("exp_*.json"))
-    data_by_model_lang_version = defaultdict(dict)
+    exp_files = sorted(output_dir.glob(cfg["file_pattern"]))
+    data_versions = defaultdict(dict)
 
     for path in exp_files:
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
-        meta    = data.get("experiment", {})
-        model   = meta.get("model", "unknown")
-        lang    = meta.get("lang", "unknown")
-        version = meta.get("prompt_version", "v1")
-        if filter_model and model != filter_model:
-            continue
 
-        preds  = data.get("predictions", [])
-        y_true = [r["dataset_label"]    for r in preds if r.get("predicted_intent")]
-        y_pred = [r["predicted_intent"] for r in preds if r.get("predicted_intent")]
+        # Extrage meta
+        meta = data.get("experiment", {})
+        exp_name = data.get("experiment_name", meta.get("name", path.stem))
+        parts = exp_name.split("__")
+        if len(parts) >= 3:
+            model = parts[0].replace("exp_","").replace("fst_","").replace("inc_","")
+            lang = parts[1]
+            version = parts[2]
+        else:
+            model = meta.get("model", "unknown")
+            lang = meta.get("lang", "unknown")
+            version = meta.get("prompt_version", "v1")
+
+        if filter_model and model != filter_model: continue
+
+        preds = data.get(pred_key, [])
+        y_true = [r[label_field] for r in preds if r.get(pred_field) is not None]
+        y_pred = [r[pred_field]  for r in preds if r.get(pred_field) is not None]
 
         if y_true:
-            acc = accuracy_score(y_true, y_pred)
-            f1  = f1_score(y_true, y_pred, average="macro", labels=LABELS, zero_division=0)
-            data_by_model_lang_version[(model, lang)][version] = (acc, f1)
+            data_versions[(model, lang)][version] = accuracy_score(y_true, y_pred)
 
     versions = ["v1", "v2", "v3", "v4"]
     rows = []
-    for (model, lang) in sorted(data_by_model_lang_version.keys()):
-        vdata = data_by_model_lang_version[(model, lang)]
+    for (model, lang) in sorted(data_versions.keys()):
+        vdata = data_versions[(model, lang)]
         row = [MODEL_DISPLAY.get(model, model), lang.upper()]
         for v in versions:
-            if v in vdata:
-                acc, f1 = vdata[v]
-                row.append(f"{acc*100:.1f}%")
-            else:
-                row.append("—")
+            row.append(pct(vdata.get(v)))
         rows.append(row)
 
-    headers = ["Model", "Lang"] + [f"Acc {v}" for v in versions]
-    rprint_table(rows, headers=headers, title="T2b — Evoluție pe versiuni")
-    rprint("  * Arată cum evoluează acuratețea de la v1 (zero-shot simplu) la v4 (few-shot).")
-
-# ──────────────────────────────────────────────
-# T3. Latență detaliată
-# ──────────────────────────────────────────────
-
-def print_t3_latency(by_key):
-    section("T3 — Latență detaliată per model și limbă (ms)")
-    rows = []
-    for key in sorted(by_key):
-        model, lang = key
-        mtype = MODEL_TYPE.get(model, "?")
-        lat   = compute_latency(by_key[key])
-        if not lat:
-            continue
-        rows.append([
-            MODEL_DISPLAY.get(model, model), lang.upper(), mtype,
-            ms(lat["mean"]), ms(lat["median"]),
-            ms(lat["p95"]),  ms(lat["p99"]),
-            ms(lat["min"]),  ms(lat["max"]),
-        ])
-    rows.sort(key=lambda r: float(r[3].replace("ms", "")))
     rprint_table(rows,
-                 headers=["Model", "Lang", "Tip", "Mean", "Median", "p95", "p99", "Min", "Max"],
-                 title="T3 — Latență detaliată")
+                 headers=["Model","Lang"] + [f"Acc {v}" for v in versions],
+                 title=f"T2b — Evoluție: {cfg['display_name']}")
 
-# ──────────────────────────────────────────────
-# T4. API vs. Local
-# ──────────────────────────────────────────────
 
-def print_t4_api_vs_local(by_key):
-    section("T4 — API vs. Local: comparație agregată")
-    groups = {"API": [], "Local": []}
-    for key in by_key:
-        mtype = MODEL_TYPE.get(key[0], "?")
-        if mtype in groups:
-            groups[mtype].append(key)
-
-    summary = []
-    for gname, keys in groups.items():
-        all_preds = []
-        for k in keys:
-            all_preds.extend(by_key[k])
-        y_true = [r["dataset_label"]    for r in all_preds if r["predicted_intent"] is not None]
-        y_pred = [r["predicted_intent"] for r in all_preds if r["predicted_intent"] is not None]
-        lats   = [r["latency_ms"]       for r in all_preds if r["latency_ms"] > 0]
-        fails  = sum(1 for r in all_preds if r["parse_failed"])
-
-        acc   = accuracy_score(y_true, y_pred) if y_true else None
-        mf1   = f1_score(y_true, y_pred, average="macro", labels=LABELS, zero_division=0) if y_true else None
-        kappa = cohen_kappa_score(y_true, y_pred, labels=LABELS) if y_true else None
-
-        summary.append([
-            gname, len(keys),
-            pct(acc), pct(mf1), fmt(kappa),
-            ms(np.mean(lats)) if lats else "—",
-            ms(np.percentile(lats, 95)) if lats else "—",
-            pct(fails / len(all_preds)) if all_preds else "—",
-        ])
-
-    rprint_table(summary,
-                 headers=["Grup", "Nr. chei", "Accuracy", "Macro F1", "Cohen κ",
-                           "Lat mean", "Lat p95", "Parse fail%"],
-                 title="T4 — API vs. Local agregat")
-
-# ──────────────────────────────────────────────
-# T5. Diferențe între modele
-# ──────────────────────────────────────────────
-
-def print_t5_differences(by_key, by_conv):
-    section("T5 — Diferențe între modele: acord și dezacord per pereche")
-    keys     = sorted(by_key.keys())
-    conv_ids = sorted(by_conv.keys())
+def print_t3(by_key, cfg):
+    section(f"T3 — Latență: {cfg['display_name']}")
     rows = []
-
-    for ka, kb in combinations(keys, 2):
-        model_a, lang_a = ka
-        model_b, lang_b = kb
-        both_correct = both_wrong = a_right = b_right = total = 0
-
-        for cid in conv_ids:
-            true_label = next(
-                (r["dataset_label"] for r in by_key[ka] if r["conversation_id"] == cid), None
-            )
-            if true_label is None:
-                continue
-            pa = by_conv[cid].get(ka)
-            pb = by_conv[cid].get(kb)
-            if pa is None or pb is None:
-                continue
-            total += 1
-            ca = pa == true_label
-            cb = pb == true_label
-            if ca and cb:           both_correct += 1
-            elif not ca and not cb: both_wrong   += 1
-            elif ca:                a_right      += 1
-            else:                   b_right      += 1
-
-        if total == 0:
-            continue
-        agree = (both_correct + both_wrong) / total
-        rows.append([
-            f"{MODEL_DISPLAY.get(model_a, model_a)}/{lang_a.upper()}",
-            f"{MODEL_DISPLAY.get(model_b, model_b)}/{lang_b.upper()}",
-            pct(agree),
-            both_correct, both_wrong, a_right, b_right, total,
-        ])
-
-    rows.sort(key=lambda r: float(r[2].replace("%","")), reverse=True)
-    rprint_table(rows[:20],
-                 headers=["Model A", "Model B", "% Acord",
-                           "Ambii corecți", "Ambii greșiți",
-                           "Doar A corect", "Doar B corect", "Total"],
-                 title="T5 — Acord între modele (top 20 perechi)")
-    rprint("  * '% Acord' = conversații unde ambii dau același răspuns (corect SAU greșit).")
-
-# ──────────────────────────────────────────────
-# T6. Analiza erorilor
-# ──────────────────────────────────────────────
-
-def print_t6_error_analysis(by_key):
-    section("T6 — Analiza erorilor: intenții greșite cel mai des per model")
     for key in sorted(by_key):
         model, lang = key
-        mtype  = MODEL_TYPE.get(model, "?")
+        lat = compute_latency(by_key[key])
+        if not lat: continue
+        rows.append([
+            MODEL_DISPLAY.get(model, model), lang.upper(),
+            MODEL_TYPE.get(model, "?"),
+            ms(lat["mean"]), ms(lat["median"]),
+            ms(lat["p95"]), ms(lat["max"]),
+        ])
+    rows.sort(key=lambda r: float(r[3].replace("ms","")))
+    rprint_table(rows,
+                 headers=["Model","Lang","Tip","Mean","Median","p95","Max"],
+                 title=f"T3 — Latență: {cfg['display_name']}")
+
+
+def print_t6(by_key, cfg):
+    section(f"T6 — Analiza erorilor: {cfg['display_name']}")
+    pred_field = cfg["pred_field"]
+    label_field = cfg["label_field"]
+
+    for key in sorted(by_key):
+        model, lang = key
         errors = defaultdict(lambda: defaultdict(int))
         for r in by_key[key]:
-            if r["predicted_intent"] and r["predicted_intent"] != r["dataset_label"]:
-                errors[r["dataset_label"]][r["predicted_intent"]] += 1
+            pred = r.get(pred_field)
+            true = r.get(label_field)
+            if pred and pred != true:
+                errors[true][pred] += 1
 
         if not errors:
             rprint(f"\n  ▶  {MODEL_DISPLAY.get(model, model)} [{lang.upper()}] — 0 erori", style="green")
             continue
 
-        rprint(f"\n  ▶  {MODEL_DISPLAY.get(model, model)} [{lang.upper()}] ({mtype})", style="bold")
+        rprint(f"\n  ▶  {MODEL_DISPLAY.get(model, model)} [{lang.upper()}]", style="bold")
         rows = [
             [true, pred, cnt]
             for true, preds in errors.items()
             for pred, cnt in sorted(preds.items(), key=lambda x: -x[1])
         ]
         rows.sort(key=lambda r: -r[2])
-        rprint_table(rows[:10],
-                     headers=["Intenție reală", "Prezis ca", "# greșeli"])
+        rprint_table(rows[:15], headers=["Etichetă reală", "Prezis ca", "# greșeli"])
 
-# ──────────────────────────────────────────────
-# T7. Impact limbă
-# ──────────────────────────────────────────────
 
-def print_t7_language_impact(by_key):
-    section("T7 — Impactul limbii promptului: RO vs EN per model")
+def print_t7(by_key, cfg, labels):
+    section(f"T7 — Impact limbă: {cfg['display_name']}")
     models = sorted({k[0] for k in by_key})
-    rows   = []
-
+    rows = []
     for model in models:
-        ro_key = (model, "ro")
-        en_key = (model, "en")
-        if ro_key not in by_key or en_key not in by_key:
-            continue
-
-        m_ro   = compute_metrics(*get_yt_yp(by_key, ro_key))
-        m_en   = compute_metrics(*get_yt_yp(by_key, en_key))
-        lat_ro = compute_latency(by_key[ro_key])
-        lat_en = compute_latency(by_key[en_key])
-
-        if not m_ro or not m_en:
-            continue
-
-        delta_acc = m_ro["accuracy"] - m_en["accuracy"]
-        winner    = "RO 🏆" if delta_acc > 0.01 else "EN 🏆" if delta_acc < -0.01 else "="
-        delta_lat = lat_ro.get("mean", 0) - lat_en.get("mean", 0) if lat_ro and lat_en else None
-
+        m_ro = compute_metrics(*get_yt_yp(by_key, (model,"ro"), cfg), labels=labels)
+        m_en = compute_metrics(*get_yt_yp(by_key, (model,"en"), cfg), labels=labels)
+        if not m_ro or not m_en: continue
+        d = m_ro["accuracy"] - m_en["accuracy"]
+        w = "RO" if d > 0.01 else "EN" if d < -0.01 else "="
+        lat_ro = compute_latency(by_key.get((model,"ro"),[]))
+        lat_en = compute_latency(by_key.get((model,"en"),[]))
         rows.append([
             MODEL_DISPLAY.get(model, model),
-            MODEL_TYPE.get(model, "?"),
             pct(m_ro["accuracy"]), pct(m_en["accuracy"]),
             delta_str(m_ro["accuracy"], m_en["accuracy"]),
-            pct(m_ro["macro_f1"]),  pct(m_en["macro_f1"]),
-            delta_str(m_ro["macro_f1"], m_en["macro_f1"]),
-            delta_str(lat_ro.get("mean"), lat_en.get("mean"), as_pct=False) if delta_lat is not None else "—",
-            winner,
+            pct(m_ro["macro_f1"]), pct(m_en["macro_f1"]),
+            delta_str(lat_ro.get("mean"), lat_en.get("mean"), as_pct=False) if lat_ro and lat_en else "—",
+            w,
         ])
-
     rprint_table(rows,
-                 headers=["Model", "Tip",
-                           "Acc RO", "Acc EN", "ΔAcc",
-                           "F1 RO",  "F1 EN",  "ΔF1",
-                           "ΔLat (RO-EN)", "Câștigător"],
-                 title="T7 — Impact limbă prompt")
-    rprint("  * ΔLat pozitiv = promptul RO e mai lent. '=' = diferență < 1%.")
+                 headers=["Model","Acc RO","Acc EN","ΔAcc","F1 RO","F1 EN","ΔLat","Winner"],
+                 title=f"T7 — Impact limbă: {cfg['display_name']}")
 
-# ──────────────────────────────────────────────
-# T8. Fiabilitate output
-# ──────────────────────────────────────────────
 
-def print_t8_reliability(by_key):
-    section("T8 — Fiabilitate output: parse failures și distribuție confidence")
+def print_t8(by_key, cfg):
+    section(f"T8 — Fiabilitate output: {cfg['display_name']}")
     rows = []
     for key in sorted(by_key):
         model, lang = key
-        mtype  = MODEL_TYPE.get(model, "?")
-        preds  = by_key[key]
-        total  = len(preds)
-        fails  = sum(1 for r in preds if r["parse_failed"])
-        high   = sum(1 for r in preds if r.get("confidence") == "high")
-        medium = sum(1 for r in preds if r.get("confidence") == "medium")
-        low    = sum(1 for r in preds if r.get("confidence") == "low")
-        none_  = sum(1 for r in preds if r.get("confidence") is None)
-
+        preds = by_key[key]
+        total = len(preds)
+        fails = sum(1 for r in preds if r.get("parse_failed", False))
+        high = sum(1 for r in preds if r.get("confidence") == "high")
+        med = sum(1 for r in preds if r.get("confidence") == "medium")
+        low = sum(1 for r in preds if r.get("confidence") == "low")
         rows.append([
-            MODEL_DISPLAY.get(model, model), lang.upper(), mtype, total,
-            fails,  pct(fails / total),
-            high,   pct(high / total),
-            medium, pct(medium / total),
-            low,    pct(low / total),
-            none_,
+            MODEL_DISPLAY.get(model, model), lang.upper(),
+            total, fails, pct(fails/total),
+            high, pct(high/total), med, pct(med/total), low, pct(low/total),
         ])
-
     rprint_table(rows,
-                 headers=["Model", "Lang", "Tip", "Total",
-                           "Fails", "Fail%",
-                           "High", "High%", "Med", "Med%",
-                           "Low", "Low%", "No conf"],
-                 title="T8 — Fiabilitate output")
+                 headers=["Model","Lang","Total","Fails","Fail%",
+                          "High","High%","Med","Med%","Low","Low%"],
+                 title=f"T8 — Fiabilitate: {cfg['display_name']}")
 
 # ──────────────────────────────────────────────
-# Export LaTeX
+# Metrici binare (doar pentru incongruities)
 # ──────────────────────────────────────────────
 
-def save_latex_tables(by_key, output_dir_path, latex_dir):
-    """Salvează tabelele principale în format LaTeX booktabs."""
-    latex_dir.mkdir(parents=True, exist_ok=True)
+def print_binary_metrics(by_key, cfg):
+    bf = cfg.get("binary_fields")
+    if not bf: return
 
-    def esc(s):
-        return str(s).replace("_", r"\_").replace("%", r"\%").replace("&", r"\&")
+    section(f"T-BIN — Metrici binare detecție: {cfg['display_name']}")
+    pred_b = bf["pred_binary"]
+    label_b = bf["label_binary"]
 
-    # ── T2 Acuratețe ──────────────────────────────────────────────────────
-    models = sorted({k[0] for k in by_key})
-    rows_t2 = []
-    for m in models:
-        m_ro = compute_metrics(*get_yt_yp(by_key, (m, "ro")))
-        m_en = compute_metrics(*get_yt_yp(by_key, (m, "en")))
-        rows_t2.append([
-            esc(MODEL_DISPLAY.get(m, m)),
-            MODEL_TYPE.get(m, "?"),
-            pct(m_ro["accuracy"] if m_ro else None),
-            pct(m_en["accuracy"] if m_en else None),
-            esc(delta_str(m_ro["accuracy"] if m_ro else None, m_en["accuracy"] if m_en else None)),
-            pct(m_ro["macro_f1"] if m_ro else None),
-            pct(m_en["macro_f1"] if m_en else None),
-            fmt(m_ro["kappa"] if m_ro else None),
-            fmt(m_en["kappa"] if m_en else None),
-        ])
-    rows_t2.sort(key=lambda r: float(r[2].replace(r"\%","").replace("%","")) if r[2] != "—" else 0, reverse=True)
-
-    headers_t2 = ["Model", "Tip", "Acc RO", "Acc EN", r"$\Delta$Acc",
-                  "F1 RO", "F1 EN", r"$\kappa$ RO", r"$\kappa$ EN"]
-    latex_t2 = tabulate(rows_t2, headers=headers_t2, tablefmt="latex_booktabs")
-    with open(latex_dir / "t2_accuracy.tex", "w", encoding="utf-8") as f:
-        f.write(latex_t2)
-
-    # ── T2b Evoluție pe versiuni ───────────────────────────────────────────
-    exp_files = sorted(output_dir_path.glob("exp_*.json"))
-    data_versions = defaultdict(dict)
-    for path in exp_files:
-        with open(path, encoding="utf-8") as f:
-            data = json.load(f)
-        meta    = data.get("experiment", {})
-        model   = meta.get("model", "unknown")
-        lang    = meta.get("lang", "unknown")
-        version = meta.get("prompt_version", "v1")
-        preds   = data.get("predictions", [])
-        y_true  = [r["dataset_label"]    for r in preds if r.get("predicted_intent")]
-        y_pred  = [r["predicted_intent"] for r in preds if r.get("predicted_intent")]
-        if y_true:
-            data_versions[(model, lang)][version] = accuracy_score(y_true, y_pred)
-
-    versions = ["v1", "v2", "v3", "v4"]
-    rows_t2b = []
-    for (model, lang) in sorted(data_versions.keys()):
-        vdata = data_versions[(model, lang)]
-        row = [esc(MODEL_DISPLAY.get(model, model)), lang.upper()]
-        for v in versions:
-            row.append(pct(vdata.get(v)))
-        rows_t2b.append(row)
-
-    headers_t2b = ["Model", "Lang"] + [f"Acc {v}" for v in versions]
-    latex_t2b = tabulate(rows_t2b, headers=headers_t2b, tablefmt="latex_booktabs")
-    with open(latex_dir / "t2b_accuracy_by_version.tex", "w", encoding="utf-8") as f:
-        f.write(latex_t2b)
-
-    # ── T3 Latență ────────────────────────────────────────────────────────
-    rows_t3 = []
+    rows = []
     for key in sorted(by_key):
         model, lang = key
-        lat = compute_latency(by_key[key])
-        if not lat:
-            continue
-        rows_t3.append([
-            esc(MODEL_DISPLAY.get(model, model)), lang.upper(),
-            MODEL_TYPE.get(model, "?"),
-            ms(lat["mean"]), ms(lat["median"]),
-            ms(lat["p95"]), ms(lat["max"]),
-        ])
-    rows_t3.sort(key=lambda r: float(r[3].replace("ms", "")))
-    latex_t3 = tabulate(rows_t3,
-                        headers=["Model", "Lang", "Tip", "Mean", "Median", "p95", "Max"],
-                        tablefmt="latex_booktabs")
-    with open(latex_dir / "t3_latency.tex", "w", encoding="utf-8") as f:
-        f.write(latex_t3)
+        preds = by_key[key]
+        y_true = [r.get(label_b) for r in preds if r.get(pred_b) is not None]
+        y_pred = [r.get(pred_b)  for r in preds if r.get(pred_b) is not None]
 
-    # ── T7 Impact limbă ───────────────────────────────────────────────────
-    rows_t7 = []
-    for model in sorted({k[0] for k in by_key}):
-        m_ro = compute_metrics(*get_yt_yp(by_key, (model, "ro")))
-        m_en = compute_metrics(*get_yt_yp(by_key, (model, "en")))
-        if not m_ro or not m_en:
-            continue
-        delta_acc = m_ro["accuracy"] - m_en["accuracy"]
-        winner = "RO" if delta_acc > 0.01 else "EN" if delta_acc < -0.01 else "="
-        rows_t7.append([
-            esc(MODEL_DISPLAY.get(model, model)),
-            MODEL_TYPE.get(model, "?"),
-            pct(m_ro["accuracy"]), pct(m_en["accuracy"]),
-            esc(delta_str(m_ro["accuracy"], m_en["accuracy"])),
-            pct(m_ro["macro_f1"]),  pct(m_en["macro_f1"]),
-            winner,
-        ])
-    latex_t7 = tabulate(rows_t7,
-                        headers=["Model", "Tip", "Acc RO", "Acc EN", r"$\Delta$Acc",
-                                  "F1 RO", "F1 EN", "Câștigător"],
-                        tablefmt="latex_booktabs")
-    with open(latex_dir / "t7_language_impact.tex", "w", encoding="utf-8") as f:
-        f.write(latex_t7)
+        if not y_true: continue
 
-    rprint(f"\n✓ Tabele LaTeX salvate în: {latex_dir}", style="bold green")
-    rprint(f"  t2_accuracy.tex          — Acuratețe per model și limbă")
-    rprint(f"  t2b_accuracy_by_version.tex — Evoluție pe versiuni v1→v4")
-    rprint(f"  t3_latency.tex           — Latență detaliată")
-    rprint(f"  t7_language_impact.tex   — Impact limbă prompt")
-    rprint()
-    rprint("  Folosire în LaTeX:")
-    rprint(r"  \input{results/latex_tables/t2_accuracy.tex}")
+        acc = accuracy_score(y_true, y_pred)
+        f1 = f1_score(y_true, y_pred, average="binary", pos_label=True, zero_division=0)
+
+        rows.append([
+            MODEL_DISPLAY.get(model, model), lang.upper(),
+            pct(acc), fmt(f1),
+        ])
+
+    rows.sort(key=lambda r: float(r[3]) if r[3]!="—" else 0, reverse=True)
+    rprint_table(rows,
+                 headers=["Model","Lang","B-Acc","B-F1"],
+                 title=f"Detecție binară: {cfg['display_name']}")
 
 # ──────────────────────────────────────────────
 # Main
 # ──────────────────────────────────────────────
 
-def run(filter_model=None, filter_lang=None, filter_version=None, save_latex=False):
-    rprint(f"\nCaut experimente în:\n  {OUTPUT_DIR}", style="bold")
+def run(task, filter_model=None, filter_lang=None, filter_version=None, save_latex=False):
+    global _report_lines
+    _report_lines = []
 
-    predictions = load_experiments(
-        output_dir=OUTPUT_DIR,
-        filter_model=filter_model,
-        filter_lang=filter_lang,
-        filter_version=filter_version,
-    )
-    by_key, by_conv = organize(predictions)
+    cfg = TASK_CONFIG[task]
+    rprint(f"\n  Task: {cfg['display_name']}", style="bold cyan")
+    rprint(f"  Director: {cfg['output_dir']}\n")
 
-    print_t1_model_overview(by_key)
-    print_t2_accuracy(by_key)
-    print_t2b_accuracy_by_version(OUTPUT_DIR, filter_model=filter_model)
-    print_t3_latency(by_key)
-    print_t4_api_vs_local(by_key)
-    print_t5_differences(by_key, by_conv)
-    print_t6_error_analysis(by_key)
-    print_t7_language_impact(by_key)
-    print_t8_reliability(by_key)
+    # Încarcă labels dacă fișierul există
+    labels = None
+    labels_path = Path(cfg["labels_file"])
+    if labels_path.exists():
+        with open(labels_path, encoding="utf-8") as f:
+            defs = json.load(f)
+        labels = cfg["labels_key"](defs)
+        rprint(f"  Labels: {len(labels)} clase din {labels_path.name}")
+    else:
+        rprint(f"  ⚠ {labels_path} nu există — labels=None (sklearn va deduce din date)")
 
-    if save_latex:
-        save_latex_tables(by_key, OUTPUT_DIR, LATEX_DIR)
+    predictions = load_experiments(cfg, filter_model, filter_lang, filter_version)
+    by_key, by_conv = organize(predictions, cfg)
+
+    print_t1(by_key, cfg)
+    print_t2(by_key, cfg, labels)
+    print_t2b(cfg, filter_model)
+    print_t3(by_key, cfg)
+    print_t6(by_key, cfg)
+    print_t7(by_key, cfg, labels)
+    print_t8(by_key, cfg)
+
+    # Metrici binare (doar incongruities)
+    if task == "incongruities":
+        print_binary_metrics(by_key, cfg)
 
     rprint(f"\n{'═'*90}", style="cyan")
-    rprint("  Evaluare completă.", style="bold green")
+    rprint(f"  Evaluare completă: {cfg['display_name']}", style="bold green")
     rprint(f"{'═'*90}", style="cyan")
 
-    save_report()
+    save_report(cfg["report_path"])
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Evaluare detaliată LLM-uri pe experimentele din outputs/"
-    )
-    parser.add_argument("--model",       type=str,  default=None)
-    parser.add_argument("--lang",        type=str,  default=None)
-    parser.add_argument("--version",     type=str,  default=None)
-    parser.add_argument("--save-latex",  action="store_true",
-                        help="Salvează tabele în format LaTeX în results/latex_tables/")
+    parser = argparse.ArgumentParser(description="Evaluare LLM-uri pe 3 taskuri")
+    parser.add_argument("--task", type=str, required=True,
+                        choices=["intent", "final_status", "incongruities"])
+    parser.add_argument("--model",   type=str, default=None)
+    parser.add_argument("--lang",    type=str, default=None)
+    parser.add_argument("--version", type=str, default=None)
+    parser.add_argument("--save-latex", action="store_true")
     args = parser.parse_args()
 
-    run(
+    run(task=args.task,
         filter_model=args.model,
         filter_lang=args.lang,
         filter_version=args.version,
-        save_latex=args.save_latex,
-    )
+        save_latex=args.save_latex)

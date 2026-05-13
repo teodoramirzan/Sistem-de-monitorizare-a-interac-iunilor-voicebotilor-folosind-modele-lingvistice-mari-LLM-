@@ -1,0 +1,360 @@
+
+Task: Detecția neconcordanțelor
+Director: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\outputs_incongruities
+Raport: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\evaluation_report_incongruities.txt
+
+Labels multi-clasă: ['incomplet', 'irelevant', 'contradictoriu', 'nealiniat_context', 'halucinatie']
+
+
+Experimente încărcate (38):
+  Aya Expanse 8B            [EN] v1  ← exp_inc_aya_expanse_8b__en__v1.json
+  Aya Expanse 8B            [EN] v2  ← exp_inc_aya_expanse_8b__en__v2.json
+  Aya Expanse 8B            [EN] v3  ← exp_inc_aya_expanse_8b__en__v3.json
+  Aya Expanse 8B            [EN] v4  ← exp_inc_aya_expanse_8b__en__v4.json
+  Aya Expanse 8B            [RO] v1  ← exp_inc_aya_expanse_8b__ro__v1.json
+  Aya Expanse 8B            [RO] v2  ← exp_inc_aya_expanse_8b__ro__v2.json
+  Aya Expanse 8B            [RO] v3  ← exp_inc_aya_expanse_8b__ro__v3.json
+  Aya Expanse 8B            [RO] v4  ← exp_inc_aya_expanse_8b__ro__v4.json
+  Gemini 2.5 Flash          [EN] v1  ← exp_inc_gemini_2.5_flash__en__v1.json
+  Gemini 2.5 Flash          [EN] v2  ← exp_inc_gemini_2.5_flash__en__v2.json
+  Gemini 2.5 Flash          [EN] v3  ← exp_inc_gemini_2.5_flash__en__v3.json
+  Gemini 2.5 Flash          [EN] v4  ← exp_inc_gemini_2.5_flash__en__v4.json
+  Gemini 2.5 Flash          [RO] v1  ← exp_inc_gemini_2.5_flash__ro__v1.json
+  Gemini 2.5 Flash          [RO] v2  ← exp_inc_gemini_2.5_flash__ro__v2.json
+  Gemini 2.5 Flash          [RO] v3  ← exp_inc_gemini_2.5_flash__ro__v3.json
+  Gemini 2.5 Flash          [RO] v4  ← exp_inc_gemini_2.5_flash__ro__v4.json
+  OpenAI o3                 [EN] v1  ← exp_inc_openai_o3__en__v1.json
+  OpenAI o3                 [EN] v2  ← exp_inc_openai_o3__en__v2.json
+  OpenAI o3                 [EN] v3  ← exp_inc_openai_o3__en__v3.json
+  OpenAI o3                 [EN] v4  ← exp_inc_openai_o3__en__v4.json
+  OpenAI o3                 [RO] v1  ← exp_inc_openai_o3__ro__v1.json
+  OpenAI o3                 [RO] v2  ← exp_inc_openai_o3__ro__v2.json
+  OpenAI o3                 [RO] v3  ← exp_inc_openai_o3__ro__v3.json
+  OpenAI o3                 [RO] v4  ← exp_inc_openai_o3__ro__v4.json
+  XLM-RoBERTa               [EN] v1  ← exp_inc_roberta_encoder__en__v1.json
+  XLM-RoBERTa               [EN] v2  ← exp_inc_roberta_encoder__en__v2.json
+  XLM-RoBERTa               [EN] v3  ← exp_inc_roberta_encoder__en__v3.json
+  XLM-RoBERTa               [EN] v4  ← exp_inc_roberta_encoder__en__v4.json
+  XLM-RoBERTa               [RO] v1  ← exp_inc_roberta_encoder__ro__v1.json
+  XLM-RoBERTa               [RO] v2  ← exp_inc_roberta_encoder__ro__v2.json
+  XLM-RoBERTa               [RO] v3  ← exp_inc_roberta_encoder__ro__v3.json
+  XLM-RoBERTa               [RO] v4  ← exp_inc_roberta_encoder__ro__v4.json
+  RoLLaMA 2 7B              [EN] v1  ← exp_inc_rollama2_7b__en__v1.json
+  RoLLaMA 2 7B              [EN] v2  ← exp_inc_rollama2_7b__en__v2.json
+  RoLLaMA 2 7B              [EN] v3  ← exp_inc_rollama2_7b__en__v3.json
+  RoLLaMA 2 7B              [RO] v1  ← exp_inc_rollama2_7b__ro__v1.json
+  RoLLaMA 2 7B              [RO] v2  ← exp_inc_rollama2_7b__ro__v2.json
+  RoLLaMA 2 7B              [RO] v3  ← exp_inc_rollama2_7b__ro__v3.json
+
+Total predicții: 6840
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T1 — Overview experimente: Detecția neconcordanțelor
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬───────┬──────────┬────────┬───────┬─────────┬─────────┬─────────╮
+│ Model            │ Tip   │ Param    │ Lang   │ Ver   │   Total │   Fails │ Fail%   │
+├──────────────────┼───────┼──────────┼────────┼───────┼─────────┼─────────┼─────────┤
+│ Aya Expanse 8B   │ Local │ 8B       │ EN     │ v1    │     180 │       1 │ 0.6%    │
+│ Aya Expanse 8B   │ Local │ 8B       │ EN     │ v2    │     180 │      45 │ 25.0%   │
+│ Aya Expanse 8B   │ Local │ 8B       │ EN     │ v3    │     180 │      19 │ 10.6%   │
+│ Aya Expanse 8B   │ Local │ 8B       │ EN     │ v4    │     180 │      52 │ 28.9%   │
+│ Aya Expanse 8B   │ Local │ 8B       │ RO     │ v1    │     180 │       1 │ 0.6%    │
+│ Aya Expanse 8B   │ Local │ 8B       │ RO     │ v2    │     180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local │ 8B       │ RO     │ v3    │     180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local │ 8B       │ RO     │ v4    │     180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ EN     │ v1    │     180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ EN     │ v2    │     180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ EN     │ v3    │     180 │       1 │ 0.6%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ EN     │ v4    │     180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ RO     │ v1    │     180 │       1 │ 0.6%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ RO     │ v2    │     180 │       1 │ 0.6%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ RO     │ v3    │     180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API   │ ~unknown │ RO     │ v4    │     180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API   │ ~200B+   │ EN     │ v1    │     180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API   │ ~200B+   │ EN     │ v2    │     180 │       1 │ 0.6%    │
+│ OpenAI o3        │ API   │ ~200B+   │ EN     │ v3    │     180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API   │ ~200B+   │ EN     │ v4    │     180 │       4 │ 2.2%    │
+│ OpenAI o3        │ API   │ ~200B+   │ RO     │ v1    │     180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API   │ ~200B+   │ RO     │ v2    │     180 │      32 │ 17.8%   │
+│ OpenAI o3        │ API   │ ~200B+   │ RO     │ v3    │     180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API   │ ~200B+   │ RO     │ v4    │     180 │      46 │ 25.6%   │
+│ XLM-RoBERTa      │ Local │ ~560M    │ EN     │ v1    │     180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M    │ EN     │ v2    │     180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M    │ EN     │ v3    │     180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M    │ EN     │ v4    │     180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M    │ RO     │ v1    │     180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M    │ RO     │ v2    │     180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M    │ RO     │ v3    │     180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local │ ~560M    │ RO     │ v4    │     180 │       0 │ 0.0%    │
+│ RoLLaMA 2 7B     │ Local │ 7B       │ EN     │ v1    │     180 │      27 │ 15.0%   │
+│ RoLLaMA 2 7B     │ Local │ 7B       │ EN     │ v2    │     180 │       0 │ 0.0%    │
+│ RoLLaMA 2 7B     │ Local │ 7B       │ EN     │ v3    │     180 │       0 │ 0.0%    │
+│ RoLLaMA 2 7B     │ Local │ 7B       │ RO     │ v1    │     180 │       0 │ 0.0%    │
+│ RoLLaMA 2 7B     │ Local │ 7B       │ RO     │ v2    │     180 │       0 │ 0.0%    │
+│ RoLLaMA 2 7B     │ Local │ 7B       │ RO     │ v3    │     180 │       0 │ 0.0%    │
+╰──────────────────┴───────┴──────────┴────────┴───────┴─────────┴─────────┴─────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T-BIN-ALL — Detecție binară pentru toate experimentele
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬────────┬───────┬─────────┬────────┬────────┬──────────┬─────╮
+│ Model            │ Lang   │ Ver   │ B-Acc   │   B-F1 │      κ │ Lat      │   N │
+├──────────────────┼────────┼───────┼─────────┼────────┼────────┼──────────┼─────┤
+│ Gemini 2.5 Flash │ RO     │ v4    │ 92.8%   │  0.822 │  0.777 │ 6895ms   │ 180 │
+│ Gemini 2.5 Flash │ RO     │ v3    │ 92.8%   │  0.817 │  0.772 │ 7462ms   │ 180 │
+│ Gemini 2.5 Flash │ EN     │ v3    │ 91.6%   │  0.789 │  0.736 │ 5757ms   │ 179 │
+│ OpenAI o3        │ RO     │ v4    │ 93.3%   │  0.78  │  0.742 │ 4292ms   │ 134 │
+│ Gemini 2.5 Flash │ EN     │ v4    │ 89.4%   │  0.753 │  0.686 │ 5748ms   │ 180 │
+│ OpenAI o3        │ EN     │ v2    │ 88.8%   │  0.73  │  0.659 │ 4260ms   │ 179 │
+│ OpenAI o3        │ EN     │ v3    │ 90.6%   │  0.73  │  0.674 │ 4794ms   │ 180 │
+│ OpenAI o3        │ EN     │ v4    │ 89.8%   │  0.727 │  0.665 │ 4686ms   │ 176 │
+│ OpenAI o3        │ RO     │ v3    │ 90.6%   │  0.721 │  0.667 │ 6163ms   │ 180 │
+│ OpenAI o3        │ RO     │ v1    │ 86.1%   │  0.658 │  0.57  │ 5345ms   │ 180 │
+│ OpenAI o3        │ EN     │ v1    │ 85.6%   │  0.629 │  0.539 │ 4903ms   │ 180 │
+│ Gemini 2.5 Flash │ RO     │ v2    │ 77.7%   │  0.608 │  0.47  │ 8054ms   │ 179 │
+│ Aya Expanse 8B   │ EN     │ v2    │ 80.7%   │  0.606 │  0.482 │ 110874ms │ 135 │
+│ Gemini 2.5 Flash │ EN     │ v2    │ 75.6%   │  0.6   │  0.453 │ 7815ms   │ 180 │
+│ Gemini 2.5 Flash │ EN     │ v1    │ 71.7%   │  0.564 │  0.397 │ 6742ms   │ 180 │
+│ OpenAI o3        │ RO     │ v2    │ 87.2%   │  0.558 │  0.483 │ 5339ms   │ 148 │
+│ Aya Expanse 8B   │ EN     │ v1    │ 78.2%   │  0.541 │  0.403 │ 68320ms  │ 179 │
+│ Aya Expanse 8B   │ RO     │ v1    │ 77.2%   │  0.539 │  0.395 │ 82649ms  │ 180 │
+│ Aya Expanse 8B   │ EN     │ v3    │ 76.4%   │  0.537 │  0.384 │ 113521ms │ 161 │
+│ Aya Expanse 8B   │ EN     │ v4    │ 74.2%   │  0.535 │  0.363 │ 113166ms │ 128 │
+│ Aya Expanse 8B   │ RO     │ v2    │ 77.2%   │  0.529 │  0.384 │ 132539ms │ 180 │
+│ Gemini 2.5 Flash │ RO     │ v1    │ 68.7%   │  0.517 │  0.332 │ 7777ms   │ 179 │
+│ Aya Expanse 8B   │ RO     │ v4    │ 55.0%   │  0.434 │  0.192 │ 126410ms │ 180 │
+│ Aya Expanse 8B   │ RO     │ v3    │ 51.7%   │  0.416 │  0.162 │ 116815ms │ 180 │
+│ XLM-RoBERTa      │ EN     │ v1    │ 25.6%   │  0.343 │  0.02  │ 6114ms   │ 180 │
+│ XLM-RoBERTa      │ EN     │ v2    │ 25.6%   │  0.343 │  0.02  │ 5720ms   │ 180 │
+│ XLM-RoBERTa      │ EN     │ v3    │ 25.6%   │  0.343 │  0.02  │ 11785ms  │ 180 │
+│ XLM-RoBERTa      │ EN     │ v4    │ 25.6%   │  0.343 │  0.02  │ 5644ms   │ 180 │
+│ XLM-RoBERTa      │ RO     │ v1    │ 25.6%   │  0.343 │  0.02  │ 5499ms   │ 180 │
+│ XLM-RoBERTa      │ RO     │ v2    │ 25.6%   │  0.343 │  0.02  │ 5736ms   │ 180 │
+│ XLM-RoBERTa      │ RO     │ v3    │ 25.6%   │  0.343 │  0.02  │ 6163ms   │ 180 │
+│ XLM-RoBERTa      │ RO     │ v4    │ 25.6%   │  0.343 │  0.02  │ 5326ms   │ 180 │
+│ RoLLaMA 2 7B     │ EN     │ v1    │ 78.5%   │  0.15  │  0.055 │ 6074ms   │ 158 │
+│ RoLLaMA 2 7B     │ RO     │ v2    │ 77.2%   │  0.089 │  0.01  │ 10842ms  │ 180 │
+│ RoLLaMA 2 7B     │ EN     │ v2    │ 79.4%   │  0     │ -0.011 │ 6667ms   │ 180 │
+│ RoLLaMA 2 7B     │ EN     │ v3    │ 80.0%   │  0     │  0     │ 10514ms  │ 180 │
+│ RoLLaMA 2 7B     │ RO     │ v1    │ 77.2%   │  0     │ -0.051 │ 6571ms   │ 180 │
+│ RoLLaMA 2 7B     │ RO     │ v3    │ 78.9%   │  0     │ -0.022 │ 14272ms  │ 180 │
+╰──────────────────┴────────┴───────┴─────────┴────────┴────────┴──────────┴─────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T-CLS-ALL — Clasificarea tipului de neconcordanță pentru toate experimentele
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬────────┬───────┬───────┬────────┬────────┬────────┬──────────┬─────╮
+│ Model            │ Lang   │ Ver   │ Acc   │   M-F1 │   W-F1 │      κ │ Lat      │   N │
+├──────────────────┼────────┼───────┼───────┼────────┼────────┼────────┼──────────┼─────┤
+│ Gemini 2.5 Flash │ EN     │ v2    │ 77.8% │  0.811 │  0.808 │  0.727 │ 8286ms   │  36 │
+│ Gemini 2.5 Flash │ RO     │ v2    │ 75.0% │  0.804 │  0.8   │  0.695 │ 8956ms   │  36 │
+│ Gemini 2.5 Flash │ RO     │ v1    │ 72.2% │  0.796 │  0.791 │  0.666 │ 9378ms   │  36 │
+│ Gemini 2.5 Flash │ RO     │ v4    │ 72.2% │  0.786 │  0.78  │  0.664 │ 9413ms   │  36 │
+│ Gemini 2.5 Flash │ EN     │ v1    │ 72.2% │  0.733 │  0.745 │  0.658 │ 7047ms   │  36 │
+│ OpenAI o3        │ EN     │ v2    │ 66.7% │  0.712 │  0.722 │  0.606 │ 4615ms   │  36 │
+│ Gemini 2.5 Flash │ EN     │ v3    │ 61.1% │  0.7   │  0.685 │  0.536 │ 7310ms   │  36 │
+│ Gemini 2.5 Flash │ RO     │ v3    │ 61.1% │  0.688 │  0.675 │  0.531 │ 10932ms  │  36 │
+│ OpenAI o3        │ EN     │ v3    │ 55.6% │  0.671 │  0.664 │  0.488 │ 5749ms   │  36 │
+│ OpenAI o3        │ RO     │ v1    │ 58.3% │  0.669 │  0.629 │  0.52  │ 5931ms   │  36 │
+│ OpenAI o3        │ EN     │ v4    │ 55.6% │  0.653 │  0.648 │  0.483 │ 5871ms   │  36 │
+│ Gemini 2.5 Flash │ EN     │ v4    │ 58.3% │  0.63  │  0.641 │  0.497 │ 8066ms   │  36 │
+│ OpenAI o3        │ RO     │ v3    │ 47.2% │  0.582 │  0.573 │  0.396 │ 7838ms   │  36 │
+│ OpenAI o3        │ EN     │ v1    │ 52.8% │  0.58  │  0.544 │  0.465 │ 5028ms   │  36 │
+│ OpenAI o3        │ RO     │ v2    │ 30.6% │  0.448 │  0.411 │  0.258 │ 4756ms   │  36 │
+│ OpenAI o3        │ RO     │ v4    │ 33.3% │  0.448 │  0.45  │  0.263 │ 4394ms   │  36 │
+│ Aya Expanse 8B   │ EN     │ v3    │ 27.8% │  0.267 │  0.266 │  0.192 │ 114768ms │  36 │
+│ Aya Expanse 8B   │ EN     │ v4    │ 22.2% │  0.226 │  0.258 │  0.136 │ 113690ms │  36 │
+│ Aya Expanse 8B   │ RO     │ v4    │ 25.0% │  0.208 │  0.204 │  0.131 │ 128781ms │  36 │
+│ Aya Expanse 8B   │ RO     │ v3    │ 25.0% │  0.193 │  0.192 │  0.124 │ 119072ms │  36 │
+│ Aya Expanse 8B   │ EN     │ v1    │ 19.4% │  0.189 │  0.177 │  0.102 │ 70286ms  │  36 │
+│ Aya Expanse 8B   │ RO     │ v1    │ 19.4% │  0.189 │  0.184 │  0.101 │ 80738ms  │  36 │
+│ Aya Expanse 8B   │ EN     │ v2    │ 13.9% │  0.141 │  0.123 │  0.064 │ 113463ms │  36 │
+│ Aya Expanse 8B   │ RO     │ v2    │ 11.1% │  0.062 │  0.043 │  0.021 │ 135214ms │  36 │
+│ RoLLaMA 2 7B     │ EN     │ v1    │ 2.8%  │  0.057 │  0.04  │  0.014 │ 6191ms   │  36 │
+│ XLM-RoBERTa      │ EN     │ v1    │ 11.1% │  0.05  │  0.056 │ -0.112 │ 6101ms   │  36 │
+│ XLM-RoBERTa      │ EN     │ v2    │ 11.1% │  0.05  │  0.056 │ -0.112 │ 5772ms   │  36 │
+│ XLM-RoBERTa      │ EN     │ v3    │ 11.1% │  0.05  │  0.056 │ -0.112 │ 8967ms   │  36 │
+│ XLM-RoBERTa      │ EN     │ v4    │ 11.1% │  0.05  │  0.056 │ -0.112 │ 6028ms   │  36 │
+│ XLM-RoBERTa      │ RO     │ v1    │ 11.1% │  0.05  │  0.056 │ -0.112 │ 5703ms   │  36 │
+│ XLM-RoBERTa      │ RO     │ v2    │ 11.1% │  0.05  │  0.056 │ -0.112 │ 5939ms   │  36 │
+│ XLM-RoBERTa      │ RO     │ v3    │ 11.1% │  0.05  │  0.056 │ -0.112 │ 6190ms   │  36 │
+│ XLM-RoBERTa      │ RO     │ v4    │ 11.1% │  0.05  │  0.056 │ -0.112 │ 5511ms   │  36 │
+│ RoLLaMA 2 7B     │ EN     │ v2    │ 0.0%  │  0     │  0     │  0     │ 6512ms   │  36 │
+│ RoLLaMA 2 7B     │ EN     │ v3    │ 0.0%  │  0     │  0     │  0     │ 10573ms  │  36 │
+│ RoLLaMA 2 7B     │ RO     │ v1    │ 0.0%  │  0     │  0     │  0     │ 5889ms   │  36 │
+│ RoLLaMA 2 7B     │ RO     │ v2    │ 0.0%  │  0     │  0     │ -0.008 │ 10438ms  │  36 │
+│ RoLLaMA 2 7B     │ RO     │ v3    │ 0.0%  │  0     │  0     │  0     │ 13720ms  │  36 │
+╰──────────────────┴────────┴───────┴───────┴────────┴────────┴────────┴──────────┴─────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T-BIN-BEST — Best prompt per model pentru detecția binară
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬───────┬────────┬───────┬─────────┬────────┬───────┬──────────┬─────╮
+│ Model            │ Tip   │ Lang   │ Ver   │ B-Acc   │   B-F1 │     κ │ Lat      │   N │
+├──────────────────┼───────┼────────┼───────┼─────────┼────────┼───────┼──────────┼─────┤
+│ Gemini 2.5 Flash │ API   │ RO     │ v4    │ 92.8%   │  0.822 │ 0.777 │ 6895ms   │ 180 │
+│ OpenAI o3        │ API   │ RO     │ v4    │ 93.3%   │  0.78  │ 0.742 │ 4292ms   │ 134 │
+│ Aya Expanse 8B   │ Local │ EN     │ v2    │ 80.7%   │  0.606 │ 0.482 │ 110874ms │ 135 │
+│ XLM-RoBERTa      │ Local │ EN     │ v1    │ 25.6%   │  0.343 │ 0.02  │ 6114ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local │ EN     │ v1    │ 78.5%   │  0.15  │ 0.055 │ 6074ms   │ 158 │
+╰──────────────────┴───────┴────────┴───────┴─────────┴────────┴───────┴──────────┴─────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T-CLS-BEST — Best prompt per model pentru tipul neconcordanței
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬───────┬────────┬───────┬───────┬────────┬────────┬────────┬──────────┬─────╮
+│ Model            │ Tip   │ Lang   │ Ver   │ Acc   │   M-F1 │   W-F1 │      κ │ Lat      │   N │
+├──────────────────┼───────┼────────┼───────┼───────┼────────┼────────┼────────┼──────────┼─────┤
+│ Gemini 2.5 Flash │ API   │ EN     │ v2    │ 77.8% │  0.811 │  0.808 │  0.727 │ 8286ms   │  36 │
+│ OpenAI o3        │ API   │ EN     │ v2    │ 66.7% │  0.712 │  0.722 │  0.606 │ 4615ms   │  36 │
+│ Aya Expanse 8B   │ Local │ EN     │ v3    │ 27.8% │  0.267 │  0.266 │  0.192 │ 114768ms │  36 │
+│ RoLLaMA 2 7B     │ Local │ EN     │ v1    │ 2.8%  │  0.057 │  0.04  │  0.014 │ 6191ms   │  36 │
+│ XLM-RoBERTa      │ Local │ EN     │ v1    │ 11.1% │  0.05  │  0.056 │ -0.112 │ 6101ms   │  36 │
+╰──────────────────┴───────┴────────┴───────┴───────┴────────┴────────┴────────┴──────────┴─────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T-CLS-PER-CLASS — Metrici per clasă pentru best prompt per model
+══════════════════════════════════════════════════════════════════════════════════════════
+╭──────────────────┬───────┬───────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Model            │ Cfg   │ Clasă             │   Precision │   Recall │    F1 │   Support │
+├──────────────────┼───────┼───────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ Gemini 2.5 Flash │ EN v2 │ incomplet         │       1     │    0.75  │ 0.857 │         8 │
+│ Gemini 2.5 Flash │ EN v2 │ irelevant         │       0.875 │    1     │ 0.933 │         7 │
+│ Gemini 2.5 Flash │ EN v2 │ contradictoriu    │       0.833 │    0.833 │ 0.833 │         6 │
+│ Gemini 2.5 Flash │ EN v2 │ nealiniat_context │       0.667 │    0.8   │ 0.727 │         5 │
+│ Gemini 2.5 Flash │ EN v2 │ halucinatie       │       0.857 │    0.6   │ 0.706 │        10 │
+│ OpenAI o3        │ EN v2 │ incomplet         │       1     │    0.875 │ 0.933 │         8 │
+│ OpenAI o3        │ EN v2 │ irelevant         │       0.75  │    0.857 │ 0.8   │         7 │
+│ OpenAI o3        │ EN v2 │ contradictoriu    │       0.857 │    1     │ 0.923 │         6 │
+│ OpenAI o3        │ EN v2 │ nealiniat_context │       1     │    0.2   │ 0.333 │         5 │
+│ OpenAI o3        │ EN v2 │ halucinatie       │       1     │    0.4   │ 0.571 │        10 │
+│ Aya Expanse 8B   │ EN v3 │ incomplet         │       0     │    0     │ 0     │         8 │
+│ Aya Expanse 8B   │ EN v3 │ irelevant         │       0.556 │    0.714 │ 0.625 │         7 │
+│ Aya Expanse 8B   │ EN v3 │ contradictoriu    │       0     │    0     │ 0     │         6 │
+│ Aya Expanse 8B   │ EN v3 │ nealiniat_context │       0.273 │    0.6   │ 0.375 │         5 │
+│ Aya Expanse 8B   │ EN v3 │ halucinatie       │       1     │    0.2   │ 0.333 │        10 │
+│ RoLLaMA 2 7B     │ EN v1 │ incomplet         │       0     │    0     │ 0     │         8 │
+│ RoLLaMA 2 7B     │ EN v1 │ irelevant         │       0     │    0     │ 0     │         7 │
+│ RoLLaMA 2 7B     │ EN v1 │ contradictoriu    │       0     │    0     │ 0     │         6 │
+│ RoLLaMA 2 7B     │ EN v1 │ nealiniat_context │       0.5   │    0.2   │ 0.286 │         5 │
+│ RoLLaMA 2 7B     │ EN v1 │ halucinatie       │       0     │    0     │ 0     │        10 │
+│ XLM-RoBERTa      │ EN v1 │ incomplet         │       0.167 │    0.5   │ 0.25  │         8 │
+│ XLM-RoBERTa      │ EN v1 │ irelevant         │       0     │    0     │ 0     │         7 │
+│ XLM-RoBERTa      │ EN v1 │ contradictoriu    │       0     │    0     │ 0     │         6 │
+│ XLM-RoBERTa      │ EN v1 │ nealiniat_context │       0     │    0     │ 0     │         5 │
+│ XLM-RoBERTa      │ EN v1 │ halucinatie       │       0     │    0     │ 0     │        10 │
+╰──────────────────┴───────┴───────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  T-ERR-BEST — Analiza erorilor pentru best prompt per model
+══════════════════════════════════════════════════════════════════════════════════════════
+
+▶ Gemini 2.5 Flash [EN v2]
+╭───────────────────┬───────────────────┬───────────╮
+│ Etichetă reală    │ Prezis ca         │   # erori │
+├───────────────────┼───────────────────┼───────────┤
+│ halucinatie       │ __invalid__       │         3 │
+│ incomplet         │ nealiniat_context │         1 │
+│ incomplet         │ contradictoriu    │         1 │
+│ halucinatie       │ nealiniat_context │         1 │
+│ contradictoriu    │ halucinatie       │         1 │
+│ nealiniat_context │ irelevant         │         1 │
+╰───────────────────┴───────────────────┴───────────╯
+
+
+▶ OpenAI o3 [EN v2]
+╭───────────────────┬────────────────┬───────────╮
+│ Etichetă reală    │ Prezis ca      │   # erori │
+├───────────────────┼────────────────┼───────────┤
+│ halucinatie       │ __invalid__    │         6 │
+│ nealiniat_context │ irelevant      │         2 │
+│ incomplet         │ __invalid__    │         1 │
+│ nealiniat_context │ contradictoriu │         1 │
+│ nealiniat_context │ __invalid__    │         1 │
+│ irelevant         │ __invalid__    │         1 │
+╰───────────────────┴────────────────┴───────────╯
+
+
+▶ Aya Expanse 8B [EN v3]
+╭───────────────────┬───────────────────┬───────────╮
+│ Etichetă reală    │ Prezis ca         │   # erori │
+├───────────────────┼───────────────────┼───────────┤
+│ halucinatie       │ __invalid__       │         6 │
+│ incomplet         │ __invalid__       │         5 │
+│ contradictoriu    │ nealiniat_context │         4 │
+│ halucinatie       │ nealiniat_context │         2 │
+│ incomplet         │ irelevant         │         2 │
+│ incomplet         │ nealiniat_context │         1 │
+│ nealiniat_context │ __invalid__       │         1 │
+│ nealiniat_context │ irelevant         │         1 │
+│ contradictoriu    │ irelevant         │         1 │
+│ contradictoriu    │ __invalid__       │         1 │
+│ irelevant         │ __invalid__       │         1 │
+│ irelevant         │ nealiniat_context │         1 │
+╰───────────────────┴───────────────────┴───────────╯
+
+
+▶ RoLLaMA 2 7B [EN v1]
+╭───────────────────┬───────────────────┬───────────╮
+│ Etichetă reală    │ Prezis ca         │   # erori │
+├───────────────────┼───────────────────┼───────────┤
+│ halucinatie       │ __invalid__       │         9 │
+│ incomplet         │ __invalid__       │         8 │
+│ irelevant         │ __invalid__       │         7 │
+│ contradictoriu    │ __invalid__       │         5 │
+│ nealiniat_context │ __invalid__       │         4 │
+│ halucinatie       │ incomplet         │         1 │
+│ contradictoriu    │ nealiniat_context │         1 │
+╰───────────────────┴───────────────────┴───────────╯
+
+
+▶ XLM-RoBERTa [EN v1]
+╭───────────────────┬───────────────────┬───────────╮
+│ Etichetă reală    │ Prezis ca         │   # erori │
+├───────────────────┼───────────────────┼───────────┤
+│ halucinatie       │ incomplet         │         8 │
+│ irelevant         │ incomplet         │         6 │
+│ contradictoriu    │ incomplet         │         4 │
+│ incomplet         │ contradictoriu    │         3 │
+│ halucinatie       │ contradictoriu    │         2 │
+│ nealiniat_context │ contradictoriu    │         2 │
+│ nealiniat_context │ incomplet         │         2 │
+│ incomplet         │ nealiniat_context │         1 │
+│ nealiniat_context │ halucinatie       │         1 │
+│ contradictoriu    │ __invalid__       │         1 │
+│ contradictoriu    │ nealiniat_context │         1 │
+│ irelevant         │ contradictoriu    │         1 │
+╰───────────────────┴───────────────────┴───────────╯
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+  LaTeX — Tabel pentru lucrare: best prompt per model, multi-clasă
+══════════════════════════════════════════════════════════════════════════════════════════
+\begin{table}[H]
+\centering
+\caption{Clasificarea tipului de neconcordanță (best prompt per model)}
+\label{tab:inc_multiclass_best}
+\footnotesize
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Model} & \textbf{Cfg} & \textbf{Acc} & \textbf{M-F1} & $\boldsymbol{\kappa}$ & \textbf{Lat} \\
+\midrule
+Gemini 2.5 Flash & EN v2 & 77.8% & 0.811 & 0.727 & 8286ms \\
+OpenAI o3 & EN v2 & 66.7% & 0.712 & 0.606 & 4615ms \\
+Aya Expanse 8B & EN v3 & 27.8% & 0.267 & 0.192 & 114768ms \\
+RoLLaMA 2 7B & EN v1 & 2.8% & 0.057 & 0.014 & 6191ms \\
+XLM-RoBERTa & EN v1 & 11.1% & 0.050 & -0.112 & 6101ms \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+══════════════════════════════════════════════════════════════════════════════════════════
+Evaluare completă: Detecția neconcordanțelor
+══════════════════════════════════════════════════════════════════════════════════════════
