@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{API vs Local comparison — Detecția neconcordanțelor}
+\label{tab:api-vs-local-incongruity-detection}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{Params} & \textbf{Acc} & \textbf{M-F1} & $\boldsymbol{\kappa}$ & \textbf{Latency} \\
+\midrule
+Gemini 2.5 Flash & API & undisclosed & 77.8\% & 0.811 & 0.727 & 8286 ms \\
+OpenAI o3 & API & ~200B+ & 66.7\% & 0.712 & 0.606 & 4615 ms \\
+Aya Expanse 8B & Local & 8B & 27.8\% & 0.267 & 0.192 & 114768 ms \\
+RoLLaMA 2 7B & Local & 7B & 2.8\% & 0.057 & 0.014 & 6191 ms \\
+XLM-RoBERTa & Local & ~560M & 11.1\% & 0.050 & -0.112 & 6101 ms \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,558 @@
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  EVALUATION: Clasificarea statusului final (Final Status Classification)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Task: final_status
+  Output dir: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\outputs_final_status
+  Report: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\evaluation_reports\eval_final_status.txt
+  Timestamp: 2026-05-19 18:49
+
+  Labels (5): ['rezolvata', 'nerezolvata', 'redirectionata', 'partial_rezolvata', 'intrerupta']
+
+
+  Loaded 40 experiment files:
+    Aya Expanse 8B            [EN] v1         ← exp_fst_aya_expanse_8b__en__v1.json
+    Aya Expanse 8B            [EN] v2         ← exp_fst_aya_expanse_8b__en__v2.json
+    Aya Expanse 8B            [EN] v3         ← exp_fst_aya_expanse_8b__en__v3.json
+    Aya Expanse 8B            [EN] v4         ← exp_fst_aya_expanse_8b__en__v4.json
+    Aya Expanse 8B            [RO] v1         ← exp_fst_aya_expanse_8b__ro__v1.json
+    Aya Expanse 8B            [RO] v2         ← exp_fst_aya_expanse_8b__ro__v2.json
+    Aya Expanse 8B            [RO] v3         ← exp_fst_aya_expanse_8b__ro__v3.json
+    Aya Expanse 8B            [RO] v4         ← exp_fst_aya_expanse_8b__ro__v4.json
+    Gemini 2.5 Flash          [EN] v1         ← exp_fst_gemini_2.5_flash__en__v1.json
+    Gemini 2.5 Flash          [EN] v2         ← exp_fst_gemini_2.5_flash__en__v2.json
+    Gemini 2.5 Flash          [EN] v3         ← exp_fst_gemini_2.5_flash__en__v3.json
+    Gemini 2.5 Flash          [EN] v4         ← exp_fst_gemini_2.5_flash__en__v4.json
+    Gemini 2.5 Flash          [RO] v1         ← exp_fst_gemini_2.5_flash__ro__v1.json
+    Gemini 2.5 Flash          [RO] v2         ← exp_fst_gemini_2.5_flash__ro__v2.json
+    Gemini 2.5 Flash          [RO] v3         ← exp_fst_gemini_2.5_flash__ro__v3.json
+    Gemini 2.5 Flash          [RO] v4         ← exp_fst_gemini_2.5_flash__ro__v4.json
+    OpenAI o3                 [EN] v1         ← exp_fst_openai_o3__en__v1.json
+    OpenAI o3                 [EN] v2         ← exp_fst_openai_o3__en__v2.json
+    OpenAI o3                 [EN] v3         ← exp_fst_openai_o3__en__v3.json
+    OpenAI o3                 [EN] v4         ← exp_fst_openai_o3__en__v4.json
+    OpenAI o3                 [RO] v1         ← exp_fst_openai_o3__ro__v1.json
+    OpenAI o3                 [RO] v2         ← exp_fst_openai_o3__ro__v2.json
+    OpenAI o3                 [RO] v3         ← exp_fst_openai_o3__ro__v3.json
+    OpenAI o3                 [RO] v4         ← exp_fst_openai_o3__ro__v4.json
+    XLM-RoBERTa               [EN] v1         ← exp_fst_roberta_encoder__en__v1.json
+    XLM-RoBERTa               [EN] v2         ← exp_fst_roberta_encoder__en__v2.json
+    XLM-RoBERTa               [EN] v3         ← exp_fst_roberta_encoder__en__v3.json
+    XLM-RoBERTa               [EN] v4         ← exp_fst_roberta_encoder__en__v4.json
+    XLM-RoBERTa               [RO] v1         ← exp_fst_roberta_encoder__ro__v1.json
+    XLM-RoBERTa               [RO] v2         ← exp_fst_roberta_encoder__ro__v2.json
+    XLM-RoBERTa               [RO] v3         ← exp_fst_roberta_encoder__ro__v3.json
+    XLM-RoBERTa               [RO] v4         ← exp_fst_roberta_encoder__ro__v4.json
+    RoLLaMA 2 7B              [EN] v1         ← exp_fst_rollama2_7b__en__v1.json
+    RoLLaMA 2 7B              [EN] v2         ← exp_fst_rollama2_7b__en__v2.json
+    RoLLaMA 2 7B              [EN] v3         ← exp_fst_rollama2_7b__en__v3.json
+    RoLLaMA 2 7B              [EN] v4         ← exp_fst_rollama2_7b__en__v4.json
+    RoLLaMA 2 7B              [RO] v1         ← exp_fst_rollama2_7b__ro__v1.json
+    RoLLaMA 2 7B              [RO] v2         ← exp_fst_rollama2_7b__ro__v2.json
+    RoLLaMA 2 7B              [RO] v3         ← exp_fst_rollama2_7b__ro__v3.json
+    RoLLaMA 2 7B              [RO] v4         ← exp_fst_rollama2_7b__ro__v4.json
+
+  Total predictions across all experiments: 7200
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T1 — Experiment Overview: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T1 — All loaded experiments
+╭──────────────────┬────────┬─────────────┬────────┬───────┬─────┬─────────┬─────────╮
+│ Model            │ Type   │ Params      │ Lang   │ Ver   │   N │   Fails │ Fail%   │
+├──────────────────┼────────┼─────────────┼────────┼───────┼─────┼─────────┼─────────┤
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN     │ v1    │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN     │ v2    │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN     │ v3    │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN     │ v4    │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ RO     │ v1    │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ RO     │ v2    │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ RO     │ v3    │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ RO     │ v4    │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ EN     │ v1    │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ EN     │ v2    │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ EN     │ v3    │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ EN     │ v4    │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v1    │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v2    │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v3    │ 180 │       1 │ 0.6%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v4    │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ EN     │ v1    │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ EN     │ v2    │ 180 │       1 │ 0.6%    │
+│ OpenAI o3        │ API    │ ~200B+      │ EN     │ v3    │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ EN     │ v4    │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ RO     │ v1    │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ RO     │ v2    │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ RO     │ v3    │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ RO     │ v4    │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v1    │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v2    │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v3    │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v4    │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ RO     │ v1    │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ RO     │ v2    │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ RO     │ v3    │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ RO     │ v4    │ 180 │       0 │ 0.0%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ EN     │ v1    │ 180 │     136 │ 75.6%   │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ EN     │ v2    │ 180 │     108 │ 60.0%   │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ EN     │ v3    │ 180 │       5 │ 2.8%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ EN     │ v4    │ 180 │      54 │ 30.0%   │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO     │ v1    │ 180 │      65 │ 36.1%   │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO     │ v2    │ 180 │       0 │ 0.0%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO     │ v3    │ 180 │       1 │ 0.6%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO     │ v4    │ 180 │       3 │ 1.7%    │
+╰──────────────────┴────────┴─────────────┴────────┴───────┴─────┴─────────┴─────────╯
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T2 — All Experiments Ranked: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T2 — All experiments, ranked by Macro-F1
+╭──────────────────┬────────┬────────┬───────┬───────┬────────┬────────┬────────┬────────────────┬───────────┬─────╮
+│ Model            │ Type   │ Lang   │ Ver   │ Acc   │   M-F1 │   W-F1 │      κ │ κ interp       │ Latency   │   N │
+├──────────────────┼────────┼────────┼───────┼───────┼────────┼────────┼────────┼────────────────┼───────────┼─────┤
+│ OpenAI o3        │ API    │ RO     │ v4    │ 90.0% │  0.86  │  0.899 │  0.856 │ Almost Perfect │ 8916 ms   │ 180 │
+│ OpenAI o3        │ API    │ EN     │ v4    │ 87.2% │  0.839 │  0.874 │  0.819 │ Almost Perfect │ 7606 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ EN     │ v4    │ 86.1% │  0.834 │  0.863 │  0.804 │ Almost Perfect │ 4769 ms   │ 180 │
+│ OpenAI o3        │ API    │ RO     │ v3    │ 85.6% │  0.809 │  0.851 │  0.794 │ Substantial    │ 4602 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ RO     │ v4    │ 83.9% │  0.806 │  0.842 │  0.774 │ Substantial    │ 6546 ms   │ 180 │
+│ OpenAI o3        │ API    │ EN     │ v3    │ 84.4% │  0.799 │  0.838 │  0.778 │ Substantial    │ 3593 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ RO     │ v3    │ 83.9% │  0.789 │  0.839 │  0.773 │ Substantial    │ 5652 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ EN     │ v3    │ 84.4% │  0.787 │  0.841 │  0.778 │ Substantial    │ 3940 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ EN     │ v2    │ 83.9% │  0.774 │  0.835 │  0.771 │ Substantial    │ 3486 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ RO     │ v2    │ 81.7% │  0.763 │  0.816 │  0.743 │ Substantial    │ 5972 ms   │ 180 │
+│ OpenAI o3        │ API    │ EN     │ v2    │ 81.7% │  0.74  │  0.813 │  0.737 │ Substantial    │ 2780 ms   │ 180 │
+│ OpenAI o3        │ API    │ RO     │ v2    │ 80.6% │  0.712 │  0.797 │  0.721 │ Substantial    │ 3707 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ EN     │ v1    │ 71.7% │  0.706 │  0.723 │  0.606 │ Substantial    │ 3779 ms   │ 180 │
+│ OpenAI o3        │ API    │ RO     │ v1    │ 72.8% │  0.701 │  0.729 │  0.609 │ Substantial    │ 2936 ms   │ 180 │
+│ OpenAI o3        │ API    │ EN     │ v1    │ 72.2% │  0.688 │  0.72  │  0.598 │ Moderate       │ 1920 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ RO     │ v1    │ 66.1% │  0.648 │  0.677 │  0.536 │ Moderate       │ 6029 ms   │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN     │ v3    │ 72.2% │  0.62  │  0.69  │  0.58  │ Moderate       │ 77595 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ RO     │ v1    │ 70.6% │  0.62  │  0.68  │  0.553 │ Moderate       │ 64211 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN     │ v2    │ 73.3% │  0.614 │  0.702 │  0.6   │ Moderate       │ 69229 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ RO     │ v2    │ 71.7% │  0.607 │  0.684 │  0.569 │ Moderate       │ 75468 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN     │ v1    │ 68.9% │  0.598 │  0.665 │  0.531 │ Moderate       │ 58077 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ RO     │ v3    │ 67.8% │  0.546 │  0.64  │  0.505 │ Moderate       │ 96263 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN     │ v4    │ 68.3% │  0.531 │  0.664 │  0.537 │ Moderate       │ 180983 ms │ 180 │
+│ Aya Expanse 8B   │ Local  │ RO     │ v4    │ 44.4% │  0.392 │  0.449 │  0.263 │ Fair           │ 515508 ms │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN     │ v1    │ 22.8% │  0.224 │  0.237 │  0.069 │ Slight         │ 4819 ms   │ 180 │
+│ XLM-RoBERTa      │ Local  │ RO     │ v1    │ 22.8% │  0.224 │  0.237 │  0.069 │ Slight         │ 4852 ms   │ 180 │
+│ XLM-RoBERTa      │ Local  │ RO     │ v2    │ 22.8% │  0.224 │  0.237 │  0.069 │ Slight         │ 4894 ms   │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN     │ v2    │ 22.2% │  0.216 │  0.232 │  0.063 │ Slight         │ 5073 ms   │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN     │ v3    │ 22.2% │  0.216 │  0.232 │  0.063 │ Slight         │ 5086 ms   │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN     │ v4    │ 22.2% │  0.216 │  0.232 │  0.064 │ Slight         │ 4560 ms   │ 180 │
+│ XLM-RoBERTa      │ Local  │ RO     │ v3    │ 22.2% │  0.216 │  0.232 │  0.063 │ Slight         │ 4972 ms   │ 180 │
+│ XLM-RoBERTa      │ Local  │ RO     │ v4    │ 22.2% │  0.216 │  0.232 │  0.064 │ Slight         │ 4842 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO     │ v3    │ 41.1% │  0.155 │  0.316 │  0.003 │ Slight         │ 12077 ms  │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO     │ v2    │ 45.6% │  0.144 │  0.315 │  0.004 │ Slight         │ 9043 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO     │ v1    │ 38.3% │  0.138 │  0.326 │  0.117 │ Slight         │ 9238 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ EN     │ v3    │ 43.3% │  0.131 │  0.296 │ -0.03  │ Poor           │ 9248 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ EN     │ v2    │ 23.9% │  0.11  │  0.26  │  0.064 │ Slight         │ 9301 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ EN     │ v1    │ 16.7% │  0.093 │  0.22  │  0.058 │ Slight         │ 7391 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO     │ v4    │ 18.9% │  0.064 │  0.061 │  0.004 │ Slight         │ 23210 ms  │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ EN     │ v4    │ 8.9%  │  0.04  │  0.038 │ -0.05  │ Poor           │ 17619 ms  │ 180 │
+╰──────────────────┴────────┴────────┴───────┴───────┴────────┴────────┴────────┴────────────────┴───────────┴─────╯
+
+
+  📝 This table shows every (model, language, prompt version) combination. The best configuration per model is selected in T3.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T3 — Best Configuration per Model: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T3 — Best prompt per model (Clasificarea statusului final)
+╭──────────────────┬────────┬─────────────┬──────────┬───────┬────────┬────────┬───────┬────────────────┬───────────┬─────╮
+│ Model            │ Type   │ Params      │ Config   │ Acc   │   M-F1 │   W-F1 │     κ │ κ interp       │ Latency   │   N │
+├──────────────────┼────────┼─────────────┼──────────┼───────┼────────┼────────┼───────┼────────────────┼───────────┼─────┤
+│ OpenAI o3 ★      │ API    │ ~200B+      │ RO v4    │ 90.0% │  0.86  │  0.899 │ 0.856 │ Almost Perfect │ 8916 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ EN v4    │ 86.1% │  0.834 │  0.863 │ 0.804 │ Almost Perfect │ 4769 ms   │ 180 │
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN v3    │ 72.2% │  0.62  │  0.69  │ 0.58  │ Moderate       │ 77595 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN v1    │ 22.8% │  0.224 │  0.237 │ 0.069 │ Slight         │ 4819 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO v3    │ 41.1% │  0.155 │  0.316 │ 0.003 │ Slight         │ 12077 ms  │ 180 │
+╰──────────────────┴────────┴─────────────┴──────────┴───────┴────────┴────────┴───────┴────────────────┴───────────┴─────╯
+
+
+  📝 Best overall: OpenAI o3 with config RO v4 — Accuracy=90.0%, Macro-F1=0.860, κ=0.856 (Almost Perfect).
+
+
+  [LaTeX block saved: best_final_status]
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T4 — Per-Class Metrics (Best Configs): Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+OpenAI o3 [RO v4]
+╭───────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class             │   Precision │   Recall │    F1 │   Support │
+├───────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ rezolvata         │       0.943 │    0.976 │ 0.96  │        85 │
+│ nerezolvata       │       0.733 │    0.846 │ 0.786 │        13 │
+│ redirectionata    │       0.926 │    0.893 │ 0.909 │        28 │
+│ partial_rezolvata │       0.848 │    0.824 │ 0.836 │        34 │
+│ intrerupta        │       0.882 │    0.75  │ 0.811 │        20 │
+╰───────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+Gemini 2.5 Flash [EN v4]
+╭───────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class             │   Precision │   Recall │    F1 │   Support │
+├───────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ rezolvata         │       0.95  │    0.894 │ 0.921 │        85 │
+│ nerezolvata       │       0.706 │    0.923 │ 0.8   │        13 │
+│ redirectionata    │       0.862 │    0.893 │ 0.877 │        28 │
+│ partial_rezolvata │       0.73  │    0.794 │ 0.761 │        34 │
+│ intrerupta        │       0.882 │    0.75  │ 0.811 │        20 │
+╰───────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+Aya Expanse 8B [EN v3]
+╭───────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class             │   Precision │   Recall │    F1 │   Support │
+├───────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ rezolvata         │       0.79  │    0.976 │ 0.874 │        85 │
+│ nerezolvata       │       0.833 │    0.769 │ 0.8   │        13 │
+│ redirectionata    │       0.688 │    0.786 │ 0.733 │        28 │
+│ partial_rezolvata │       0.407 │    0.324 │ 0.361 │        34 │
+│ intrerupta        │       1     │    0.2   │ 0.333 │        20 │
+╰───────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+XLM-RoBERTa [EN v1]
+╭───────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class             │   Precision │   Recall │    F1 │   Support │
+├───────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ rezolvata         │       0.583 │    0.165 │ 0.257 │        85 │
+│ nerezolvata       │       0.114 │    0.308 │ 0.167 │        13 │
+│ redirectionata    │       0.333 │    0.25  │ 0.286 │        28 │
+│ partial_rezolvata │       0.188 │    0.176 │ 0.182 │        34 │
+│ intrerupta        │       0.147 │    0.5   │ 0.227 │        20 │
+╰───────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+RoLLaMA 2 7B [RO v3]
+╭───────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class             │   Precision │   Recall │    F1 │   Support │
+├───────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ rezolvata         │       0.479 │    0.8   │ 0.599 │        85 │
+│ nerezolvata       │       0     │    0     │ 0     │        13 │
+│ redirectionata    │       0     │    0     │ 0     │        28 │
+│ partial_rezolvata │       0.176 │    0.176 │ 0.176 │        34 │
+│ intrerupta        │       0     │    0     │ 0     │        20 │
+╰───────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T5 — Error Analysis (Best Configs): Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  ▶ OpenAI o3 [RO v4] — 18 errors out of 180 (10.0% error rate)
+
+OpenAI o3 [RO v4]
+╭───────────────────┬───────────────────┬─────────┬──────────────╮
+│ True Label        │ Predicted As      │   Count │ % of Total   │
+├───────────────────┼───────────────────┼─────────┼──────────────┤
+│ partial_rezolvata │ rezolvata         │       3 │ 1.7%         │
+│ redirectionata    │ partial_rezolvata │       3 │ 1.7%         │
+│ intrerupta        │ nerezolvata       │       3 │ 1.7%         │
+│ partial_rezolvata │ intrerupta        │       2 │ 1.1%         │
+│ nerezolvata       │ partial_rezolvata │       2 │ 1.1%         │
+│ intrerupta        │ rezolvata         │       2 │ 1.1%         │
+│ partial_rezolvata │ redirectionata    │       1 │ 0.6%         │
+│ rezolvata         │ redirectionata    │       1 │ 0.6%         │
+│ rezolvata         │ nerezolvata       │       1 │ 0.6%         │
+╰───────────────────┴───────────────────┴─────────┴──────────────╯
+
+
+  ▶ Gemini 2.5 Flash [EN v4] — 25 errors out of 180 (13.9% error rate)
+
+Gemini 2.5 Flash [EN v4]
+╭───────────────────┬───────────────────┬─────────┬──────────────╮
+│ True Label        │ Predicted As      │   Count │ % of Total   │
+├───────────────────┼───────────────────┼─────────┼──────────────┤
+│ rezolvata         │ partial_rezolvata │       6 │ 3.3%         │
+│ intrerupta        │ nerezolvata       │       4 │ 2.2%         │
+│ partial_rezolvata │ redirectionata    │       3 │ 1.7%         │
+│ partial_rezolvata │ rezolvata         │       3 │ 1.7%         │
+│ redirectionata    │ partial_rezolvata │       3 │ 1.7%         │
+│ partial_rezolvata │ intrerupta        │       1 │ 0.6%         │
+│ rezolvata         │ intrerupta        │       1 │ 0.6%         │
+│ rezolvata         │ redirectionata    │       1 │ 0.6%         │
+│ rezolvata         │ nerezolvata       │       1 │ 0.6%         │
+│ intrerupta        │ rezolvata         │       1 │ 0.6%         │
+│ nerezolvata       │ partial_rezolvata │       1 │ 0.6%         │
+╰───────────────────┴───────────────────┴─────────┴──────────────╯
+
+
+  ▶ Aya Expanse 8B [EN v3] — 50 errors out of 180 (27.8% error rate)
+
+Aya Expanse 8B [EN v3]
+╭───────────────────┬───────────────────┬─────────┬──────────────╮
+│ True Label        │ Predicted As      │   Count │ % of Total   │
+├───────────────────┼───────────────────┼─────────┼──────────────┤
+│ partial_rezolvata │ rezolvata         │      17 │ 9.4%         │
+│ intrerupta        │ partial_rezolvata │       8 │ 4.4%         │
+│ partial_rezolvata │ redirectionata    │       6 │ 3.3%         │
+│ redirectionata    │ partial_rezolvata │       4 │ 2.2%         │
+│ intrerupta        │ rezolvata         │       4 │ 2.2%         │
+│ intrerupta        │ redirectionata    │       3 │ 1.7%         │
+│ nerezolvata       │ partial_rezolvata │       3 │ 1.7%         │
+│ redirectionata    │ rezolvata         │       1 │ 0.6%         │
+│ redirectionata    │ nerezolvata       │       1 │ 0.6%         │
+│ intrerupta        │ nerezolvata       │       1 │ 0.6%         │
+│ rezolvata         │ partial_rezolvata │       1 │ 0.6%         │
+│ rezolvata         │ redirectionata    │       1 │ 0.6%         │
+╰───────────────────┴───────────────────┴─────────┴──────────────╯
+
+
+  ▶ XLM-RoBERTa [EN v1] — 139 errors out of 180 (77.2% error rate)
+
+XLM-RoBERTa [EN v1]
+╭───────────────────┬───────────────────┬─────────┬──────────────╮
+│ True Label        │ Predicted As      │   Count │ % of Total   │
+├───────────────────┼───────────────────┼─────────┼──────────────┤
+│ rezolvata         │ intrerupta        │      32 │ 17.8%        │
+│ rezolvata         │ partial_rezolvata │      18 │ 10.0%        │
+│ rezolvata         │ nerezolvata       │      13 │ 7.2%         │
+│ partial_rezolvata │ intrerupta        │      12 │ 6.7%         │
+│ redirectionata    │ intrerupta        │      11 │ 6.1%         │
+│ rezolvata         │ redirectionata    │       8 │ 4.4%         │
+│ partial_rezolvata │ nerezolvata       │       7 │ 3.9%         │
+│ intrerupta        │ nerezolvata       │       7 │ 3.9%         │
+│ partial_rezolvata │ rezolvata         │       6 │ 3.3%         │
+│ redirectionata    │ partial_rezolvata │       5 │ 2.8%         │
+│ redirectionata    │ nerezolvata       │       4 │ 2.2%         │
+│ partial_rezolvata │ redirectionata    │       3 │ 1.7%         │
+│ nerezolvata       │ intrerupta        │       3 │ 1.7%         │
+│ nerezolvata       │ rezolvata         │       2 │ 1.1%         │
+│ nerezolvata       │ partial_rezolvata │       2 │ 1.1%         │
+╰───────────────────┴───────────────────┴─────────┴──────────────╯
+
+
+  ▶ RoLLaMA 2 7B [RO v3] — 106 errors out of 180 (58.9% error rate)
+
+RoLLaMA 2 7B [RO v3]
+╭───────────────────┬───────────────────┬─────────┬──────────────╮
+│ True Label        │ Predicted As      │   Count │ % of Total   │
+├───────────────────┼───────────────────┼─────────┼──────────────┤
+│ partial_rezolvata │ rezolvata         │      27 │ 15.0%        │
+│ intrerupta        │ rezolvata         │      20 │ 11.1%        │
+│ redirectionata    │ rezolvata         │      18 │ 10.0%        │
+│ rezolvata         │ partial_rezolvata │      15 │ 8.3%         │
+│ redirectionata    │ partial_rezolvata │       9 │ 5.0%         │
+│ nerezolvata       │ rezolvata         │       9 │ 5.0%         │
+│ nerezolvata       │ partial_rezolvata │       4 │ 2.2%         │
+│ partial_rezolvata │ nerezolvata       │       1 │ 0.6%         │
+│ redirectionata    │ nerezolvata       │       1 │ 0.6%         │
+│ rezolvata         │ nerezolvata       │       1 │ 0.6%         │
+│ rezolvata         │ __invalid__       │       1 │ 0.6%         │
+╰───────────────────┴───────────────────┴─────────┴──────────────╯
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T6 — Prompt Version Evolution: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T6 — Version evolution (Clasificarea statusului final)
+╭──────────────────┬────────┬───────────────┬───────────────┬───────────────┬───────────────┬──────────────────╮
+│ Model            │ Lang   │ Acc/F1 v1     │ Acc/F1 v2     │ Acc/F1 v3     │ Acc/F1 v4     │ ΔF1 first→last   │
+├──────────────────┼────────┼───────────────┼───────────────┼───────────────┼───────────────┼──────────────────┤
+│ Aya Expanse 8B   │ EN     │ 68.9% / 0.598 │ 73.3% / 0.614 │ 72.2% / 0.620 │ 68.3% / 0.531 │ -6.7%            │
+│ Aya Expanse 8B   │ RO     │ 70.6% / 0.620 │ 71.7% / 0.607 │ 67.8% / 0.546 │ 44.4% / 0.392 │ -22.8%           │
+│ Gemini 2.5 Flash │ EN     │ 71.7% / 0.706 │ 83.9% / 0.774 │ 84.4% / 0.787 │ 86.1% / 0.834 │ +12.8%           │
+│ Gemini 2.5 Flash │ RO     │ 66.1% / 0.648 │ 81.7% / 0.763 │ 83.9% / 0.789 │ 83.9% / 0.806 │ +15.8%           │
+│ OpenAI o3        │ EN     │ 72.2% / 0.688 │ 81.7% / 0.740 │ 84.4% / 0.799 │ 87.2% / 0.839 │ +15.1%           │
+│ OpenAI o3        │ RO     │ 72.8% / 0.701 │ 80.6% / 0.712 │ 85.6% / 0.809 │ 90.0% / 0.860 │ +15.9%           │
+│ XLM-RoBERTa      │ EN     │ 22.8% / 0.224 │ 22.2% / 0.216 │ 22.2% / 0.216 │ 22.2% / 0.216 │ -0.7%            │
+│ XLM-RoBERTa      │ RO     │ 22.8% / 0.224 │ 22.8% / 0.224 │ 22.2% / 0.216 │ 22.2% / 0.216 │ -0.7%            │
+│ RoLLaMA 2 7B     │ EN     │ 16.7% / 0.093 │ 23.9% / 0.110 │ 43.3% / 0.131 │ 8.9% / 0.040  │ -5.3%            │
+│ RoLLaMA 2 7B     │ RO     │ 38.3% / 0.138 │ 45.6% / 0.144 │ 41.1% / 0.155 │ 18.9% / 0.064 │ -7.4%            │
+╰──────────────────┴────────┴───────────────┴───────────────┴───────────────┴───────────────┴──────────────────╯
+
+
+  📝 Each cell shows Accuracy / Macro-F1 for that prompt version. The ΔF1 column measures the net improvement from the earliest to the latest prompt version.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T7 — Language Impact (RO vs EN): Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T7 — Language impact (Clasificarea statusului final)
+╭──────────────────┬────────┬──────────┬──────────┬────────┬─────────┬─────────┬───────┬──────────┬──────────┬───────────┬──────────╮
+│ Model            │ Type   │ Acc RO   │ Acc EN   │ ΔAcc   │   F1 RO │   F1 EN │ ΔF1   │ Lat RO   │ Lat EN   │ ΔLat      │ Winner   │
+├──────────────────┼────────┼──────────┼──────────┼────────┼─────────┼─────────┼───────┼──────────┼──────────┼───────────┼──────────┤
+│ Aya Expanse 8B   │ Local  │ 70.6%    │ 72.2%    │ -1.7%  │   0.62  │   0.62  │ -0.0% │ 64211 ms │ 77595 ms │ -13384 ms │ ≈        │
+│ Gemini 2.5 Flash │ API    │ 83.9%    │ 86.1%    │ -2.2%  │   0.806 │   0.834 │ -2.8% │ 6546 ms  │ 4769 ms  │ +1777 ms  │ EN       │
+│ OpenAI o3        │ API    │ 90.0%    │ 87.2%    │ +2.8%  │   0.86  │   0.839 │ +2.1% │ 8916 ms  │ 7606 ms  │ +1310 ms  │ RO       │
+│ XLM-RoBERTa      │ Local  │ 22.8%    │ 22.8%    │ +0.0%  │   0.224 │   0.224 │ +0.0% │ 4852 ms  │ 4819 ms  │ +34 ms    │ ≈        │
+│ RoLLaMA 2 7B     │ Local  │ 41.1%    │ 43.3%    │ -2.2%  │   0.155 │   0.131 │ +2.4% │ 12077 ms │ 9248 ms  │ +2828 ms  │ RO       │
+╰──────────────────┴────────┴──────────┴──────────┴────────┴─────────┴─────────┴───────┴──────────┴──────────┴───────────┴──────────╯
+
+
+  📝 For tasks on Romanian banking conversations, RO prompts often align better with the conversational register. EN prompts can help with models that have stronger English pretraining. The winner column uses a 1% threshold on Macro-F1.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T8 — Latency Analysis: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T8 — Latency for best configs (Clasificarea statusului final)
+╭──────────────────┬────────┬──────────┬──────────┬──────────┬──────────┬───────────┬──────────┬───────────┬─────╮
+│ Model            │ Type   │ Config   │ Mean     │ Median   │ Std      │ p95       │ Min      │ Max       │   N │
+├──────────────────┼────────┼──────────┼──────────┼──────────┼──────────┼───────────┼──────────┼───────────┼─────┤
+│ Gemini 2.5 Flash │ API    │ EN v4    │ 4769 ms  │ 3788 ms  │ 2878 ms  │ 11370 ms  │ 1246 ms  │ 20685 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN v1    │ 4819 ms  │ 3704 ms  │ 2572 ms  │ 8846 ms   │ 1362 ms  │ 10113 ms  │ 180 │
+│ OpenAI o3        │ API    │ RO v4    │ 8916 ms  │ 8436 ms  │ 6707 ms  │ 21062 ms  │ 1303 ms  │ 37002 ms  │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO v3    │ 12077 ms │ 11837 ms │ 2264 ms  │ 15559 ms  │ 8787 ms  │ 24714 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN v3    │ 77595 ms │ 69204 ms │ 27112 ms │ 124746 ms │ 18691 ms │ 162893 ms │ 180 │
+╰──────────────────┴────────┴──────────┴──────────┴──────────┴──────────┴───────────┴──────────┴───────────┴─────╯
+
+
+  📝 API models include network round-trip time. Local models run on consumer hardware with quantized weights (Q4_K_M for Ollama models). p95 is most relevant for production SLA considerations.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T9 — Output Reliability: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T9 — Output reliability (Clasificarea statusului final)
+╭──────────────────┬────────┬───────┬─────────┬─────────┬─────────┬─────────┬────────┬────────╮
+│ Model            │ Lang   │ Ver   │   Total │   Fails │ Fail%   │ High%   │ Med%   │ Low%   │
+├──────────────────┼────────┼───────┼─────────┼─────────┼─────────┼─────────┼────────┼────────┤
+│ Aya Expanse 8B   │ EN     │ v1    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ EN     │ v2    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ EN     │ v3    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ EN     │ v4    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ RO     │ v1    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ RO     │ v2    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ RO     │ v3    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ RO     │ v4    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ EN     │ v1    │     180 │       0 │ 0.0%    │ 98.3%   │ 1.7%   │ 0.0%   │
+│ Gemini 2.5 Flash │ EN     │ v2    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ EN     │ v3    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ EN     │ v4    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ RO     │ v1    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ RO     │ v2    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ RO     │ v3    │     180 │       1 │ 0.6%    │ 99.4%   │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ RO     │ v4    │     180 │       0 │ 0.0%    │ 99.4%   │ 0.6%   │ 0.0%   │
+│ OpenAI o3        │ EN     │ v1    │     180 │       0 │ 0.0%    │ 84.4%   │ 15.6%  │ 0.0%   │
+│ OpenAI o3        │ EN     │ v2    │     180 │       1 │ 0.6%    │ 82.8%   │ 16.7%  │ 0.0%   │
+│ OpenAI o3        │ EN     │ v3    │     180 │       0 │ 0.0%    │ 90.0%   │ 10.0%  │ 0.0%   │
+│ OpenAI o3        │ EN     │ v4    │     180 │       0 │ 0.0%    │ 83.3%   │ 16.7%  │ 0.0%   │
+│ OpenAI o3        │ RO     │ v1    │     180 │       0 │ 0.0%    │ 78.3%   │ 21.7%  │ 0.0%   │
+│ OpenAI o3        │ RO     │ v2    │     180 │       0 │ 0.0%    │ 81.1%   │ 18.9%  │ 0.0%   │
+│ OpenAI o3        │ RO     │ v3    │     180 │       0 │ 0.0%    │ 90.0%   │ 10.0%  │ 0.0%   │
+│ OpenAI o3        │ RO     │ v4    │     180 │       0 │ 0.0%    │ 85.0%   │ 15.0%  │ 0.0%   │
+│ XLM-RoBERTa      │ EN     │ v1    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
+│ XLM-RoBERTa      │ EN     │ v2    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
+│ XLM-RoBERTa      │ EN     │ v3    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
+│ XLM-RoBERTa      │ EN     │ v4    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
+│ XLM-RoBERTa      │ RO     │ v1    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
+│ XLM-RoBERTa      │ RO     │ v2    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
+│ XLM-RoBERTa      │ RO     │ v3    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
+│ XLM-RoBERTa      │ RO     │ v4    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
+│ RoLLaMA 2 7B     │ EN     │ v1    │     180 │     136 │ 75.6%   │ 22.8%   │ 32.2%  │ 0.0%   │
+│ RoLLaMA 2 7B     │ EN     │ v2    │     180 │     108 │ 60.0%   │ 35.0%   │ 32.8%  │ 0.0%   │
+│ RoLLaMA 2 7B     │ EN     │ v3    │     180 │       5 │ 2.8%    │ 0.6%    │ 0.6%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ EN     │ v4    │     180 │      54 │ 30.0%   │ —       │ —      │ —      │
+│ RoLLaMA 2 7B     │ RO     │ v1    │     180 │      65 │ 36.1%   │ 47.2%   │ 3.3%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ RO     │ v2    │     180 │       0 │ 0.0%    │ —       │ —      │ —      │
+│ RoLLaMA 2 7B     │ RO     │ v3    │     180 │       1 │ 0.6%    │ —       │ —      │ —      │
+│ RoLLaMA 2 7B     │ RO     │ v4    │     180 │       3 │ 1.7%    │ —       │ —      │ —      │
+╰──────────────────┴────────┴───────┴─────────┴─────────┴─────────┴─────────┴────────┴────────╯
+
+
+  📝 Parse failures indicate the model returned output that could not be parsed into the expected JSON schema. High failure rates correlate with weaker instruction-following capability.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  C1 — API vs Local Comparison: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+C1 — API vs Local (Clasificarea statusului final)
+╭──────────────┬────────────┬───────────┬────────────┬─────────┬───────────┬───────────────────────────────────────────╮
+│ Category     │   N models │ Avg Acc   │   Avg M-F1 │   Avg κ │ Avg Lat   │ Models                                    │
+├──────────────┼────────────┼───────────┼────────────┼─────────┼───────────┼───────────────────────────────────────────┤
+│ API models   │          2 │ 88.1%     │      0.847 │   0.83  │ 6843 ms   │ OpenAI o3, Gemini 2.5 Flash               │
+│ Local models │          3 │ 45.4%     │      0.333 │   0.217 │ 31497 ms  │ Aya Expanse 8B, XLM-RoBERTa, RoLLaMA 2 7B │
+╰──────────────┴────────────┴───────────┴────────────┴─────────┴───────────┴───────────────────────────────────────────╯
+
+
+C1b — Individual model details (Clasificarea statusului final)
+╭──────────────────┬────────┬─────────────┬───────┬────────┬───────┬───────────┬─────────────────────┬────────────────╮
+│ Model            │ Type   │ Params      │ Acc   │   M-F1 │     κ │ Latency   │ Provider            │ Quantization   │
+├──────────────────┼────────┼─────────────┼───────┼────────┼───────┼───────────┼─────────────────────┼────────────────┤
+│ OpenAI o3        │ API    │ ~200B+      │ 90.0% │  0.86  │ 0.856 │ 8916 ms   │ OpenAI API          │ N/A            │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ 86.1% │  0.834 │ 0.804 │ 4769 ms   │ Google AI API       │ N/A            │
+│ Aya Expanse 8B   │ Local  │ 8B          │ 72.2% │  0.62  │ 0.58  │ 77595 ms  │ Ollama (local)      │ Q4_K_M         │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ 22.8% │  0.224 │ 0.069 │ 4819 ms   │ HuggingFace (local) │ FP16/FP32      │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ 41.1% │  0.155 │ 0.003 │ 12077 ms  │ Ollama (local)      │ Q4_K_M         │
+╰──────────────────┴────────┴─────────────┴───────┴────────┴───────┴───────────┴─────────────────────┴────────────────╯
+
+
+  📝 API vs Local gap (Macro-F1): +24.0%. Best API: OpenAI o3 (0.860), Best Local: Aya Expanse 8B (0.620). This confirms the advantage of large proprietary models for this task.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  C2 — Parameter Efficiency: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+C2 — Parameter efficiency (Clasificarea statusului final)
+╭──────────────────┬────────┬─────────────┬───────┬────────┬────────────────────╮
+│ Model            │ Type   │ Params      │ Acc   │   M-F1 │ F1/log₁₀(params)   │
+├──────────────────┼────────┼─────────────┼───────┼────────┼────────────────────┤
+│ OpenAI o3        │ API    │ ~200B+      │ 90.0% │  0.86  │ 0.076              │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ 86.1% │  0.834 │ —                  │
+│ Aya Expanse 8B   │ Local  │ 8B          │ 72.2% │  0.62  │ 0.063              │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ 22.8% │  0.224 │ 0.026              │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ 41.1% │  0.155 │ 0.016              │
+╰──────────────────┴────────┴─────────────┴───────┴────────┴────────────────────╯
+
+
+  📝 F1/log₁₀(params) measures how much performance a model squeezes per order of magnitude of parameters. Smaller models with high scores are exceptionally parameter-efficient.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  C3 — Latency–Accuracy Trade-off: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+C3 — Latency vs Accuracy (Clasificarea statusului final)
+╭──────────────────┬────────┬───────┬────────┬────────────────┬───────────────┬───────────╮
+│ Model            │ Type   │ Acc   │   M-F1 │ Latency (ms)   │ Latency (s)   │   Acc/sec │
+├──────────────────┼────────┼───────┼────────┼────────────────┼───────────────┼───────────┤
+│ Gemini 2.5 Flash │ API    │ 86.1% │  0.834 │ 4769 ms        │ 4.77 s        │       0.2 │
+│ OpenAI o3        │ API    │ 90.0% │  0.86  │ 8916 ms        │ 8.92 s        │       0.1 │
+│ Aya Expanse 8B   │ Local  │ 72.2% │  0.62  │ 77595 ms       │ 77.60 s       │       0   │
+│ XLM-RoBERTa      │ Local  │ 22.8% │  0.224 │ 4819 ms        │ 4.82 s        │       0   │
+│ RoLLaMA 2 7B     │ Local  │ 41.1% │  0.155 │ 12077 ms       │ 12.08 s       │       0   │
+╰──────────────────┴────────┴───────┴────────┴────────────────┴───────────────┴───────────╯
+
+
+  📝 Acc/sec measures how much accuracy is delivered per second of inference time. Models with high accuracy AND low latency rank highest — relevant for real-time monitoring pipelines.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  C5 — Agreement Analysis (Cohen's κ): Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+C5 — κ interpretation per Landis & Koch (1977)
+╭──────────────────┬────────┬──────────┬───────┬──────────────────┬───────┬────────┬────────────╮
+│ Model            │ Type   │ Config   │     κ │ Interpretation   │ Acc   │   M-F1 │ Invalid%   │
+├──────────────────┼────────┼──────────┼───────┼──────────────────┼───────┼────────┼────────────┤
+│ OpenAI o3        │ API    │ RO v4    │ 0.856 │ Almost Perfect   │ 90.0% │  0.86  │ 0.0%       │
+│ Gemini 2.5 Flash │ API    │ EN v4    │ 0.804 │ Almost Perfect   │ 86.1% │  0.834 │ 0.0%       │
+│ Aya Expanse 8B   │ Local  │ EN v3    │ 0.58  │ Moderate         │ 72.2% │  0.62  │ 0.0%       │
+│ XLM-RoBERTa      │ Local  │ EN v1    │ 0.069 │ Slight           │ 22.8% │  0.224 │ 0.0%       │
+│ RoLLaMA 2 7B     │ Local  │ RO v3    │ 0.003 │ Slight           │ 41.1% │  0.155 │ 0.6%       │
+╰──────────────────┴────────┴──────────┴───────┴──────────────────┴───────┴────────┴────────────╯
+
+
+  📝 Cohen's κ corrects for chance agreement, making it stricter than raw accuracy. Invalid predictions (unparseable outputs mapped to __invalid__) are penalized in the κ computation. Interpretation: <0.20=Slight, 0.21-0.40=Fair, 0.41-0.60=Moderate, 0.61-0.80=Substantial, 0.81-1.00=Almost Perfect.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  EVALUATION COMPLETE: Clasificarea statusului final
+════════════════════════════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{API vs Local comparison — Extragerea intenției}
+\label{tab:api-vs-local-intent-extraction}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{Params} & \textbf{Acc} & \textbf{M-F1} & $\boldsymbol{\kappa}$ & \textbf{Latency} \\
+\midrule
+OpenAI o3 & API & ~200B+ & 98.3\% & 0.983 & 0.982 & 4035 ms \\
+Gemini 2.5 Flash & API & undisclosed & 97.8\% & 0.977 & 0.976 & 3499 ms \\
+Aya Expanse 8B & Local & 8B & 91.1\% & 0.909 & 0.903 & 94257 ms \\
+XLM-RoBERTa & Local & ~560M & 53.9\% & 0.552 & 0.497 & 11503 ms \\
+RoLLaMA 2 7B & Local & 7B & 15.6\% & 0.119 & 0.084 & 7438 ms \\
+RoBERT-base & Local & ~125M & 1.7\% & 0.012 & -0.073 & 3075 ms \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Best prompt configuration per model — Intent Extraction}
+\label{tab:intent-best}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Model} & \textbf{Config} & \textbf{Acc} & \textbf{M-F1} & \textbf{W-F1} & $\boldsymbol{\kappa}$ & \textbf{Latency} \\
+\midrule
+\textbf{OpenAI o3} & EN v4 & 98.3\% & 0.983 & 0.983 & 0.982 & 4035 ms \\
+Gemini 2.5 Flash & RO v4 & 97.8\% & 0.977 & 0.977 & 0.976 & 3499 ms \\
+Aya Expanse 8B & EN v4 & 91.1\% & 0.909 & 0.910 & 0.903 & 94257 ms \\
+XLM-RoBERTa & EN v1 & 53.9\% & 0.552 & 0.550 & 0.497 & 11503 ms \\
+RoLLaMA 2 7B & EN v1 & 15.6\% & 0.119 & 0.120 & 0.084 & 7438 ms \\
+RoBERT-base & RO v1 & 1.7\% & 0.012 & 0.012 & -0.073 & 3075 ms \\
+\bottomrule
+\end{tabular}
+\end{table}

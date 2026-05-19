@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Best prompt configuration per model — Final Status Classification}
+\label{tab:final-status-best}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Model} & \textbf{Config} & \textbf{Acc} & \textbf{M-F1} & \textbf{W-F1} & $\boldsymbol{\kappa}$ & \textbf{Latency} \\
+\midrule
+\textbf{OpenAI o3} & RO v4 & 90.0\% & 0.860 & 0.899 & 0.856 & 8916 ms \\
+Gemini 2.5 Flash & EN v4 & 86.1\% & 0.834 & 0.863 & 0.804 & 4769 ms \\
+Aya Expanse 8B & EN v3 & 72.2\% & 0.620 & 0.690 & 0.580 & 77595 ms \\
+XLM-RoBERTa & EN v1 & 22.8\% & 0.224 & 0.237 & 0.069 & 4819 ms \\
+RoLLaMA 2 7B & RO v3 & 41.1\% & 0.155 & 0.316 & 0.003 & 12077 ms \\
+\bottomrule
+\end{tabular}
+\end{table}

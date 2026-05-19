@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{API vs Local comparison — Clasificarea statusului final}
+\label{tab:api-vs-local-final-status-classification}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{Params} & \textbf{Acc} & \textbf{M-F1} & $\boldsymbol{\kappa}$ & \textbf{Latency} \\
+\midrule
+OpenAI o3 & API & ~200B+ & 90.0\% & 0.860 & 0.856 & 8916 ms \\
+Gemini 2.5 Flash & API & undisclosed & 86.1\% & 0.834 & 0.804 & 4769 ms \\
+Aya Expanse 8B & Local & 8B & 72.2\% & 0.620 & 0.580 & 77595 ms \\
+XLM-RoBERTa & Local & ~560M & 22.8\% & 0.224 & 0.069 & 4819 ms \\
+RoLLaMA 2 7B & Local & 7B & 41.1\% & 0.155 & 0.003 & 12077 ms \\
+\bottomrule
+\end{tabular}
+\end{table}

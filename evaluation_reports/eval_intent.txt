@@ -1,0 +1,638 @@
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  EVALUATION: Extragerea intenției (Intent Extraction)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Task: intent
+  Output dir: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\outputs\intent
+  Report: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\evaluation_reports\eval_intent.txt
+  Timestamp: 2026-05-19 18:49
+
+  Labels (12): ['block_card', 'unblock_card', 'open_account', 'close_account', 'check_balance', 'get_account_statement', 'report_suspicious_transaction', 'update_personal_data', 'schedule_advisor_meeting', 'reset_or_recover_auth', 'general_product_info', 'fallback']
+
+
+  Loaded 42 experiment files:
+    Aya Expanse 8B            [EN] v1         ← exp_aya_expanse_8b__en__v1.json
+    Aya Expanse 8B            [EN] v2         ← exp_aya_expanse_8b__en__v2.json
+    Aya Expanse 8B            [EN] v3         ← exp_aya_expanse_8b__en__v3.json
+    Aya Expanse 8B            [EN] v4         ← exp_aya_expanse_8b__en__v4.json
+    Aya Expanse 8B            [RO] v1         ← exp_aya_expanse_8b__ro__v1.json
+    Aya Expanse 8B            [RO] v2         ← exp_aya_expanse_8b__ro__v2.json
+    Aya Expanse 8B            [RO] v3         ← exp_aya_expanse_8b__ro__v3.json
+    Aya Expanse 8B            [RO] v4         ← exp_aya_expanse_8b__ro__v4.json
+    Gemini 2.5 Flash          [EN] v1         ← exp_gemini_2.5_flash__en__v1.json
+    Gemini 2.5 Flash          [EN] v2         ← exp_gemini_2.5_flash__en__v2.json
+    Gemini 2.5 Flash          [EN] v3         ← exp_gemini_2.5_flash__en__v3.json
+    Gemini 2.5 Flash          [EN] v4         ← exp_gemini_2.5_flash__en__v4.json
+    Gemini 2.5 Flash          [RO] v1         ← exp_gemini_2.5_flash__ro__v1.json
+    Gemini 2.5 Flash          [RO] v2         ← exp_gemini_2.5_flash__ro__v2.json
+    Gemini 2.5 Flash          [RO] v3         ← exp_gemini_2.5_flash__ro__v3.json
+    Gemini 2.5 Flash          [RO] v4         ← exp_gemini_2.5_flash__ro__v4.json
+    OpenAI o3                 [EN] v1         ← exp_openai_o3__en__v1.json
+    OpenAI o3                 [EN] v2         ← exp_openai_o3__en__v2.json
+    OpenAI o3                 [EN] v3         ← exp_openai_o3__en__v3.json
+    OpenAI o3                 [EN] v4         ← exp_openai_o3__en__v4.json
+    OpenAI o3                 [RO] v1         ← exp_openai_o3__ro__v1.json
+    OpenAI o3                 [RO] v2         ← exp_openai_o3__ro__v2.json
+    OpenAI o3                 [RO] v3         ← exp_openai_o3__ro__v3.json
+    OpenAI o3                 [RO] v4         ← exp_openai_o3__ro__v4.json
+    RoBERT-base               [RO] v1         ← exp_robert_encoder__ro__v1.json
+    XLM-RoBERTa               [EN] v1         ← exp_roberta_encoder__en__v1.json
+    XLM-RoBERTa               [EN] v2         ← exp_roberta_encoder__en__v2.json
+    XLM-RoBERTa               [EN] v3         ← exp_roberta_encoder__en__v3.json
+    XLM-RoBERTa               [EN] v4         ← exp_roberta_encoder__en__v4.json
+    XLM-RoBERTa               [RO] v1         ← exp_roberta_encoder__ro__v1.json
+    XLM-RoBERTa               [RO] v2         ← exp_roberta_encoder__ro__v2.json
+    XLM-RoBERTa               [RO] v3         ← exp_roberta_encoder__ro__v3.json
+    XLM-RoBERTa               [RO] v4         ← exp_roberta_encoder__ro__v4.json
+    RoLLaMA 2 7B              [EN] v1         ← exp_rollama2_7b__en__v1.json
+    RoLLaMA 2 7B              [EN] v2         ← exp_rollama2_7b__en__v2.json
+    RoLLaMA 2 7B              [EN] v3         ← exp_rollama2_7b__en__v3.json
+    RoLLaMA 2 7B              [EN] v4         ← exp_rollama2_7b__en__v4.json
+    RoLLaMA 2 7B              [RO] v1         ← exp_rollama2_7b__ro__v1.json
+    RoLLaMA 2 7B              [RO] v2         ← exp_rollama2_7b__ro__v2.json
+    RoLLaMA 2 7B              [RO] v3         ← exp_rollama2_7b__ro__v3.json
+    RoLLaMA 2 7B              [RO] v3_ro_labels ← exp_rollama2_7b__ro__v3_ro_labels.json
+    RoLLaMA 2 7B              [RO] v4         ← exp_rollama2_7b__ro__v4.json
+
+  Total predictions across all experiments: 7560
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T1 — Experiment Overview: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T1 — All loaded experiments
+╭──────────────────┬────────┬─────────────┬────────┬──────────────┬─────┬─────────┬─────────╮
+│ Model            │ Type   │ Params      │ Lang   │ Ver          │   N │   Fails │ Fail%   │
+├──────────────────┼────────┼─────────────┼────────┼──────────────┼─────┼─────────┼─────────┤
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN     │ v1           │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN     │ v2           │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN     │ v3           │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN     │ v4           │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ RO     │ v1           │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ RO     │ v2           │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ RO     │ v3           │ 180 │       0 │ 0.0%    │
+│ Aya Expanse 8B   │ Local  │ 8B          │ RO     │ v4           │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ EN     │ v1           │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ EN     │ v2           │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ EN     │ v3           │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ EN     │ v4           │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v1           │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v2           │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v3           │ 180 │       0 │ 0.0%    │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v4           │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ EN     │ v1           │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ EN     │ v2           │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ EN     │ v3           │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ EN     │ v4           │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ RO     │ v1           │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ RO     │ v2           │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ RO     │ v3           │ 180 │       0 │ 0.0%    │
+│ OpenAI o3        │ API    │ ~200B+      │ RO     │ v4           │ 180 │      13 │ 7.2%    │
+│ RoBERT-base      │ Local  │ ~125M       │ RO     │ v1           │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v1           │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v2           │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v3           │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v4           │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ RO     │ v1           │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ RO     │ v2           │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ RO     │ v3           │ 180 │       0 │ 0.0%    │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ RO     │ v4           │ 180 │       0 │ 0.0%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ EN     │ v1           │ 180 │       1 │ 0.6%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ EN     │ v2           │ 180 │       7 │ 3.9%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ EN     │ v3           │ 180 │       1 │ 0.6%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ EN     │ v4           │ 180 │       6 │ 3.3%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO     │ v1           │ 180 │       6 │ 3.3%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO     │ v2           │ 180 │      11 │ 6.1%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO     │ v3           │ 180 │       3 │ 1.7%    │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO     │ v3_ro_labels │ 180 │      54 │ 30.0%   │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ RO     │ v4           │ 180 │      64 │ 35.6%   │
+╰──────────────────┴────────┴─────────────┴────────┴──────────────┴─────┴─────────┴─────────╯
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T2 — All Experiments Ranked: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T2 — All experiments, ranked by Macro-F1
+╭──────────────────┬────────┬────────┬──────────────┬───────┬────────┬────────┬────────┬────────────────┬───────────┬─────╮
+│ Model            │ Type   │ Lang   │ Ver          │ Acc   │   M-F1 │   W-F1 │      κ │ κ interp       │ Latency   │   N │
+├──────────────────┼────────┼────────┼──────────────┼───────┼────────┼────────┼────────┼────────────────┼───────────┼─────┤
+│ OpenAI o3        │ API    │ EN     │ v3           │ 98.3% │  0.983 │  0.983 │  0.982 │ Almost Perfect │ 2898 ms   │ 180 │
+│ OpenAI o3        │ API    │ EN     │ v4           │ 98.3% │  0.983 │  0.983 │  0.982 │ Almost Perfect │ 4035 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ RO     │ v4           │ 97.8% │  0.977 │  0.977 │  0.976 │ Almost Perfect │ 3499 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ EN     │ v3           │ 97.2% │  0.973 │  0.972 │  0.97  │ Almost Perfect │ 2200 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ EN     │ v2           │ 97.2% │  0.972 │  0.972 │  0.97  │ Almost Perfect │ 1856 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ EN     │ v4           │ 97.2% │  0.972 │  0.972 │  0.97  │ Almost Perfect │ 2472 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ RO     │ v2           │ 97.2% │  0.972 │  0.972 │  0.97  │ Almost Perfect │ 3628 ms   │ 180 │
+│ OpenAI o3        │ API    │ RO     │ v3           │ 97.2% │  0.972 │  0.972 │  0.97  │ Almost Perfect │ 2905 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ RO     │ v3           │ 96.1% │  0.96  │  0.96  │  0.958 │ Almost Perfect │ 4319 ms   │ 180 │
+│ OpenAI o3        │ API    │ EN     │ v2           │ 96.1% │  0.96  │  0.96  │  0.958 │ Almost Perfect │ 2157 ms   │ 180 │
+│ OpenAI o3        │ API    │ RO     │ v2           │ 95.6% │  0.955 │  0.955 │  0.952 │ Almost Perfect │ 2913 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ EN     │ v1           │ 95.6% │  0.954 │  0.953 │  0.952 │ Almost Perfect │ 1575 ms   │ 180 │
+│ OpenAI o3        │ API    │ EN     │ v1           │ 95.6% │  0.952 │  0.951 │  0.952 │ Almost Perfect │ 1547 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ RO     │ v1           │ 95.0% │  0.947 │  0.946 │  0.945 │ Almost Perfect │ 2159 ms   │ 180 │
+│ OpenAI o3        │ API    │ RO     │ v4           │ 91.1% │  0.944 │  0.944 │  0.904 │ Almost Perfect │ 4255 ms   │ 180 │
+│ OpenAI o3        │ API    │ RO     │ v1           │ 94.4% │  0.939 │  0.938 │  0.939 │ Almost Perfect │ 2144 ms   │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN     │ v4           │ 91.1% │  0.909 │  0.91  │  0.903 │ Almost Perfect │ 94257 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ RO     │ v4           │ 90.0% │  0.898 │  0.899 │  0.891 │ Almost Perfect │ 122785 ms │ 180 │
+│ Aya Expanse 8B   │ Local  │ RO     │ v3           │ 90.0% │  0.89  │  0.887 │  0.891 │ Almost Perfect │ 78670 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ RO     │ v2           │ 90.0% │  0.889 │  0.887 │  0.891 │ Almost Perfect │ 56399 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN     │ v3           │ 88.3% │  0.872 │  0.871 │  0.873 │ Almost Perfect │ 72928 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ RO     │ v1           │ 87.8% │  0.863 │  0.86  │  0.867 │ Almost Perfect │ 357915 ms │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN     │ v2           │ 85.6% │  0.845 │  0.845 │  0.842 │ Almost Perfect │ 55720 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN     │ v1           │ 85.6% │  0.842 │  0.841 │  0.842 │ Almost Perfect │ 214406 ms │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN     │ v1           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 11503 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN     │ v2           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 14776 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN     │ v3           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 10984 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN     │ v4           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 10644 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ RO     │ v1           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 11434 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ RO     │ v2           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 12053 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ RO     │ v3           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 10531 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ RO     │ v4           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 9939 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ EN     │ v1           │ 15.6% │  0.119 │  0.12  │  0.084 │ Slight         │ 7438 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ EN     │ v2           │ 16.1% │  0.118 │  0.119 │  0.092 │ Slight         │ 7749 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO     │ v3_ro_labels │ 13.3% │  0.094 │  0.093 │  0.073 │ Slight         │ 5920 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ EN     │ v3           │ 14.4% │  0.061 │  0.06  │  0.072 │ Slight         │ 9953 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO     │ v3           │ 13.9% │  0.061 │  0.06  │  0.066 │ Slight         │ 10965 ms  │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO     │ v2           │ 8.9%  │  0.04  │  0.039 │  0.017 │ Slight         │ 7493 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO     │ v1           │ 8.3%  │  0.023 │  0.022 │  0.009 │ Slight         │ 9834 ms   │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ RO     │ v4           │ 6.7%  │  0.016 │  0.017 │  0.01  │ Slight         │ 11380 ms  │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ EN     │ v4           │ 8.9%  │  0.014 │  0.015 │  0.003 │ Slight         │ 10577 ms  │ 180 │
+│ RoBERT-base      │ Local  │ RO     │ v1           │ 1.7%  │  0.012 │  0.012 │ -0.073 │ Poor           │ 3075 ms   │ 180 │
+╰──────────────────┴────────┴────────┴──────────────┴───────┴────────┴────────┴────────┴────────────────┴───────────┴─────╯
+
+
+  📝 This table shows every (model, language, prompt version) combination. The best configuration per model is selected in T3.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T3 — Best Configuration per Model: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T3 — Best prompt per model (Extragerea intenției)
+╭──────────────────┬────────┬─────────────┬──────────┬───────┬────────┬────────┬────────┬────────────────┬───────────┬─────╮
+│ Model            │ Type   │ Params      │ Config   │ Acc   │   M-F1 │   W-F1 │      κ │ κ interp       │ Latency   │   N │
+├──────────────────┼────────┼─────────────┼──────────┼───────┼────────┼────────┼────────┼────────────────┼───────────┼─────┤
+│ OpenAI o3 ★      │ API    │ ~200B+      │ EN v4    │ 98.3% │  0.983 │  0.983 │  0.982 │ Almost Perfect │ 4035 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ RO v4    │ 97.8% │  0.977 │  0.977 │  0.976 │ Almost Perfect │ 3499 ms   │ 180 │
+│ Aya Expanse 8B   │ Local  │ 8B          │ EN v4    │ 91.1% │  0.909 │  0.91  │  0.903 │ Almost Perfect │ 94257 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ EN v1    │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 11503 ms  │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ EN v1    │ 15.6% │  0.119 │  0.12  │  0.084 │ Slight         │ 7438 ms   │ 180 │
+│ RoBERT-base      │ Local  │ ~125M       │ RO v1    │ 1.7%  │  0.012 │  0.012 │ -0.073 │ Poor           │ 3075 ms   │ 180 │
+╰──────────────────┴────────┴─────────────┴──────────┴───────┴────────┴────────┴────────┴────────────────┴───────────┴─────╯
+
+
+  📝 Best overall: OpenAI o3 with config EN v4 — Accuracy=98.3%, Macro-F1=0.983, κ=0.982 (Almost Perfect).
+
+
+  [LaTeX block saved: best_intent]
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T4 — Per-Class Metrics (Best Configs): Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+OpenAI o3 [EN v4]
+╭───────────────────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class                         │   Precision │   Recall │    F1 │   Support │
+├───────────────────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ block_card                    │       0.933 │    1     │ 0.966 │        14 │
+│ unblock_card                  │       1     │    1     │ 1     │        14 │
+│ open_account                  │       1     │    1     │ 1     │        15 │
+│ close_account                 │       1     │    1     │ 1     │        15 │
+│ check_balance                 │       1     │    1     │ 1     │        15 │
+│ get_account_statement         │       1     │    1     │ 1     │        15 │
+│ report_suspicious_transaction │       0.933 │    0.933 │ 0.933 │        15 │
+│ update_personal_data          │       1     │    1     │ 1     │        16 │
+│ schedule_advisor_meeting      │       0.938 │    1     │ 0.968 │        15 │
+│ reset_or_recover_auth         │       1     │    1     │ 1     │        15 │
+│ general_product_info          │       1     │    0.933 │ 0.966 │        15 │
+│ fallback                      │       1     │    0.938 │ 0.968 │        16 │
+╰───────────────────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+Gemini 2.5 Flash [RO v4]
+╭───────────────────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class                         │   Precision │   Recall │    F1 │   Support │
+├───────────────────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ block_card                    │       1     │    1     │ 1     │        14 │
+│ unblock_card                  │       1     │    1     │ 1     │        14 │
+│ open_account                  │       0.938 │    1     │ 0.968 │        15 │
+│ close_account                 │       1     │    1     │ 1     │        15 │
+│ check_balance                 │       1     │    1     │ 1     │        15 │
+│ get_account_statement         │       1     │    1     │ 1     │        15 │
+│ report_suspicious_transaction │       0.938 │    1     │ 0.968 │        15 │
+│ update_personal_data          │       1     │    1     │ 1     │        16 │
+│ schedule_advisor_meeting      │       0.882 │    1     │ 0.938 │        15 │
+│ reset_or_recover_auth         │       1     │    1     │ 1     │        15 │
+│ general_product_info          │       1     │    0.8   │ 0.889 │        15 │
+│ fallback                      │       1     │    0.938 │ 0.968 │        16 │
+╰───────────────────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+Aya Expanse 8B [EN v4]
+╭───────────────────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class                         │   Precision │   Recall │    F1 │   Support │
+├───────────────────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ block_card                    │       0.7   │    1     │ 0.824 │        14 │
+│ unblock_card                  │       0.846 │    0.786 │ 0.815 │        14 │
+│ open_account                  │       0.789 │    1     │ 0.882 │        15 │
+│ close_account                 │       1     │    1     │ 1     │        15 │
+│ check_balance                 │       0.933 │    0.933 │ 0.933 │        15 │
+│ get_account_statement         │       1     │    1     │ 1     │        15 │
+│ report_suspicious_transaction │       0.833 │    1     │ 0.909 │        15 │
+│ update_personal_data          │       1     │    1     │ 1     │        16 │
+│ schedule_advisor_meeting      │       1     │    1     │ 1     │        15 │
+│ reset_or_recover_auth         │       1     │    0.733 │ 0.846 │        15 │
+│ general_product_info          │       1     │    0.8   │ 0.889 │        15 │
+│ fallback                      │       1     │    0.688 │ 0.815 │        16 │
+╰───────────────────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+XLM-RoBERTa [EN v1]
+╭───────────────────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class                         │   Precision │   Recall │    F1 │   Support │
+├───────────────────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ block_card                    │       0.556 │    0.714 │ 0.625 │        14 │
+│ unblock_card                  │       0.714 │    0.714 │ 0.714 │        14 │
+│ open_account                  │       0.647 │    0.733 │ 0.688 │        15 │
+│ close_account                 │       1     │    0.333 │ 0.5   │        15 │
+│ check_balance                 │       0.625 │    0.333 │ 0.435 │        15 │
+│ get_account_statement         │       0.364 │    0.533 │ 0.432 │        15 │
+│ report_suspicious_transaction │       0.529 │    0.6   │ 0.562 │        15 │
+│ update_personal_data          │       0.714 │    0.625 │ 0.667 │        16 │
+│ schedule_advisor_meeting      │       0.727 │    0.533 │ 0.615 │        15 │
+│ reset_or_recover_auth         │       0.615 │    0.533 │ 0.571 │        15 │
+│ general_product_info          │       0.667 │    0.533 │ 0.593 │        15 │
+│ fallback                      │       0.172 │    0.312 │ 0.222 │        16 │
+╰───────────────────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+RoLLaMA 2 7B [EN v1]
+╭───────────────────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class                         │   Precision │   Recall │    F1 │   Support │
+├───────────────────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ block_card                    │       0.086 │    1     │ 0.159 │        14 │
+│ unblock_card                  │       0     │    0     │ 0     │        14 │
+│ open_account                  │       0.727 │    0.533 │ 0.615 │        15 │
+│ close_account                 │       0     │    0     │ 0     │        15 │
+│ check_balance                 │       1     │    0.2   │ 0.333 │        15 │
+│ get_account_statement         │       0     │    0     │ 0     │        15 │
+│ report_suspicious_transaction │       0     │    0     │ 0     │        15 │
+│ update_personal_data          │       1     │    0.188 │ 0.316 │        16 │
+│ schedule_advisor_meeting      │       0     │    0     │ 0     │        15 │
+│ reset_or_recover_auth         │       0     │    0     │ 0     │        15 │
+│ general_product_info          │       0     │    0     │ 0     │        15 │
+│ fallback                      │       0     │    0     │ 0     │        16 │
+╰───────────────────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+RoBERT-base [RO v1]
+╭───────────────────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class                         │   Precision │   Recall │    F1 │   Support │
+├───────────────────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ block_card                    │       0     │    0     │ 0     │        14 │
+│ unblock_card                  │       0     │    0     │ 0     │        14 │
+│ open_account                  │       0     │    0     │ 0     │        15 │
+│ close_account                 │       0     │    0     │ 0     │        15 │
+│ check_balance                 │       0     │    0     │ 0     │        15 │
+│ get_account_statement         │       0     │    0     │ 0     │        15 │
+│ report_suspicious_transaction │       0     │    0     │ 0     │        15 │
+│ update_personal_data          │       0     │    0     │ 0     │        16 │
+│ schedule_advisor_meeting      │       0     │    0     │ 0     │        15 │
+│ reset_or_recover_auth         │       0     │    0     │ 0     │        15 │
+│ general_product_info          │       0.018 │    0.067 │ 0.029 │        15 │
+│ fallback                      │       0.1   │    0.125 │ 0.111 │        16 │
+╰───────────────────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T5 — Error Analysis (Best Configs): Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  ▶ OpenAI o3 [EN v4] — 3 errors out of 180 (1.7% error rate)
+
+OpenAI o3 [EN v4]
+╭───────────────────────────────┬───────────────────────────────┬─────────┬──────────────╮
+│ True Label                    │ Predicted As                  │   Count │ % of Total   │
+├───────────────────────────────┼───────────────────────────────┼─────────┼──────────────┤
+│ general_product_info          │ schedule_advisor_meeting      │       1 │ 0.6%         │
+│ fallback                      │ report_suspicious_transaction │       1 │ 0.6%         │
+│ report_suspicious_transaction │ block_card                    │       1 │ 0.6%         │
+╰───────────────────────────────┴───────────────────────────────┴─────────┴──────────────╯
+
+
+  ▶ Gemini 2.5 Flash [RO v4] — 4 errors out of 180 (2.2% error rate)
+
+Gemini 2.5 Flash [RO v4]
+╭──────────────────────┬───────────────────────────────┬─────────┬──────────────╮
+│ True Label           │ Predicted As                  │   Count │ % of Total   │
+├──────────────────────┼───────────────────────────────┼─────────┼──────────────┤
+│ general_product_info │ schedule_advisor_meeting      │       2 │ 1.1%         │
+│ general_product_info │ open_account                  │       1 │ 0.6%         │
+│ fallback             │ report_suspicious_transaction │       1 │ 0.6%         │
+╰──────────────────────┴───────────────────────────────┴─────────┴──────────────╯
+
+
+  ▶ Aya Expanse 8B [EN v4] — 16 errors out of 180 (8.9% error rate)
+
+Aya Expanse 8B [EN v4]
+╭───────────────────────┬───────────────────────────────┬─────────┬──────────────╮
+│ True Label            │ Predicted As                  │   Count │ % of Total   │
+├───────────────────────┼───────────────────────────────┼─────────┼──────────────┤
+│ unblock_card          │ block_card                    │       3 │ 1.7%         │
+│ general_product_info  │ open_account                  │       3 │ 1.7%         │
+│ reset_or_recover_auth │ block_card                    │       2 │ 1.1%         │
+│ reset_or_recover_auth │ unblock_card                  │       2 │ 1.1%         │
+│ fallback              │ report_suspicious_transaction │       2 │ 1.1%         │
+│ fallback              │ open_account                  │       1 │ 0.6%         │
+│ fallback              │ block_card                    │       1 │ 0.6%         │
+│ fallback              │ check_balance                 │       1 │ 0.6%         │
+│ check_balance         │ report_suspicious_transaction │       1 │ 0.6%         │
+╰───────────────────────┴───────────────────────────────┴─────────┴──────────────╯
+
+
+  ▶ XLM-RoBERTa [EN v1] — 83 errors out of 180 (46.1% error rate)
+
+XLM-RoBERTa [EN v1]
+╭───────────────────────────────┬───────────────────────────────┬─────────┬──────────────╮
+│ True Label                    │ Predicted As                  │   Count │ % of Total   │
+├───────────────────────────────┼───────────────────────────────┼─────────┼──────────────┤
+│ check_balance                 │ get_account_statement         │       7 │ 3.9%         │
+│ reset_or_recover_auth         │ fallback                      │       4 │ 2.2%         │
+│ close_account                 │ fallback                      │       3 │ 1.7%         │
+│ get_account_statement         │ fallback                      │       3 │ 1.7%         │
+│ unblock_card                  │ block_card                    │       3 │ 1.7%         │
+│ general_product_info          │ open_account                  │       3 │ 1.7%         │
+│ update_personal_data          │ fallback                      │       3 │ 1.7%         │
+│ schedule_advisor_meeting      │ fallback                      │       3 │ 1.7%         │
+│ report_suspicious_transaction │ fallback                      │       3 │ 1.7%         │
+│ close_account                 │ block_card                    │       2 │ 1.1%         │
+│ close_account                 │ open_account                  │       2 │ 1.1%         │
+│ general_product_info          │ fallback                      │       2 │ 1.1%         │
+│ fallback                      │ report_suspicious_transaction │       2 │ 1.1%         │
+│ fallback                      │ get_account_statement         │       2 │ 1.1%         │
+│ fallback                      │ schedule_advisor_meeting      │       2 │ 1.1%         │
+╰───────────────────────────────┴───────────────────────────────┴─────────┴──────────────╯
+
+
+  ▶ RoLLaMA 2 7B [EN v1] — 152 errors out of 180 (84.4% error rate)
+
+RoLLaMA 2 7B [EN v1]
+╭───────────────────────────────┬────────────────┬─────────┬──────────────╮
+│ True Label                    │ Predicted As   │   Count │ % of Total   │
+├───────────────────────────────┼────────────────┼─────────┼──────────────┤
+│ fallback                      │ block_card     │      16 │ 8.9%         │
+│ close_account                 │ block_card     │      15 │ 8.3%         │
+│ get_account_statement         │ block_card     │      15 │ 8.3%         │
+│ report_suspicious_transaction │ block_card     │      15 │ 8.3%         │
+│ reset_or_recover_auth         │ block_card     │      15 │ 8.3%         │
+│ unblock_card                  │ block_card     │      14 │ 7.8%         │
+│ general_product_info          │ block_card     │      14 │ 7.8%         │
+│ schedule_advisor_meeting      │ block_card     │      13 │ 7.2%         │
+│ update_personal_data          │ block_card     │      12 │ 6.7%         │
+│ check_balance                 │ block_card     │      12 │ 6.7%         │
+│ open_account                  │ block_card     │       7 │ 3.9%         │
+│ schedule_advisor_meeting      │ open_account   │       2 │ 1.1%         │
+│ update_personal_data          │ __invalid__    │       1 │ 0.6%         │
+│ general_product_info          │ open_account   │       1 │ 0.6%         │
+╰───────────────────────────────┴────────────────┴─────────┴──────────────╯
+
+
+  ▶ RoBERT-base [RO v1] — 177 errors out of 180 (98.3% error rate)
+
+RoBERT-base [RO v1]
+╭───────────────────────────────┬──────────────────────────┬─────────┬──────────────╮
+│ True Label                    │ Predicted As             │   Count │ % of Total   │
+├───────────────────────────────┼──────────────────────────┼─────────┼──────────────┤
+│ reset_or_recover_auth         │ schedule_advisor_meeting │      12 │ 6.7%         │
+│ close_account                 │ general_product_info     │      10 │ 5.6%         │
+│ block_card                    │ schedule_advisor_meeting │      10 │ 5.6%         │
+│ unblock_card                  │ schedule_advisor_meeting │      10 │ 5.6%         │
+│ update_personal_data          │ schedule_advisor_meeting │       9 │ 5.0%         │
+│ open_account                  │ general_product_info     │       9 │ 5.0%         │
+│ report_suspicious_transaction │ schedule_advisor_meeting │       9 │ 5.0%         │
+│ check_balance                 │ schedule_advisor_meeting │       9 │ 5.0%         │
+│ fallback                      │ general_product_info     │       9 │ 5.0%         │
+│ get_account_statement         │ schedule_advisor_meeting │       8 │ 4.4%         │
+│ schedule_advisor_meeting      │ general_product_info     │       6 │ 3.3%         │
+│ report_suspicious_transaction │ general_product_info     │       5 │ 2.8%         │
+│ check_balance                 │ general_product_info     │       5 │ 2.8%         │
+│ fallback                      │ reset_or_recover_auth    │       5 │ 2.8%         │
+│ update_personal_data          │ check_balance            │       4 │ 2.2%         │
+╰───────────────────────────────┴──────────────────────────┴─────────┴──────────────╯
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T6 — Prompt Version Evolution: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T6 — Version evolution (Extragerea intenției)
+╭──────────────────┬────────┬───────────────┬───────────────┬───────────────┬───────────────────────┬───────────────┬──────────────────╮
+│ Model            │ Lang   │ Acc/F1 v1     │ Acc/F1 v2     │ Acc/F1 v3     │ Acc/F1 v3_ro_labels   │ Acc/F1 v4     │ ΔF1 first→last   │
+├──────────────────┼────────┼───────────────┼───────────────┼───────────────┼───────────────────────┼───────────────┼──────────────────┤
+│ Aya Expanse 8B   │ EN     │ 85.6% / 0.842 │ 85.6% / 0.845 │ 88.3% / 0.872 │ —                     │ 91.1% / 0.909 │ +6.8%            │
+│ Aya Expanse 8B   │ RO     │ 87.8% / 0.863 │ 90.0% / 0.889 │ 90.0% / 0.890 │ —                     │ 90.0% / 0.898 │ +3.5%            │
+│ Gemini 2.5 Flash │ EN     │ 95.6% / 0.954 │ 97.2% / 0.972 │ 97.2% / 0.973 │ —                     │ 97.2% / 0.972 │ +1.8%            │
+│ Gemini 2.5 Flash │ RO     │ 95.0% / 0.947 │ 97.2% / 0.972 │ 96.1% / 0.960 │ —                     │ 97.8% / 0.977 │ +3.0%            │
+│ OpenAI o3        │ EN     │ 95.6% / 0.952 │ 96.1% / 0.960 │ 98.3% / 0.983 │ —                     │ 98.3% / 0.983 │ +3.1%            │
+│ OpenAI o3        │ RO     │ 94.4% / 0.939 │ 95.6% / 0.955 │ 97.2% / 0.972 │ —                     │ 91.1% / 0.944 │ +0.5%            │
+│ RoBERT-base      │ RO     │ 1.7% / 0.012  │ —             │ —             │ —                     │ —             │ —                │
+│ XLM-RoBERTa      │ EN     │ 53.9% / 0.552 │ 53.9% / 0.552 │ 53.9% / 0.552 │ —                     │ 53.9% / 0.552 │ +0.0%            │
+│ XLM-RoBERTa      │ RO     │ 53.9% / 0.552 │ 53.9% / 0.552 │ 53.9% / 0.552 │ —                     │ 53.9% / 0.552 │ +0.0%            │
+│ RoLLaMA 2 7B     │ EN     │ 15.6% / 0.119 │ 16.1% / 0.118 │ 14.4% / 0.061 │ —                     │ 8.9% / 0.014  │ -10.4%           │
+│ RoLLaMA 2 7B     │ RO     │ 8.3% / 0.023  │ 8.9% / 0.040  │ 13.9% / 0.061 │ 13.3% / 0.094         │ 6.7% / 0.016  │ -0.7%            │
+╰──────────────────┴────────┴───────────────┴───────────────┴───────────────┴───────────────────────┴───────────────┴──────────────────╯
+
+
+  📝 Each cell shows Accuracy / Macro-F1 for that prompt version. The ΔF1 column measures the net improvement from the earliest to the latest prompt version.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T7 — Language Impact (RO vs EN): Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T7 — Language impact (Extragerea intenției)
+╭──────────────────┬────────┬──────────┬──────────┬────────┬─────────┬─────────┬───────┬───────────┬──────────┬───────────┬───────────╮
+│ Model            │ Type   │ Acc RO   │ Acc EN   │ ΔAcc   │   F1 RO │ F1 EN   │ ΔF1   │ Lat RO    │ Lat EN   │ ΔLat      │ Winner    │
+├──────────────────┼────────┼──────────┼──────────┼────────┼─────────┼─────────┼───────┼───────────┼──────────┼───────────┼───────────┤
+│ Aya Expanse 8B   │ Local  │ 90.0%    │ 91.1%    │ -1.1%  │   0.898 │ 0.909   │ -1.1% │ 122785 ms │ 94257 ms │ +28528 ms │ EN        │
+│ Gemini 2.5 Flash │ API    │ 97.8%    │ 97.2%    │ +0.6%  │   0.977 │ 0.973   │ +0.5% │ 3499 ms   │ 2200 ms  │ +1299 ms  │ ≈         │
+│ OpenAI o3        │ API    │ 97.2%    │ 98.3%    │ -1.1%  │   0.972 │ 0.983   │ -1.2% │ 2905 ms   │ 4035 ms  │ -1130 ms  │ EN        │
+│ RoBERT-base      │ Local  │ 1.7%     │ —        │ —      │   0.012 │ —       │ —     │ 3075 ms   │ —        │ —         │ RO (only) │
+│ XLM-RoBERTa      │ Local  │ 53.9%    │ 53.9%    │ +0.0%  │   0.552 │ 0.552   │ +0.0% │ 11434 ms  │ 11503 ms │ -69 ms    │ ≈         │
+│ RoLLaMA 2 7B     │ Local  │ 13.3%    │ 15.6%    │ -2.2%  │   0.094 │ 0.119   │ -2.5% │ 5920 ms   │ 7438 ms  │ -1518 ms  │ EN        │
+╰──────────────────┴────────┴──────────┴──────────┴────────┴─────────┴─────────┴───────┴───────────┴──────────┴───────────┴───────────╯
+
+
+  📝 For tasks on Romanian banking conversations, RO prompts often align better with the conversational register. EN prompts can help with models that have stronger English pretraining. The winner column uses a 1% threshold on Macro-F1.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T8 — Latency Analysis: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T8 — Latency for best configs (Extragerea intenției)
+╭──────────────────┬────────┬──────────┬──────────┬──────────┬──────────┬───────────┬──────────┬───────────┬─────╮
+│ Model            │ Type   │ Config   │ Mean     │ Median   │ Std      │ p95       │ Min      │ Max       │   N │
+├──────────────────┼────────┼──────────┼──────────┼──────────┼──────────┼───────────┼──────────┼───────────┼─────┤
+│ RoBERT-base      │ Local  │ RO v1    │ 3075 ms  │ 2445 ms  │ 1642 ms  │ 5625 ms   │ 765 ms   │ 5766 ms   │ 180 │
+│ Gemini 2.5 Flash │ API    │ RO v4    │ 3499 ms  │ 3117 ms  │ 2024 ms  │ 5435 ms   │ 1500 ms  │ 18985 ms  │ 180 │
+│ OpenAI o3        │ API    │ EN v4    │ 4035 ms  │ 3586 ms  │ 1893 ms  │ 7434 ms   │ 1469 ms  │ 12594 ms  │ 180 │
+│ RoLLaMA 2 7B     │ Local  │ EN v1    │ 7438 ms  │ 6210 ms  │ 3979 ms  │ 14548 ms  │ 3523 ms  │ 19869 ms  │ 180 │
+│ XLM-RoBERTa      │ Local  │ EN v1    │ 11503 ms │ 8898 ms  │ 6004 ms  │ 20843 ms  │ 3468 ms  │ 25781 ms  │ 180 │
+│ Aya Expanse 8B   │ Local  │ EN v4    │ 94257 ms │ 82172 ms │ 29934 ms │ 147468 ms │ 11578 ms │ 180343 ms │ 180 │
+╰──────────────────┴────────┴──────────┴──────────┴──────────┴──────────┴───────────┴──────────┴───────────┴─────╯
+
+
+  📝 API models include network round-trip time. Local models run on consumer hardware with quantized weights (Q4_K_M for Ollama models). p95 is most relevant for production SLA considerations.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  T9 — Output Reliability: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+T9 — Output reliability (Extragerea intenției)
+╭──────────────────┬────────┬──────────────┬─────────┬─────────┬─────────┬─────────┬────────┬────────╮
+│ Model            │ Lang   │ Ver          │   Total │   Fails │ Fail%   │ High%   │ Med%   │ Low%   │
+├──────────────────┼────────┼──────────────┼─────────┼─────────┼─────────┼─────────┼────────┼────────┤
+│ Aya Expanse 8B   │ EN     │ v1           │     180 │       0 │ 0.0%    │ 97.8%   │ 0.0%   │ 2.2%   │
+│ Aya Expanse 8B   │ EN     │ v2           │     180 │       0 │ 0.0%    │ 98.3%   │ 0.0%   │ 1.7%   │
+│ Aya Expanse 8B   │ EN     │ v3           │     180 │       0 │ 0.0%    │ 99.4%   │ 0.0%   │ 0.6%   │
+│ Aya Expanse 8B   │ EN     │ v4           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ RO     │ v1           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ RO     │ v2           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ RO     │ v3           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Aya Expanse 8B   │ RO     │ v4           │     180 │       0 │ 0.0%    │ 99.4%   │ 0.6%   │ 0.0%   │
+│ Gemini 2.5 Flash │ EN     │ v1           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ EN     │ v2           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ EN     │ v3           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ EN     │ v4           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ RO     │ v1           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ RO     │ v2           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Gemini 2.5 Flash │ RO     │ v3           │     180 │       0 │ 0.0%    │ 99.4%   │ 0.6%   │ 0.0%   │
+│ Gemini 2.5 Flash │ RO     │ v4           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ OpenAI o3        │ EN     │ v1           │     180 │       0 │ 0.0%    │ 98.3%   │ 1.7%   │ 0.0%   │
+│ OpenAI o3        │ EN     │ v2           │     180 │       0 │ 0.0%    │ 97.2%   │ 2.8%   │ 0.0%   │
+│ OpenAI o3        │ EN     │ v3           │     180 │       0 │ 0.0%    │ 99.4%   │ 0.6%   │ 0.0%   │
+│ OpenAI o3        │ EN     │ v4           │     180 │       0 │ 0.0%    │ 99.4%   │ 0.6%   │ 0.0%   │
+│ OpenAI o3        │ RO     │ v1           │     180 │       0 │ 0.0%    │ 96.1%   │ 3.9%   │ 0.0%   │
+│ OpenAI o3        │ RO     │ v2           │     180 │       0 │ 0.0%    │ 98.3%   │ 1.7%   │ 0.0%   │
+│ OpenAI o3        │ RO     │ v3           │     180 │       0 │ 0.0%    │ 97.8%   │ 2.2%   │ 0.0%   │
+│ OpenAI o3        │ RO     │ v4           │     180 │      13 │ 7.2%    │ 92.2%   │ 0.6%   │ 0.0%   │
+│ RoBERT-base      │ RO     │ v1           │     180 │       0 │ 0.0%    │ 0.0%    │ 0.0%   │ 100.0% │
+│ XLM-RoBERTa      │ EN     │ v1           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
+│ XLM-RoBERTa      │ EN     │ v2           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
+│ XLM-RoBERTa      │ EN     │ v3           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
+│ XLM-RoBERTa      │ EN     │ v4           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
+│ XLM-RoBERTa      │ RO     │ v1           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
+│ XLM-RoBERTa      │ RO     │ v2           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
+│ XLM-RoBERTa      │ RO     │ v3           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
+│ XLM-RoBERTa      │ RO     │ v4           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
+│ RoLLaMA 2 7B     │ EN     │ v1           │     180 │       1 │ 0.6%    │ 15.6%   │ 0.0%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ EN     │ v2           │     180 │       7 │ 3.9%    │ 28.9%   │ 0.0%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ EN     │ v3           │     180 │       1 │ 0.6%    │ 44.4%   │ 0.0%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ EN     │ v4           │     180 │       6 │ 3.3%    │ 93.3%   │ 0.0%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ RO     │ v1           │     180 │       6 │ 3.3%    │ 7.8%    │ 0.0%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ RO     │ v2           │     180 │      11 │ 6.1%    │ 1.1%    │ 0.0%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ RO     │ v3           │     180 │       3 │ 1.7%    │ 50.0%   │ 0.0%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ RO     │ v3_ro_labels │     180 │      54 │ 30.0%   │ 8.3%    │ 0.0%   │ 0.0%   │
+│ RoLLaMA 2 7B     │ RO     │ v4           │     180 │      64 │ 35.6%   │ —       │ —      │ —      │
+╰──────────────────┴────────┴──────────────┴─────────┴─────────┴─────────┴─────────┴────────┴────────╯
+
+
+  📝 Parse failures indicate the model returned output that could not be parsed into the expected JSON schema. High failure rates correlate with weaker instruction-following capability.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  C1 — API vs Local Comparison: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+C1 — API vs Local (Extragerea intenției)
+╭──────────────┬────────────┬───────────┬────────────┬─────────┬───────────┬────────────────────────────────────────────────────────╮
+│ Category     │   N models │ Avg Acc   │   Avg M-F1 │   Avg κ │ Avg Lat   │ Models                                                 │
+├──────────────┼────────────┼───────────┼────────────┼─────────┼───────────┼────────────────────────────────────────────────────────┤
+│ API models   │          2 │ 98.1%     │      0.98  │   0.979 │ 3767 ms   │ OpenAI o3, Gemini 2.5 Flash                            │
+│ Local models │          4 │ 40.6%     │      0.398 │   0.353 │ 29068 ms  │ Aya Expanse 8B, XLM-RoBERTa, RoLLaMA 2 7B, RoBERT-base │
+╰──────────────┴────────────┴───────────┴────────────┴─────────┴───────────┴────────────────────────────────────────────────────────╯
+
+
+C1b — Individual model details (Extragerea intenției)
+╭──────────────────┬────────┬─────────────┬───────┬────────┬────────┬───────────┬─────────────────────┬────────────────╮
+│ Model            │ Type   │ Params      │ Acc   │   M-F1 │      κ │ Latency   │ Provider            │ Quantization   │
+├──────────────────┼────────┼─────────────┼───────┼────────┼────────┼───────────┼─────────────────────┼────────────────┤
+│ OpenAI o3        │ API    │ ~200B+      │ 98.3% │  0.983 │  0.982 │ 4035 ms   │ OpenAI API          │ N/A            │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ 97.8% │  0.977 │  0.976 │ 3499 ms   │ Google AI API       │ N/A            │
+│ Aya Expanse 8B   │ Local  │ 8B          │ 91.1% │  0.909 │  0.903 │ 94257 ms  │ Ollama (local)      │ Q4_K_M         │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ 53.9% │  0.552 │  0.497 │ 11503 ms  │ HuggingFace (local) │ FP16/FP32      │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ 15.6% │  0.119 │  0.084 │ 7438 ms   │ Ollama (local)      │ Q4_K_M         │
+│ RoBERT-base      │ Local  │ ~125M       │ 1.7%  │  0.012 │ -0.073 │ 3075 ms   │ HuggingFace (local) │ FP16/FP32      │
+╰──────────────────┴────────┴─────────────┴───────┴────────┴────────┴───────────┴─────────────────────┴────────────────╯
+
+
+  📝 API vs Local gap (Macro-F1): +7.4%. Best API: OpenAI o3 (0.983), Best Local: Aya Expanse 8B (0.909). This confirms the advantage of large proprietary models for this task.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  C2 — Parameter Efficiency: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+C2 — Parameter efficiency (Extragerea intenției)
+╭──────────────────┬────────┬─────────────┬───────┬────────┬────────────────────╮
+│ Model            │ Type   │ Params      │ Acc   │   M-F1 │ F1/log₁₀(params)   │
+├──────────────────┼────────┼─────────────┼───────┼────────┼────────────────────┤
+│ OpenAI o3        │ API    │ ~200B+      │ 98.3% │  0.983 │ 0.087              │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ 97.8% │  0.977 │ —                  │
+│ Aya Expanse 8B   │ Local  │ 8B          │ 91.1% │  0.909 │ 0.092              │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ 53.9% │  0.552 │ 0.063              │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ 15.6% │  0.119 │ 0.012              │
+│ RoBERT-base      │ Local  │ ~125M       │ 1.7%  │  0.012 │ 0.001              │
+╰──────────────────┴────────┴─────────────┴───────┴────────┴────────────────────╯
+
+
+  📝 F1/log₁₀(params) measures how much performance a model squeezes per order of magnitude of parameters. Smaller models with high scores are exceptionally parameter-efficient.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  C3 — Latency–Accuracy Trade-off: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+C3 — Latency vs Accuracy (Extragerea intenției)
+╭──────────────────┬────────┬───────┬────────┬────────────────┬───────────────┬───────────╮
+│ Model            │ Type   │ Acc   │   M-F1 │ Latency (ms)   │ Latency (s)   │   Acc/sec │
+├──────────────────┼────────┼───────┼────────┼────────────────┼───────────────┼───────────┤
+│ Gemini 2.5 Flash │ API    │ 97.8% │  0.977 │ 3499 ms        │ 3.50 s        │       0.3 │
+│ OpenAI o3        │ API    │ 98.3% │  0.983 │ 4035 ms        │ 4.03 s        │       0.2 │
+│ Aya Expanse 8B   │ Local  │ 91.1% │  0.909 │ 94257 ms       │ 94.26 s       │       0   │
+│ XLM-RoBERTa      │ Local  │ 53.9% │  0.552 │ 11503 ms       │ 11.50 s       │       0   │
+│ RoLLaMA 2 7B     │ Local  │ 15.6% │  0.119 │ 7438 ms        │ 7.44 s        │       0   │
+│ RoBERT-base      │ Local  │ 1.7%  │  0.012 │ 3075 ms        │ 3.08 s        │       0   │
+╰──────────────────┴────────┴───────┴────────┴────────────────┴───────────────┴───────────╯
+
+
+  📝 Acc/sec measures how much accuracy is delivered per second of inference time. Models with high accuracy AND low latency rank highest — relevant for real-time monitoring pipelines.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  C5 — Agreement Analysis (Cohen's κ): Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+C5 — κ interpretation per Landis & Koch (1977)
+╭──────────────────┬────────┬──────────┬────────┬──────────────────┬───────┬────────┬────────────╮
+│ Model            │ Type   │ Config   │      κ │ Interpretation   │ Acc   │   M-F1 │ Invalid%   │
+├──────────────────┼────────┼──────────┼────────┼──────────────────┼───────┼────────┼────────────┤
+│ OpenAI o3        │ API    │ EN v4    │  0.982 │ Almost Perfect   │ 98.3% │  0.983 │ 0.0%       │
+│ Gemini 2.5 Flash │ API    │ RO v4    │  0.976 │ Almost Perfect   │ 97.8% │  0.977 │ 0.0%       │
+│ Aya Expanse 8B   │ Local  │ EN v4    │  0.903 │ Almost Perfect   │ 91.1% │  0.909 │ 0.0%       │
+│ XLM-RoBERTa      │ Local  │ EN v1    │  0.497 │ Moderate         │ 53.9% │  0.552 │ 0.0%       │
+│ RoLLaMA 2 7B     │ Local  │ EN v1    │  0.084 │ Slight           │ 15.6% │  0.119 │ 0.6%       │
+│ RoBERT-base      │ Local  │ RO v1    │ -0.073 │ Poor             │ 1.7%  │  0.012 │ 0.0%       │
+╰──────────────────┴────────┴──────────┴────────┴──────────────────┴───────┴────────┴────────────╯
+
+
+  📝 Cohen's κ corrects for chance agreement, making it stricter than raw accuracy. Invalid predictions (unparseable outputs mapped to __invalid__) are penalized in the κ computation. Interpretation: <0.20=Slight, 0.21-0.40=Fair, 0.41-0.60=Moderate, 0.61-0.80=Substantial, 0.81-1.00=Almost Perfect.
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  EVALUATION COMPLETE: Extragerea intenției
+════════════════════════════════════════════════════════════════════════════════════════════════════

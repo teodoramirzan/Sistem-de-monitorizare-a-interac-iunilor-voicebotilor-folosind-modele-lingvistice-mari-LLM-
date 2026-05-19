@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Language impact analysis — Extragerea intenției}
+\label{tab:lang-impact-intent-extraction}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Model} & \textbf{Acc RO} & \textbf{Acc EN} & \textbf{$\Delta$Acc} & \textbf{F1 RO} & \textbf{F1 EN} & \textbf{Winner} \\
+\midrule
+Aya Expanse 8B & 90.0% & 91.1% & -1.1% & 0.898 & 0.909 & EN \\
+Gemini 2.5 Flash & 97.8% & 97.2% & +0.6% & 0.977 & 0.973 & ≈ \\
+OpenAI o3 & 97.2% & 98.3% & -1.1% & 0.972 & 0.983 & EN \\
+RoBERT-base & 1.7% & — & — & 0.012 & — & RO (only) \\
+XLM-RoBERTa & 53.9% & 53.9% & +0.0% & 0.552 & 0.552 & ≈ \\
+RoLLaMA 2 7B & 13.3% & 15.6% & -2.2% & 0.094 & 0.119 & EN \\
+\bottomrule
+\end{tabular}
+\end{table}

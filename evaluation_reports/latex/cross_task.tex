@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Cross-task comparison — Best Macro-F1 per model}
+\label{tab:cross-task}
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{Intent Extraction} & \textbf{Final Status Classification} & \textbf{Incongruity Detection} & \textbf{Avg} \\
+\midrule
+Gemini 2.5 Flash & API & 0.977 & 0.834 & 0.811 & 0.874 \\
+OpenAI o3 & API & 0.983 & 0.860 & 0.712 & 0.852 \\
+Aya Expanse 8B & Local & 0.909 & 0.620 & 0.267 & 0.599 \\
+XLM-RoBERTa & Local & 0.552 & 0.224 & 0.050 & 0.275 \\
+RoLLaMA 2 7B & Local & 0.119 & 0.155 & 0.057 & 0.110 \\
+RoBERT-base & Local & 0.012 & — & — & 0.012 \\
+\bottomrule
+\end{tabular}
+\end{table}

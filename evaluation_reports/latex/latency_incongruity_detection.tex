@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Latency analysis — Detecția neconcordanțelor}
+\label{tab:latency-incongruity-detection}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{Mean} & \textbf{Median} & \textbf{Std} & \textbf{p95} & \textbf{N} \\
+\midrule
+OpenAI o3 & API & 4615 ms & 3867 ms & 3321 ms & 9789 ms & 36 \\
+XLM-RoBERTa & Local & 6101 ms & 5414 ms & 2544 ms & 10605 ms & 36 \\
+RoLLaMA 2 7B & Local & 6191 ms & 5862 ms & 1111 ms & 8352 ms & 36 \\
+Gemini 2.5 Flash & API & 8286 ms & 7016 ms & 3766 ms & 15230 ms & 36 \\
+Aya Expanse 8B & Local & 114768 ms & 107890 ms & 25645 ms & 160211 ms & 36 \\
+\bottomrule
+\end{tabular}
+\end{table}

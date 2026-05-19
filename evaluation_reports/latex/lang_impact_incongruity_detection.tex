@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Language impact analysis — Detecția neconcordanțelor}
+\label{tab:lang-impact-incongruity-detection}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Model} & \textbf{Acc RO} & \textbf{Acc EN} & \textbf{$\Delta$Acc} & \textbf{F1 RO} & \textbf{F1 EN} & \textbf{Winner} \\
+\midrule
+Aya Expanse 8B & 25.0% & 27.8% & -2.8% & 0.193 & 0.267 & EN \\
+Gemini 2.5 Flash & 75.0% & 77.8% & -2.8% & 0.804 & 0.811 & ≈ \\
+OpenAI o3 & 55.6% & 66.7% & -11.1% & 0.671 & 0.712 & EN \\
+XLM-RoBERTa & 11.1% & 11.1% & +0.0% & 0.050 & 0.050 & ≈ \\
+RoLLaMA 2 7B & 0.0% & 2.8% & -2.8% & 0.000 & 0.057 & EN \\
+\bottomrule
+\end{tabular}
+\end{table}

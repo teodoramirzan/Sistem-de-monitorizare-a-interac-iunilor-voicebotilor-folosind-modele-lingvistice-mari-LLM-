@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Best prompt configuration per model — Incongruity Type Classification}
+\label{tab:incongruity-best}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Model} & \textbf{Config} & \textbf{Acc} & \textbf{M-F1} & \textbf{W-F1} & $\boldsymbol{\kappa}$ & \textbf{Latency} \\
+\midrule
+\textbf{Gemini 2.5 Flash} & EN v2 & 77.8\% & 0.811 & 0.808 & 0.727 & 8286 ms \\
+OpenAI o3 & EN v2 & 66.7\% & 0.712 & 0.722 & 0.606 & 4615 ms \\
+Aya Expanse 8B & EN v3 & 27.8\% & 0.267 & 0.266 & 0.192 & 114768 ms \\
+RoLLaMA 2 7B & EN v1 & 2.8\% & 0.057 & 0.040 & 0.014 & 6191 ms \\
+XLM-RoBERTa & EN v1 & 11.1\% & 0.050 & 0.056 & -0.112 & 6101 ms \\
+\bottomrule
+\end{tabular}
+\end{table}

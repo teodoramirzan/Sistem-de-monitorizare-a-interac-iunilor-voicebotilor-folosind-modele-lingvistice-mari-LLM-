@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Latency analysis — Extragerea intenției}
+\label{tab:latency-intent-extraction}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{Mean} & \textbf{Median} & \textbf{Std} & \textbf{p95} & \textbf{N} \\
+\midrule
+RoBERT-base & Local & 3075 ms & 2445 ms & 1642 ms & 5625 ms & 180 \\
+Gemini 2.5 Flash & API & 3499 ms & 3117 ms & 2024 ms & 5435 ms & 180 \\
+OpenAI o3 & API & 4035 ms & 3586 ms & 1893 ms & 7434 ms & 180 \\
+RoLLaMA 2 7B & Local & 7438 ms & 6210 ms & 3979 ms & 14548 ms & 180 \\
+XLM-RoBERTa & Local & 11503 ms & 8898 ms & 6004 ms & 20843 ms & 180 \\
+Aya Expanse 8B & Local & 94257 ms & 82172 ms & 29934 ms & 147468 ms & 180 \\
+\bottomrule
+\end{tabular}
+\end{table}
