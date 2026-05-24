@@ -646,7 +646,14 @@ def get_multiclass_yt_yp(rows, labels, task):
         if task != "incongruities" and true_label not in labels:
             continue
         y_true.append(true_label)
-        y_pred.append(pred_label if pred_label in labels else "__invalid__")
+        if pred_label in labels:
+            y_pred.append(pred_label)
+        elif task == "incongruities" and (pred_label is None or pred_label == "none"):
+            # Model said "no incongruity" — valid decision (false negative),
+            # not a parse failure. Map to "__fn_none__" instead of "__invalid__".
+            y_pred.append("__fn_none__")
+        else:
+            y_pred.append("__invalid__")
         valid_rows.append(r)
     return y_true, y_pred, valid_rows
 
@@ -656,6 +663,7 @@ def compute_multiclass_metrics(rows, labels, task):
     if not y_true:
         return None
     n_invalid = sum(1 for p in y_pred if p == "__invalid__")
+    n_fn_none = sum(1 for p in y_pred if p == "__fn_none__")
     return {
         "accuracy": accuracy_score(y_true, y_pred),
         "macro_f1": f1_score(y_true, y_pred, labels=labels, average="macro", zero_division=0),
@@ -663,7 +671,9 @@ def compute_multiclass_metrics(rows, labels, task):
         "kappa": safe_kappa(y_true, y_pred, labels),
         "n": len(y_true),
         "n_invalid": n_invalid,
+        "n_fn_none": n_fn_none,
         "invalid_rate": n_invalid / len(y_true) if y_true else 0,
+        "fn_none_rate": n_fn_none / len(y_true) if y_true else 0,
         "y_true": y_true,
         "y_pred": y_pred,
         "valid_rows": valid_rows,
@@ -716,7 +726,9 @@ def collect_multiclass_records(by_key, labels, task):
             "weighted_f1": metrics["weighted_f1"],
             "kappa": metrics["kappa"],
             "n_invalid": metrics["n_invalid"],
+            "n_fn_none": metrics.get("n_fn_none", 0),
             "invalid_rate": metrics["invalid_rate"],
+            "fn_none_rate": metrics.get("fn_none_rate", 0),
             "latency": lat,
             "n": metrics["n"],
             "y_true": metrics["y_true"],
@@ -1199,7 +1211,7 @@ def print_c3_latency_accuracy_tradeoff(records, cfg):
             pct(rec["accuracy"]), fmt(rec["macro_f1"]),
             ms(lat),
             sec(lat / 1000 if lat else None),
-            fmt(points_per_sec, 1) if points_per_sec else "—",
+            fmt(points_per_sec, 3) if points_per_sec else "—",
         ])
     rows.sort(key=lambda r: float(r[6]) if r[6] != "—" else 0, reverse=True)
     rprint_table(rows,
@@ -1218,21 +1230,33 @@ def print_c5_kappa_interpretation(records, cfg):
     rows = []
     for rec in best:
         k = rec["kappa"]
-        rows.append([
+        row = [
             rec["model_display"], rec["type"],
             f"{rec['lang'].upper()} {rec['version']}",
             fmt(k), interpret_kappa(k),
             pct(rec["accuracy"]), fmt(rec["macro_f1"]),
             pct(rec.get("invalid_rate", 0)),
-        ])
-    rprint_table(rows,
-                 headers=["Model", "Type", "Config", "κ", "Interpretation",
-                          "Acc", "M-F1", "Invalid%"],
+        ]
+        # Add FN% column for incongruities
+        if rec.get("fn_none_rate") is not None:
+            row.append(pct(rec.get("fn_none_rate", 0)))
+        rows.append(row)
+
+    headers = ["Model", "Type", "Config", "κ", "Interpretation",
+               "Acc", "M-F1", "Invalid%"]
+    # Add FN% header if any record has fn_none data
+    if any(rec.get("fn_none_rate") is not None for rec in best):
+        headers.append("FN-none%")
+
+    rprint_table(rows, headers=headers,
                  title=f"C5 — κ interpretation per Landis & Koch (1977)")
 
     commentary("Cohen's κ corrects for chance agreement, making it stricter than "
                "raw accuracy. Invalid predictions (unparseable outputs mapped to "
-               "__invalid__) are penalized in the κ computation. "
+               "__invalid__) are penalized in the κ computation. For incongruity "
+               "detection, FN-none% shows the percentage of positive samples where "
+               "the model predicted no incongruity (false negatives), which are "
+               "penalized separately from truly invalid outputs. "
                "Interpretation: <0.20=Slight, 0.21-0.40=Fair, 0.41-0.60=Moderate, "
                "0.61-0.80=Substantial, 0.81-1.00=Almost Perfect.")
 
