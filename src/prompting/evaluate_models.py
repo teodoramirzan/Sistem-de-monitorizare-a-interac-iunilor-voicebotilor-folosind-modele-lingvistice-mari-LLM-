@@ -137,7 +137,7 @@ TASK_CONFIG = {
         "latex_dir": BASE_DIR / "evaluation_reports" / "latex",
         "labels_path": BASE_DIR / "configs" / "incongruities_definitions.json",
         "labels_default": [
-            "incomplet", "irelevant", "contradictoriu",
+            "none", "incomplet", "irelevant", "contradictoriu",
             "nealiniat_context", "halucinatie",
         ],
         "file_pattern": "*.json",
@@ -165,6 +165,7 @@ TASK_CONFIG = {
 }
 
 
+
 # ── Model metadata ────────────────────────────────────────────────────────
 
 MODEL_TYPE = {
@@ -174,6 +175,8 @@ MODEL_TYPE = {
     "rollama2_7b":      "Local",
     "roberta_encoder":  "Local",
     "robert_encoder":   "Local",
+    "qwen2_5_3b":       "Local",
+    "mistral_7b":       "Local",
 }
 
 MODEL_DISPLAY = {
@@ -183,6 +186,8 @@ MODEL_DISPLAY = {
     "rollama2_7b":      "RoLLaMA 2 7B",
     "roberta_encoder":  "XLM-RoBERTa",
     "robert_encoder":   "RoBERT-base",
+    "qwen2_5_3b":       "Qwen2.5 3B",
+    "mistral_7b":       "Mistral 7B",
 }
 
 MODEL_PARAMS_B = {
@@ -192,6 +197,8 @@ MODEL_PARAMS_B = {
     "rollama2_7b":      7.0,
     "roberta_encoder":  0.56,
     "robert_encoder":   0.125,
+    "qwen2_5_3b":       3.0,
+    "mistral_7b":       7.0,
 }
 
 MODEL_PARAMS_DISPLAY = {
@@ -201,6 +208,8 @@ MODEL_PARAMS_DISPLAY = {
     "rollama2_7b":      "7B",
     "roberta_encoder":  "~560M",
     "robert_encoder":   "~125M",
+    "qwen2_5_3b":       "3B",
+    "mistral_7b":       "7B",
 }
 
 # Inference environment metadata
@@ -211,6 +220,8 @@ MODEL_INFERENCE_INFO = {
     "rollama2_7b":      {"provider": "Ollama (local)", "quantization": "Q4_K_M", "hardware": "local GPU"},
     "roberta_encoder":  {"provider": "HuggingFace (local)", "quantization": "FP16/FP32", "hardware": "local GPU"},
     "robert_encoder":   {"provider": "HuggingFace (local)", "quantization": "FP16/FP32", "hardware": "local GPU"},
+    "qwen2_5_3b":       {"provider": "HuggingFace Transformers (Colab)", "quantization": "4-bit NF4", "hardware": "Colab T4 GPU"},
+    "mistral_7b":       {"provider": "HuggingFace Transformers (Colab)", "quantization": "4-bit NF4", "hardware": "Colab T4 GPU"},
 }
 
 # Kappa interpretation (Landis & Koch, 1977)
@@ -557,9 +568,13 @@ def normalize_prediction_row(row, exp, cfg):
     pred_label = get_first_existing(row, cfg["pred_candidates"])
     true_label = get_first_existing(row, cfg["true_candidates"])
 
+
+    if (true_label is None or true_label == "null") and "none" in (cfg.get("labels_default") or []):
+        true_label = "none"
+
     pred_norm = normalize_label(pred_label)
     true_norm = normalize_label(true_label)
-
+  
     normalized = {
         **row,
         "model_name": exp["model"],
@@ -640,19 +655,14 @@ def get_multiclass_yt_yp(rows, labels, task):
         pred_label = r.get("predicted_label_norm")
         if true_label is None:
             continue
-        # For incongruities multiclass: only samples WITH an incongruity
-        if task == "incongruities" and true_label not in labels:
-            continue
-        if task != "incongruities" and true_label not in labels:
+        # Only include samples where true_label is in the defined label set
+        if true_label not in labels:
             continue
         y_true.append(true_label)
         if pred_label in labels:
             y_pred.append(pred_label)
-        elif task == "incongruities" and (pred_label is None or pred_label == "none"):
-            # Model said "no incongruity" — valid decision (false negative),
-            # not a parse failure. Map to "__fn_none__" instead of "__invalid__".
-            y_pred.append("__fn_none__")
         else:
+            # Parse failure or invalid prediction
             y_pred.append("__invalid__")
         valid_rows.append(r)
     return y_true, y_pred, valid_rows
@@ -663,7 +673,6 @@ def compute_multiclass_metrics(rows, labels, task):
     if not y_true:
         return None
     n_invalid = sum(1 for p in y_pred if p == "__invalid__")
-    n_fn_none = sum(1 for p in y_pred if p == "__fn_none__")
     return {
         "accuracy": accuracy_score(y_true, y_pred),
         "macro_f1": f1_score(y_true, y_pred, labels=labels, average="macro", zero_division=0),
@@ -671,9 +680,7 @@ def compute_multiclass_metrics(rows, labels, task):
         "kappa": safe_kappa(y_true, y_pred, labels),
         "n": len(y_true),
         "n_invalid": n_invalid,
-        "n_fn_none": n_fn_none,
         "invalid_rate": n_invalid / len(y_true) if y_true else 0,
-        "fn_none_rate": n_fn_none / len(y_true) if y_true else 0,
         "y_true": y_true,
         "y_pred": y_pred,
         "valid_rows": valid_rows,
@@ -726,9 +733,7 @@ def collect_multiclass_records(by_key, labels, task):
             "weighted_f1": metrics["weighted_f1"],
             "kappa": metrics["kappa"],
             "n_invalid": metrics["n_invalid"],
-            "n_fn_none": metrics.get("n_fn_none", 0),
             "invalid_rate": metrics["invalid_rate"],
-            "fn_none_rate": metrics.get("fn_none_rate", 0),
             "latency": lat,
             "n": metrics["n"],
             "y_true": metrics["y_true"],
@@ -1237,26 +1242,17 @@ def print_c5_kappa_interpretation(records, cfg):
             pct(rec["accuracy"]), fmt(rec["macro_f1"]),
             pct(rec.get("invalid_rate", 0)),
         ]
-        # Add FN% column for incongruities
-        if rec.get("fn_none_rate") is not None:
-            row.append(pct(rec.get("fn_none_rate", 0)))
         rows.append(row)
 
     headers = ["Model", "Type", "Config", "κ", "Interpretation",
                "Acc", "M-F1", "Invalid%"]
-    # Add FN% header if any record has fn_none data
-    if any(rec.get("fn_none_rate") is not None for rec in best):
-        headers.append("FN-none%")
 
     rprint_table(rows, headers=headers,
                  title=f"C5 — κ interpretation per Landis & Koch (1977)")
 
     commentary("Cohen's κ corrects for chance agreement, making it stricter than "
                "raw accuracy. Invalid predictions (unparseable outputs mapped to "
-               "__invalid__) are penalized in the κ computation. For incongruity "
-               "detection, FN-none% shows the percentage of positive samples where "
-               "the model predicted no incongruity (false negatives), which are "
-               "penalized separately from truly invalid outputs. "
+               "__invalid__) are penalized in the κ computation."
                "Interpretation: <0.20=Slight, 0.21-0.40=Fair, 0.41-0.60=Moderate, "
                "0.61-0.80=Substantial, 0.81-1.00=Almost Perfect.")
 
