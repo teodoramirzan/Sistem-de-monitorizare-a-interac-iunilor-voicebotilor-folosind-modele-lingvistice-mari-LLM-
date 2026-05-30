@@ -2,6 +2,11 @@
   "task": "incongruities",
   "labels": [
     {
+      "name": "none",
+      "description_ro": "Nu există neconcordanțe în conversație. Voicebotul răspunde corect, complet și consistent la toate solicitările utilizatorului.",
+      "description_en": "No incongruities in the conversation. The voicebot responds correctly, completely, and consistently to all user requests."
+    },
+    {
       "name": "incomplet",
       "description_ro": "Răspunsul voicebotului nu adresează toate cerințele din mesajul utilizatorului. Dacă utilizatorul a pus mai multe întrebări sau a formulat mai multe cereri și botul răspunde doar la unele dintre ele, răspunsul este incomplet. Nu se clasifică drept incomplet dacă botul a răspuns complet la ce s-a cerut, chiar dacă ar fi putut adăuga detalii suplimentare.",
       "description_en": "The voicebot's response does not address all the requirements in the user's message. If the user asked multiple questions or made multiple requests and the bot only responded to some of them, the response is incomplete. Do not classify as incomplete if the bot fully answered what was asked, even if it could have added extra details."

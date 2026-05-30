@@ -5,12 +5,12 @@
   Task: final_status
   Output dir: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\outputs_final_status
   Report: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\evaluation_reports\eval_final_status.txt
-  Timestamp: 2026-05-19 18:49
+  Timestamp: 2026-05-30 20:16
 
   Labels (5): ['rezolvata', 'nerezolvata', 'redirectionata', 'partial_rezolvata', 'intrerupta']
 
 
-  Loaded 40 experiment files:
+  Loaded 42 experiment files:
     Aya Expanse 8B            [EN] v1         ← exp_fst_aya_expanse_8b__en__v1.json
     Aya Expanse 8B            [EN] v2         ← exp_fst_aya_expanse_8b__en__v2.json
     Aya Expanse 8B            [EN] v3         ← exp_fst_aya_expanse_8b__en__v3.json
@@ -27,6 +27,7 @@
     Gemini 2.5 Flash          [RO] v2         ← exp_fst_gemini_2.5_flash__ro__v2.json
     Gemini 2.5 Flash          [RO] v3         ← exp_fst_gemini_2.5_flash__ro__v3.json
     Gemini 2.5 Flash          [RO] v4         ← exp_fst_gemini_2.5_flash__ro__v4.json
+    Mistral 7B                [RO] v4         ← exp_fst_mistral_7b__ro__v4__20260524_185821.json
     OpenAI o3                 [EN] v1         ← exp_fst_openai_o3__en__v1.json
     OpenAI o3                 [EN] v2         ← exp_fst_openai_o3__en__v2.json
     OpenAI o3                 [EN] v3         ← exp_fst_openai_o3__en__v3.json
@@ -35,6 +36,7 @@
     OpenAI o3                 [RO] v2         ← exp_fst_openai_o3__ro__v2.json
     OpenAI o3                 [RO] v3         ← exp_fst_openai_o3__ro__v3.json
     OpenAI o3                 [RO] v4         ← exp_fst_openai_o3__ro__v4.json
+    Qwen2.5 3B                [RO] v4         ← exp_fst_qwen2_5_3b__ro__v4__20260524_163738.json
     XLM-RoBERTa               [EN] v1         ← exp_fst_roberta_encoder__en__v1.json
     XLM-RoBERTa               [EN] v2         ← exp_fst_roberta_encoder__en__v2.json
     XLM-RoBERTa               [EN] v3         ← exp_fst_roberta_encoder__en__v3.json
@@ -52,7 +54,7 @@
     RoLLaMA 2 7B              [RO] v3         ← exp_fst_rollama2_7b__ro__v3.json
     RoLLaMA 2 7B              [RO] v4         ← exp_fst_rollama2_7b__ro__v4.json
 
-  Total predictions across all experiments: 7200
+  Total predictions across all experiments: 7560
 
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -79,6 +81,7 @@ T1 — All loaded experiments
 │ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v2    │ 180 │       0 │ 0.0%    │
 │ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v3    │ 180 │       1 │ 0.6%    │
 │ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v4    │ 180 │       0 │ 0.0%    │
+│ Mistral 7B       │ Local  │ 7B          │ RO     │ v4    │ 180 │       2 │ 1.1%    │
 │ OpenAI o3        │ API    │ ~200B+      │ EN     │ v1    │ 180 │       0 │ 0.0%    │
 │ OpenAI o3        │ API    │ ~200B+      │ EN     │ v2    │ 180 │       1 │ 0.6%    │
 │ OpenAI o3        │ API    │ ~200B+      │ EN     │ v3    │ 180 │       0 │ 0.0%    │
@@ -87,6 +90,7 @@ T1 — All loaded experiments
 │ OpenAI o3        │ API    │ ~200B+      │ RO     │ v2    │ 180 │       0 │ 0.0%    │
 │ OpenAI o3        │ API    │ ~200B+      │ RO     │ v3    │ 180 │       0 │ 0.0%    │
 │ OpenAI o3        │ API    │ ~200B+      │ RO     │ v4    │ 180 │       0 │ 0.0%    │
+│ Qwen2.5 3B       │ Local  │ 3B          │ RO     │ v4    │ 180 │       6 │ 3.3%    │
 │ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v1    │ 180 │       0 │ 0.0%    │
 │ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v2    │ 180 │       0 │ 0.0%    │
 │ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v3    │ 180 │       0 │ 0.0%    │
@@ -135,8 +139,10 @@ T2 — All experiments, ranked by Macro-F1
 │ Aya Expanse 8B   │ Local  │ EN     │ v2    │ 73.3% │  0.614 │  0.702 │  0.6   │ Moderate       │ 69229 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ RO     │ v2    │ 71.7% │  0.607 │  0.684 │  0.569 │ Moderate       │ 75468 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ EN     │ v1    │ 68.9% │  0.598 │  0.665 │  0.531 │ Moderate       │ 58077 ms  │ 180 │
+│ Mistral 7B       │ Local  │ RO     │ v4    │ 68.9% │  0.548 │  0.667 │  0.537 │ Moderate       │ 22721 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ RO     │ v3    │ 67.8% │  0.546 │  0.64  │  0.505 │ Moderate       │ 96263 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ EN     │ v4    │ 68.3% │  0.531 │  0.664 │  0.537 │ Moderate       │ 180983 ms │ 180 │
+│ Qwen2.5 3B       │ Local  │ RO     │ v4    │ 51.1% │  0.493 │  0.542 │  0.365 │ Fair           │ 13930 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ RO     │ v4    │ 44.4% │  0.392 │  0.449 │  0.263 │ Fair           │ 515508 ms │ 180 │
 │ XLM-RoBERTa      │ Local  │ EN     │ v1    │ 22.8% │  0.224 │  0.237 │  0.069 │ Slight         │ 4819 ms   │ 180 │
 │ XLM-RoBERTa      │ Local  │ RO     │ v1    │ 22.8% │  0.224 │  0.237 │  0.069 │ Slight         │ 4852 ms   │ 180 │
@@ -171,6 +177,8 @@ T3 — Best prompt per model (Clasificarea statusului final)
 │ OpenAI o3 ★      │ API    │ ~200B+      │ RO v4    │ 90.0% │  0.86  │  0.899 │ 0.856 │ Almost Perfect │ 8916 ms   │ 180 │
 │ Gemini 2.5 Flash │ API    │ undisclosed │ EN v4    │ 86.1% │  0.834 │  0.863 │ 0.804 │ Almost Perfect │ 4769 ms   │ 180 │
 │ Aya Expanse 8B   │ Local  │ 8B          │ EN v3    │ 72.2% │  0.62  │  0.69  │ 0.58  │ Moderate       │ 77595 ms  │ 180 │
+│ Mistral 7B       │ Local  │ 7B          │ RO v4    │ 68.9% │  0.548 │  0.667 │ 0.537 │ Moderate       │ 22721 ms  │ 180 │
+│ Qwen2.5 3B       │ Local  │ 3B          │ RO v4    │ 51.1% │  0.493 │  0.542 │ 0.365 │ Fair           │ 13930 ms  │ 180 │
 │ XLM-RoBERTa      │ Local  │ ~560M       │ EN v1    │ 22.8% │  0.224 │  0.237 │ 0.069 │ Slight         │ 4819 ms   │ 180 │
 │ RoLLaMA 2 7B     │ Local  │ 7B          │ RO v3    │ 41.1% │  0.155 │  0.316 │ 0.003 │ Slight         │ 12077 ms  │ 180 │
 ╰──────────────────┴────────┴─────────────┴──────────┴───────┴────────┴────────┴───────┴────────────────┴───────────┴─────╯
@@ -218,6 +226,30 @@ Aya Expanse 8B [EN v3]
 │ redirectionata    │       0.688 │    0.786 │ 0.733 │        28 │
 │ partial_rezolvata │       0.407 │    0.324 │ 0.361 │        34 │
 │ intrerupta        │       1     │    0.2   │ 0.333 │        20 │
+╰───────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+Mistral 7B [RO v4]
+╭───────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class             │   Precision │   Recall │    F1 │   Support │
+├───────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ rezolvata         │       0.825 │    0.941 │ 0.879 │        85 │
+│ nerezolvata       │       0.667 │    0.462 │ 0.545 │        13 │
+│ redirectionata    │       0.739 │    0.607 │ 0.667 │        28 │
+│ partial_rezolvata │       0.404 │    0.559 │ 0.469 │        34 │
+│ intrerupta        │       1     │    0.1   │ 0.182 │        20 │
+╰───────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+Qwen2.5 3B [RO v4]
+╭───────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class             │   Precision │   Recall │    F1 │   Support │
+├───────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ rezolvata         │       1     │    0.447 │ 0.618 │        85 │
+│ nerezolvata       │       0.833 │    0.385 │ 0.526 │        13 │
+│ redirectionata    │       0.842 │    0.571 │ 0.681 │        28 │
+│ partial_rezolvata │       0.3   │    0.882 │ 0.448 │        34 │
+│ intrerupta        │       0.273 │    0.15  │ 0.194 │        20 │
 ╰───────────────────┴─────────────┴──────────┴───────┴───────────╯
 
 
@@ -308,6 +340,52 @@ Aya Expanse 8B [EN v3]
 ╰───────────────────┴───────────────────┴─────────┴──────────────╯
 
 
+  ▶ Mistral 7B [RO v4] — 56 errors out of 180 (31.1% error rate)
+
+Mistral 7B [RO v4]
+╭───────────────────┬───────────────────┬─────────┬──────────────╮
+│ True Label        │ Predicted As      │   Count │ % of Total   │
+├───────────────────┼───────────────────┼─────────┼──────────────┤
+│ intrerupta        │ partial_rezolvata │      11 │ 6.1%         │
+│ partial_rezolvata │ rezolvata         │      10 │ 5.6%         │
+│ redirectionata    │ partial_rezolvata │       8 │ 4.4%         │
+│ nerezolvata       │ partial_rezolvata │       6 │ 3.3%         │
+│ partial_rezolvata │ redirectionata    │       4 │ 2.2%         │
+│ redirectionata    │ rezolvata         │       3 │ 1.7%         │
+│ intrerupta        │ rezolvata         │       3 │ 1.7%         │
+│ intrerupta        │ nerezolvata       │       3 │ 1.7%         │
+│ rezolvata         │ partial_rezolvata │       3 │ 1.7%         │
+│ intrerupta        │ redirectionata    │       1 │ 0.6%         │
+│ partial_rezolvata │ __invalid__       │       1 │ 0.6%         │
+│ rezolvata         │ redirectionata    │       1 │ 0.6%         │
+│ rezolvata         │ __invalid__       │       1 │ 0.6%         │
+│ nerezolvata       │ rezolvata         │       1 │ 0.6%         │
+╰───────────────────┴───────────────────┴─────────┴──────────────╯
+
+
+  ▶ Qwen2.5 3B [RO v4] — 88 errors out of 180 (48.9% error rate)
+
+Qwen2.5 3B [RO v4]
+╭───────────────────┬───────────────────┬─────────┬──────────────╮
+│ True Label        │ Predicted As      │   Count │ % of Total   │
+├───────────────────┼───────────────────┼─────────┼──────────────┤
+│ rezolvata         │ partial_rezolvata │      39 │ 21.7%        │
+│ intrerupta        │ partial_rezolvata │      16 │ 8.9%         │
+│ redirectionata    │ partial_rezolvata │      10 │ 5.6%         │
+│ nerezolvata       │ partial_rezolvata │       5 │ 2.8%         │
+│ rezolvata         │ __invalid__       │       4 │ 2.2%         │
+│ nerezolvata       │ intrerupta        │       3 │ 1.7%         │
+│ redirectionata    │ intrerupta        │       2 │ 1.1%         │
+│ rezolvata         │ intrerupta        │       2 │ 1.1%         │
+│ partial_rezolvata │ __invalid__       │       2 │ 1.1%         │
+│ intrerupta        │ redirectionata    │       1 │ 0.6%         │
+│ rezolvata         │ nerezolvata       │       1 │ 0.6%         │
+│ rezolvata         │ redirectionata    │       1 │ 0.6%         │
+│ partial_rezolvata │ intrerupta        │       1 │ 0.6%         │
+│ partial_rezolvata │ redirectionata    │       1 │ 0.6%         │
+╰───────────────────┴───────────────────┴─────────┴──────────────╯
+
+
   ▶ XLM-RoBERTa [EN v1] — 139 errors out of 180 (77.2% error rate)
 
 XLM-RoBERTa [EN v1]
@@ -364,8 +442,10 @@ T6 — Version evolution (Clasificarea statusului final)
 │ Aya Expanse 8B   │ RO     │ 70.6% / 0.620 │ 71.7% / 0.607 │ 67.8% / 0.546 │ 44.4% / 0.392 │ -22.8%           │
 │ Gemini 2.5 Flash │ EN     │ 71.7% / 0.706 │ 83.9% / 0.774 │ 84.4% / 0.787 │ 86.1% / 0.834 │ +12.8%           │
 │ Gemini 2.5 Flash │ RO     │ 66.1% / 0.648 │ 81.7% / 0.763 │ 83.9% / 0.789 │ 83.9% / 0.806 │ +15.8%           │
+│ Mistral 7B       │ RO     │ —             │ —             │ —             │ 68.9% / 0.548 │ —                │
 │ OpenAI o3        │ EN     │ 72.2% / 0.688 │ 81.7% / 0.740 │ 84.4% / 0.799 │ 87.2% / 0.839 │ +15.1%           │
 │ OpenAI o3        │ RO     │ 72.8% / 0.701 │ 80.6% / 0.712 │ 85.6% / 0.809 │ 90.0% / 0.860 │ +15.9%           │
+│ Qwen2.5 3B       │ RO     │ —             │ —             │ —             │ 51.1% / 0.493 │ —                │
 │ XLM-RoBERTa      │ EN     │ 22.8% / 0.224 │ 22.2% / 0.216 │ 22.2% / 0.216 │ 22.2% / 0.216 │ -0.7%            │
 │ XLM-RoBERTa      │ RO     │ 22.8% / 0.224 │ 22.8% / 0.224 │ 22.2% / 0.216 │ 22.2% / 0.216 │ -0.7%            │
 │ RoLLaMA 2 7B     │ EN     │ 16.7% / 0.093 │ 23.9% / 0.110 │ 43.3% / 0.131 │ 8.9% / 0.040  │ -5.3%            │
@@ -381,15 +461,17 @@ T6 — Version evolution (Clasificarea statusului final)
 ════════════════════════════════════════════════════════════════════════════════════════════════════
 
 T7 — Language impact (Clasificarea statusului final)
-╭──────────────────┬────────┬──────────┬──────────┬────────┬─────────┬─────────┬───────┬──────────┬──────────┬───────────┬──────────╮
-│ Model            │ Type   │ Acc RO   │ Acc EN   │ ΔAcc   │   F1 RO │   F1 EN │ ΔF1   │ Lat RO   │ Lat EN   │ ΔLat      │ Winner   │
-├──────────────────┼────────┼──────────┼──────────┼────────┼─────────┼─────────┼───────┼──────────┼──────────┼───────────┼──────────┤
-│ Aya Expanse 8B   │ Local  │ 70.6%    │ 72.2%    │ -1.7%  │   0.62  │   0.62  │ -0.0% │ 64211 ms │ 77595 ms │ -13384 ms │ ≈        │
-│ Gemini 2.5 Flash │ API    │ 83.9%    │ 86.1%    │ -2.2%  │   0.806 │   0.834 │ -2.8% │ 6546 ms  │ 4769 ms  │ +1777 ms  │ EN       │
-│ OpenAI o3        │ API    │ 90.0%    │ 87.2%    │ +2.8%  │   0.86  │   0.839 │ +2.1% │ 8916 ms  │ 7606 ms  │ +1310 ms  │ RO       │
-│ XLM-RoBERTa      │ Local  │ 22.8%    │ 22.8%    │ +0.0%  │   0.224 │   0.224 │ +0.0% │ 4852 ms  │ 4819 ms  │ +34 ms    │ ≈        │
-│ RoLLaMA 2 7B     │ Local  │ 41.1%    │ 43.3%    │ -2.2%  │   0.155 │   0.131 │ +2.4% │ 12077 ms │ 9248 ms  │ +2828 ms  │ RO       │
-╰──────────────────┴────────┴──────────┴──────────┴────────┴─────────┴─────────┴───────┴──────────┴──────────┴───────────┴──────────╯
+╭──────────────────┬────────┬──────────┬──────────┬────────┬─────────┬─────────┬───────┬──────────┬──────────┬───────────┬───────────╮
+│ Model            │ Type   │ Acc RO   │ Acc EN   │ ΔAcc   │   F1 RO │ F1 EN   │ ΔF1   │ Lat RO   │ Lat EN   │ ΔLat      │ Winner    │
+├──────────────────┼────────┼──────────┼──────────┼────────┼─────────┼─────────┼───────┼──────────┼──────────┼───────────┼───────────┤
+│ Aya Expanse 8B   │ Local  │ 70.6%    │ 72.2%    │ -1.7%  │   0.62  │ 0.620   │ -0.0% │ 64211 ms │ 77595 ms │ -13384 ms │ ≈         │
+│ Gemini 2.5 Flash │ API    │ 83.9%    │ 86.1%    │ -2.2%  │   0.806 │ 0.834   │ -2.8% │ 6546 ms  │ 4769 ms  │ +1777 ms  │ EN        │
+│ Mistral 7B       │ Local  │ 68.9%    │ —        │ —      │   0.548 │ —       │ —     │ 22721 ms │ —        │ —         │ RO (only) │
+│ OpenAI o3        │ API    │ 90.0%    │ 87.2%    │ +2.8%  │   0.86  │ 0.839   │ +2.1% │ 8916 ms  │ 7606 ms  │ +1310 ms  │ RO        │
+│ Qwen2.5 3B       │ Local  │ 51.1%    │ —        │ —      │   0.493 │ —       │ —     │ 13930 ms │ —        │ —         │ RO (only) │
+│ XLM-RoBERTa      │ Local  │ 22.8%    │ 22.8%    │ +0.0%  │   0.224 │ 0.224   │ +0.0% │ 4852 ms  │ 4819 ms  │ +34 ms    │ ≈         │
+│ RoLLaMA 2 7B     │ Local  │ 41.1%    │ 43.3%    │ -2.2%  │   0.155 │ 0.131   │ +2.4% │ 12077 ms │ 9248 ms  │ +2828 ms  │ RO        │
+╰──────────────────┴────────┴──────────┴──────────┴────────┴─────────┴─────────┴───────┴──────────┴──────────┴───────────┴───────────╯
 
 
   📝 For tasks on Romanian banking conversations, RO prompts often align better with the conversational register. EN prompts can help with models that have stronger English pretraining. The winner column uses a 1% threshold on Macro-F1.
@@ -407,6 +489,8 @@ T8 — Latency for best configs (Clasificarea statusului final)
 │ XLM-RoBERTa      │ Local  │ EN v1    │ 4819 ms  │ 3704 ms  │ 2572 ms  │ 8846 ms   │ 1362 ms  │ 10113 ms  │ 180 │
 │ OpenAI o3        │ API    │ RO v4    │ 8916 ms  │ 8436 ms  │ 6707 ms  │ 21062 ms  │ 1303 ms  │ 37002 ms  │ 180 │
 │ RoLLaMA 2 7B     │ Local  │ RO v3    │ 12077 ms │ 11837 ms │ 2264 ms  │ 15559 ms  │ 8787 ms  │ 24714 ms  │ 180 │
+│ Qwen2.5 3B       │ Local  │ RO v4    │ 13930 ms │ 13843 ms │ 1425 ms  │ 16409 ms  │ 11560 ms │ 18226 ms  │ 180 │
+│ Mistral 7B       │ Local  │ RO v4    │ 22721 ms │ 22187 ms │ 3193 ms  │ 28282 ms  │ 17074 ms │ 32136 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ EN v3    │ 77595 ms │ 69204 ms │ 27112 ms │ 124746 ms │ 18691 ms │ 162893 ms │ 180 │
 ╰──────────────────┴────────┴──────────┴──────────┴──────────┴──────────┴───────────┴──────────┴───────────┴─────╯
 
@@ -438,6 +522,7 @@ T9 — Output reliability (Clasificarea statusului final)
 │ Gemini 2.5 Flash │ RO     │ v2    │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
 │ Gemini 2.5 Flash │ RO     │ v3    │     180 │       1 │ 0.6%    │ 99.4%   │ 0.0%   │ 0.0%   │
 │ Gemini 2.5 Flash │ RO     │ v4    │     180 │       0 │ 0.0%    │ 99.4%   │ 0.6%   │ 0.0%   │
+│ Mistral 7B       │ RO     │ v4    │     180 │       2 │ 1.1%    │ —       │ —      │ —      │
 │ OpenAI o3        │ EN     │ v1    │     180 │       0 │ 0.0%    │ 84.4%   │ 15.6%  │ 0.0%   │
 │ OpenAI o3        │ EN     │ v2    │     180 │       1 │ 0.6%    │ 82.8%   │ 16.7%  │ 0.0%   │
 │ OpenAI o3        │ EN     │ v3    │     180 │       0 │ 0.0%    │ 90.0%   │ 10.0%  │ 0.0%   │
@@ -446,6 +531,7 @@ T9 — Output reliability (Clasificarea statusului final)
 │ OpenAI o3        │ RO     │ v2    │     180 │       0 │ 0.0%    │ 81.1%   │ 18.9%  │ 0.0%   │
 │ OpenAI o3        │ RO     │ v3    │     180 │       0 │ 0.0%    │ 90.0%   │ 10.0%  │ 0.0%   │
 │ OpenAI o3        │ RO     │ v4    │     180 │       0 │ 0.0%    │ 85.0%   │ 15.0%  │ 0.0%   │
+│ Qwen2.5 3B       │ RO     │ v4    │     180 │       6 │ 3.3%    │ —       │ —      │ —      │
 │ XLM-RoBERTa      │ EN     │ v1    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
 │ XLM-RoBERTa      │ EN     │ v2    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
 │ XLM-RoBERTa      │ EN     │ v3    │     180 │       0 │ 0.0%    │ 0.0%    │ 19.4%  │ 80.6%  │
@@ -473,24 +559,26 @@ T9 — Output reliability (Clasificarea statusului final)
 ════════════════════════════════════════════════════════════════════════════════════════════════════
 
 C1 — API vs Local (Clasificarea statusului final)
-╭──────────────┬────────────┬───────────┬────────────┬─────────┬───────────┬───────────────────────────────────────────╮
-│ Category     │   N models │ Avg Acc   │   Avg M-F1 │   Avg κ │ Avg Lat   │ Models                                    │
-├──────────────┼────────────┼───────────┼────────────┼─────────┼───────────┼───────────────────────────────────────────┤
-│ API models   │          2 │ 88.1%     │      0.847 │   0.83  │ 6843 ms   │ OpenAI o3, Gemini 2.5 Flash               │
-│ Local models │          3 │ 45.4%     │      0.333 │   0.217 │ 31497 ms  │ Aya Expanse 8B, XLM-RoBERTa, RoLLaMA 2 7B │
-╰──────────────┴────────────┴───────────┴────────────┴─────────┴───────────┴───────────────────────────────────────────╯
+╭──────────────┬────────────┬───────────┬────────────┬─────────┬───────────┬───────────────────────────────────────────────────────────────────╮
+│ Category     │   N models │ Avg Acc   │   Avg M-F1 │   Avg κ │ Avg Lat   │ Models                                                            │
+├──────────────┼────────────┼───────────┼────────────┼─────────┼───────────┼───────────────────────────────────────────────────────────────────┤
+│ API models   │          2 │ 88.1%     │      0.847 │   0.83  │ 6843 ms   │ OpenAI o3, Gemini 2.5 Flash                                       │
+│ Local models │          5 │ 51.2%     │      0.408 │   0.311 │ 26228 ms  │ Aya Expanse 8B, Mistral 7B, Qwen2.5 3B, XLM-RoBERTa, RoLLaMA 2 7B │
+╰──────────────┴────────────┴───────────┴────────────┴─────────┴───────────┴───────────────────────────────────────────────────────────────────╯
 
 
 C1b — Individual model details (Clasificarea statusului final)
-╭──────────────────┬────────┬─────────────┬───────┬────────┬───────┬───────────┬─────────────────────┬────────────────╮
-│ Model            │ Type   │ Params      │ Acc   │   M-F1 │     κ │ Latency   │ Provider            │ Quantization   │
-├──────────────────┼────────┼─────────────┼───────┼────────┼───────┼───────────┼─────────────────────┼────────────────┤
-│ OpenAI o3        │ API    │ ~200B+      │ 90.0% │  0.86  │ 0.856 │ 8916 ms   │ OpenAI API          │ N/A            │
-│ Gemini 2.5 Flash │ API    │ undisclosed │ 86.1% │  0.834 │ 0.804 │ 4769 ms   │ Google AI API       │ N/A            │
-│ Aya Expanse 8B   │ Local  │ 8B          │ 72.2% │  0.62  │ 0.58  │ 77595 ms  │ Ollama (local)      │ Q4_K_M         │
-│ XLM-RoBERTa      │ Local  │ ~560M       │ 22.8% │  0.224 │ 0.069 │ 4819 ms   │ HuggingFace (local) │ FP16/FP32      │
-│ RoLLaMA 2 7B     │ Local  │ 7B          │ 41.1% │  0.155 │ 0.003 │ 12077 ms  │ Ollama (local)      │ Q4_K_M         │
-╰──────────────────┴────────┴─────────────┴───────┴────────┴───────┴───────────┴─────────────────────┴────────────────╯
+╭──────────────────┬────────┬─────────────┬───────┬────────┬───────┬───────────┬──────────────────────────────────┬────────────────╮
+│ Model            │ Type   │ Params      │ Acc   │   M-F1 │     κ │ Latency   │ Provider                         │ Quantization   │
+├──────────────────┼────────┼─────────────┼───────┼────────┼───────┼───────────┼──────────────────────────────────┼────────────────┤
+│ OpenAI o3        │ API    │ ~200B+      │ 90.0% │  0.86  │ 0.856 │ 8916 ms   │ OpenAI API                       │ N/A            │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ 86.1% │  0.834 │ 0.804 │ 4769 ms   │ Google AI API                    │ N/A            │
+│ Aya Expanse 8B   │ Local  │ 8B          │ 72.2% │  0.62  │ 0.58  │ 77595 ms  │ Ollama (local)                   │ Q4_K_M         │
+│ Mistral 7B       │ Local  │ 7B          │ 68.9% │  0.548 │ 0.537 │ 22721 ms  │ HuggingFace Transformers (Colab) │ 4-bit NF4      │
+│ Qwen2.5 3B       │ Local  │ 3B          │ 51.1% │  0.493 │ 0.365 │ 13930 ms  │ HuggingFace Transformers (Colab) │ 4-bit NF4      │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ 22.8% │  0.224 │ 0.069 │ 4819 ms   │ HuggingFace (local)              │ FP16/FP32      │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ 41.1% │  0.155 │ 0.003 │ 12077 ms  │ Ollama (local)                   │ Q4_K_M         │
+╰──────────────────┴────────┴─────────────┴───────┴────────┴───────┴───────────┴──────────────────────────────────┴────────────────╯
 
 
   📝 API vs Local gap (Macro-F1): +24.0%. Best API: OpenAI o3 (0.860), Best Local: Aya Expanse 8B (0.620). This confirms the advantage of large proprietary models for this task.
@@ -507,6 +595,8 @@ C2 — Parameter efficiency (Clasificarea statusului final)
 │ OpenAI o3        │ API    │ ~200B+      │ 90.0% │  0.86  │ 0.076              │
 │ Gemini 2.5 Flash │ API    │ undisclosed │ 86.1% │  0.834 │ —                  │
 │ Aya Expanse 8B   │ Local  │ 8B          │ 72.2% │  0.62  │ 0.063              │
+│ Mistral 7B       │ Local  │ 7B          │ 68.9% │  0.548 │ 0.056              │
+│ Qwen2.5 3B       │ Local  │ 3B          │ 51.1% │  0.493 │ 0.052              │
 │ XLM-RoBERTa      │ Local  │ ~560M       │ 22.8% │  0.224 │ 0.026              │
 │ RoLLaMA 2 7B     │ Local  │ 7B          │ 41.1% │  0.155 │ 0.016              │
 ╰──────────────────┴────────┴─────────────┴───────┴────────┴────────────────────╯
@@ -523,11 +613,13 @@ C3 — Latency vs Accuracy (Clasificarea statusului final)
 ╭──────────────────┬────────┬───────┬────────┬────────────────┬───────────────┬───────────╮
 │ Model            │ Type   │ Acc   │   M-F1 │ Latency (ms)   │ Latency (s)   │   Acc/sec │
 ├──────────────────┼────────┼───────┼────────┼────────────────┼───────────────┼───────────┤
-│ Gemini 2.5 Flash │ API    │ 86.1% │  0.834 │ 4769 ms        │ 4.77 s        │       0.2 │
-│ OpenAI o3        │ API    │ 90.0% │  0.86  │ 8916 ms        │ 8.92 s        │       0.1 │
-│ Aya Expanse 8B   │ Local  │ 72.2% │  0.62  │ 77595 ms       │ 77.60 s       │       0   │
-│ XLM-RoBERTa      │ Local  │ 22.8% │  0.224 │ 4819 ms        │ 4.82 s        │       0   │
-│ RoLLaMA 2 7B     │ Local  │ 41.1% │  0.155 │ 12077 ms       │ 12.08 s       │       0   │
+│ Gemini 2.5 Flash │ API    │ 86.1% │  0.834 │ 4769 ms        │ 4.77 s        │     0.181 │
+│ OpenAI o3        │ API    │ 90.0% │  0.86  │ 8916 ms        │ 8.92 s        │     0.101 │
+│ XLM-RoBERTa      │ Local  │ 22.8% │  0.224 │ 4819 ms        │ 4.82 s        │     0.047 │
+│ Qwen2.5 3B       │ Local  │ 51.1% │  0.493 │ 13930 ms       │ 13.93 s       │     0.037 │
+│ RoLLaMA 2 7B     │ Local  │ 41.1% │  0.155 │ 12077 ms       │ 12.08 s       │     0.034 │
+│ Mistral 7B       │ Local  │ 68.9% │  0.548 │ 22721 ms       │ 22.72 s       │     0.03  │
+│ Aya Expanse 8B   │ Local  │ 72.2% │  0.62  │ 77595 ms       │ 77.60 s       │     0.009 │
 ╰──────────────────┴────────┴───────┴────────┴────────────────┴───────────────┴───────────╯
 
 
@@ -545,12 +637,14 @@ C5 — κ interpretation per Landis & Koch (1977)
 │ OpenAI o3        │ API    │ RO v4    │ 0.856 │ Almost Perfect   │ 90.0% │  0.86  │ 0.0%       │
 │ Gemini 2.5 Flash │ API    │ EN v4    │ 0.804 │ Almost Perfect   │ 86.1% │  0.834 │ 0.0%       │
 │ Aya Expanse 8B   │ Local  │ EN v3    │ 0.58  │ Moderate         │ 72.2% │  0.62  │ 0.0%       │
+│ Mistral 7B       │ Local  │ RO v4    │ 0.537 │ Moderate         │ 68.9% │  0.548 │ 1.1%       │
+│ Qwen2.5 3B       │ Local  │ RO v4    │ 0.365 │ Fair             │ 51.1% │  0.493 │ 3.3%       │
 │ XLM-RoBERTa      │ Local  │ EN v1    │ 0.069 │ Slight           │ 22.8% │  0.224 │ 0.0%       │
 │ RoLLaMA 2 7B     │ Local  │ RO v3    │ 0.003 │ Slight           │ 41.1% │  0.155 │ 0.6%       │
 ╰──────────────────┴────────┴──────────┴───────┴──────────────────┴───────┴────────┴────────────╯
 
 
-  📝 Cohen's κ corrects for chance agreement, making it stricter than raw accuracy. Invalid predictions (unparseable outputs mapped to __invalid__) are penalized in the κ computation. Interpretation: <0.20=Slight, 0.21-0.40=Fair, 0.41-0.60=Moderate, 0.61-0.80=Substantial, 0.81-1.00=Almost Perfect.
+  📝 Cohen's κ corrects for chance agreement, making it stricter than raw accuracy. Invalid predictions (unparseable outputs mapped to __invalid__) are penalized in the κ computation.Interpretation: <0.20=Slight, 0.21-0.40=Fair, 0.41-0.60=Moderate, 0.61-0.80=Substantial, 0.81-1.00=Almost Perfect.
 
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════

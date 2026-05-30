@@ -5,12 +5,12 @@
   Task: intent
   Output dir: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\outputs\intent
   Report: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\evaluation_reports\eval_intent.txt
-  Timestamp: 2026-05-19 18:49
+  Timestamp: 2026-05-30 20:16
 
   Labels (12): ['block_card', 'unblock_card', 'open_account', 'close_account', 'check_balance', 'get_account_statement', 'report_suspicious_transaction', 'update_personal_data', 'schedule_advisor_meeting', 'reset_or_recover_auth', 'general_product_info', 'fallback']
 
 
-  Loaded 42 experiment files:
+  Loaded 44 experiment files:
     Aya Expanse 8B            [EN] v1         ← exp_aya_expanse_8b__en__v1.json
     Aya Expanse 8B            [EN] v2         ← exp_aya_expanse_8b__en__v2.json
     Aya Expanse 8B            [EN] v3         ← exp_aya_expanse_8b__en__v3.json
@@ -27,6 +27,7 @@
     Gemini 2.5 Flash          [RO] v2         ← exp_gemini_2.5_flash__ro__v2.json
     Gemini 2.5 Flash          [RO] v3         ← exp_gemini_2.5_flash__ro__v3.json
     Gemini 2.5 Flash          [RO] v4         ← exp_gemini_2.5_flash__ro__v4.json
+    Mistral 7B                [EN] v4         ← exp_mistral_7b__en__v4__20260524_174059.json
     OpenAI o3                 [EN] v1         ← exp_openai_o3__en__v1.json
     OpenAI o3                 [EN] v2         ← exp_openai_o3__en__v2.json
     OpenAI o3                 [EN] v3         ← exp_openai_o3__en__v3.json
@@ -35,6 +36,7 @@
     OpenAI o3                 [RO] v2         ← exp_openai_o3__ro__v2.json
     OpenAI o3                 [RO] v3         ← exp_openai_o3__ro__v3.json
     OpenAI o3                 [RO] v4         ← exp_openai_o3__ro__v4.json
+    Qwen2.5 3B                [EN] v4         ← exp_qwen2_5_3b__en__v4__20260524_161928.json
     RoBERT-base               [RO] v1         ← exp_robert_encoder__ro__v1.json
     XLM-RoBERTa               [EN] v1         ← exp_roberta_encoder__en__v1.json
     XLM-RoBERTa               [EN] v2         ← exp_roberta_encoder__en__v2.json
@@ -54,7 +56,7 @@
     RoLLaMA 2 7B              [RO] v3_ro_labels ← exp_rollama2_7b__ro__v3_ro_labels.json
     RoLLaMA 2 7B              [RO] v4         ← exp_rollama2_7b__ro__v4.json
 
-  Total predictions across all experiments: 7560
+  Total predictions across all experiments: 7920
 
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -81,6 +83,7 @@ T1 — All loaded experiments
 │ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v2           │ 180 │       0 │ 0.0%    │
 │ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v3           │ 180 │       0 │ 0.0%    │
 │ Gemini 2.5 Flash │ API    │ undisclosed │ RO     │ v4           │ 180 │       0 │ 0.0%    │
+│ Mistral 7B       │ Local  │ 7B          │ EN     │ v4           │ 180 │       0 │ 0.0%    │
 │ OpenAI o3        │ API    │ ~200B+      │ EN     │ v1           │ 180 │       0 │ 0.0%    │
 │ OpenAI o3        │ API    │ ~200B+      │ EN     │ v2           │ 180 │       0 │ 0.0%    │
 │ OpenAI o3        │ API    │ ~200B+      │ EN     │ v3           │ 180 │       0 │ 0.0%    │
@@ -89,6 +92,7 @@ T1 — All loaded experiments
 │ OpenAI o3        │ API    │ ~200B+      │ RO     │ v2           │ 180 │       0 │ 0.0%    │
 │ OpenAI o3        │ API    │ ~200B+      │ RO     │ v3           │ 180 │       0 │ 0.0%    │
 │ OpenAI o3        │ API    │ ~200B+      │ RO     │ v4           │ 180 │      13 │ 7.2%    │
+│ Qwen2.5 3B       │ Local  │ 3B          │ EN     │ v4           │ 180 │       0 │ 0.0%    │
 │ RoBERT-base      │ Local  │ ~125M       │ RO     │ v1           │ 180 │       0 │ 0.0%    │
 │ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v1           │ 180 │       0 │ 0.0%    │
 │ XLM-RoBERTa      │ Local  │ ~560M       │ EN     │ v2           │ 180 │       0 │ 0.0%    │
@@ -138,10 +142,12 @@ T2 — All experiments, ranked by Macro-F1
 │ Aya Expanse 8B   │ Local  │ RO     │ v4           │ 90.0% │  0.898 │  0.899 │  0.891 │ Almost Perfect │ 122785 ms │ 180 │
 │ Aya Expanse 8B   │ Local  │ RO     │ v3           │ 90.0% │  0.89  │  0.887 │  0.891 │ Almost Perfect │ 78670 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ RO     │ v2           │ 90.0% │  0.889 │  0.887 │  0.891 │ Almost Perfect │ 56399 ms  │ 180 │
+│ Mistral 7B       │ Local  │ EN     │ v4           │ 89.4% │  0.887 │  0.885 │  0.885 │ Almost Perfect │ 9306 ms   │ 180 │
 │ Aya Expanse 8B   │ Local  │ EN     │ v3           │ 88.3% │  0.872 │  0.871 │  0.873 │ Almost Perfect │ 72928 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ RO     │ v1           │ 87.8% │  0.863 │  0.86  │  0.867 │ Almost Perfect │ 357915 ms │ 180 │
 │ Aya Expanse 8B   │ Local  │ EN     │ v2           │ 85.6% │  0.845 │  0.845 │  0.842 │ Almost Perfect │ 55720 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ EN     │ v1           │ 85.6% │  0.842 │  0.841 │  0.842 │ Almost Perfect │ 214406 ms │ 180 │
+│ Qwen2.5 3B       │ Local  │ EN     │ v4           │ 75.0% │  0.697 │  0.703 │  0.727 │ Substantial    │ 6044 ms   │ 180 │
 │ XLM-RoBERTa      │ Local  │ EN     │ v1           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 11503 ms  │ 180 │
 │ XLM-RoBERTa      │ Local  │ EN     │ v2           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 14776 ms  │ 180 │
 │ XLM-RoBERTa      │ Local  │ EN     │ v3           │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 10984 ms  │ 180 │
@@ -177,6 +183,8 @@ T3 — Best prompt per model (Extragerea intenției)
 │ OpenAI o3 ★      │ API    │ ~200B+      │ EN v4    │ 98.3% │  0.983 │  0.983 │  0.982 │ Almost Perfect │ 4035 ms   │ 180 │
 │ Gemini 2.5 Flash │ API    │ undisclosed │ RO v4    │ 97.8% │  0.977 │  0.977 │  0.976 │ Almost Perfect │ 3499 ms   │ 180 │
 │ Aya Expanse 8B   │ Local  │ 8B          │ EN v4    │ 91.1% │  0.909 │  0.91  │  0.903 │ Almost Perfect │ 94257 ms  │ 180 │
+│ Mistral 7B       │ Local  │ 7B          │ EN v4    │ 89.4% │  0.887 │  0.885 │  0.885 │ Almost Perfect │ 9306 ms   │ 180 │
+│ Qwen2.5 3B       │ Local  │ 3B          │ EN v4    │ 75.0% │  0.697 │  0.703 │  0.727 │ Substantial    │ 6044 ms   │ 180 │
 │ XLM-RoBERTa      │ Local  │ ~560M       │ EN v1    │ 53.9% │  0.552 │  0.55  │  0.497 │ Moderate       │ 11503 ms  │ 180 │
 │ RoLLaMA 2 7B     │ Local  │ 7B          │ EN v1    │ 15.6% │  0.119 │  0.12  │  0.084 │ Slight         │ 7438 ms   │ 180 │
 │ RoBERT-base      │ Local  │ ~125M       │ RO v1    │ 1.7%  │  0.012 │  0.012 │ -0.073 │ Poor           │ 3075 ms   │ 180 │
@@ -246,6 +254,44 @@ Aya Expanse 8B [EN v4]
 │ reset_or_recover_auth         │       1     │    0.733 │ 0.846 │        15 │
 │ general_product_info          │       1     │    0.8   │ 0.889 │        15 │
 │ fallback                      │       1     │    0.688 │ 0.815 │        16 │
+╰───────────────────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+Mistral 7B [EN v4]
+╭───────────────────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class                         │   Precision │   Recall │    F1 │   Support │
+├───────────────────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ block_card                    │       0.867 │    0.929 │ 0.897 │        14 │
+│ unblock_card                  │       1     │    0.857 │ 0.923 │        14 │
+│ open_account                  │       0.882 │    1     │ 0.938 │        15 │
+│ close_account                 │       1     │    0.933 │ 0.966 │        15 │
+│ check_balance                 │       0.778 │    0.933 │ 0.848 │        15 │
+│ get_account_statement         │       1     │    0.933 │ 0.966 │        15 │
+│ report_suspicious_transaction │       0.75  │    1     │ 0.857 │        15 │
+│ update_personal_data          │       1     │    1     │ 1     │        16 │
+│ schedule_advisor_meeting      │       0.789 │    1     │ 0.882 │        15 │
+│ reset_or_recover_auth         │       0.938 │    1     │ 0.968 │        15 │
+│ general_product_info          │       1     │    0.867 │ 0.929 │        15 │
+│ fallback                      │       1     │    0.312 │ 0.476 │        16 │
+╰───────────────────────────────┴─────────────┴──────────┴───────┴───────────╯
+
+
+Qwen2.5 3B [EN v4]
+╭───────────────────────────────┬─────────────┬──────────┬───────┬───────────╮
+│ Class                         │   Precision │   Recall │    F1 │   Support │
+├───────────────────────────────┼─────────────┼──────────┼───────┼───────────┤
+│ block_card                    │       0.389 │    1     │ 0.56  │        14 │
+│ unblock_card                  │       0     │    0     │ 0     │        14 │
+│ open_account                  │       0.882 │    1     │ 0.938 │        15 │
+│ close_account                 │       1     │    1     │ 1     │        15 │
+│ check_balance                 │       0.469 │    1     │ 0.638 │        15 │
+│ get_account_statement         │       0     │    0     │ 0     │        15 │
+│ report_suspicious_transaction │       0.846 │    0.733 │ 0.786 │        15 │
+│ update_personal_data          │       1     │    1     │ 1     │        16 │
+│ schedule_advisor_meeting      │       1     │    1     │ 1     │        15 │
+│ reset_or_recover_auth         │       0.929 │    0.867 │ 0.897 │        15 │
+│ general_product_info          │       0.933 │    0.933 │ 0.933 │        15 │
+│ fallback                      │       1     │    0.438 │ 0.609 │        16 │
 ╰───────────────────────────────┴─────────────┴──────────┴───────┴───────────╯
 
 
@@ -352,6 +398,46 @@ Aya Expanse 8B [EN v4]
 ╰───────────────────────┴───────────────────────────────┴─────────┴──────────────╯
 
 
+  ▶ Mistral 7B [EN v4] — 19 errors out of 180 (10.6% error rate)
+
+Mistral 7B [EN v4]
+╭───────────────────────┬───────────────────────────────┬─────────┬──────────────╮
+│ True Label            │ Predicted As                  │   Count │ % of Total   │
+├───────────────────────┼───────────────────────────────┼─────────┼──────────────┤
+│ fallback              │ check_balance                 │       4 │ 2.2%         │
+│ fallback              │ schedule_advisor_meeting      │       3 │ 1.7%         │
+│ fallback              │ report_suspicious_transaction │       3 │ 1.7%         │
+│ general_product_info  │ open_account                  │       2 │ 1.1%         │
+│ get_account_statement │ __invalid__                   │       1 │ 0.6%         │
+│ fallback              │ block_card                    │       1 │ 0.6%         │
+│ check_balance         │ report_suspicious_transaction │       1 │ 0.6%         │
+│ close_account         │ schedule_advisor_meeting      │       1 │ 0.6%         │
+│ block_card            │ report_suspicious_transaction │       1 │ 0.6%         │
+│ unblock_card          │ reset_or_recover_auth         │       1 │ 0.6%         │
+│ unblock_card          │ block_card                    │       1 │ 0.6%         │
+╰───────────────────────┴───────────────────────────────┴─────────┴──────────────╯
+
+
+  ▶ Qwen2.5 3B [EN v4] — 45 errors out of 180 (25.0% error rate)
+
+Qwen2.5 3B [EN v4]
+╭───────────────────────────────┬───────────────────────────────┬─────────┬──────────────╮
+│ True Label                    │ Predicted As                  │   Count │ % of Total   │
+├───────────────────────────────┼───────────────────────────────┼─────────┼──────────────┤
+│ get_account_statement         │ check_balance                 │      14 │ 7.8%         │
+│ unblock_card                  │ block_card                    │      14 │ 7.8%         │
+│ report_suspicious_transaction │ block_card                    │       4 │ 2.2%         │
+│ fallback                      │ check_balance                 │       3 │ 1.7%         │
+│ reset_or_recover_auth         │ block_card                    │       2 │ 1.1%         │
+│ fallback                      │ report_suspicious_transaction │       2 │ 1.1%         │
+│ fallback                      │ block_card                    │       2 │ 1.1%         │
+│ get_account_statement         │ general_product_info          │       1 │ 0.6%         │
+│ fallback                      │ open_account                  │       1 │ 0.6%         │
+│ fallback                      │ reset_or_recover_auth         │       1 │ 0.6%         │
+│ general_product_info          │ open_account                  │       1 │ 0.6%         │
+╰───────────────────────────────┴───────────────────────────────┴─────────┴──────────────╯
+
+
   ▶ XLM-RoBERTa [EN v1] — 83 errors out of 180 (46.1% error rate)
 
 XLM-RoBERTa [EN v1]
@@ -435,8 +521,10 @@ T6 — Version evolution (Extragerea intenției)
 │ Aya Expanse 8B   │ RO     │ 87.8% / 0.863 │ 90.0% / 0.889 │ 90.0% / 0.890 │ —                     │ 90.0% / 0.898 │ +3.5%            │
 │ Gemini 2.5 Flash │ EN     │ 95.6% / 0.954 │ 97.2% / 0.972 │ 97.2% / 0.973 │ —                     │ 97.2% / 0.972 │ +1.8%            │
 │ Gemini 2.5 Flash │ RO     │ 95.0% / 0.947 │ 97.2% / 0.972 │ 96.1% / 0.960 │ —                     │ 97.8% / 0.977 │ +3.0%            │
+│ Mistral 7B       │ EN     │ —             │ —             │ —             │ —                     │ 89.4% / 0.887 │ —                │
 │ OpenAI o3        │ EN     │ 95.6% / 0.952 │ 96.1% / 0.960 │ 98.3% / 0.983 │ —                     │ 98.3% / 0.983 │ +3.1%            │
 │ OpenAI o3        │ RO     │ 94.4% / 0.939 │ 95.6% / 0.955 │ 97.2% / 0.972 │ —                     │ 91.1% / 0.944 │ +0.5%            │
+│ Qwen2.5 3B       │ EN     │ —             │ —             │ —             │ —                     │ 75.0% / 0.697 │ —                │
 │ RoBERT-base      │ RO     │ 1.7% / 0.012  │ —             │ —             │ —                     │ —             │ —                │
 │ XLM-RoBERTa      │ EN     │ 53.9% / 0.552 │ 53.9% / 0.552 │ 53.9% / 0.552 │ —                     │ 53.9% / 0.552 │ +0.0%            │
 │ XLM-RoBERTa      │ RO     │ 53.9% / 0.552 │ 53.9% / 0.552 │ 53.9% / 0.552 │ —                     │ 53.9% / 0.552 │ +0.0%            │
@@ -454,14 +542,16 @@ T6 — Version evolution (Extragerea intenției)
 
 T7 — Language impact (Extragerea intenției)
 ╭──────────────────┬────────┬──────────┬──────────┬────────┬─────────┬─────────┬───────┬───────────┬──────────┬───────────┬───────────╮
-│ Model            │ Type   │ Acc RO   │ Acc EN   │ ΔAcc   │   F1 RO │ F1 EN   │ ΔF1   │ Lat RO    │ Lat EN   │ ΔLat      │ Winner    │
+│ Model            │ Type   │ Acc RO   │ Acc EN   │ ΔAcc   │ F1 RO   │ F1 EN   │ ΔF1   │ Lat RO    │ Lat EN   │ ΔLat      │ Winner    │
 ├──────────────────┼────────┼──────────┼──────────┼────────┼─────────┼─────────┼───────┼───────────┼──────────┼───────────┼───────────┤
-│ Aya Expanse 8B   │ Local  │ 90.0%    │ 91.1%    │ -1.1%  │   0.898 │ 0.909   │ -1.1% │ 122785 ms │ 94257 ms │ +28528 ms │ EN        │
-│ Gemini 2.5 Flash │ API    │ 97.8%    │ 97.2%    │ +0.6%  │   0.977 │ 0.973   │ +0.5% │ 3499 ms   │ 2200 ms  │ +1299 ms  │ ≈         │
-│ OpenAI o3        │ API    │ 97.2%    │ 98.3%    │ -1.1%  │   0.972 │ 0.983   │ -1.2% │ 2905 ms   │ 4035 ms  │ -1130 ms  │ EN        │
-│ RoBERT-base      │ Local  │ 1.7%     │ —        │ —      │   0.012 │ —       │ —     │ 3075 ms   │ —        │ —         │ RO (only) │
-│ XLM-RoBERTa      │ Local  │ 53.9%    │ 53.9%    │ +0.0%  │   0.552 │ 0.552   │ +0.0% │ 11434 ms  │ 11503 ms │ -69 ms    │ ≈         │
-│ RoLLaMA 2 7B     │ Local  │ 13.3%    │ 15.6%    │ -2.2%  │   0.094 │ 0.119   │ -2.5% │ 5920 ms   │ 7438 ms  │ -1518 ms  │ EN        │
+│ Aya Expanse 8B   │ Local  │ 90.0%    │ 91.1%    │ -1.1%  │ 0.898   │ 0.909   │ -1.1% │ 122785 ms │ 94257 ms │ +28528 ms │ EN        │
+│ Gemini 2.5 Flash │ API    │ 97.8%    │ 97.2%    │ +0.6%  │ 0.977   │ 0.973   │ +0.5% │ 3499 ms   │ 2200 ms  │ +1299 ms  │ ≈         │
+│ Mistral 7B       │ Local  │ —        │ 89.4%    │ —      │ —       │ 0.887   │ —     │ —         │ 9306 ms  │ —         │ EN (only) │
+│ OpenAI o3        │ API    │ 97.2%    │ 98.3%    │ -1.1%  │ 0.972   │ 0.983   │ -1.2% │ 2905 ms   │ 4035 ms  │ -1130 ms  │ EN        │
+│ Qwen2.5 3B       │ Local  │ —        │ 75.0%    │ —      │ —       │ 0.697   │ —     │ —         │ 6044 ms  │ —         │ EN (only) │
+│ RoBERT-base      │ Local  │ 1.7%     │ —        │ —      │ 0.012   │ —       │ —     │ 3075 ms   │ —        │ —         │ RO (only) │
+│ XLM-RoBERTa      │ Local  │ 53.9%    │ 53.9%    │ +0.0%  │ 0.552   │ 0.552   │ +0.0% │ 11434 ms  │ 11503 ms │ -69 ms    │ ≈         │
+│ RoLLaMA 2 7B     │ Local  │ 13.3%    │ 15.6%    │ -2.2%  │ 0.094   │ 0.119   │ -2.5% │ 5920 ms   │ 7438 ms  │ -1518 ms  │ EN        │
 ╰──────────────────┴────────┴──────────┴──────────┴────────┴─────────┴─────────┴───────┴───────────┴──────────┴───────────┴───────────╯
 
 
@@ -479,7 +569,9 @@ T8 — Latency for best configs (Extragerea intenției)
 │ RoBERT-base      │ Local  │ RO v1    │ 3075 ms  │ 2445 ms  │ 1642 ms  │ 5625 ms   │ 765 ms   │ 5766 ms   │ 180 │
 │ Gemini 2.5 Flash │ API    │ RO v4    │ 3499 ms  │ 3117 ms  │ 2024 ms  │ 5435 ms   │ 1500 ms  │ 18985 ms  │ 180 │
 │ OpenAI o3        │ API    │ EN v4    │ 4035 ms  │ 3586 ms  │ 1893 ms  │ 7434 ms   │ 1469 ms  │ 12594 ms  │ 180 │
+│ Qwen2.5 3B       │ Local  │ EN v4    │ 6044 ms  │ 6045 ms  │ 523 ms   │ 6967 ms   │ 4948 ms  │ 7326 ms   │ 180 │
 │ RoLLaMA 2 7B     │ Local  │ EN v1    │ 7438 ms  │ 6210 ms  │ 3979 ms  │ 14548 ms  │ 3523 ms  │ 19869 ms  │ 180 │
+│ Mistral 7B       │ Local  │ EN v4    │ 9306 ms  │ 8977 ms  │ 1097 ms  │ 11352 ms  │ 7630 ms  │ 12550 ms  │ 180 │
 │ XLM-RoBERTa      │ Local  │ EN v1    │ 11503 ms │ 8898 ms  │ 6004 ms  │ 20843 ms  │ 3468 ms  │ 25781 ms  │ 180 │
 │ Aya Expanse 8B   │ Local  │ EN v4    │ 94257 ms │ 82172 ms │ 29934 ms │ 147468 ms │ 11578 ms │ 180343 ms │ 180 │
 ╰──────────────────┴────────┴──────────┴──────────┴──────────┴──────────┴───────────┴──────────┴───────────┴─────╯
@@ -512,6 +604,7 @@ T9 — Output reliability (Extragerea intenției)
 │ Gemini 2.5 Flash │ RO     │ v2           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
 │ Gemini 2.5 Flash │ RO     │ v3           │     180 │       0 │ 0.0%    │ 99.4%   │ 0.6%   │ 0.0%   │
 │ Gemini 2.5 Flash │ RO     │ v4           │     180 │       0 │ 0.0%    │ 100.0%  │ 0.0%   │ 0.0%   │
+│ Mistral 7B       │ EN     │ v4           │     180 │       0 │ 0.0%    │ —       │ —      │ —      │
 │ OpenAI o3        │ EN     │ v1           │     180 │       0 │ 0.0%    │ 98.3%   │ 1.7%   │ 0.0%   │
 │ OpenAI o3        │ EN     │ v2           │     180 │       0 │ 0.0%    │ 97.2%   │ 2.8%   │ 0.0%   │
 │ OpenAI o3        │ EN     │ v3           │     180 │       0 │ 0.0%    │ 99.4%   │ 0.6%   │ 0.0%   │
@@ -520,6 +613,7 @@ T9 — Output reliability (Extragerea intenției)
 │ OpenAI o3        │ RO     │ v2           │     180 │       0 │ 0.0%    │ 98.3%   │ 1.7%   │ 0.0%   │
 │ OpenAI o3        │ RO     │ v3           │     180 │       0 │ 0.0%    │ 97.8%   │ 2.2%   │ 0.0%   │
 │ OpenAI o3        │ RO     │ v4           │     180 │      13 │ 7.2%    │ 92.2%   │ 0.6%   │ 0.0%   │
+│ Qwen2.5 3B       │ EN     │ v4           │     180 │       0 │ 0.0%    │ —       │ —      │ —      │
 │ RoBERT-base      │ RO     │ v1           │     180 │       0 │ 0.0%    │ 0.0%    │ 0.0%   │ 100.0% │
 │ XLM-RoBERTa      │ EN     │ v1           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
 │ XLM-RoBERTa      │ EN     │ v2           │     180 │       0 │ 0.0%    │ 1.7%    │ 10.0%  │ 88.3%  │
@@ -549,25 +643,27 @@ T9 — Output reliability (Extragerea intenției)
 ════════════════════════════════════════════════════════════════════════════════════════════════════
 
 C1 — API vs Local (Extragerea intenției)
-╭──────────────┬────────────┬───────────┬────────────┬─────────┬───────────┬────────────────────────────────────────────────────────╮
-│ Category     │   N models │ Avg Acc   │   Avg M-F1 │   Avg κ │ Avg Lat   │ Models                                                 │
-├──────────────┼────────────┼───────────┼────────────┼─────────┼───────────┼────────────────────────────────────────────────────────┤
-│ API models   │          2 │ 98.1%     │      0.98  │   0.979 │ 3767 ms   │ OpenAI o3, Gemini 2.5 Flash                            │
-│ Local models │          4 │ 40.6%     │      0.398 │   0.353 │ 29068 ms  │ Aya Expanse 8B, XLM-RoBERTa, RoLLaMA 2 7B, RoBERT-base │
-╰──────────────┴────────────┴───────────┴────────────┴─────────┴───────────┴────────────────────────────────────────────────────────╯
+╭──────────────┬────────────┬───────────┬────────────┬─────────┬───────────┬────────────────────────────────────────────────────────────────────────────────╮
+│ Category     │   N models │ Avg Acc   │   Avg M-F1 │   Avg κ │ Avg Lat   │ Models                                                                         │
+├──────────────┼────────────┼───────────┼────────────┼─────────┼───────────┼────────────────────────────────────────────────────────────────────────────────┤
+│ API models   │          2 │ 98.1%     │      0.98  │   0.979 │ 3767 ms   │ OpenAI o3, Gemini 2.5 Flash                                                    │
+│ Local models │          6 │ 54.4%     │      0.529 │   0.504 │ 21937 ms  │ Aya Expanse 8B, Mistral 7B, Qwen2.5 3B, XLM-RoBERTa, RoLLaMA 2 7B, RoBERT-base │
+╰──────────────┴────────────┴───────────┴────────────┴─────────┴───────────┴────────────────────────────────────────────────────────────────────────────────╯
 
 
 C1b — Individual model details (Extragerea intenției)
-╭──────────────────┬────────┬─────────────┬───────┬────────┬────────┬───────────┬─────────────────────┬────────────────╮
-│ Model            │ Type   │ Params      │ Acc   │   M-F1 │      κ │ Latency   │ Provider            │ Quantization   │
-├──────────────────┼────────┼─────────────┼───────┼────────┼────────┼───────────┼─────────────────────┼────────────────┤
-│ OpenAI o3        │ API    │ ~200B+      │ 98.3% │  0.983 │  0.982 │ 4035 ms   │ OpenAI API          │ N/A            │
-│ Gemini 2.5 Flash │ API    │ undisclosed │ 97.8% │  0.977 │  0.976 │ 3499 ms   │ Google AI API       │ N/A            │
-│ Aya Expanse 8B   │ Local  │ 8B          │ 91.1% │  0.909 │  0.903 │ 94257 ms  │ Ollama (local)      │ Q4_K_M         │
-│ XLM-RoBERTa      │ Local  │ ~560M       │ 53.9% │  0.552 │  0.497 │ 11503 ms  │ HuggingFace (local) │ FP16/FP32      │
-│ RoLLaMA 2 7B     │ Local  │ 7B          │ 15.6% │  0.119 │  0.084 │ 7438 ms   │ Ollama (local)      │ Q4_K_M         │
-│ RoBERT-base      │ Local  │ ~125M       │ 1.7%  │  0.012 │ -0.073 │ 3075 ms   │ HuggingFace (local) │ FP16/FP32      │
-╰──────────────────┴────────┴─────────────┴───────┴────────┴────────┴───────────┴─────────────────────┴────────────────╯
+╭──────────────────┬────────┬─────────────┬───────┬────────┬────────┬───────────┬──────────────────────────────────┬────────────────╮
+│ Model            │ Type   │ Params      │ Acc   │   M-F1 │      κ │ Latency   │ Provider                         │ Quantization   │
+├──────────────────┼────────┼─────────────┼───────┼────────┼────────┼───────────┼──────────────────────────────────┼────────────────┤
+│ OpenAI o3        │ API    │ ~200B+      │ 98.3% │  0.983 │  0.982 │ 4035 ms   │ OpenAI API                       │ N/A            │
+│ Gemini 2.5 Flash │ API    │ undisclosed │ 97.8% │  0.977 │  0.976 │ 3499 ms   │ Google AI API                    │ N/A            │
+│ Aya Expanse 8B   │ Local  │ 8B          │ 91.1% │  0.909 │  0.903 │ 94257 ms  │ Ollama (local)                   │ Q4_K_M         │
+│ Mistral 7B       │ Local  │ 7B          │ 89.4% │  0.887 │  0.885 │ 9306 ms   │ HuggingFace Transformers (Colab) │ 4-bit NF4      │
+│ Qwen2.5 3B       │ Local  │ 3B          │ 75.0% │  0.697 │  0.727 │ 6044 ms   │ HuggingFace Transformers (Colab) │ 4-bit NF4      │
+│ XLM-RoBERTa      │ Local  │ ~560M       │ 53.9% │  0.552 │  0.497 │ 11503 ms  │ HuggingFace (local)              │ FP16/FP32      │
+│ RoLLaMA 2 7B     │ Local  │ 7B          │ 15.6% │  0.119 │  0.084 │ 7438 ms   │ Ollama (local)                   │ Q4_K_M         │
+│ RoBERT-base      │ Local  │ ~125M       │ 1.7%  │  0.012 │ -0.073 │ 3075 ms   │ HuggingFace (local)              │ FP16/FP32      │
+╰──────────────────┴────────┴─────────────┴───────┴────────┴────────┴───────────┴──────────────────────────────────┴────────────────╯
 
 
   📝 API vs Local gap (Macro-F1): +7.4%. Best API: OpenAI o3 (0.983), Best Local: Aya Expanse 8B (0.909). This confirms the advantage of large proprietary models for this task.
@@ -584,6 +680,8 @@ C2 — Parameter efficiency (Extragerea intenției)
 │ OpenAI o3        │ API    │ ~200B+      │ 98.3% │  0.983 │ 0.087              │
 │ Gemini 2.5 Flash │ API    │ undisclosed │ 97.8% │  0.977 │ —                  │
 │ Aya Expanse 8B   │ Local  │ 8B          │ 91.1% │  0.909 │ 0.092              │
+│ Mistral 7B       │ Local  │ 7B          │ 89.4% │  0.887 │ 0.090              │
+│ Qwen2.5 3B       │ Local  │ 3B          │ 75.0% │  0.697 │ 0.074              │
 │ XLM-RoBERTa      │ Local  │ ~560M       │ 53.9% │  0.552 │ 0.063              │
 │ RoLLaMA 2 7B     │ Local  │ 7B          │ 15.6% │  0.119 │ 0.012              │
 │ RoBERT-base      │ Local  │ ~125M       │ 1.7%  │  0.012 │ 0.001              │
@@ -601,12 +699,14 @@ C3 — Latency vs Accuracy (Extragerea intenției)
 ╭──────────────────┬────────┬───────┬────────┬────────────────┬───────────────┬───────────╮
 │ Model            │ Type   │ Acc   │   M-F1 │ Latency (ms)   │ Latency (s)   │   Acc/sec │
 ├──────────────────┼────────┼───────┼────────┼────────────────┼───────────────┼───────────┤
-│ Gemini 2.5 Flash │ API    │ 97.8% │  0.977 │ 3499 ms        │ 3.50 s        │       0.3 │
-│ OpenAI o3        │ API    │ 98.3% │  0.983 │ 4035 ms        │ 4.03 s        │       0.2 │
-│ Aya Expanse 8B   │ Local  │ 91.1% │  0.909 │ 94257 ms       │ 94.26 s       │       0   │
-│ XLM-RoBERTa      │ Local  │ 53.9% │  0.552 │ 11503 ms       │ 11.50 s       │       0   │
-│ RoLLaMA 2 7B     │ Local  │ 15.6% │  0.119 │ 7438 ms        │ 7.44 s        │       0   │
-│ RoBERT-base      │ Local  │ 1.7%  │  0.012 │ 3075 ms        │ 3.08 s        │       0   │
+│ Gemini 2.5 Flash │ API    │ 97.8% │  0.977 │ 3499 ms        │ 3.50 s        │     0.279 │
+│ OpenAI o3        │ API    │ 98.3% │  0.983 │ 4035 ms        │ 4.03 s        │     0.244 │
+│ Qwen2.5 3B       │ Local  │ 75.0% │  0.697 │ 6044 ms        │ 6.04 s        │     0.124 │
+│ Mistral 7B       │ Local  │ 89.4% │  0.887 │ 9306 ms        │ 9.31 s        │     0.096 │
+│ XLM-RoBERTa      │ Local  │ 53.9% │  0.552 │ 11503 ms       │ 11.50 s       │     0.047 │
+│ RoLLaMA 2 7B     │ Local  │ 15.6% │  0.119 │ 7438 ms        │ 7.44 s        │     0.021 │
+│ Aya Expanse 8B   │ Local  │ 91.1% │  0.909 │ 94257 ms       │ 94.26 s       │     0.01  │
+│ RoBERT-base      │ Local  │ 1.7%  │  0.012 │ 3075 ms        │ 3.08 s        │     0.005 │
 ╰──────────────────┴────────┴───────┴────────┴────────────────┴───────────────┴───────────╯
 
 
@@ -624,13 +724,15 @@ C5 — κ interpretation per Landis & Koch (1977)
 │ OpenAI o3        │ API    │ EN v4    │  0.982 │ Almost Perfect   │ 98.3% │  0.983 │ 0.0%       │
 │ Gemini 2.5 Flash │ API    │ RO v4    │  0.976 │ Almost Perfect   │ 97.8% │  0.977 │ 0.0%       │
 │ Aya Expanse 8B   │ Local  │ EN v4    │  0.903 │ Almost Perfect   │ 91.1% │  0.909 │ 0.0%       │
+│ Mistral 7B       │ Local  │ EN v4    │  0.885 │ Almost Perfect   │ 89.4% │  0.887 │ 0.6%       │
+│ Qwen2.5 3B       │ Local  │ EN v4    │  0.727 │ Substantial      │ 75.0% │  0.697 │ 0.0%       │
 │ XLM-RoBERTa      │ Local  │ EN v1    │  0.497 │ Moderate         │ 53.9% │  0.552 │ 0.0%       │
 │ RoLLaMA 2 7B     │ Local  │ EN v1    │  0.084 │ Slight           │ 15.6% │  0.119 │ 0.6%       │
 │ RoBERT-base      │ Local  │ RO v1    │ -0.073 │ Poor             │ 1.7%  │  0.012 │ 0.0%       │
 ╰──────────────────┴────────┴──────────┴────────┴──────────────────┴───────┴────────┴────────────╯
 
 
-  📝 Cohen's κ corrects for chance agreement, making it stricter than raw accuracy. Invalid predictions (unparseable outputs mapped to __invalid__) are penalized in the κ computation. Interpretation: <0.20=Slight, 0.21-0.40=Fair, 0.41-0.60=Moderate, 0.61-0.80=Substantial, 0.81-1.00=Almost Perfect.
+  📝 Cohen's κ corrects for chance agreement, making it stricter than raw accuracy. Invalid predictions (unparseable outputs mapped to __invalid__) are penalized in the κ computation.Interpretation: <0.20=Slight, 0.21-0.40=Fair, 0.41-0.60=Moderate, 0.61-0.80=Substantial, 0.81-1.00=Almost Perfect.
 
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════
