@@ -568,9 +568,12 @@ def normalize_prediction_row(row, exp, cfg):
     pred_label = get_first_existing(row, cfg["pred_candidates"])
     true_label = get_first_existing(row, cfg["true_candidates"])
 
-
+    # Fix: normalizare "none" pentru incongruities
+    # Varianta mai sigura — nu depinde de variabila task
     if (true_label is None or true_label == "null") and "none" in (cfg.get("labels_default") or []):
         true_label = "none"
+    if (pred_label is None or pred_label == "null") and "none" in (cfg.get("labels_default") or []):
+        pred_label = "none"
 
     pred_norm = normalize_label(pred_label)
     true_norm = normalize_label(true_label)
@@ -654,19 +657,18 @@ def get_multiclass_yt_yp(rows, labels, task):
         true_label = r.get("true_label_norm")
         pred_label = r.get("predicted_label_norm")
         if true_label is None:
-            continue
-        # Only include samples where true_label is in the defined label set
+            true_label = "none"
+        if pred_label is None:
+            pred_label = "none"
         if true_label not in labels:
             continue
         y_true.append(true_label)
         if pred_label in labels:
             y_pred.append(pred_label)
         else:
-            # Parse failure or invalid prediction
             y_pred.append("__invalid__")
         valid_rows.append(r)
     return y_true, y_pred, valid_rows
-
 
 def compute_multiclass_metrics(rows, labels, task):
     y_true, y_pred, valid_rows = get_multiclass_yt_yp(rows, labels, task)
