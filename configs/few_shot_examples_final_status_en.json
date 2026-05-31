@@ -1,0 +1,47 @@
+{
+  "examples": [
+    {
+      "conversation": [
+        {"role": "user", "text": "Hello, I want to block my lost card."},
+        {"role": "assistant", "text": "I am sorry about that. For security, please tell me the last 4 digits of the card."},
+        {"role": "user", "text": "The last digits are 4321."},
+        {"role": "assistant", "text": "The card ending in 4321 has been blocked. You will receive confirmation by SMS."}
+      ],
+      "final_status": "rezolvata",
+      "reasoning": "The voicebot confirms that the requested action was completed."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "I want to open a savings account."},
+        {"role": "assistant", "text": "I can start the request, but you need to sign the documents in the app to complete it."}
+      ],
+      "final_status": "partial_rezolvata",
+      "reasoning": "The request still requires extra steps after the conversation."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Can you transfer me to an operator?"},
+        {"role": "assistant", "text": "Sure, I am redirecting you to an available consultant."}
+      ],
+      "final_status": "redirectionata",
+      "reasoning": "The conversation explicitly redirects the user to a human operator."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "I cannot access the app anymore."},
+        {"role": "assistant", "text": "I am sorry, I cannot process the access reset right now because of a technical error."}
+      ],
+      "final_status": "nerezolvata",
+      "reasoning": "The voicebot attempts the task but cannot fulfill it."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "I would like to check my account balance."},
+        {"role": "assistant", "text": "For verification, I need to confirm your identity."},
+        {"role": "user", "text": "I will come back later, thank you."}
+      ],
+      "final_status": "intrerupta",
+      "reasoning": "The user interrupts the conversation before the request is resolved."
+    }
+  ]
+}

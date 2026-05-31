@@ -1,0 +1,47 @@
+{
+  "examples": [
+    {
+      "conversation": [
+        {"role": "user", "text": "Bună, vreau să-mi blochez cardul pierdut."},
+        {"role": "assistant", "text": "Îmi pare rău pentru situație. Pentru siguranță, spuneți ultimele 4 cifre ale cardului."},
+        {"role": "user", "text": "Ultimele cifre sunt 4321."},
+        {"role": "assistant", "text": "Cardul terminat în 4321 a fost blocat. Veți primi confirmarea prin SMS."}
+      ],
+      "final_status": "rezolvata",
+      "reasoning": "Voicebotul confirmă finalizarea acțiunii solicitate."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Vreau să deschid un cont de economii."},
+        {"role": "assistant", "text": "Pot iniția cererea, dar pentru finalizare trebuie să semnați documentele în aplicație."}
+      ],
+      "final_status": "partial_rezolvata",
+      "reasoning": "Cererea continuă cu pași suplimentari după conversație."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Mă puteți transfera la un operator?"},
+        {"role": "assistant", "text": "Sigur, vă redirecționez către un consultant disponibil."}
+      ],
+      "final_status": "redirectionata",
+      "reasoning": "Dialogul conține redirecționare explicită către operator uman."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Nu mai pot intra în aplicație."},
+        {"role": "assistant", "text": "Îmi pare rău, nu pot procesa resetarea accesului în acest moment din cauza unei erori tehnice."}
+      ],
+      "final_status": "nerezolvata",
+      "reasoning": "Voicebotul încearcă, dar nu poate îndeplini cererea."
+    },
+    {
+      "conversation": [
+        {"role": "user", "text": "Aș vrea să aflu soldul contului."},
+        {"role": "assistant", "text": "Pentru verificare, am nevoie de confirmarea identității."},
+        {"role": "user", "text": "Revin mai târziu, mulțumesc."}
+      ],
+      "final_status": "intrerupta",
+      "reasoning": "Utilizatorul oprește conversația înainte ca cererea să fie rezolvată."
+    }
+  ]
+}
