@@ -12,6 +12,12 @@ from pathlib import Path
 from typing import Dict, List
 from urllib.parse import urlparse
 
+ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = ROOT.parent
+for import_path in (ROOT, PROJECT_ROOT):
+    if str(import_path) not in sys.path:
+        sys.path.insert(0, str(import_path))
+
 from conversation_evaluator import ConversationEvaluator, Turn
 from live_banking_demo import BankingVoicebotDemo
 from speech_normalizer import normalize_for_tts
@@ -32,20 +38,18 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 
-ROOT = Path(__file__).resolve().parent
-PROJECT_ROOT = ROOT.parent
 STATIC_ROOT = ROOT / "web_ui"
 TTS_CACHE = ROOT / "tts_cache"
 SESSIONS: Dict[str, BankingVoicebotDemo] = {}
 
 EVALUATION_MODELS = {
-    "openai_o3": {"label": "OpenAI o3", "kind": "API"},
-    "gemini_2.5_flash": {"label": "Gemini 2.5 Flash", "kind": "API"},
-    "aya_expanse_8b": {"label": "Aya Expanse 8B", "kind": "local"},
-    "rollama2_7b": {"label": "RoLLaMA 2 7B", "kind": "local"},
-    "roberta_encoder": {"label": "XLM-RoBERTa encoder", "kind": "local"},
-    "mistral_7b": {"label": "Mistral 7B", "kind": "local"},
-    "qwen2.5_3b": {"label": "Qwen2.5 3B", "kind": "local"},
+    "openai_o3": {"label": "OpenAI o3", "kind": "API", "provider": "openai", "supports_real": True},
+    "gemini_2.5_flash": {"label": "Gemini 2.5 Flash", "kind": "API", "provider": "gemini", "supports_real": True},
+    "aya_expanse_8b": {"label": "Aya Expanse 8B", "kind": "local", "provider": "ollama", "supports_real": True},
+    "rollama2_7b": {"label": "RoLLaMA 2 7B", "kind": "local", "provider": "ollama", "supports_real": True},
+    "roberta_encoder": {"label": "XLM-RoBERTa encoder", "kind": "local", "provider": "encoder", "supports_real": False},
+    "mistral_7b": {"label": "Mistral 7B", "kind": "local", "provider": "ollama", "supports_real": True},
+    "qwen2.5_3b": {"label": "Qwen2.5 3B", "kind": "local", "provider": "ollama", "supports_real": True},
 }
 
 TASK_RECOMMENDATIONS = {
@@ -78,6 +82,30 @@ TASK_RECOMMENDATIONS = {
         "few_shot_file": "configs/few_shot_examples_incongruities.json",
         "metric": "binary F1 0.8219, type macro F1 0.8531",
         "source": "outputs_incongruities/exp_inc_gemini_2.5_flash__ro__v4.json",
+    },
+}
+
+MODEL_TASK_PROMPTS = {
+    "intent": {
+        "openai_o3": {"lang": "en", "prompt_version": "v4", "note": "best/tie pentru OpenAI o3"},
+        "gemini_2.5_flash": {"lang": "ro", "prompt_version": "v4", "note": "best pentru Gemini în raportul de intent"},
+        "aya_expanse_8b": {"lang": "en", "prompt_version": "v4", "note": "best pentru Aya Expanse 8B"},
+        "rollama2_7b": {"lang": "ro", "prompt_version": "v4", "note": "variantă compatibilă cu prompturile disponibile"},
+        "mistral_7b": {"lang": "ro", "prompt_version": "v4", "note": "model adăugat pentru comparație"},
+        "qwen2.5_3b": {"lang": "ro", "prompt_version": "v4", "note": "model adăugat pentru comparație"},
+        "roberta_encoder": {"lang": "ro", "prompt_version": "v4", "note": "baseline encoder; fără apel generativ real"},
+    },
+    "final_status": {
+        "default": {"lang": "ro", "prompt_version": "v4", "note": "v4 few-shot adăugat pentru demo"},
+    },
+    "incongruities": {
+        "openai_o3": {"lang": "ro", "prompt_version": "v4", "note": "v4 few-shot disponibil"},
+        "gemini_2.5_flash": {"lang": "ro", "prompt_version": "v4", "note": "best salvat pentru incongruențe"},
+        "aya_expanse_8b": {"lang": "ro", "prompt_version": "v4", "note": "v4 few-shot disponibil"},
+        "rollama2_7b": {"lang": "ro", "prompt_version": "v4", "note": "v4 few-shot disponibil"},
+        "mistral_7b": {"lang": "ro", "prompt_version": "v4", "note": "model adăugat pentru comparație"},
+        "qwen2.5_3b": {"lang": "ro", "prompt_version": "v4", "note": "model adăugat pentru comparație"},
+        "roberta_encoder": {"lang": "ro", "prompt_version": "v4", "note": "baseline encoder; fără apel generativ real"},
     },
 }
 
@@ -205,8 +233,12 @@ class BanutilHandler(SimpleHTTPRequestHandler):
             {
                 "models": EVALUATION_MODELS,
                 "recommendations": TASK_RECOMMENDATIONS,
+                "execution_modes": {
+                    "local": "Evaluator local, fără chei API, util pentru demo rapid.",
+                    "real": "Trimite prompturile v4 către OpenAI/Gemini/Ollama, în funcție de modelul ales.",
+                },
                 "tasks": ["intent", "final_status", "incongruities"],
-                "note": "In pagina web, evaluatorul ruleaza local pentru demo. Selectia de model arata configuratia si recomandarea pe task.",
+                "note": "Alege Local pentru demo fără chei sau Model real pentru apeluri OpenAI/Gemini/Ollama.",
             }
         )
 
@@ -333,41 +365,130 @@ class BanutilHandler(SimpleHTTPRequestHandler):
 
 
 def build_pipeline_evaluation(transcript: List[Turn], model_config: Dict[str, str]) -> Dict[str, object]:
-    raw_results = ConversationEvaluator().evaluate(transcript).to_dict()
+    execution_mode = str(model_config.get("execution_mode") or "local")
+    local_results = ConversationEvaluator().evaluate(transcript).to_dict()
+    raw_results = {}
     tasks = {}
-    for task, task_result in raw_results.items():
+    for task, local_result in local_results.items():
         recommendation = TASK_RECOMMENDATIONS[task]
         selected_model = model_config.get(task) or model_config.get("model") or recommendation["model"]
         if selected_model not in EVALUATION_MODELS:
             selected_model = recommendation["model"]
+        task_config = resolve_task_prompt_config(task, selected_model, model_config)
+        prompt_context = load_prompt_context(task, task_config)
+        task_result = local_result
+        raw_response = None
+        error = None
+        if execution_mode == "real":
+            task_result, raw_response, error = evaluate_task_with_real_model(task, transcript, selected_model, task_config)
+        raw_results[task] = task_result
         tasks[task] = {
             "model": selected_model,
             "model_label": EVALUATION_MODELS[selected_model]["label"],
+            "provider": EVALUATION_MODELS[selected_model]["provider"],
+            "execution_mode": execution_mode,
             "recommended_model": recommendation["model"],
             "is_recommended": selected_model == recommendation["model"],
-            "lang": model_config.get(f"{task}_lang") or recommendation["lang"],
-            "prompt_version": model_config.get(f"{task}_prompt_version") or recommendation["prompt_version"],
+            "lang": task_config["lang"],
+            "prompt_version": task_config["prompt_version"],
+            "prompt_selection_note": task_config.get("note"),
             "recommendation": recommendation,
-            "prompt_context": load_prompt_context(task),
+            "prompt_context": prompt_context,
             "result": task_result,
         }
+        if raw_response is not None:
+            tasks[task]["raw_response"] = raw_response
+        if error is not None:
+            tasks[task]["error"] = error
     return {"results": raw_results, "tasks": tasks}
 
 
-def load_prompt_context(task: str) -> Dict[str, object]:
+def resolve_task_prompt_config(task: str, model_key: str, model_config: Dict[str, str]) -> Dict[str, str]:
     recommendation = TASK_RECOMMENDATIONS[task]
-    definitions = load_json_file(recommendation.get("definitions_file"))
-    examples = load_json_file(recommendation.get("few_shot_file"))
+    base = MODEL_TASK_PROMPTS.get(task, {}).get(model_key) or MODEL_TASK_PROMPTS.get(task, {}).get("default") or {}
+    lang = model_config.get(f"{task}_lang") or base.get("lang") or recommendation["lang"]
+    version = model_config.get(f"{task}_prompt_version") or base.get("prompt_version") or recommendation["prompt_version"]
+    return {
+        "lang": lang,
+        "prompt_version": version,
+        "note": base.get("note") or "configurație recomandată pentru task",
+    }
+
+
+def evaluate_task_with_real_model(task: str, transcript: List[Turn], model_key: str, task_config: Dict[str, str]):
+    if not EVALUATION_MODELS[model_key].get("supports_real"):
+        return (
+            {
+                "error": "model_nongenerativ",
+                "message": "Acest model este baseline encoder și nu poate primi prompturi conversaționale în demo-ul web.",
+            },
+            None,
+            "Modelul selectat nu suportă evaluare generativă reală în pagina web.",
+        )
+    try:
+        from src.evaluation_pipeline.prompting import render_prompt
+        from src.evaluation_pipeline.providers import evaluate_with_provider
+
+        prompt, _prompt_meta = render_prompt(
+            task=task,
+            conversation=transcript,
+            lang=task_config["lang"],
+            version=task_config["prompt_version"],
+        )
+        result, raw_response = evaluate_with_provider(
+            task=task,
+            conversation=transcript,
+            model_key=model_key,
+            prompt=prompt,
+            provider="auto",
+        )
+        return result, raw_response, None
+    except Exception as exc:
+        return (
+            {
+                "error": "model_call_failed",
+                "message": str(exc),
+            },
+            None,
+            str(exc),
+        )
+
+
+def load_prompt_context(task: str, task_config: Dict[str, str]) -> Dict[str, object]:
+    definitions_file = TASK_RECOMMENDATIONS[task].get("definitions_file")
+    few_shot_file = few_shot_file_for(task, task_config["lang"])
+    prompt_file = prompt_file_for(task, task_config["lang"], task_config["prompt_version"])
+    definitions = load_json_file(definitions_file)
+    examples = load_json_file(few_shot_file)
     labels = definitions.get("labels", []) if isinstance(definitions, dict) else []
     return {
-        "prompt_file": recommendation.get("prompt_file"),
-        "prompt_exists": path_exists(recommendation.get("prompt_file")),
-        "definitions_file": recommendation.get("definitions_file"),
+        "prompt_file": prompt_file,
+        "prompt_exists": path_exists(prompt_file),
+        "definitions_file": definitions_file,
         "class_labels": [item.get("name") for item in labels if isinstance(item, dict)],
         "class_count": len(labels),
-        "few_shot_file": recommendation.get("few_shot_file"),
+        "few_shot_file": few_shot_file,
         "few_shot_examples_loaded": count_examples(examples),
     }
+
+
+def few_shot_file_for(task: str, lang: str) -> str | None:
+    if task == "intent":
+        return "configs/few_shot_examples_intent.json"
+    if task == "final_status":
+        return "configs/few_shot_examples_final_status_en.json" if lang == "en" else "configs/few_shot_examples_final_status.json"
+    if task == "incongruities":
+        return "configs/few_shot_examples_incongruities.json"
+    return None
+
+
+def prompt_file_for(task: str, lang: str, version: str) -> str | None:
+    try:
+        from src.evaluation_pipeline.config import PROMPT_FILES
+
+        return f"prompts/{PROMPT_FILES[task][(lang, version)]}"
+    except Exception:
+        return TASK_RECOMMENDATIONS.get(task, {}).get("prompt_file")
 
 
 def path_exists(relative_path: str | None) -> bool:

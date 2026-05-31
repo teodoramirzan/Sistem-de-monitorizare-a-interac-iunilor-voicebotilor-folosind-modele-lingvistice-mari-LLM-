@@ -21,6 +21,7 @@ const kbExamples = document.querySelector("#kbExamples");
 const recommendations = document.querySelector("#recommendations");
 const batchConversation = document.querySelector("#batchConversation");
 const batchTranscript = document.querySelector("#batchTranscript");
+const executionMode = document.querySelector("#executionMode");
 
 let lastBotText = "";
 let currentMode = "text";
@@ -48,7 +49,7 @@ async function api(path, body = {}) {
 }
 
 function getModelConfig() {
-  const config = {};
+  const config = { execution_mode: executionMode.value };
   document.querySelectorAll("[data-task-model]").forEach((select) => {
     config[select.dataset.taskModel] = select.value;
   });
@@ -74,8 +75,7 @@ function populateModelSelectors() {
       .join("");
     select.value = recommended || Object.keys(models)[0] || "";
   });
-  document.querySelector("#modelHint").textContent =
-    "În web demo, scorul se calculează local; selectorul arată modelul/promptul ales pentru comparație.";
+  updateModelHint();
 }
 
 function renderRecommendations() {
@@ -92,6 +92,13 @@ function renderRecommendations() {
       `;
     })
     .join("");
+}
+
+function updateModelHint() {
+  document.querySelector("#modelHint").textContent =
+    executionMode.value === "real"
+      ? "Trimite prompturile către modelul ales. Ai nevoie de chei API sau Ollama pornit local."
+      : "Rulează local fără chei API. Selectorul păstrează configurația de comparație.";
 }
 
 function addBubble(role, text, target = chat) {
@@ -439,6 +446,7 @@ document.querySelectorAll(".app-tab").forEach((tab) => {
 voice.addEventListener("change", () => {
   voiceLabel.textContent = voice.value;
 });
+executionMode.addEventListener("change", updateModelHint);
 
 loadEvaluationOptions().catch((error) => showToast(error.message));
 loadPhoneStatus().catch(() => {

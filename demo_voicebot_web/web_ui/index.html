@@ -57,6 +57,13 @@
           <section class="model-box">
             <h2>Modele evaluare</h2>
             <label class="field mini">
+              <span>Mod rulare</span>
+              <select id="executionMode">
+                <option value="local">Local, fără API</option>
+                <option value="real">Model real/API/Ollama</option>
+              </select>
+            </label>
+            <label class="field mini">
               <span>Intent</span>
               <select id="intentModel" data-task-model="intent"></select>
             </label>
