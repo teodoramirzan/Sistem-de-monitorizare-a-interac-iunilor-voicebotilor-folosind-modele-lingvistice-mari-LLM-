@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bănuțel | Voicebot bancar</title>
+    <link rel="stylesheet" href="styles.css?v=20260531-pipeline" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace">
+        <aside class="side">
+          <div class="brand">
+            <div class="mark">B</div>
+            <div>
+              <h1>Bănuțel</h1>
+              <p>asistent vocal bancar</p>
+            </div>
+          </div>
+
+          <div class="app-tabs" role="tablist" aria-label="Vedere demo">
+            <button class="app-tab active" data-view="live" type="button">Live</button>
+            <button class="app-tab" data-view="evaluator" type="button">Evaluator</button>
+          </div>
+
+          <div class="status-grid">
+            <div>
+              <span>Voce</span>
+              <strong id="voiceLabel">gia</strong>
+            </div>
+            <div>
+              <span>Cache</span>
+              <strong id="cacheLabel">pregătit</strong>
+            </div>
+            <div>
+              <span>Telefon</span>
+              <strong id="phoneLabel">local</strong>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>Cheie Zevo</span>
+            <input id="apiKey" type="password" autocomplete="off" placeholder="opțional, dacă nu e în env" />
+          </label>
+
+          <label class="field">
+            <span>Voce TTS</span>
+            <select id="voice">
+              <option value="gia">gia</option>
+              <option value="ema">ema</option>
+              <option value="maria">maria</option>
+              <option value="alex">alex</option>
+              <option value="radu">radu</option>
+            </select>
+          </label>
+
+          <section class="model-box">
+            <h2>Modele evaluare</h2>
+            <label class="field mini">
+              <span>Intent</span>
+              <select id="intentModel" data-task-model="intent"></select>
+            </label>
+            <label class="field mini">
+              <span>Status final</span>
+              <select id="finalStatusModel" data-task-model="final_status"></select>
+            </label>
+            <label class="field mini">
+              <span>Neconcordanțe</span>
+              <select id="incongruitiesModel" data-task-model="incongruities"></select>
+            </label>
+            <p id="modelHint">Încarc recomandările...</p>
+          </section>
+
+          <div class="actions compact">
+            <button id="newSession" class="primary" type="button">Sesiune nouă</button>
+            <button id="clearCache" type="button">Golește cache</button>
+          </div>
+
+          <div class="phone">
+            <h2>Mod apel</h2>
+            <p id="phoneStatus">Verific disponibilitatea numărului...</p>
+            <a id="callLink" class="call-link" href="#">Sună-l pe Bănuțel</a>
+            <code>/api/telephony/inbound</code>
+          </div>
+        </aside>
+
+        <section class="main-panel view-panel" data-view-panel="live">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow">Demo dizertație</span>
+              <h2>Conversație live</h2>
+            </div>
+            <div class="mode-tabs" role="tablist" aria-label="Mod conversație">
+              <button class="tab active" data-mode="text" type="button">Text</button>
+              <button class="tab" data-mode="voice" type="button">Voce</button>
+              <button class="tab" data-mode="phone" type="button">Telefon</button>
+            </div>
+          </header>
+
+          <div id="chat" class="chat" aria-live="polite"></div>
+
+          <div class="control-surface">
+            <form id="messageForm" class="composer mode-panel" data-panel="text">
+              <input id="message" type="text" autocomplete="off" placeholder="Scrie mesajul..." />
+              <button class="primary" type="submit">Trimite</button>
+            </form>
+
+            <div class="voice-panel mode-panel hidden" data-panel="voice">
+              <button id="micButton" class="mic" type="button" aria-label="Pornește microfonul">
+                <span></span>
+              </button>
+              <div>
+                <strong id="micTitle">Apasă microfonul și vorbește</strong>
+                <p id="micStatus">Replica va fi trimisă către Zevo STT, apoi răspunsul va fi redat audio.</p>
+              </div>
+            </div>
+
+            <div class="phone-panel mode-panel hidden" data-panel="phone">
+              <strong id="phonePanelTitle">Poți suna la numărul configurat pentru Bănuțel.</strong>
+              <p id="phonePanelText">Pentru apeluri reale, configurează numărul Zevo să trimită transcriptul către webhook-ul public.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="main-panel evaluator-panel view-panel hidden" data-view-panel="evaluator">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow">Pipeline evaluare</span>
+              <h2>Conversație completă</h2>
+            </div>
+            <button id="loadSample" type="button">Exemplu</button>
+          </header>
+
+          <div class="batch-area">
+            <label class="field textarea-field">
+              <span>Transcript de evaluat</span>
+              <textarea id="batchConversation" spellcheck="false">USER: Vreau să-mi blochez cardul.
+ASSISTANT: Pentru siguranță, spuneți ultimele 4 cifre.
+USER: Ultimele cifre sunt 4321.
+ASSISTANT: Cardul terminat în 4321 a fost blocat.</textarea>
+            </label>
+            <div class="batch-actions">
+              <button id="evaluateBatch" class="primary" type="button">Evaluează conversația</button>
+              <button id="clearBatch" type="button">Curăță</button>
+            </div>
+            <div id="batchTranscript" class="mini-transcript"></div>
+          </div>
+        </section>
+
+        <aside class="analysis">
+          <div class="analysis-head">
+            <h2>Rezultat</h2>
+            <div class="actions">
+              <button id="playLast" type="button">Redă ultimul</button>
+              <button id="analyze" class="primary" type="button">Analiză</button>
+            </div>
+          </div>
+          <section class="recommendation-box">
+            <h3>Recomandări</h3>
+            <div id="recommendations"></div>
+          </section>
+          <section class="kb-box">
+            <h3>Knowledge base</h3>
+            <p id="kbStatus">Încarc exemple similare...</p>
+            <div id="kbExamples" class="kb-examples"></div>
+          </section>
+          <pre id="result">{}</pre>
+        </aside>
+      </section>
+    </main>
+
+    <audio id="player" hidden></audio>
+    <script src="app.js?v=20260531-pipeline"></script>
+  </body>
+</html>

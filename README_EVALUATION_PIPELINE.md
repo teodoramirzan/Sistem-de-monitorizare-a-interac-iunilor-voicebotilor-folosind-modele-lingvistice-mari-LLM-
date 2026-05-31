@@ -31,6 +31,27 @@ Modul `local` folosește euristici locale și este util pentru verificarea pipel
 python -m src.evaluation_pipeline.cli --conversation-id conv_simple_0001 --task all
 ```
 
+## Interfața web
+
+Demo-ul HTML este inclus în `demo_voicebot_web`.
+
+```powershell
+python demo_voicebot_web/web_demo_server.py
+```
+
+Deschide apoi:
+
+```text
+http://127.0.0.1:8787
+```
+
+În pagina web ai două moduri:
+
+- `Live`: conversație text/voce/telefon cu Bănuțel;
+- `Evaluator`: lipești o conversație completă și o evaluezi pe cele 3 taskuri.
+
+Selectorul de model din pagină arată configurația de comparație și recomandările; evaluarea din web rulează local pentru demo.
+
 Pentru randarea completă a prompturilor și rularea cu modele reale:
 
 ```powershell
