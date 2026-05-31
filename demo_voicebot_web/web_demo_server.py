@@ -33,6 +33,7 @@ if hasattr(sys.stderr, "reconfigure"):
 
 
 ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = ROOT.parent
 STATIC_ROOT = ROOT / "web_ui"
 TTS_CACHE = ROOT / "tts_cache"
 SESSIONS: Dict[str, BankingVoicebotDemo] = {}
@@ -52,6 +53,9 @@ TASK_RECOMMENDATIONS = {
         "model": "openai_o3",
         "lang": "en",
         "prompt_version": "v4",
+        "prompt_file": "prompts/intent_extraction/en_few_shot_v4.jinja",
+        "definitions_file": "configs/intent_definitions.json",
+        "few_shot_file": "configs/few_shot_examples_intent.json",
         "metric": "accuracy/F1 98.3%",
         "source": "evaluation_report_intent.txt",
     },
@@ -59,6 +63,9 @@ TASK_RECOMMENDATIONS = {
         "model": "openai_o3",
         "lang": "ro",
         "prompt_version": "v4",
+        "prompt_file": "prompts/final_status/fs_ro_few_shot_v4.jinja",
+        "definitions_file": "configs/final_status_definitions.json",
+        "few_shot_file": "configs/few_shot_examples_final_status.json",
         "metric": "recomandare derivata din notebook; rezultate JSON lipsa",
         "source": "outputs_final_status/final_status_experiments.ipynb",
     },
@@ -66,6 +73,9 @@ TASK_RECOMMENDATIONS = {
         "model": "gemini_2.5_flash",
         "lang": "ro",
         "prompt_version": "v4",
+        "prompt_file": "prompts/incongruities/ro_incongruities_v4.jinja",
+        "definitions_file": "configs/incongruities_definitions.json",
+        "few_shot_file": "configs/few_shot_examples_incongruities.json",
         "metric": "binary F1 0.8219, type macro F1 0.8531",
         "source": "outputs_incongruities/exp_inc_gemini_2.5_flash__ro__v4.json",
     },
@@ -338,9 +348,49 @@ def build_pipeline_evaluation(transcript: List[Turn], model_config: Dict[str, st
             "lang": model_config.get(f"{task}_lang") or recommendation["lang"],
             "prompt_version": model_config.get(f"{task}_prompt_version") or recommendation["prompt_version"],
             "recommendation": recommendation,
+            "prompt_context": load_prompt_context(task),
             "result": task_result,
         }
     return {"results": raw_results, "tasks": tasks}
+
+
+def load_prompt_context(task: str) -> Dict[str, object]:
+    recommendation = TASK_RECOMMENDATIONS[task]
+    definitions = load_json_file(recommendation.get("definitions_file"))
+    examples = load_json_file(recommendation.get("few_shot_file"))
+    labels = definitions.get("labels", []) if isinstance(definitions, dict) else []
+    return {
+        "prompt_file": recommendation.get("prompt_file"),
+        "prompt_exists": path_exists(recommendation.get("prompt_file")),
+        "definitions_file": recommendation.get("definitions_file"),
+        "class_labels": [item.get("name") for item in labels if isinstance(item, dict)],
+        "class_count": len(labels),
+        "few_shot_file": recommendation.get("few_shot_file"),
+        "few_shot_examples_loaded": count_examples(examples),
+    }
+
+
+def path_exists(relative_path: str | None) -> bool:
+    if not relative_path:
+        return False
+    return (PROJECT_ROOT / relative_path).exists()
+
+
+def load_json_file(relative_path: str | None):
+    if not relative_path:
+        return None
+    path = PROJECT_ROOT / relative_path
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+
+def count_examples(data) -> int:
+    if isinstance(data, list):
+        return len(data)
+    if isinstance(data, dict) and isinstance(data.get("examples"), list):
+        return len(data["examples"])
+    return 0
 
 
 def parse_conversation_text(text: str) -> List[Turn]:

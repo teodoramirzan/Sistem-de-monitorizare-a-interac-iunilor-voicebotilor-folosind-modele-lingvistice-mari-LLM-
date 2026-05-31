@@ -210,22 +210,35 @@ class ConversationEvaluator:
     def _detect_context_misalignment(self, turns: List[Turn]) -> Optional[Dict[str, Any]]:
         last_user_digits = None
         last_user_email = None
+        last_user_card_type = None
         for idx, turn in enumerate(turns, start=1):
             text = turn.get("text", "")
             if turn.get("role") == "user":
+                normalized = _normalize(text)
                 digits = re.findall(r"\b\d{4,16}\b", text)
                 emails = re.findall(r"[\w\.-]+@[\w\.-]+\.\w+", text)
                 if digits:
                     last_user_digits = digits[-1]
                 if emails:
                     last_user_email = emails[-1].lower()
+                card_type = _card_type(normalized)
+                if card_type:
+                    last_user_card_type = card_type
             elif turn.get("role") == "assistant":
+                normalized = _normalize(text)
                 assistant_digits = re.findall(r"\b\d{4,16}\b", text)
                 assistant_emails = [m.lower() for m in re.findall(r"[\w\.-]+@[\w\.-]+\.\w+", text)]
+                assistant_card_type = _card_type(normalized)
                 if last_user_digits and assistant_digits and last_user_digits not in assistant_digits:
                     return _inc("nealiniat_context", "medium", f"ASSISTANT turn {idx} foloseste un numar diferit fata de cel oferit de utilizator.")
                 if last_user_email and assistant_emails and last_user_email not in assistant_emails:
                     return _inc("nealiniat_context", "medium", f"ASSISTANT turn {idx} foloseste un email diferit fata de cel oferit de utilizator.")
+                if last_user_card_type and assistant_card_type and assistant_card_type != last_user_card_type:
+                    return _inc(
+                        "nealiniat_context",
+                        "high",
+                        f"ASSISTANT turn {idx} foloseste tipul de card '{assistant_card_type}', desi utilizatorul mentionase '{last_user_card_type}'.",
+                    )
         return None
 
     def _detect_contradiction(self, assistant_turns: Iterable[tuple[int, str]]) -> Optional[Dict[str, Any]]:
@@ -300,6 +313,16 @@ def _normalize(text: str) -> str:
 
 def _has_any(text: str, keywords: Iterable[str]) -> bool:
     return any(keyword in text for keyword in keywords)
+
+
+def _card_type(text: str) -> Optional[str]:
+    if "card" not in text:
+        return None
+    if _has_any(text, ["credit", "de credit"]):
+        return "credit"
+    if _has_any(text, ["debit", "de debit"]):
+        return "debit"
+    return None
 
 
 def _result(field_name: str, value: str, confidence: str, reasoning: str) -> Dict[str, str]:
