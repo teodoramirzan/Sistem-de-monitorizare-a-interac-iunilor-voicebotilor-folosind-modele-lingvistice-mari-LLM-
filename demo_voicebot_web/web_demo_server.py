@@ -18,6 +18,24 @@ for import_path in (ROOT, PROJECT_ROOT):
     if str(import_path) not in sys.path:
         sys.path.insert(0, str(import_path))
 
+
+def load_dotenv_file(path: Path) -> None:
+    if not path.exists():
+        return
+    for raw_line in path.read_text(encoding="utf-8-sig").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+load_dotenv_file(PROJECT_ROOT / ".env")
+load_dotenv_file(ROOT / ".env")
+
 from conversation_evaluator import ConversationEvaluator, Turn
 from live_banking_demo import BankingVoicebotDemo
 from speech_normalizer import normalize_for_tts
