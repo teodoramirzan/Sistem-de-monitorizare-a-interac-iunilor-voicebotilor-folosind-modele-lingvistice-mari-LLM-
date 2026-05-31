@@ -261,6 +261,23 @@ h1 {
   line-height: 1.4;
 }
 
+.env-status {
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border: 1px solid #e2c6c6;
+  border-radius: 8px;
+  background: #fff7f7;
+  color: #7b3434;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.env-status.ok {
+  border-color: #bcd8c8;
+  background: #f2faf5;
+  color: var(--green-dark);
+}
+
 .phone h2 {
   font-size: 16px;
   margin-bottom: 8px;

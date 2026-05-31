@@ -36,6 +36,20 @@ def load_dotenv_file(path: Path) -> None:
 load_dotenv_file(PROJECT_ROOT / ".env")
 load_dotenv_file(ROOT / ".env")
 
+ENV_ALIASES = {
+    "OPENAI_API_KEY": ["OPENAI_KEY", "OPENAI_TOKEN"],
+    "GOOGLE_API_KEY": ["GEMINI_API_KEY", "GOOGLE_GENAI_API_KEY", "GOOGLE_AI_API_KEY"],
+    "ZEVO_API_KEY": ["ZEVO_KEY", "ZEVO_LICENSE"],
+}
+
+for canonical, aliases in ENV_ALIASES.items():
+    if not os.getenv(canonical):
+        for alias in aliases:
+            value = os.getenv(alias)
+            if value:
+                os.environ[canonical] = value
+                break
+
 from conversation_evaluator import ConversationEvaluator, Turn
 from live_banking_demo import BankingVoicebotDemo
 from speech_normalizer import normalize_for_tts
@@ -149,6 +163,7 @@ class BanutilHandler(SimpleHTTPRequestHandler):
             "/api/voice-message": self._voice_message,
             "/api/analyze": self._analyze,
             "/api/evaluation-options": self._evaluation_options,
+            "/api/env-status": self._env_status,
             "/api/evaluate-conversation": self._evaluate_conversation,
             "/api/tts": self._tts,
             "/api/cache/clear": self._clear_cache,
@@ -251,6 +266,7 @@ class BanutilHandler(SimpleHTTPRequestHandler):
             {
                 "models": EVALUATION_MODELS,
                 "recommendations": TASK_RECOMMENDATIONS,
+                "env_status": env_status(),
                 "execution_modes": {
                     "local": "Evaluator local, fără chei API, util pentru demo rapid.",
                     "real": "Trimite prompturile v4 către OpenAI/Gemini/Ollama, în funcție de modelul ales.",
@@ -259,6 +275,9 @@ class BanutilHandler(SimpleHTTPRequestHandler):
                 "note": "Alege Local pentru demo fără chei sau Model real pentru apeluri OpenAI/Gemini/Ollama.",
             }
         )
+
+    def _env_status(self):
+        self._send_json(env_status())
 
     def _evaluate_conversation(self):
         payload = self._read_json()
@@ -419,6 +438,18 @@ def build_pipeline_evaluation(transcript: List[Turn], model_config: Dict[str, st
         if error is not None:
             tasks[task]["error"] = error
     return {"results": raw_results, "tasks": tasks}
+
+
+def env_status() -> Dict[str, object]:
+    dotenv_paths = [PROJECT_ROOT / ".env", ROOT / ".env"]
+    return {
+        "dotenv_paths_checked": [str(path) for path in dotenv_paths],
+        "dotenv_found": [str(path) for path in dotenv_paths if path.exists()],
+        "openai_api_key_loaded": bool(os.getenv("OPENAI_API_KEY")),
+        "google_api_key_loaded": bool(os.getenv("GOOGLE_API_KEY")),
+        "zevo_api_key_loaded": bool(os.getenv("ZEVO_API_KEY")),
+        "supported_aliases": ENV_ALIASES,
+    }
 
 
 def resolve_task_prompt_config(task: str, model_key: str, model_config: Dict[str, str]) -> Dict[str, str]:

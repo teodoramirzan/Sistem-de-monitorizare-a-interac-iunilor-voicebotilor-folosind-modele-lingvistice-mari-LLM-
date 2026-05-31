@@ -22,6 +22,7 @@ const recommendations = document.querySelector("#recommendations");
 const batchConversation = document.querySelector("#batchConversation");
 const batchTranscript = document.querySelector("#batchTranscript");
 const executionMode = document.querySelector("#executionMode");
+const envStatus = document.querySelector("#envStatus");
 
 let lastBotText = "";
 let currentMode = "text";
@@ -76,6 +77,7 @@ function populateModelSelectors() {
     select.value = recommended || Object.keys(models)[0] || "";
   });
   updateModelHint();
+  renderEnvStatus(evaluationOptions.env_status || {});
 }
 
 function renderRecommendations() {
@@ -99,6 +101,14 @@ function updateModelHint() {
     executionMode.value === "real"
       ? "Trimite prompturile către modelul ales. Ai nevoie de chei API sau Ollama pornit local."
       : "Rulează local fără chei API. Selectorul păstrează configurația de comparație.";
+}
+
+function renderEnvStatus(status) {
+  const openai = status.openai_api_key_loaded ? "OpenAI ✓" : "OpenAI lipsă";
+  const gemini = status.google_api_key_loaded ? "Gemini ✓" : "Gemini lipsă";
+  const zevo = status.zevo_api_key_loaded ? "Zevo ✓" : "Zevo lipsă";
+  envStatus.textContent = `${openai} · ${gemini} · ${zevo}`;
+  envStatus.classList.toggle("ok", Boolean(status.openai_api_key_loaded && status.google_api_key_loaded));
 }
 
 function addBubble(role, text, target = chat) {
