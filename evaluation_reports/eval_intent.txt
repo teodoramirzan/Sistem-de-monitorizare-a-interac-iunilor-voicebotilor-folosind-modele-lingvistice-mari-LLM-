@@ -5,7 +5,7 @@
   Task: intent
   Output dir: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\outputs\intent
   Report: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\evaluation_reports\eval_intent.txt
-  Timestamp: 2026-05-30 20:16
+  Timestamp: 2026-05-31 13:02
 
   Labels (12): ['block_card', 'unblock_card', 'open_account', 'close_account', 'check_balance', 'get_account_statement', 'report_suspicious_transaction', 'update_personal_data', 'schedule_advisor_meeting', 'reset_or_recover_auth', 'general_product_info', 'fallback']
 

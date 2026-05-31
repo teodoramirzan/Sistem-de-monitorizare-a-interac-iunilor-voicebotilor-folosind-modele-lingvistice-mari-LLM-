@@ -5,7 +5,7 @@
   Task: final_status
   Output dir: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\outputs_final_status
   Report: C:\Users\Matebook 14s\Documents\Sistem-de-monitorizare-a-interac-iunilor-voicebotilor-folosind-modele-lingvistice-mari-LLM-\evaluation_reports\eval_final_status.txt
-  Timestamp: 2026-05-30 20:16
+  Timestamp: 2026-05-31 13:02
 
   Labels (5): ['rezolvata', 'nerezolvata', 'redirectionata', 'partial_rezolvata', 'intrerupta']
 
