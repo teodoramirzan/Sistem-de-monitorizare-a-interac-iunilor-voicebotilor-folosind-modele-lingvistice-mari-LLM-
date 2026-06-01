@@ -49,23 +49,35 @@ class BankingVoicebotDemo:
 
     def handle_user_message(self, user_text: str) -> str:
         self._add("user", user_text)
+        response = self._handle_user_message_core(user_text, allow_llm=True)
+        self._add("assistant", response)
+        return response
+
+    def handle_user_message_dataset_first(self, user_text: str) -> str:
+        self._add("user", user_text)
+        response = self._handle_user_message_core(user_text, allow_llm=False)
+        if self.state.intent == "fallback":
+            response = self._fallback_response(user_text, default=response)
+        self._add("assistant", response)
+        return response
+
+    def handle_user_message_llm_first(self, user_text: str) -> str:
+        # Compatibilitate cu serverul existent: comportamentul este acum dataset-first.
+        return self.handle_user_message_dataset_first(user_text)
+
+    def _handle_user_message_core(self, user_text: str, allow_llm: bool) -> str:
         normalized = _normalize(user_text)
         self._refresh_kb_context(user_text)
 
         if _is_interruption(normalized):
-            response = "Am înțeles. Oprim conversația aici și puteți reveni oricând aveți timp."
-            self._add("assistant", response)
-            return response
+            return "Am înțeles. Oprim conversația aici și puteți reveni oricând aveți timp."
 
         if _is_small_talk(normalized):
-            response = "Bună! Sunt aici și vă pot ajuta cu operațiuni bancare sau cu un scenariu de test pentru demo."
-            self._add("assistant", response)
-            return response
+            return "Bună! Sunt aici și vă pot ajuta cu operațiuni bancare sau cu un scenariu de test pentru demo."
 
         if _is_ambiguous_banking_fragment(normalized):
-            response = self._fallback_response(user_text, default=_clarify_card_or_account(normalized))
-            self._add("assistant", response)
-            return response
+            default = _clarify_card_or_account(normalized)
+            return self._fallback_response(user_text, default=default) if allow_llm else default
 
         current_turn_intent = self.evaluator.extract_intent([{"role": "user", "text": user_text}])["intent"]
         if current_turn_intent != "fallback" and _should_switch_intent(self.state.intent, current_turn_intent, normalized):
@@ -106,27 +118,9 @@ class BankingVoicebotDemo:
         elif self.state.intent == "informatii_produse":
             response = self._handle_product_info(normalized)
         else:
-            response = self._fallback_response(user_text)
+            response = self._fallback_response(user_text) if allow_llm else _gentle_fallback_message()
 
-        self._add("assistant", response)
         return response
-
-    def handle_user_message_llm_first(self, user_text: str) -> str:
-        self._add("user", user_text)
-        self._refresh_kb_context(user_text)
-        if self.llm_fallback:
-            try:
-                response = self.llm_fallback(self.state.transcript, user_text, self.knowledge_base_context())
-            except Exception:
-                response = None
-            if response:
-                self._add("assistant", response)
-                return response
-
-        # Fallback local pentru demo offline: eliminăm mesajul adăugat mai sus
-        # și îl retrimitem prin fluxul deterministic.
-        self.state.transcript.pop()
-        return self.handle_user_message(user_text)
 
     def final_evaluation(self) -> str:
         return dump_evaluation(self.evaluator.evaluate(self.state.transcript))
@@ -373,13 +367,15 @@ def _is_interruption(text: str) -> bool:
 
 def _is_small_talk(text: str) -> bool:
     cleaned = text.strip(" .,!?:;-")
-    if cleaned.startswith(("hello", "helo", "hell", "buna", "bună", "salut", "hei")) and len(cleaned.split()) <= 2:
+    if cleaned.startswith(("hello", "helo", "hell", "buna", "bună", "salut", "hei", "ceau", "ciao")) and len(cleaned.split()) <= 2:
         return True
     return cleaned in {
         "buna",
         "salut",
         "hello",
         "hei",
+        "ceau",
+        "ciao",
         "ce faci",
         "cum esti",
         "cum ești",
@@ -488,6 +484,13 @@ def _looks_banking_related(text: str) -> bool:
             "consultant",
             "banca",
         ],
+    )
+
+
+def _gentle_fallback_message() -> str:
+    return (
+        "Pot continua pe solicitări bancare precum carduri, conturi, sold, extras, tranzacții suspecte, "
+        "date personale, programări sau resetarea accesului. Spuneți-mi ce doriți să verificăm."
     )
 
 
