@@ -24,6 +24,7 @@ const progressMode = document.querySelector("#progressMode");
 const progressSteps = document.querySelector("#progressSteps");
 const analyzeButton = document.querySelector("#analyze");
 const evaluateBatchButton = document.querySelector("#evaluateBatch");
+const resultCards = document.querySelector("#resultCards");
 
 let lastBotText = "";
 let currentMode = "text";
@@ -92,7 +93,6 @@ function renderRecommendations() {
       return `
         <div class="rec-item">
           <strong>${taskLabel(task)}: ${escapeHtml(model)}</strong>
-          <span>${escapeHtml(rec.lang)} · ${escapeHtml(rec.prompt_version)} · ${escapeHtml(rec.metric)}</span>
         </div>
       `;
     })
@@ -204,6 +204,7 @@ function renderMiniTranscript(turns) {
 
 async function startSession() {
   result.textContent = "{}";
+  clearResultCards();
   const payload = await api("/api/start", { session_id: sessionId });
   renderTranscript(payload.transcript);
   renderKnowledgeBase(payload.knowledge_base);
@@ -213,6 +214,7 @@ async function startSession() {
 
 async function sendMessage(text) {
   result.textContent = "{}";
+  clearResultCards();
   const payload = await api("/api/message", { session_id: sessionId, message: text });
   renderTranscript(payload.transcript);
   renderKnowledgeBase(payload.knowledge_base);
@@ -222,6 +224,7 @@ async function sendMessage(text) {
 
 async function sendVoiceMessage(audioBase64) {
   result.textContent = "{}";
+  clearResultCards();
   const payload = await api("/api/voice-message", {
     session_id: sessionId,
     audio_base64: audioBase64,
@@ -243,6 +246,7 @@ async function analyze() {
       model_config: config,
     });
     renderKnowledgeBase(payload.knowledge_base);
+    renderAnalysisCards(payload.pipeline);
     result.textContent = JSON.stringify(payload.pipeline, null, 2);
     finishProgress("done");
   } catch (error) {
@@ -261,6 +265,7 @@ async function evaluateBatch() {
     });
     renderMiniTranscript(payload.transcript);
     renderKnowledgeBase(payload.knowledge_base);
+    renderAnalysisCards(payload.evaluation);
     result.textContent = JSON.stringify(payload.evaluation, null, 2);
     finishProgress("done");
   } catch (error) {
@@ -290,6 +295,76 @@ function renderKnowledgeBase(kb) {
       `
     )
     .join("");
+}
+
+function renderAnalysisCards(pipeline) {
+  const results = pipeline?.results || pipeline?.evaluation || {};
+  const tasks = pipeline?.tasks || {};
+  const intent = results.intent || {};
+  const finalStatus = results.final_status || {};
+  const incongruities = results.incongruities || {};
+  const cards = [
+    {
+      title: "Intent",
+      value: intent.intent || intent.error || "necunoscut",
+      confidence: intent.confidence,
+      reasoning: intent.reasoning || intent.message,
+      meta: taskMeta(tasks.intent),
+    },
+    {
+      title: "Status final",
+      value: finalStatus.final_status || finalStatus.error || "necunoscut",
+      confidence: finalStatus.confidence,
+      reasoning: finalStatus.reasoning || finalStatus.message,
+      meta: taskMeta(tasks.final_status),
+    },
+    {
+      title: "Neconcordanțe",
+      value: incongruityLabel(incongruities),
+      confidence: incongruities.confidence,
+      reasoning: incongruities.reasoning || incongruities.message,
+      meta: taskMeta(tasks.incongruities),
+      alert: Boolean(incongruities.has_incongruity),
+    },
+  ];
+  resultCards.innerHTML = cards.map(renderResultCard).join("");
+  resultCards.classList.remove("hidden");
+}
+
+function renderResultCard(card) {
+  const confidence = card.confidence ? `<span class="pill">${escapeHtml(card.confidence)}</span>` : "";
+  const alertClass = card.alert ? " alert" : "";
+  return `
+    <article class="result-card${alertClass}">
+      <div class="result-main">
+        <span>${escapeHtml(card.title)}</span>
+        <strong>${escapeHtml(card.value)}</strong>
+      </div>
+      ${confidence}
+      ${card.meta ? `<p class="result-meta">${escapeHtml(card.meta)}</p>` : ""}
+      ${card.reasoning ? `<p>${escapeHtml(card.reasoning)}</p>` : ""}
+    </article>
+  `;
+}
+
+function taskMeta(task) {
+  if (!task) return "";
+  const recommended = task.is_recommended ? "recomandat" : "selectat";
+  return `${task.model_label || task.model || "model"} · ${task.lang || ""} ${task.prompt_version || ""} · ${recommended}`;
+}
+
+function incongruityLabel(value) {
+  if (value.error) return value.error;
+  if (value.has_incongruity) {
+    return value.incongruity_type ? `Da · ${value.incongruity_type}` : "Da";
+  }
+  if (value.has_incongruity === false) return "Nu";
+  return "necunoscut";
+}
+
+function clearResultCards() {
+  resultCards.innerHTML = "";
+  resultCards.classList.add("hidden");
 }
 
 async function speak(text, autoplay) {

@@ -9,7 +9,7 @@ import sys
 import wave
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent
@@ -73,6 +73,7 @@ if hasattr(sys.stderr, "reconfigure"):
 STATIC_ROOT = ROOT / "web_ui"
 TTS_CACHE = ROOT / "tts_cache"
 SESSIONS: Dict[str, BankingVoicebotDemo] = {}
+LIVE_LLM_MODEL = os.getenv("GEMINI_LIVE_MODEL", "gemini-2.5-flash")
 
 EVALUATION_MODELS = {
     "openai_o3": {"label": "OpenAI o3", "kind": "API", "provider": "openai", "supports_real": True},
@@ -176,7 +177,7 @@ class BanutilHandler(SimpleHTTPRequestHandler):
 
     def _start_session(self):
         session_id = self._read_json().get("session_id", "default")
-        demo = BankingVoicebotDemo()
+        demo = create_demo_session()
         greeting = demo.start_message()
         SESSIONS[session_id] = demo
         self._send_json(
@@ -192,7 +193,7 @@ class BanutilHandler(SimpleHTTPRequestHandler):
         payload = self._read_json()
         session_id = payload.get("session_id", "default")
         user_text = str(payload.get("message", "")).strip()
-        demo = SESSIONS.setdefault(session_id, BankingVoicebotDemo())
+        demo = get_demo_session(session_id)
         if not demo.state.transcript:
             demo.start_message()
         if not user_text:
@@ -229,7 +230,7 @@ class BanutilHandler(SimpleHTTPRequestHandler):
         if not user_text:
             return self._send_json({"error": "Zevo STT nu a returnat transcript"}, status=502)
 
-        demo = SESSIONS.setdefault(session_id, BankingVoicebotDemo())
+        demo = get_demo_session(session_id)
         if not demo.state.transcript:
             demo.start_message()
         bot_text = demo.handle_user_message(user_text)
@@ -404,6 +405,63 @@ def build_pipeline_evaluation(transcript: List[Turn], model_config: Dict[str, st
         if error is not None:
             tasks[task]["error"] = error
     return {"results": raw_results, "tasks": tasks}
+
+
+def create_demo_session() -> BankingVoicebotDemo:
+    return BankingVoicebotDemo(llm_fallback=generate_live_llm_reply)
+
+
+def get_demo_session(session_id: str) -> BankingVoicebotDemo:
+    if session_id not in SESSIONS:
+        SESSIONS[session_id] = create_demo_session()
+    return SESSIONS[session_id]
+
+
+def generate_live_llm_reply(transcript: List[Turn], user_text: str, knowledge_base: Dict[str, object]) -> Optional[str]:
+    if not os.getenv("GOOGLE_API_KEY"):
+        return None
+    examples = knowledge_base.get("examples") if isinstance(knowledge_base, dict) else []
+    examples_text = "\n".join(
+        f"- {item.get('mapped_intent', 'necunoscut')}: {item.get('first_user_message', '')}"
+        for item in examples[:3]
+        if isinstance(item, dict)
+    )
+    recent_turns = "\n".join(
+        f"{turn.get('role', '').upper()}: {turn.get('text', '')}"
+        for turn in transcript[-8:]
+    )
+    prompt = f"""
+Ești Bănuțel, un voicebot demonstrativ pentru asistență bancară în limba română.
+Răspunde natural, politicos și concis, în maximum două propoziții.
+
+Reguli:
+- Dacă utilizatorul salută sau mulțumește, răspunde firesc și invită-l să continue.
+- Dacă întrebarea este bancară, ajută-l la nivel de demo: carduri, conturi, sold, extras, tranzacții suspecte, date personale, programări, resetare acces, comisioane sau produse.
+- Dacă lipsește o informație necesară, cere exact acea informație.
+- Dacă întrebarea nu este bancară, redirecționează blând spre ce poate face demo-ul, fără formula rigidă „pot răspunde doar”.
+- Nu inventa date personale reale, solduri reale sau politici bancare reale. Marchează răspunsul ca demo când este nevoie.
+- Nu folosi Markdown.
+
+Exemple similare din knowledge base:
+{examples_text or "Nu există exemple relevante."}
+
+Transcript recent:
+{recent_turns}
+
+Ultimul mesaj utilizator:
+{user_text}
+
+Răspuns Bănuțel:
+""".strip()
+    try:
+        from google import genai
+
+        client = genai.Client()
+        response = client.models.generate_content(model=LIVE_LLM_MODEL, contents=prompt)
+        text = (response.text or "").strip()
+    except Exception:
+        return None
+    return text[:700] if text else None
 
 
 def env_status() -> Dict[str, object]:

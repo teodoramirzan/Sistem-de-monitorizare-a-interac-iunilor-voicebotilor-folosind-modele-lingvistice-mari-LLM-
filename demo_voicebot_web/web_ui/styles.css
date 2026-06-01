@@ -412,7 +412,7 @@ code {
 
 .analysis {
   display: grid;
-  grid-template-rows: auto auto auto auto 1fr;
+  grid-template-rows: auto auto auto auto auto 1fr;
   overflow: hidden;
 }
 
@@ -528,13 +528,8 @@ button:disabled {
   line-height: 1.35;
 }
 
-.rec-item strong,
-.rec-item span {
+.rec-item strong {
   display: block;
-}
-
-.rec-item span {
-  color: var(--muted);
 }
 
 .kb-box {
@@ -577,6 +572,65 @@ button:disabled {
   color: var(--muted);
 }
 
+.result-cards {
+  display: grid;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.result-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.result-card.alert {
+  border-left-color: var(--rose);
+  background: #fff8f9;
+}
+
+.result-main span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.result-main strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 18px;
+}
+
+.result-card p {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.result-card .result-meta {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.pill {
+  align-self: start;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eaf4ee;
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 pre {
   overflow: auto;
   margin: 0;
@@ -584,6 +638,8 @@ pre {
   white-space: pre-wrap;
   font-size: 13px;
   line-height: 1.55;
+  background: #fbfcff;
+  color: #263238;
 }
 
 .evaluator-panel {

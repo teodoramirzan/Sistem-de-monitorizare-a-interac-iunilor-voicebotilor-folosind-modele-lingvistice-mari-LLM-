@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional
+from typing import Callable, Dict, List, Optional
 
 from conversation_kb import ConversationKnowledgeBase
 from conversation_evaluator import ConversationEvaluator, Turn, dump_evaluation, format_conversation
@@ -28,10 +28,15 @@ class BankingSessionState:
 
 
 class BankingVoicebotDemo:
-    def __init__(self, knowledge_base: Optional[ConversationKnowledgeBase] = None) -> None:
+    def __init__(
+        self,
+        knowledge_base: Optional[ConversationKnowledgeBase] = None,
+        llm_fallback: Optional[Callable[[List[Turn], str, Dict[str, object]], Optional[str]]] = None,
+    ) -> None:
         self.state = BankingSessionState()
         self.evaluator = ConversationEvaluator()
         self.knowledge_base = knowledge_base or ConversationKnowledgeBase()
+        self.llm_fallback = llm_fallback
 
     def start_message(self) -> str:
         text = (
@@ -49,6 +54,11 @@ class BankingVoicebotDemo:
 
         if _is_interruption(normalized):
             response = "Am înțeles. Oprim conversația aici și puteți reveni oricând aveți timp."
+            self._add("assistant", response)
+            return response
+
+        if _is_small_talk(normalized):
+            response = "Bună! Sunt aici și vă pot ajuta cu operațiuni bancare sau cu un scenariu de test pentru demo."
             self._add("assistant", response)
             return response
 
@@ -87,10 +97,7 @@ class BankingVoicebotDemo:
         elif self.state.intent == "informatii_produse":
             response = self._handle_product_info(normalized)
         else:
-            response = (
-                "Pot răspunde doar la solicitări bancare pentru acest demo. "
-                "Vă pot ajuta cu un card, un cont, soldul, extrasul sau o programare cu un consultant."
-            )
+            response = self._fallback_response(user_text)
 
         self._add("assistant", response)
         return response
@@ -221,6 +228,19 @@ class BankingVoicebotDemo:
             query = latest_user_text
         self.state.kb_examples = [example.to_dict() for example in self.knowledge_base.search(query, top_k=3)]
 
+    def _fallback_response(self, user_text: str) -> str:
+        if self.llm_fallback:
+            try:
+                generated = self.llm_fallback(self.state.transcript, user_text, self.knowledge_base_context())
+            except Exception:
+                generated = None
+            if generated:
+                return generated
+        return (
+            "Pot continua pe solicitări bancare precum carduri, conturi, sold, extras, tranzacții suspecte, "
+            "date personale, programări sau resetarea accesului. Spuneți-mi ce doriți să verificăm."
+        )
+
 
 def run_cli() -> None:
     parser = argparse.ArgumentParser(description="Demo live pentru evaluarea conversatiilor voicebot.")
@@ -315,6 +335,21 @@ def _is_interruption(text: str) -> bool:
             "alta data",
         ],
     )
+
+
+def _is_small_talk(text: str) -> bool:
+    cleaned = text.strip(" .,!?:;-")
+    return cleaned in {
+        "buna",
+        "salut",
+        "hello",
+        "hei",
+        "mersi",
+        "multumesc",
+        "buna ziua",
+        "bună",
+        "mulțumesc",
+    }
 
 
 def _looks_banking_related(text: str) -> bool:

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bănuțel | Voicebot bancar</title>
-    <link rel="stylesheet" href="styles.css?v=20260601-results" />
+    <link rel="stylesheet" href="styles.css?v=20260601-live-llm" />
   </head>
   <body>
     <main class="shell">
@@ -194,12 +194,13 @@ ASSISTANT: Cardul terminat în 4321 a fost blocat.</textarea>
             <p id="kbStatus">Încarc exemple similare...</p>
             <div id="kbExamples" class="kb-examples"></div>
           </section>
+          <section id="resultCards" class="result-cards hidden"></section>
           <pre id="result">{}</pre>
         </aside>
       </section>
     </main>
 
     <audio id="player" hidden></audio>
-    <script src="app.js?v=20260601-results"></script>
+    <script src="app.js?v=20260601-live-llm"></script>
   </body>
 </html>
