@@ -48,6 +48,53 @@ THESIS_RECOMMENDATIONS = {
     "incongruities": "Gemini 2.5 Flash, EN v4: Macro-F1 pe tip 0.734 și acord substanțial. Taskul rămâne cel mai dificil din cele trei.",
 }
 
+TASK_CONTEXT = {
+    "intent": (
+        "Taskul de extragere a intenției are 12 clase și testează dacă modelul identifică cererea principală "
+        "a clientului din întreaga conversație. În capitolul de evaluare, acesta este cel mai stabil task: "
+        "modelele API depășesc 97% Macro-F1, iar unele modele locale sunt suficient de bune pentru un pipeline practic."
+    ),
+    "final_status": (
+        "Clasificarea statusului final are 5 clase: rezolvată, parțial rezolvată, nerezolvată, întreruptă și redirecționată. "
+        "Este mai dificilă decât intenția, pentru că modelul trebuie să urmărească dacă dialogul chiar s-a încheiat cu o soluție."
+    ),
+    "incongruities": (
+        "Detecția neconcordanțelor este cea mai dificilă sarcină: modelul trebuie să compare răspunsurile voicebotului cu "
+        "cererea și contextul clientului. Evaluarea are două niveluri: detecție binară și clasificarea tipului de eroare."
+    ),
+}
+
+PROMPT_EVOLUTION_NOTES = {
+    "v1": "definiții narative, zero-shot, punct de plecare",
+    "v2": "schemă mai strictă și reguli de format JSON",
+    "v3": "criterii operaționale și reguli anti-eroare",
+    "v3_ro_labels": "variantă cu etichete românești, folosită ca test de robustețe",
+    "v4": "few-shot, exemple calibrate și reguli finale",
+}
+
+METHODOLOGY_EXPLANATION = """
+În capitolul de evaluare, spațiul experimental este definit de patru factori: modelul evaluat,
+limba promptului, versiunea promptului și taskul de clasificare. Fiecare combinație validă este
+o rulare completă pe cele 180 de conversații bancare simulate, urmată de parsarea răspunsului și
+calcularea metricilor.
+
+Setul complet descris în lucrare conține 128 de experimente: 44 pentru extragerea intenției,
+42 pentru clasificarea statusului final și 42 pentru detecția neconcordanțelor. Cinci modele sunt
+profilate complet pe combinațiile principale de limbă și prompt: OpenAI o3, Gemini 2.5 Flash,
+Aya Expanse 8B, RoLLaMA 2 7B și XLM-RoBERTa. Mistral 7B și Qwen2.5 3B sunt evaluate doar pe
+configurațiile considerate optime, deoarece rulările locale cuantizate pe Colab sunt mult mai
+costisitoare ca timp.
+"""
+
+METRIC_EXPLANATIONS = [
+    ("Accuracy", "Proporția predicțiilor corecte. Este ușor de interpretat, dar poate ascunde erori pe clase rare."),
+    ("Macro-F1", "Media F1 pe clase, cu aceeași greutate pentru fiecare clasă. Este metrica principală când distribuția este dezechilibrată."),
+    ("Weighted-F1", "Media F1 ponderată cu frecvența claselor. Reflectă mai bine impactul operațional al claselor frecvente."),
+    ("Cohen's κ", "Măsoară acordul peste nivelul așteptat întâmplător. În teză se folosește interpretarea Landis & Koch."),
+    ("Parse failure rate", "Rata outputurilor neparsabile sau cu etichete invalide. Este crucială pentru un pipeline automat, nu doar pentru scorul academic."),
+    ("Latency / P95", "Timpul mediu și percentila 95 indică dacă modelul este realist pentru monitorizare aproape în timp real."),
+]
+
 
 def repair_text(value: Any) -> Any:
     if isinstance(value, str):
@@ -206,6 +253,10 @@ def best_rows(df: pd.DataFrame, by: str, metric: str) -> pd.DataFrame:
     return df.dropna(subset=[metric]).sort_values(metric, ascending=False).groupby(by, as_index=False).head(1)
 
 
+def api_local_only(df: pd.DataFrame) -> pd.DataFrame:
+    return df[df["model_type"].isin(["API", "Local"])].copy()
+
+
 def filtered_task_df(metrics: pd.DataFrame, task: str) -> pd.DataFrame:
     return metrics[metrics["task"] == task].copy()
 
@@ -241,13 +292,46 @@ def render_prompt_evolution(df: pd.DataFrame, task: str) -> None:
         st.caption("Nu există date pentru evoluția prompturilor.")
         return
     evo = evo[evo["prompt_version"].astype(str).str.startswith("v")]
-    selected = best_rows(evo, ["model", "language", "prompt_version"], metric)
-    pivot = selected.pivot_table(index="prompt_order", columns="model", values=metric, aggfunc="max").sort_index()
+    st.markdown(
+        "Evoluția prompturilor arată cum rafinarea instrucțiunilor schimbă performanța. "
+        "În teză, trecerea de la v1 la v4 merge de la definiții narative la reguli operaționale și exemple few-shot."
+    )
+    prompt_story = pd.DataFrame(
+        [{"versiune": key, "rol în experiment": value} for key, value in PROMPT_EVOLUTION_NOTES.items()]
+    )
+    st.dataframe(prompt_story, use_container_width=True, hide_index=True)
+
+    available_models = sorted(evo["model"].dropna().unique())
+    selected_model = st.selectbox("Model pentru evoluția prompturilor", available_models, key=f"prompt-evolution-{task}")
+    model_evo = evo[evo["model"] == selected_model].copy()
+    selected = best_rows(model_evo, ["language", "prompt_version"], metric)
+    pivot = selected.pivot_table(index="prompt_version", columns="language", values=metric, aggfunc="max")
+    pivot = pivot.reindex(sorted(pivot.index, key=lambda value: PROMPT_ORDER.get(str(value), 99)))
     if pivot.empty:
         st.caption("Nu există serii comparabile v1-v4.")
         return
     st.line_chart(pivot)
-    st.caption("Graficul urmărește progresia v1-v4, ca în subsecțiunile de evoluție a prompturilor din capitolul 6.")
+    st.caption("Graficul compară limbile promptului pentru același model, ca să se vadă mai clar dacă RO sau EN ajută pe taskul selectat.")
+
+    delta_rows = []
+    for language, group in model_evo.groupby("language"):
+        by_version = group.sort_values("prompt_order").groupby("prompt_version", as_index=False).head(1)
+        values = by_version.set_index("prompt_version")[metric]
+        first_version = values.index[0] if not values.empty else None
+        last_version = values.index[-1] if not values.empty else None
+        if first_version and last_version:
+            delta_rows.append(
+                {
+                    "limbă": language.upper(),
+                    "prima versiune": first_version,
+                    "scor inițial": values.loc[first_version],
+                    "ultima versiune": last_version,
+                    "scor final": values.loc[last_version],
+                    "delta": values.loc[last_version] - values.loc[first_version],
+                }
+            )
+    if delta_rows:
+        st.dataframe(pd.DataFrame(delta_rows), use_container_width=True, hide_index=True)
 
 
 def load_predictions(task: str, source_file: str) -> pd.DataFrame:
@@ -270,26 +354,40 @@ def load_predictions(task: str, source_file: str) -> pd.DataFrame:
 
 def render_methodology(metrics: pd.DataFrame) -> None:
     st.header("6.1 Metodologia de evaluare")
-    st.write(
-        "Dashboard-ul urmează logica din capitolul de evaluare: fiecare experiment este definit de task, model, "
-        "limba promptului și versiunea promptului, apoi este comparat prin metrici agregate, latență și fiabilitatea outputului."
-    )
+    st.write(METHODOLOGY_EXPLANATION)
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Taskuri", metrics["task"].nunique())
     c2.metric("Experimente încărcate", len(metrics))
     c3.metric("Modele", metrics["model"].nunique())
     c4.metric("Conversații / rulare", int(metrics["dataset_size"].dropna().max()))
+
+    st.subheader("Design experimental")
+    st.markdown(
+        "- **Modele API:** OpenAI o3 și Gemini 2.5 Flash, evaluate pentru performanță maximă și disciplină de output.\n"
+        "- **Modele locale generative:** Aya Expanse 8B, RoLLaMA 2 7B, Mistral 7B și Qwen2.5 3B, relevante pentru scenarii cu restricții de confidențialitate sau cost.\n"
+        "- **Encoder-only:** XLM-RoBERTa este inclus ca baseline metodologic, dar este exclus din comparația API vs local, deoarece nu generează JSON prin prompting.\n"
+        "- **Prompturi:** v1-v4 urmăresc rafinarea instrucțiunilor, de la zero-shot narativ la few-shot cu exemple calibrate.\n"
+        "- **Date:** fiecare experiment rulează pe același master dataset de 180 de conversații, astfel încât scorurile să fie comparabile."
+    )
+
     st.subheader("Spațiul experimental")
     experiment_space = metrics.groupby(["task", "model_type"]).size().reset_index(name="experimente")
     experiment_space["task"] = experiment_space["task"].map(TASK_LABELS)
     st.dataframe(experiment_space, use_container_width=True, hide_index=True)
+
+    thesis_counts = pd.DataFrame(
+        [
+            {"task": TASK_LABELS["intent"], "experimente în capitol": 44, "observație": "toate versiunile principale, plus configurații locale suplimentare"},
+            {"task": TASK_LABELS["final_status"], "experimente în capitol": 42, "observație": "configurații RO/EN și v1-v4 pentru modelele principale"},
+            {"task": TASK_LABELS["incongruities"], "experimente în capitol": 42, "observație": "detecție binară și clasificarea tipului de neconcordanță"},
+        ]
+    )
+    st.dataframe(thesis_counts, use_container_width=True, hide_index=True)
+
     st.subheader("Metrici folosite")
-    st.markdown(
-        "- **Accuracy**: proporția predicțiilor corecte.\n"
-        "- **Macro-F1**: scor echilibrat pe clase, util când distribuția este dezechilibrată.\n"
-        "- **Weighted-F1**: scor ponderat cu frecvența claselor, apropiat de perspectiva operațională.\n"
-        "- **Cohen's κ**: acordul peste nivelul așteptat întâmplător.\n"
-        "- **Parse failure rate**: rata răspunsurilor invalide sau neparsabile ca JSON."
+    st.dataframe(pd.DataFrame(METRIC_EXPLANATIONS, columns=["metrică", "interpretare"]), use_container_width=True, hide_index=True)
+    st.caption(
+        "Predicțiile invalide nu sunt ignorate: în evaluare sunt penalizate explicit, deoarece un pipeline automat are nevoie de JSON valid, nu doar de text fluent."
     )
 
 
@@ -297,6 +395,7 @@ def render_task_page(metrics: pd.DataFrame) -> None:
     st.header("6.3-6.5 Rezultate pe task")
     task = st.selectbox("Task", TASK_ORDER, format_func=lambda value: TASK_LABELS[value])
     task_df = filtered_task_df(metrics, task)
+    st.write(TASK_CONTEXT[task])
     st.info(THESIS_RECOMMENDATIONS[task])
 
     with st.expander("Filtre", expanded=True):
@@ -308,6 +407,7 @@ def render_task_page(metrics: pd.DataFrame) -> None:
 
     render_best_cards(view, task)
     st.subheader("Cele mai bune configurații")
+    st.caption("Acest grafic corespunde tabelelor „cele mai bune rezultate per model/configurație” din capitolul 6.")
     chart_top_configs(view, task)
     st.dataframe(view.sort_values(metric_column(task, view), ascending=False), use_container_width=True, hide_index=True)
 
@@ -315,6 +415,10 @@ def render_task_page(metrics: pd.DataFrame) -> None:
     metric = metric_column(task, view)
     per_model = best_rows(view, "model", metric)
     st.dataframe(per_model.sort_values(metric, ascending=False), use_container_width=True, hide_index=True)
+    if not per_model.empty:
+        api_local = per_model[per_model["model_type"].isin(["API", "Local"])].copy()
+        if not api_local.empty:
+            st.caption("În această vedere encoder-ele pot apărea ca baseline, dar comparația operațională API vs local se face separat, fără Encoder.")
 
     st.subheader("Evoluția prompturilor")
     render_prompt_evolution(view, task)
@@ -322,6 +426,10 @@ def render_task_page(metrics: pd.DataFrame) -> None:
 
 def render_transversal(metrics: pd.DataFrame) -> None:
     st.header("6.6 Analize comparative transversale")
+    st.write(
+        "Această secțiune reproduce logica sintezei din capitolul 6: compară dificultatea taskurilor, "
+        "decalajul dintre modele API și modele locale, impactul limbii promptului, latența și fiabilitatea outputului."
+    )
 
     st.subheader("Comparație între taskuri")
     rows = []
@@ -338,9 +446,13 @@ def render_transversal(metrics: pd.DataFrame) -> None:
         st.bar_chart(best_task_df.set_index("task")[["best_score"]])
 
     st.subheader("Modele API vs modele locale")
+    st.caption(
+        "Comparația exclude explicit modelele Encoder-only. XLM-RoBERTa rămâne baseline în tabelele generale, "
+        "dar nu este comparabil direct cu modelele generative API/local, deoarece nu produce răspuns JSON prin prompting."
+    )
     comparable = []
     for task in TASK_ORDER:
-        task_df = filtered_task_df(metrics, task)
+        task_df = api_local_only(filtered_task_df(metrics, task))
         metric = metric_column(task, task_df)
         best_type = best_rows(task_df, ["model_type"], metric)
         if not best_type.empty:
@@ -350,11 +462,18 @@ def render_transversal(metrics: pd.DataFrame) -> None:
         api_local = pd.concat(comparable, ignore_index=True)
         st.dataframe(api_local.sort_values(["task", "score"], ascending=[True, False]), use_container_width=True, hide_index=True)
         st.bar_chart(api_local.pivot_table(index="task", columns="model_type", values="score", aggfunc="max"))
+        st.markdown(
+            "Interpretarea din teză este vizibilă și aici: decalajul API-local crește pe măsură ce taskul cere mai mult raționament contextual. "
+            "Pe intenție, modelele locale puternice sunt competitive; pe neconcordanțe, modelele API rămân mult mai robuste."
+        )
 
     st.subheader("Impactul limbii promptului")
+    st.caption(
+        "Tabelele din teză compară cea mai bună configurație RO cu cea mai bună configurație EN pentru același model și task."
+    )
     language_rows = []
     for task in TASK_ORDER:
-        task_df = filtered_task_df(metrics, task)
+        task_df = api_local_only(filtered_task_df(metrics, task))
         metric = metric_column(task, task_df)
         per_lang = best_rows(task_df, ["model", "language"], metric)
         for model, group in per_lang.groupby("model"):
@@ -374,13 +493,19 @@ def render_transversal(metrics: pd.DataFrame) -> None:
     st.dataframe(language_df, use_container_width=True, hide_index=True)
 
     st.subheader("Latență")
-    latency = metrics.dropna(subset=["latency_ms"]).copy()
+    st.caption(
+        "Latența contează practic pentru monitorizare: media descrie costul tipic, iar P95 arată comportamentul în cazurile lente."
+    )
+    latency = api_local_only(metrics).dropna(subset=["latency_ms"]).copy()
     if not latency.empty:
         best_latency = best_rows(latency, ["task", "model"], "latency_ms")
         st.bar_chart(best_latency.sort_values("latency_ms").set_index("config")[["latency_ms"]].head(20))
 
     st.subheader("Fiabilitatea outputului")
-    reliability = metrics.dropna(subset=["parse_failure_rate"]).copy()
+    st.caption(
+        "Un output fluent nu este suficient. Pentru un pipeline automat, răspunsul trebuie să respecte schema JSON și taxonomia de clase."
+    )
+    reliability = api_local_only(metrics).dropna(subset=["parse_failure_rate"]).copy()
     if not reliability.empty:
         reliability["parse_failure_%"] = reliability["parse_failure_rate"] * 100
         st.dataframe(
