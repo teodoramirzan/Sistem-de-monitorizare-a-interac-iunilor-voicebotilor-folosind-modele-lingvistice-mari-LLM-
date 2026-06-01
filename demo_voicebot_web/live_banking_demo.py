@@ -62,8 +62,17 @@ class BankingVoicebotDemo:
             self._add("assistant", response)
             return response
 
+        if _is_ambiguous_banking_fragment(normalized):
+            response = self._fallback_response(user_text, default=_clarify_card_or_account(normalized))
+            self._add("assistant", response)
+            return response
+
+        current_turn_intent = self.evaluator.extract_intent([{"role": "user", "text": user_text}])["intent"]
+        if current_turn_intent != "fallback" and _should_switch_intent(self.state.intent, current_turn_intent, normalized):
+            self._switch_intent(current_turn_intent)
+
         if self.state.intent is None or self.state.intent == "fallback":
-            evaluator_intent = self.evaluator.extract_intent(self.state.transcript)["intent"]
+            evaluator_intent = current_turn_intent
             if evaluator_intent != "fallback":
                 detected = evaluator_intent
             elif _looks_banking_related(normalized):
@@ -228,7 +237,7 @@ class BankingVoicebotDemo:
             query = latest_user_text
         self.state.kb_examples = [example.to_dict() for example in self.knowledge_base.search(query, top_k=3)]
 
-    def _fallback_response(self, user_text: str) -> str:
+    def _fallback_response(self, user_text: str, default: Optional[str] = None) -> str:
         if self.llm_fallback:
             try:
                 generated = self.llm_fallback(self.state.transcript, user_text, self.knowledge_base_context())
@@ -236,10 +245,18 @@ class BankingVoicebotDemo:
                 generated = None
             if generated:
                 return generated
+        if default:
+            return default
         return (
             "Pot continua pe solicitări bancare precum carduri, conturi, sold, extras, tranzacții suspecte, "
             "date personale, programări sau resetarea accesului. Spuneți-mi ce doriți să verificăm."
         )
+
+    def _switch_intent(self, new_intent: str) -> None:
+        if self.state.intent != new_intent:
+            self.state.intent = new_intent
+            self.state.slots.clear()
+            self.state.authenticated = False
 
 
 def run_cli() -> None:
@@ -339,16 +356,99 @@ def _is_interruption(text: str) -> bool:
 
 def _is_small_talk(text: str) -> bool:
     cleaned = text.strip(" .,!?:;-")
+    if cleaned.startswith(("hello", "helo", "hell", "buna", "bună", "salut", "hei")) and len(cleaned.split()) <= 2:
+        return True
     return cleaned in {
         "buna",
         "salut",
         "hello",
         "hei",
+        "ce faci",
+        "cum esti",
+        "cum ești",
         "mersi",
         "multumesc",
         "buna ziua",
         "bună",
         "mulțumesc",
+    }
+
+
+def _is_ambiguous_banking_fragment(text: str) -> bool:
+    cleaned = text.strip(" .,!?:;-")
+    words = cleaned.split()
+    if len(words) > 3:
+        return False
+    ambiguous = {
+        "card",
+        "cardul",
+        "carduri",
+        "cont",
+        "contul",
+        "conturi",
+        "credit",
+        "credite",
+        "banca",
+        "bancă",
+        "aplicatie",
+        "aplicație",
+    }
+    if cleaned in ambiguous:
+        return True
+    return any(word in ambiguous for word in words) and not _has_any(
+        cleaned,
+        [
+            "blochez",
+            "blocare",
+            "deblochez",
+            "deblocare",
+            "pierdut",
+            "furat",
+            "sold",
+            "extras",
+            "deschid",
+            "inchid",
+            "închid",
+            "comision",
+            "cost",
+            "taxa",
+            "taxă",
+        ],
+    )
+
+
+def _clarify_card_or_account(text: str) -> str:
+    if "card" in text:
+        return (
+            "Sigur. Despre card vă pot ajuta cu blocare, deblocare, card de credit, comisioane sau tranzacții. "
+            "Ce doriți să facem mai exact?"
+        )
+    if "cont" in text:
+        return (
+            "Sigur. Pentru cont vă pot ajuta cu sold, extras, deschidere, închidere sau informații despre comisioane. "
+            "Ce anume vă interesează?"
+        )
+    return "Sigur. Spuneți-mi puțin mai exact ce operațiune bancară doriți să verificăm."
+
+
+def _should_switch_intent(current_intent: Optional[str], new_intent: str, text: str) -> bool:
+    if current_intent in {None, "fallback"}:
+        return True
+    if current_intent == new_intent:
+        return False
+    if _has_any(text, ["nu", "alt", "alta", "schimb", "acum", "vreau", "as vrea", "aș vrea"]):
+        return True
+    return new_intent in {
+        "verificare_sold",
+        "extras_de_cont",
+        "tranzactie_suspicioasa",
+        "programare_consultant",
+        "resetare_autentificare",
+        "informatii_produse",
+        "deschidere_cont",
+        "inchidere_cont",
+        "blocare_card",
+        "deblocare_card",
     }
 
 
