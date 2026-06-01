@@ -61,7 +61,7 @@ pip install -r requirements-evaluation-pipeline.txt
 
 ## Dashboard rezultate
 
-Dashboard-ul Streamlit citește rezultatele existente din `evaluation_reports`, `outputs_final_status` și `outputs_incongruities`.
+Dashboard-ul Streamlit citește rezultatele existente din `evaluation_reports`, `outputs_final_status` și `outputs_incongruities` și este organizat după structura capitolului 6 din dizertație: metodologie, rezultate pe task, evoluția prompturilor, comparații API/local, latență, limbă și fiabilitatea outputului.
 
 ```powershell
 streamlit run streamlit_results_dashboard.py
