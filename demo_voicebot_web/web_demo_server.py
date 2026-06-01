@@ -417,38 +417,67 @@ def get_demo_session(session_id: str) -> BankingVoicebotDemo:
     return SESSIONS[session_id]
 
 
+def format_kb_examples_for_live_prompt(examples: object) -> str:
+    if not isinstance(examples, list):
+        return ""
+    formatted_examples = []
+    for item in examples[:4]:
+        if not isinstance(item, dict):
+            continue
+        turns = item.get("turns") if isinstance(item.get("turns"), list) else []
+        turns_text = "\n".join(
+            f"  {str(turn.get('role', '')).upper()}: {turn.get('text', '')}"
+            for turn in turns[:12]
+            if isinstance(turn, dict)
+        )
+        if not turns_text:
+            turns_text = (
+                f"  USER: {item.get('first_user_message', '')}\n"
+                f"  ASSISTANT: {item.get('assistant_resolution', '')}"
+            )
+        formatted_examples.append(
+            "\n".join(
+                [
+                    f"Exemplu {item.get('conversation_id', '')}",
+                    f"intent={item.get('mapped_intent', 'necunoscut')}; "
+                    f"status={item.get('final_status', 'necunoscut')}; "
+                    f"scor_similaritate={item.get('score', 0)}",
+                    turns_text,
+                ]
+            )
+        )
+    return "\n\n".join(formatted_examples)
+
+
 def generate_live_llm_reply(transcript: List[Turn], user_text: str, knowledge_base: Dict[str, object]) -> Optional[str]:
     if not os.getenv("GOOGLE_API_KEY"):
         return None
     examples = knowledge_base.get("examples") if isinstance(knowledge_base, dict) else []
-    examples_text = "\n".join(
-        (
-            f"- intent={item.get('mapped_intent', 'necunoscut')}; "
-            f"utilizator: {item.get('first_user_message', '')}; "
-            f"rezolvare exemplu: {item.get('assistant_resolution', '')}"
-        )
-        for item in examples[:3]
-        if isinstance(item, dict)
-    )
+    examples_text = format_kb_examples_for_live_prompt(examples)
     recent_turns = "\n".join(
         f"{turn.get('role', '').upper()}: {turn.get('text', '')}"
         for turn in transcript[-8:]
     )
     prompt = f"""
 Ești Bănuțel, un voicebot demonstrativ pentru asistență bancară în limba română.
-Ești chemat doar când flow-ul local și cazurile din dataset nu acoperă suficient situația. Răspunde natural, politicos și concis, în maximum două propoziții.
+Răspunzi printr-un flow RAG dataset-first: conversația live este ghidată mai întâi de exemplele similare din dataset, apoi de raționamentul tău general când datasetul nu acoperă complet cazul. Răspunde natural, politicos și concis, în maximum două propoziții.
+
+Pipeline obligatoriu:
+1. Uită-te la transcriptul recent și la exemplele similare din dataset.
+2. Alege exemplul sau tiparul cel mai apropiat, dacă există unul relevant.
+3. Continuă conversația cu următorul pas logic din acel tipar, nu cu o soluție inventată.
+4. Dacă exemplele sunt slabe, conflictuale sau nu acoperă mesajul, cere o clarificare scurtă sau răspunde ca asistent bancar demonstrativ.
 
 Reguli:
-- Folosește knowledge base-ul ca sursă prioritară; când exemplele similare se potrivesc cererii utilizatorului, păstrează pașii și tipul de clarificare din exemple.
+- Nu folosi reguli hardcodate pentru un singur caz; generalizează din exemplele similare.
 - Dacă utilizatorul este într-un flux deja început, continuă acel flux și cere informația următoare necesară, fără să sari la recomandări externe.
-- Dacă knowledge base-ul nu acoperă complet situația, răspunde cu raționament general de asistent bancar demonstrativ.
-- Dacă utilizatorul spune doar „card”, „cont”, „credit” sau alt fragment vag, NU presupune o acțiune. Întreabă ce dorește: blocare/deblocare, sold, extras, comisioane, tranzacții etc.
 - Dacă utilizatorul schimbă subiectul în aceeași conversație, continuă cu noul subiect și nu rămâne blocat în fluxul anterior.
 - Dacă utilizatorul salută, întreabă „ce faci” sau mulțumește, răspunde firesc și invită-l să continue.
 - Dacă întrebarea este bancară, ajută-l la nivel de demo: carduri, conturi, sold, extras, tranzacții suspecte, date personale, programări, resetare acces, comisioane sau produse.
 - Dacă lipsește o informație necesară, cere exact acea informație, fără să inventezi.
 - Dacă întrebarea nu este bancară, redirecționează blând spre ce poate face demo-ul, fără formula rigidă „pot răspunde doar”.
 - Nu inventa date personale reale, solduri reale, coduri, decizii bancare reale sau politici bancare reale. Marchează răspunsul ca demo când este nevoie.
+- Nu copia mecanic ultimul răspuns dintr-un exemplu dacă utilizatorul live este într-o etapă diferită; folosește exemplul ca flow de referință.
 - Nu folosi Markdown.
 
 Exemple similare din knowledge base:

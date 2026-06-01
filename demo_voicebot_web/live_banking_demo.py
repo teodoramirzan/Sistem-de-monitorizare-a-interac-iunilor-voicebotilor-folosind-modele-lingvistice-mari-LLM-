@@ -55,14 +55,15 @@ class BankingVoicebotDemo:
 
     def handle_user_message_dataset_first(self, user_text: str) -> str:
         self._add("user", user_text)
-        response = self._handle_user_message_core(user_text, allow_llm=False)
-        if self.state.intent == "fallback":
-            response = self._fallback_response(user_text, default=response)
+        self._refresh_kb_context(user_text)
+        response = self._try_llm_response(user_text)
+        if not response:
+            response = self._handle_user_message_core(user_text, allow_llm=False)
         self._add("assistant", response)
         return response
 
     def handle_user_message_llm_first(self, user_text: str) -> str:
-        # Compatibilitate cu serverul existent: comportamentul este acum dataset-first.
+        # Compatibilitate cu serverul existent: comportamentul este acum RAG dataset-first.
         return self.handle_user_message_dataset_first(user_text)
 
     def _handle_user_message_core(self, user_text: str, allow_llm: bool) -> str:
@@ -127,7 +128,7 @@ class BankingVoicebotDemo:
 
     def knowledge_base_context(self) -> Dict[str, object]:
         query = " ".join(turn["text"] for turn in self.state.transcript if turn.get("role") == "user")
-        context = self.knowledge_base.explain(query)
+        context = self.knowledge_base.explain(query, intent_hint=self.state.intent)
         if self.state.kb_examples:
             context["examples"] = self.state.kb_examples
         return context
@@ -243,25 +244,34 @@ class BankingVoicebotDemo:
         if not self.knowledge_base.available:
             self.state.kb_examples = []
             return
+        current_turn_intent = self.evaluator.extract_intent([{"role": "user", "text": latest_user_text}])["intent"]
+        if current_turn_intent != "fallback":
+            self.state.intent = current_turn_intent
         query = " ".join(turn["text"] for turn in self.state.transcript if turn.get("role") == "user")
         if not query:
             query = latest_user_text
-        self.state.kb_examples = [example.to_dict() for example in self.knowledge_base.search(query, top_k=3)]
+        self.state.kb_examples = [
+            example.to_dict() for example in self.knowledge_base.search(query, top_k=4, intent_hint=self.state.intent)
+        ]
 
     def _fallback_response(self, user_text: str, default: Optional[str] = None) -> str:
-        if self.llm_fallback:
-            try:
-                generated = self.llm_fallback(self.state.transcript, user_text, self.knowledge_base_context())
-            except Exception:
-                generated = None
-            if generated:
-                return generated
+        generated = self._try_llm_response(user_text)
+        if generated:
+            return generated
         if default:
             return default
         return (
             "Pot continua pe solicitări bancare precum carduri, conturi, sold, extras, tranzacții suspecte, "
             "date personale, programări sau resetarea accesului. Spuneți-mi ce doriți să verificăm."
         )
+
+    def _try_llm_response(self, user_text: str) -> Optional[str]:
+        if not self.llm_fallback:
+            return None
+        try:
+            return self.llm_fallback(self.state.transcript, user_text, self.knowledge_base_context())
+        except Exception:
+            return None
 
     def _switch_intent(self, new_intent: str) -> None:
         if self.state.intent != new_intent:

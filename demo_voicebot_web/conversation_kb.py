@@ -50,6 +50,7 @@ class KBExample:
     score: float
     first_user_message: str
     assistant_resolution: str
+    turns: List[Turn]
 
     def to_dict(self) -> Dict[str, object]:
         return {
@@ -60,6 +61,7 @@ class KBExample:
             "score": round(self.score, 4),
             "first_user_message": self.first_user_message,
             "assistant_resolution": self.assistant_resolution,
+            "turns": self.turns,
         }
 
 
@@ -75,7 +77,7 @@ class ConversationKnowledgeBase:
     def available(self) -> bool:
         return bool(self.documents)
 
-    def search(self, query: str, top_k: int = 3) -> List[KBExample]:
+    def search(self, query: str, top_k: int = 3, intent_hint: Optional[str] = None) -> List[KBExample]:
         if not self.documents:
             return []
         query_vector = text_vector(query)
@@ -86,7 +88,10 @@ class ConversationKnowledgeBase:
         for doc in self.documents:
             score = cosine(query_vector, doc["vector"])
             if score > 0:
-                scored.append((score, doc))
+                conversation = doc["conversation"]
+                mapped_intent = INTENT_MAP.get(str(conversation.get("intent", "")), "fallback")
+                reranked_score = score * 1.25 if intent_hint and mapped_intent == intent_hint else score
+                scored.append((reranked_score, doc))
 
         scored.sort(key=lambda item: item[0], reverse=True)
         return [self._example_from_doc(doc, score) for score, doc in scored[:top_k]]
@@ -101,8 +106,8 @@ class ConversationKnowledgeBase:
         intent, score = votes.most_common(1)[0]
         return intent if score >= 0.08 else None
 
-    def explain(self, query: str, top_k: int = 3) -> Dict[str, object]:
-        examples = self.search(query, top_k=top_k)
+    def explain(self, query: str, top_k: int = 3, intent_hint: Optional[str] = None) -> Dict[str, object]:
+        examples = self.search(query, top_k=top_k, intent_hint=intent_hint)
         return {
             "available": self.available,
             "dataset_path": str(self.dataset_path) if self.dataset_path else None,
@@ -136,6 +141,7 @@ class ConversationKnowledgeBase:
             score=score,
             first_user_message=first_turn_text(turns, "user"),
             assistant_resolution=last_turn_text(turns, "assistant"),
+            turns=[{"role": turn.get("role", ""), "text": turn.get("text", "")} for turn in turns],
         )
 
 
