@@ -111,6 +111,23 @@ class BankingVoicebotDemo:
         self._add("assistant", response)
         return response
 
+    def handle_user_message_llm_first(self, user_text: str) -> str:
+        self._add("user", user_text)
+        self._refresh_kb_context(user_text)
+        if self.llm_fallback:
+            try:
+                response = self.llm_fallback(self.state.transcript, user_text, self.knowledge_base_context())
+            except Exception:
+                response = None
+            if response:
+                self._add("assistant", response)
+                return response
+
+        # Fallback local pentru demo offline: eliminăm mesajul adăugat mai sus
+        # și îl retrimitem prin fluxul deterministic.
+        self.state.transcript.pop()
+        return self.handle_user_message(user_text)
+
     def final_evaluation(self) -> str:
         return dump_evaluation(self.evaluator.evaluate(self.state.transcript))
 

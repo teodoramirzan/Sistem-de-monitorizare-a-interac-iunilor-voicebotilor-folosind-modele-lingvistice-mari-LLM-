@@ -198,7 +198,7 @@ class BanutilHandler(SimpleHTTPRequestHandler):
             demo.start_message()
         if not user_text:
             return self._send_json({"error": "Mesaj gol"}, status=400)
-        bot_text = demo.handle_user_message(user_text)
+        bot_text = demo.handle_user_message_llm_first(user_text)
         self._send_json(
             {
                 "bot": bot_text,
@@ -233,7 +233,7 @@ class BanutilHandler(SimpleHTTPRequestHandler):
         demo = get_demo_session(session_id)
         if not demo.state.transcript:
             demo.start_message()
-        bot_text = demo.handle_user_message(user_text)
+        bot_text = demo.handle_user_message_llm_first(user_text)
         self._send_json(
             {
                 "user": user_text,
@@ -422,7 +422,11 @@ def generate_live_llm_reply(transcript: List[Turn], user_text: str, knowledge_ba
         return None
     examples = knowledge_base.get("examples") if isinstance(knowledge_base, dict) else []
     examples_text = "\n".join(
-        f"- {item.get('mapped_intent', 'necunoscut')}: {item.get('first_user_message', '')}"
+        (
+            f"- intent={item.get('mapped_intent', 'necunoscut')}; "
+            f"utilizator: {item.get('first_user_message', '')}; "
+            f"rezolvare exemplu: {item.get('assistant_resolution', '')}"
+        )
         for item in examples[:3]
         if isinstance(item, dict)
     )
@@ -432,14 +436,18 @@ def generate_live_llm_reply(transcript: List[Turn], user_text: str, knowledge_ba
     )
     prompt = f"""
 Ești Bănuțel, un voicebot demonstrativ pentru asistență bancară în limba română.
-Răspunde natural, politicos și concis, în maximum două propoziții.
+Tu generezi TOATE răspunsurile conversației live. Răspunde natural, politicos și concis, în maximum două propoziții.
 
 Reguli:
-- Dacă utilizatorul salută sau mulțumește, răspunde firesc și invită-l să continue.
+- Folosește knowledge base-ul când exemplele similare se potrivesc cererii utilizatorului; păstrează pașii și tipul de clarificare din exemple.
+- Dacă knowledge base-ul nu acoperă complet situația, răspunde cu raționament general de asistent bancar demonstrativ.
+- Dacă utilizatorul spune doar „card”, „cont”, „credit” sau alt fragment vag, NU presupune o acțiune. Întreabă ce dorește: blocare/deblocare, sold, extras, comisioane, tranzacții etc.
+- Dacă utilizatorul schimbă subiectul în aceeași conversație, continuă cu noul subiect și nu rămâne blocat în fluxul anterior.
+- Dacă utilizatorul salută, întreabă „ce faci” sau mulțumește, răspunde firesc și invită-l să continue.
 - Dacă întrebarea este bancară, ajută-l la nivel de demo: carduri, conturi, sold, extras, tranzacții suspecte, date personale, programări, resetare acces, comisioane sau produse.
-- Dacă lipsește o informație necesară, cere exact acea informație.
+- Dacă lipsește o informație necesară, cere exact acea informație, fără să inventezi.
 - Dacă întrebarea nu este bancară, redirecționează blând spre ce poate face demo-ul, fără formula rigidă „pot răspunde doar”.
-- Nu inventa date personale reale, solduri reale sau politici bancare reale. Marchează răspunsul ca demo când este nevoie.
+- Nu inventa date personale reale, solduri reale, coduri, decizii bancare reale sau politici bancare reale. Marchează răspunsul ca demo când este nevoie.
 - Nu folosi Markdown.
 
 Exemple similare din knowledge base:
