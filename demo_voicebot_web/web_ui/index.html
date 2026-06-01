@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bănuțel | Voicebot bancar</title>
-    <link rel="stylesheet" href="styles.css?v=20260531-pipeline" />
+    <link rel="stylesheet" href="styles.css?v=20260601-results" />
   </head>
   <body>
     <main class="shell">
@@ -21,6 +21,7 @@
           <div class="app-tabs" role="tablist" aria-label="Vedere demo">
             <button class="app-tab active" data-view="live" type="button">Live</button>
             <button class="app-tab" data-view="evaluator" type="button">Evaluator</button>
+            <button class="app-tab" data-view="reports" type="button">Rezultate</button>
           </div>
 
           <div class="status-grid">
@@ -31,10 +32,6 @@
             <div>
               <span>Cache</span>
               <strong id="cacheLabel">pregătit</strong>
-            </div>
-            <div>
-              <span>Telefon</span>
-              <strong id="phoneLabel">local</strong>
             </div>
           </div>
 
@@ -83,13 +80,6 @@
             <button id="newSession" class="primary" type="button">Sesiune nouă</button>
             <button id="clearCache" type="button">Golește cache</button>
           </div>
-
-          <div class="phone">
-            <h2>Mod apel</h2>
-            <p id="phoneStatus">Verific disponibilitatea numărului...</p>
-            <a id="callLink" class="call-link" href="#">Sună-l pe Bănuțel</a>
-            <code>/api/telephony/inbound</code>
-          </div>
         </aside>
 
         <section class="main-panel view-panel" data-view-panel="live">
@@ -101,7 +91,6 @@
             <div class="mode-tabs" role="tablist" aria-label="Mod conversație">
               <button class="tab active" data-mode="text" type="button">Text</button>
               <button class="tab" data-mode="voice" type="button">Voce</button>
-              <button class="tab" data-mode="phone" type="button">Telefon</button>
             </div>
           </header>
 
@@ -121,11 +110,6 @@
                 <strong id="micTitle">Apasă microfonul și vorbește</strong>
                 <p id="micStatus">Replica va fi trimisă către Zevo STT, apoi răspunsul va fi redat audio.</p>
               </div>
-            </div>
-
-            <div class="phone-panel mode-panel hidden" data-panel="phone">
-              <strong id="phonePanelTitle">Poți suna la numărul configurat pentru Bănuțel.</strong>
-              <p id="phonePanelText">Pentru apeluri reale, configurează numărul Zevo să trimită transcriptul către webhook-ul public.</p>
             </div>
           </div>
         </section>
@@ -155,6 +139,37 @@ ASSISTANT: Cardul terminat în 4321 a fost blocat.</textarea>
           </div>
         </section>
 
+        <section class="main-panel reports-panel view-panel hidden" data-view-panel="reports">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow">Rapoarte evaluare</span>
+              <h2>Rezultate interactive</h2>
+            </div>
+            <a class="button-link primary" href="http://127.0.0.1:8501" target="_blank" rel="noreferrer">Deschide dashboard</a>
+          </header>
+          <div class="reports-content">
+            <section>
+              <h3>Dashboard Streamlit</h3>
+              <p>Am adăugat o pagină separată pentru explorarea rezultatelor existente din repo: metrici pe task, comparații între modele, limbă, versiune de prompt și fișierele sursă.</p>
+            </section>
+            <section class="command-card">
+              <span>Pornește din terminal</span>
+              <code>streamlit run streamlit_results_dashboard.py</code>
+            </section>
+            <section>
+              <h3>Ce poți explora</h3>
+              <div class="feature-grid">
+                <div>Intent extraction</div>
+                <div>Status final</div>
+                <div>Neconcordanțe</div>
+                <div>Prompturi v1-v4</div>
+                <div>Modele API și locale</div>
+                <div>Fișiere JSON și rapoarte text</div>
+              </div>
+            </section>
+          </div>
+        </section>
+
         <aside class="analysis">
           <div class="analysis-head">
             <h2>Rezultat</h2>
@@ -163,6 +178,13 @@ ASSISTANT: Cardul terminat în 4321 a fost blocat.</textarea>
               <button id="analyze" class="primary" type="button">Analiză</button>
             </div>
           </div>
+          <section id="runProgress" class="run-progress hidden" aria-live="polite">
+            <div class="progress-title">
+              <h3 id="progressTitle">Rulez evaluarea</h3>
+              <span id="progressMode">local</span>
+            </div>
+            <div id="progressSteps" class="progress-steps"></div>
+          </section>
           <section class="recommendation-box">
             <h3>Recomandări</h3>
             <div id="recommendations"></div>
@@ -178,6 +200,6 @@ ASSISTANT: Cardul terminat în 4321 a fost blocat.</textarea>
     </main>
 
     <audio id="player" hidden></audio>
-    <script src="app.js?v=20260531-pipeline"></script>
+    <script src="app.js?v=20260601-results"></script>
   </body>
 </html>

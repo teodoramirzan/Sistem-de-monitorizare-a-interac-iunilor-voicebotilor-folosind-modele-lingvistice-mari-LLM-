@@ -167,8 +167,6 @@ class BanutilHandler(SimpleHTTPRequestHandler):
             "/api/evaluate-conversation": self._evaluate_conversation,
             "/api/tts": self._tts,
             "/api/cache/clear": self._clear_cache,
-            "/api/telephony/inbound": self._telephony_inbound,
-            "/api/telephony/status": self._telephony_status,
         }
         handler = routes.get(parsed.path)
         if not handler:
@@ -332,38 +330,6 @@ class BanutilHandler(SimpleHTTPRequestHandler):
         TTS_CACHE.mkdir(exist_ok=True)
         self._send_json({"ok": True, "message": "Cache-ul TTS a fost golit."})
 
-    def _telephony_status(self):
-        phone_number = os.getenv("ZEVO_PHONE_NUMBER", "").strip()
-        public_url = os.getenv("PUBLIC_WEBHOOK_URL", "").strip()
-        configured = bool(phone_number)
-        self._send_json(
-            {
-                "configured": configured,
-                "phone_number": phone_number,
-                "public_webhook_url": public_url,
-                "webhook_url": "/api/telephony/inbound",
-                "note": "Pentru apeluri reale, numarul Zevo trebuie sa trimita transcriptul catre webhook-ul public al acestui server.",
-            }
-        )
-
-    def _telephony_inbound(self):
-        payload = self._read_json()
-        session_id = str(payload.get("call_id") or payload.get("session_id") or "phone-default")
-        user_text = str(payload.get("transcript") or payload.get("message") or "").strip()
-        demo = SESSIONS.setdefault(session_id, BankingVoicebotDemo())
-        if not demo.state.transcript:
-            demo.start_message()
-        if not user_text:
-            return self._send_json({"error": "Lipseste transcriptul apelului"}, status=400)
-        bot_text = demo.handle_user_message(user_text)
-        self._send_json(
-            {
-                "reply_text": bot_text,
-                "transcript": demo.state.transcript,
-                "knowledge_base": demo.knowledge_base_context(),
-            }
-        )
-
     def _serve_cache_file(self, path: str):
         name = Path(path).name
         target = TTS_CACHE / name
@@ -447,8 +413,10 @@ def env_status() -> Dict[str, object]:
         "dotenv_found": [str(path) for path in dotenv_paths if path.exists()],
         "openai_api_key_loaded": bool(os.getenv("OPENAI_API_KEY")),
         "google_api_key_loaded": bool(os.getenv("GOOGLE_API_KEY")),
-        "zevo_api_key_loaded": bool(os.getenv("ZEVO_API_KEY")),
-        "supported_aliases": ENV_ALIASES,
+        "supported_aliases": {
+            "OPENAI_API_KEY": ENV_ALIASES["OPENAI_API_KEY"],
+            "GOOGLE_API_KEY": ENV_ALIASES["GOOGLE_API_KEY"],
+        },
     }
 
 

@@ -8,11 +8,6 @@ const apiKey = document.querySelector("#apiKey");
 const voice = document.querySelector("#voice");
 const voiceLabel = document.querySelector("#voiceLabel");
 const cacheLabel = document.querySelector("#cacheLabel");
-const phoneLabel = document.querySelector("#phoneLabel");
-const phoneStatus = document.querySelector("#phoneStatus");
-const callLink = document.querySelector("#callLink");
-const phonePanelTitle = document.querySelector("#phonePanelTitle");
-const phonePanelText = document.querySelector("#phonePanelText");
 const micButton = document.querySelector("#micButton");
 const micTitle = document.querySelector("#micTitle");
 const micStatus = document.querySelector("#micStatus");
@@ -23,11 +18,19 @@ const batchConversation = document.querySelector("#batchConversation");
 const batchTranscript = document.querySelector("#batchTranscript");
 const executionMode = document.querySelector("#executionMode");
 const envStatus = document.querySelector("#envStatus");
+const runProgress = document.querySelector("#runProgress");
+const progressTitle = document.querySelector("#progressTitle");
+const progressMode = document.querySelector("#progressMode");
+const progressSteps = document.querySelector("#progressSteps");
+const analyzeButton = document.querySelector("#analyze");
+const evaluateBatchButton = document.querySelector("#evaluateBatch");
 
 let lastBotText = "";
 let currentMode = "text";
 let currentView = "live";
 let recording = false;
+let progressTimer = null;
+let progressIndex = 0;
 let evaluationOptions = { models: {}, recommendations: {}, tasks: [] };
 
 async function api(path, body = {}) {
@@ -99,16 +102,85 @@ function renderRecommendations() {
 function updateModelHint() {
   document.querySelector("#modelHint").textContent =
     executionMode.value === "real"
-      ? "Trimite prompturile către modelul ales. Ai nevoie de chei API sau Ollama pornit local."
+      ? "Trimite prompturile către modelul ales. Ai nevoie de OpenAI/Gemini în .env sau Ollama pornit local."
       : "Rulează local fără chei API. Selectorul păstrează configurația de comparație.";
 }
 
 function renderEnvStatus(status) {
   const openai = status.openai_api_key_loaded ? "OpenAI ✓" : "OpenAI lipsă";
   const gemini = status.google_api_key_loaded ? "Gemini ✓" : "Gemini lipsă";
-  const zevo = status.zevo_api_key_loaded ? "Zevo ✓" : "Zevo lipsă";
-  envStatus.textContent = `${openai} · ${gemini} · ${zevo}`;
+  envStatus.textContent = `${openai} · ${gemini}`;
   envStatus.classList.toggle("ok", Boolean(status.openai_api_key_loaded && status.google_api_key_loaded));
+}
+
+function progressLabels(config) {
+  if (config.execution_mode === "real") {
+    return [
+      "Pregătesc transcriptul și contextul taskurilor",
+      `Rulez intent cu ${modelLabel(config.intent)}`,
+      `Rulez status final cu ${modelLabel(config.final_status)}`,
+      `Rulez neconcordanțe cu ${modelLabel(config.incongruities)}`,
+      "Parsez răspunsurile JSON și actualizez rezultatul",
+    ];
+  }
+  return [
+    "Pregătesc transcriptul",
+    "Aplic regulile locale pentru intent",
+    "Aplic regulile locale pentru status final",
+    "Aplic regulile locale pentru neconcordanțe",
+    "Actualizez rezultatul",
+  ];
+}
+
+function startProgress(title, config) {
+  stopProgressTimer();
+  progressTitle.textContent = title;
+  progressMode.textContent = config.execution_mode === "real" ? "model real/API/Ollama" : "local";
+  progressIndex = 0;
+  const labels = progressLabels(config);
+  progressSteps.innerHTML = labels
+    .map((label, index) => `<div class="progress-step" data-step="${index}"><span></span>${escapeHtml(label)}</div>`)
+    .join("");
+  runProgress.classList.remove("hidden");
+  setBusy(true);
+  markProgressStep();
+  progressTimer = setInterval(() => {
+    progressIndex = Math.min(progressIndex + 1, labels.length - 1);
+    markProgressStep();
+  }, config.execution_mode === "real" ? 4200 : 800);
+}
+
+function markProgressStep(finalState = null) {
+  progressSteps.querySelectorAll(".progress-step").forEach((step, index) => {
+    step.classList.toggle("done", index < progressIndex || finalState === "done");
+    step.classList.toggle("active", index === progressIndex && !finalState);
+    step.classList.toggle("error", finalState === "error" && index === progressIndex);
+  });
+}
+
+function finishProgress(state, message = "") {
+  stopProgressTimer();
+  if (state === "done") {
+    progressIndex = progressSteps.children.length - 1;
+    markProgressStep("done");
+  } else if (state === "error") {
+    markProgressStep("error");
+    if (message) showToast(message);
+  }
+  setBusy(false);
+}
+
+function stopProgressTimer() {
+  if (progressTimer) {
+    clearInterval(progressTimer);
+    progressTimer = null;
+  }
+}
+
+function setBusy(isBusy) {
+  analyzeButton.disabled = isBusy;
+  evaluateBatchButton.disabled = isBusy;
+  document.body.classList.toggle("busy", isBusy);
 }
 
 function addBubble(role, text, target = chat) {
@@ -163,22 +235,38 @@ async function sendVoiceMessage(audioBase64) {
 }
 
 async function analyze() {
-  const payload = await api("/api/analyze", {
-    session_id: sessionId,
-    model_config: getModelConfig(),
-  });
-  renderKnowledgeBase(payload.knowledge_base);
-  result.textContent = JSON.stringify(payload.pipeline, null, 2);
+  const config = getModelConfig();
+  startProgress("Analizez conversația live", config);
+  try {
+    const payload = await api("/api/analyze", {
+      session_id: sessionId,
+      model_config: config,
+    });
+    renderKnowledgeBase(payload.knowledge_base);
+    result.textContent = JSON.stringify(payload.pipeline, null, 2);
+    finishProgress("done");
+  } catch (error) {
+    finishProgress("error", error.message);
+    throw error;
+  }
 }
 
 async function evaluateBatch() {
-  const payload = await api("/api/evaluate-conversation", {
-    conversation_text: batchConversation.value,
-    model_config: getModelConfig(),
-  });
-  renderMiniTranscript(payload.transcript);
-  renderKnowledgeBase(payload.knowledge_base);
-  result.textContent = JSON.stringify(payload.evaluation, null, 2);
+  const config = getModelConfig();
+  startProgress("Evaluez transcriptul complet", config);
+  try {
+    const payload = await api("/api/evaluate-conversation", {
+      conversation_text: batchConversation.value,
+      model_config: config,
+    });
+    renderMiniTranscript(payload.transcript);
+    renderKnowledgeBase(payload.knowledge_base);
+    result.textContent = JSON.stringify(payload.evaluation, null, 2);
+    finishProgress("done");
+  } catch (error) {
+    finishProgress("error", error.message);
+    throw error;
+  }
 }
 
 function renderKnowledgeBase(kb) {
@@ -226,28 +314,6 @@ async function clearCache() {
   const payload = await api("/api/cache/clear", {});
   cacheLabel.textContent = "golit";
   showToast(payload.message);
-}
-
-async function loadPhoneStatus() {
-  const payload = await api("/api/telephony/status", {});
-  phoneLabel.textContent = payload.configured ? "configurat" : "local";
-  if (payload.configured) {
-    phoneStatus.textContent = `Poți suna la ${payload.phone_number}.`;
-    callLink.href = `tel:${payload.phone_number.replace(/\s+/g, "")}`;
-    callLink.textContent = `Sună la ${payload.phone_number}`;
-    callLink.classList.remove("disabled");
-    phonePanelTitle.textContent = `Poți suna la ${payload.phone_number}.`;
-    phonePanelText.textContent = payload.public_webhook_url
-      ? `Webhook public: ${payload.public_webhook_url}`
-      : "Numărul este afișat, dar pentru răspuns real trebuie configurat webhook-ul public în Zevo.";
-  } else {
-    phoneStatus.textContent = "Setează ZEVO_PHONE_NUMBER pentru a afișa numărul de apel.";
-    callLink.href = "#";
-    callLink.textContent = "Număr neconfigurat";
-    callLink.classList.add("disabled");
-    phonePanelTitle.textContent = "Pentru apel de pe telefon, configurează numărul Zevo.";
-    phonePanelText.textContent = "Setează ZEVO_PHONE_NUMBER și configurează webhook-ul public către /api/telephony/inbound.";
-  }
 }
 
 function startDictation() {
@@ -298,10 +364,10 @@ function setView(view) {
 }
 
 function loadSample() {
-  batchConversation.value = `USER: Vreau să-mi verific soldul și să primesc extrasul pe luna trecută.
-ASSISTANT: Pentru sold trebuie să confirmați identitatea. Puteți confirma codul primit prin SMS?
-USER: Da, confirm.
-ASSISTANT: Soldul disponibil este 2.450 de lei.`;
+  batchConversation.value = `USER: Vreau să-mi blochez cardul de credit.
+ASSISTANT: Pentru siguranță, spuneți ultimele 4 cifre.
+USER: Ultimele cifre sunt 4321.
+ASSISTANT: Cardul de debit terminat în 4321 a fost blocat.`;
 }
 
 function showToast(message) {
@@ -325,6 +391,10 @@ function taskLabel(task) {
     final_status: "Status final",
     incongruities: "Neconcordanțe",
   }[task] || task;
+}
+
+function modelLabel(key) {
+  return evaluationOptions.models?.[key]?.label || key || "modelul selectat";
 }
 
 async function recordWav(durationMs) {
@@ -436,8 +506,8 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
-document.querySelector("#analyze").addEventListener("click", () => analyze().catch((error) => showToast(error.message)));
-document.querySelector("#evaluateBatch").addEventListener("click", () => evaluateBatch().catch((error) => showToast(error.message)));
+analyzeButton.addEventListener("click", () => analyze().catch((error) => showToast(error.message)));
+evaluateBatchButton.addEventListener("click", () => evaluateBatch().catch((error) => showToast(error.message)));
 document.querySelector("#clearBatch").addEventListener("click", () => {
   batchConversation.value = "";
   batchTranscript.innerHTML = "";
@@ -459,7 +529,4 @@ voice.addEventListener("change", () => {
 executionMode.addEventListener("change", updateModelHint);
 
 loadEvaluationOptions().catch((error) => showToast(error.message));
-loadPhoneStatus().catch(() => {
-  phoneLabel.textContent = "local";
-});
 startSession().catch((error) => showToast(error.message));

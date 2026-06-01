@@ -47,8 +47,9 @@ http://127.0.0.1:8787
 
 În pagina web ai două moduri:
 
-- `Live`: conversație text/voce/telefon cu Bănuțel;
+- `Live`: conversație text/voce cu Bănuțel;
 - `Evaluator`: lipești o conversație completă și o evaluezi pe cele 3 taskuri.
+- `Rezultate`: deschide dashboard-ul interactiv Streamlit pentru rapoartele existente.
 
 Selectorul de model din pagină arată configurația de comparație și recomandările; evaluarea din web rulează local pentru demo.
 
@@ -57,6 +58,16 @@ Pentru randarea completă a prompturilor și rularea cu modele reale:
 ```powershell
 pip install -r requirements-evaluation-pipeline.txt
 ```
+
+## Dashboard rezultate
+
+Dashboard-ul Streamlit citește rezultatele existente din `evaluation_reports`, `outputs_final_status` și `outputs_incongruities`.
+
+```powershell
+streamlit run streamlit_results_dashboard.py
+```
+
+Deschide apoi `http://127.0.0.1:8501`. Poți filtra după task, model, limbă și versiune de prompt, apoi poți inspecta predicțiile din fiecare fișier JSON.
 
 ## Rulare cu modelul recomandat
 
