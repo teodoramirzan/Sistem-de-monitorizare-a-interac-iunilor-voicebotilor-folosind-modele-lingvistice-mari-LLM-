@@ -44,7 +44,7 @@ MODEL_REGISTRY: dict[str, ModelSpec] = {
         "baseline encoder; alias păstrat din notebook-uri",
     ),
     "mistral_7b": ModelSpec(
-        "Mistral 7B", "ollama", "mistral:7b", "model local adăugat pentru comparație"
+        "Mistral 7B", "ollama", "mistral:7b-instruct", "model local adăugat pentru comparație"
     ),
     "qwen2.5_3b": ModelSpec(
         "Qwen2.5 3B", "ollama", "qwen2.5:3b", "model local adăugat pentru comparație"

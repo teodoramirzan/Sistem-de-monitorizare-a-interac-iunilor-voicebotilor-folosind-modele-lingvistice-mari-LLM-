@@ -85,6 +85,13 @@ EVALUATION_MODELS = {
     "qwen2.5_3b": {"label": "Qwen2.5 3B", "kind": "local", "provider": "ollama", "supports_real": True},
 }
 
+OLLAMA_INSTALL_COMMANDS = {
+    "aya_expanse_8b": "ollama pull aya-expanse:8b",
+    "rollama2_7b": "ollama pull rollama2:7b",
+    "mistral_7b": "ollama pull mistral:7b-instruct",
+    "qwen2.5_3b": "ollama pull qwen2.5:3b",
+}
+
 TASK_RECOMMENDATIONS = {
     "intent": {
         "model": "openai_o3",
@@ -263,7 +270,7 @@ class BanutilHandler(SimpleHTTPRequestHandler):
     def _evaluation_options(self):
         self._send_json(
             {
-                "models": EVALUATION_MODELS,
+                "models": evaluation_models_payload(),
                 "recommendations": TASK_RECOMMENDATIONS,
                 "env_status": env_status(),
                 "execution_modes": {
@@ -403,7 +410,10 @@ def build_pipeline_evaluation(transcript: List[Turn], model_config: Dict[str, st
         if raw_response is not None:
             tasks[task]["raw_response"] = raw_response
         if error is not None:
-            tasks[task]["error"] = error
+            if isinstance(task_result, dict) and "error" in task_result:
+                tasks[task]["error"] = error
+            else:
+                tasks[task]["warning"] = error
     return {"results": raw_results, "tasks": tasks}
 
 
@@ -504,16 +514,53 @@ Răspuns Bănuțel:
 
 def env_status() -> Dict[str, object]:
     dotenv_paths = [PROJECT_ROOT / ".env", ROOT / ".env"]
+    ollama_models = installed_ollama_models()
     return {
         "dotenv_paths_checked": [str(path) for path in dotenv_paths],
         "dotenv_found": [str(path) for path in dotenv_paths if path.exists()],
         "openai_api_key_loaded": bool(os.getenv("OPENAI_API_KEY")),
         "google_api_key_loaded": bool(os.getenv("GOOGLE_API_KEY")),
+        "ollama_running": ollama_models is not None,
+        "ollama_models": ollama_models or [],
+        "ollama_install_commands": OLLAMA_INSTALL_COMMANDS,
         "supported_aliases": {
             "OPENAI_API_KEY": ENV_ALIASES["OPENAI_API_KEY"],
             "GOOGLE_API_KEY": ENV_ALIASES["GOOGLE_API_KEY"],
         },
     }
+
+
+def installed_ollama_models() -> Optional[List[str]]:
+    try:
+        import ollama
+        from src.evaluation_pipeline.providers import list_ollama_model_names
+
+        return list_ollama_model_names(ollama)
+    except Exception:
+        return None
+
+
+def evaluation_models_payload() -> Dict[str, Dict[str, object]]:
+    models = {key: dict(value) for key, value in EVALUATION_MODELS.items()}
+    installed = installed_ollama_models()
+    try:
+        from src.evaluation_pipeline.providers import OLLAMA_MODEL_ALIASES
+    except Exception:
+        OLLAMA_MODEL_ALIASES = {}
+    for key, model in models.items():
+        if model.get("provider") == "ollama":
+            candidates = OLLAMA_MODEL_ALIASES.get(key, [])
+            model["ollama_candidates"] = candidates
+            model["install_command"] = OLLAMA_INSTALL_COMMANDS.get(key)
+            model["installed"] = bool(installed and any(candidate in installed for candidate in candidates))
+            model["availability_note"] = (
+                "instalat în Ollama"
+                if model["installed"]
+                else "lipsește din Ollama; se folosește fallback local în demo"
+            )
+        elif model.get("provider") == "encoder":
+            model["availability_note"] = "baseline local nongenerativ; nu folosește Ollama"
+    return models
 
 
 def resolve_task_prompt_config(task: str, model_key: str, model_config: Dict[str, str]) -> Dict[str, str]:
@@ -529,17 +576,16 @@ def resolve_task_prompt_config(task: str, model_key: str, model_config: Dict[str
 
 
 def evaluate_task_with_real_model(task: str, transcript: List[Turn], model_key: str, task_config: Dict[str, str]):
+    local_result = ConversationEvaluator().evaluate(transcript).to_dict()[task]
     if not EVALUATION_MODELS[model_key].get("supports_real"):
         return (
-            {
-                "error": "model_nongenerativ",
-                "message": "Acest model este baseline encoder și nu poate primi prompturi conversaționale în demo-ul web.",
-            },
+            local_result,
             None,
-            "Modelul selectat nu suportă evaluare generativă reală în pagina web.",
+            "Modelul selectat este baseline encoder, nu model generativ. Am afișat evaluarea locală pentru demo.",
         )
     try:
         from src.evaluation_pipeline.prompting import render_prompt
+        from src.evaluation_pipeline.providers import OllamaModelMissingError
         from src.evaluation_pipeline.providers import evaluate_with_provider
 
         prompt, _prompt_meta = render_prompt(
@@ -556,7 +602,21 @@ def evaluate_task_with_real_model(task: str, transcript: List[Turn], model_key: 
             provider="auto",
         )
         return result, raw_response, None
+    except OllamaModelMissingError as exc:
+        return (
+            local_result,
+            None,
+            f"{exc} Am afișat evaluarea locală ca fallback pentru demo.",
+        )
     except Exception as exc:
+        if EVALUATION_MODELS[model_key].get("provider") == "ollama" and is_ollama_runtime_error(exc):
+            command = OLLAMA_INSTALL_COMMANDS.get(model_key)
+            hint = f" Rulează: {command}" if command else ""
+            return (
+                local_result,
+                None,
+                f"Ollama nu poate rula modelul selectat ({exc}).{hint} Am afișat evaluarea locală ca fallback pentru demo.",
+            )
         return (
             {
                 "error": "model_call_failed",
@@ -565,6 +625,17 @@ def evaluate_task_with_real_model(task: str, transcript: List[Turn], model_key: 
             None,
             str(exc),
         )
+
+
+def is_ollama_runtime_error(exc: Exception) -> bool:
+    message = str(exc).lower()
+    return (
+        "ollama" in message
+        or "not found" in message
+        or "status code: 404" in message
+        or "no module named 'ollama'" in message
+        or 'no module named "ollama"' in message
+    )
 
 
 def load_prompt_context(task: str, task_config: Dict[str, str]) -> Dict[str, object]:

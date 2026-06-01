@@ -74,7 +74,12 @@ function populateModelSelectors() {
     const recommended = evaluationOptions.recommendations?.[task]?.model;
     select.innerHTML = Object.entries(models)
       .map(([key, model]) => {
-        const suffix = key === recommended ? " · recomandat" : "";
+        const recommendedSuffix = key === recommended ? " · recomandat" : "";
+        const availabilitySuffix =
+          executionMode.value === "real" && model.provider === "ollama" && model.installed === false
+            ? " · lipsește în Ollama"
+            : "";
+        const suffix = `${recommendedSuffix}${availabilitySuffix}`;
         return `<option value="${escapeHtml(key)}">${escapeHtml(model.label)}${suffix}</option>`;
       })
       .join("");
@@ -109,7 +114,10 @@ function updateModelHint() {
 function renderEnvStatus(status) {
   const openai = status.openai_api_key_loaded ? "OpenAI ✓" : "OpenAI lipsă";
   const gemini = status.google_api_key_loaded ? "Gemini ✓" : "Gemini lipsă";
-  envStatus.textContent = `${openai} · ${gemini}`;
+  const ollama = status.ollama_running
+    ? `Ollama ✓ ${status.ollama_models?.length || 0} modele`
+    : "Ollama oprit/lipsă";
+  envStatus.textContent = `${openai} · ${gemini} · ${ollama}`;
   envStatus.classList.toggle("ok", Boolean(status.openai_api_key_loaded && status.google_api_key_loaded));
 }
 
@@ -350,7 +358,8 @@ function renderResultCard(card) {
 function taskMeta(task) {
   if (!task) return "";
   const recommended = task.is_recommended ? "recomandat" : "selectat";
-  return `${task.model_label || task.model || "model"} · ${task.lang || ""} ${task.prompt_version || ""} · ${recommended}`;
+  const warning = task.warning || task.error ? ` · ${task.warning || task.error}` : "";
+  return `${task.model_label || task.model || "model"} · ${task.lang || ""} ${task.prompt_version || ""} · ${recommended}${warning}`;
 }
 
 function incongruityLabel(value) {
@@ -601,7 +610,10 @@ document.querySelectorAll(".app-tab").forEach((tab) => {
 voice.addEventListener("change", () => {
   voiceLabel.textContent = voice.value;
 });
-executionMode.addEventListener("change", updateModelHint);
+executionMode.addEventListener("change", () => {
+  populateModelSelectors();
+  updateModelHint();
+});
 
 loadEvaluationOptions().catch((error) => showToast(error.message));
 startSession().catch((error) => showToast(error.message));
